@@ -87,7 +87,7 @@
             </div>
         </div>
         <table class="text-xs text-left text-gray-800 dark:text-gray-400">
-            <thead class="text-xs text-gray-800 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border">
+            <thead class="text-xs text-gray-800 uppercase bg-gray-300 dark:bg-gray-700 dark:text-gray-400 border ">
                 <tr>
                     <th scope="col-4" class="p-4">
                         <div class="flex items-center">
@@ -99,48 +99,64 @@
                     <th class="px-2 py-1 font-medium font-mono " style="font-size: smaller;">
                         S/S
                     </th>
-                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center" style="font-size: smaller;">
-                        Malzeme TF
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
+                        STF NO
                     </th>
-                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center" style="font-size: smaller;">
-                        Siparis TF
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
+                        SME NO
                     </th>
-                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center" style="font-size: smaller;">
-                        Siparis k
+                    
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
+                        FTE NO
                     </th>
-                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center" style="font-size: smaller;">
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
                         STF Date
                     </th>
-                    <th scope="col" class="px-2 py-1 font-mono font-medium" style="font-size: smaller;">
-                        <div class="text-red-300 w-48">Vendor</div>
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
+                        <div class="w-48">Vendor</div>
                     </th>
-                    <th scope="col" class="px-2 py-1 font-mono font-medium" style="font-size: smaller;">
-                        <div class="w-96">Product name</div>
+                    <th scope="col" class="px-2 py-1 font-mono font-medium border" style="font-size: smaller;">
+                        <div class="w-96">Product name Turkish</div>
                     </th>
-                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center" style="font-size: smaller;">
+                    <th scope="col" class="px-2 py-1 font-mono font-medium border" style="font-size: smaller;">
+                        <div class="w-96">Product name Other</div>
+                    </th>
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
                         Count
                     </th>
-                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center" style="font-size: smaller;">
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
                         Unit
                     </th>
-                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center" style="font-size: smaller;">
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
                         Price
                     </th>
-                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center" style="font-size: smaller;">
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
                         Total
                     </th>
-                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center" style="font-size: smaller;">
-                        <div class="text-red-300 w-24">Order</div>
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
+                        CR
                     </th>
-                    <th scope="col" class="px-2 py-1  font-mono font-medium text-center" style="font-size: smaller;">
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
+                        <div class="w-24">Order</div>
+                    </th>
+                    <th scope="col" class="px-2 py-1 font-mono font-medium text-center border" style="font-size: smaller;">
+                        <div class="w-24">Supplier</div>
+                    </th>
+                    <th scope="col" class="px-2 py-1  font-mono font-medium text-center border" style="font-size: smaller;">
                         Certificate
+                    </th>
+                    <th scope="col" class="px-2 py-1  font-mono font-medium text-center border" style="font-size: smaller;">
+                        Passport
+                    </th>
+                    <th scope="col" class="px-2 py-1  font-mono font-medium text-center border" style="font-size: smaller;">
+                        Comment
                     </th>
 
                 </tr>
             </thead>
             <tbody>
 
-                <tr v-for="i in 10"
+                <tr v-for="i in 500"
                     class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td class="w-1 p-4 py-2 ">
                         <div class="flex items-center">
@@ -149,46 +165,60 @@
                             <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
                         </div>
                     </td>
-                    <th class="px-2 py-2 font-mono font-thin">
+                    <th class="px-2 py-2 font-mono font-bold">
                         {{ i }}
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
-                        <span class="bg-red-500 text-white p-1 rounded-md">SRU23.RS07.0510</span>
+                    <th class="px-2 py-2 font-mono font-thin border" style="font-size: smaller;">
+                        <span class="bg-orange-500 text-white p-1 rounded-full font-bold">SRU23.RS07.0879</span>
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
-                        <span class="bg-orange-500 text-white p-1 rounded-md">SRU23.RS07.0879</span>
+                    <th class="px-2 py-2 font-mono font-thin border" style="font-size: smaller;">
+                        <span  class="bg-green-500 text-white p-1 rounded-full font-bold">SRU23.RS07.0877</span>
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
-                        <span  class="bg-green-500 text-white p-1 rounded-md">SRU23.RS07.0877</span>
+                    <th class="px-2 py-2 font-mono font-thin border" style="font-size: smaller;">
+                        <span  class="bg-red-500 text-white p-1 rounded-full font-bold">SRU23.RS07.0877</span>
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
+                    <th class="px-2 py-2 font-mono font-thin border" style="font-size: smaller;">
                         11.04.2023
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
+                    <th class="px-2 py-2 font-mono font-thin border" style="font-size: smaller;">
                         <span>ООО ВЕК ЭЛЕКТРО</span>
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
+                    <th class="px-2 py-2 font-mono font-thin border" style="font-size: smaller;">
                         YOYO 2 mt GERI SARMALLI DUSUS DURDURUCU YOYO 2 mt HB-02
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
+                    <th class="px-2 py-2 font-mono font-thin border" style="font-size: smaller;">
+                        Средство защиты втягивающего типа BEKAS двухплечевое, длина ленты 1,8 м. с большими карабинами
+                    </th>
+                    <th class="px-2 py-2 font-mono font-thin border" style="font-size: smaller;">
                         11
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
+                    <th class="px-2 py-2 font-mono font-thin border" style="font-size: smaller;">
                         Ad
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
+                    <th class="px-2 py-2 font-mono font-thin border" style="font-size: smaller;">
                         510
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
+                    <th class="px-2 py-2 font-mono font-thin border" style="font-size: smaller;">
                         5610
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
-                        Ozan Harmanci
+                    <th class="px-2 py-2 font-mono font-thin text-center border" style="font-size: smaller;">
+                        $
                     </th>
-                    <th class="px-2 py-2 font-mono font-thin" style="font-size: smaller;">
-                        Yes
+                    <th class="px-2 py-2 font-mono font-thin text-center border" style="font-size: smaller;">
+                        Mehmet Ugur Dogan
                     </th>
-
+                    <th class="px-2 py-2 font-mono font-thin text-center border" style="font-size: smaller;">
+                        Irina Stepanova
+                    </th>
+                    <th class="px-2 py-2 font-mono font-thin text-center border" style="font-size: smaller;">
+                        <span class="font-bold"><i class="fa-solid fa-check fa-xl" style="color:green"></i></span>
+                    </th>
+                    <th class="px-2 py-2 font-mono font-thin text-center border" style="font-size: smaller;">
+                        <span  class="font-bold"><i class="fa-solid fa-xmark fa-xl" style="color:red"></i></span>
+                    </th>
+                    <th class="px-2 py-2 font-mono font-thin text-center border" style="font-size: smaller;">
+                       <div class="w-96">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+                    </th>
                 </tr>
 
             </tbody>
