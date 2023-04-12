@@ -16,7 +16,7 @@
 
 <script setup>
 
-  import STF_COMP from './components/tables/STF_Table_Comp.vue';
+  import STF_COMP from './components/STF_Table_Comp.vue';
   import Navbar from './layouts/Navbar.vue';
 
 </script>
