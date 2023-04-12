@@ -1,5 +1,6 @@
 <template>
     <div class="relative  shadow-md sm:rounded-lg w-full">
+        <!-- Time and Search -->
         <div class="flex items-center justify-between pb-4">
             <div>
                 <button id="dropdownRadioButton" data-dropdown-toggle="dropdownRadio"
@@ -86,6 +87,7 @@
                     placeholder="Search for items">
             </div>
         </div>
+        <!-- Table -->
         <table class="text-xs text-left text-gray-800 dark:text-gray-400">
             <thead class="text-xs text-gray-800 uppercase bg-gray-300 dark:bg-gray-700 dark:text-gray-400 border ">
                 <tr>
@@ -156,7 +158,7 @@
             </thead>
             <tbody>
 
-                <tr v-for="i in 500"
+                <tr v-for="i in 10"
                     class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td class="w-1 p-4 py-2 ">
                         <div class="flex items-center">
