@@ -5,10 +5,12 @@
 
     <Navbar/>
 
+    <router-view></router-view>
+
     <!-- Table Form -->
-    <div class="p-2 w-full">
+    <!-- <div class="p-2 w-full">
       <STF_COMP/>
-    </div>
+    </div> -->
   
   </div>
 
