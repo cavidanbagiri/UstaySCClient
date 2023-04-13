@@ -9,10 +9,10 @@
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             
             <!-- Table Header -->
-                <MTF_Table_Thead_Comp/>            
+            <MTF_Table_Thead_Comp/>            
 
             <!-- Table Body -->
-                <MTF_Table_Tbody_Comp/>
+            <MTF_Table_Tbody_Comp/>
 
         </table>
         
