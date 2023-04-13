@@ -3,6 +3,7 @@
 
         <!-- Table -->
         <table class="text-xs text-left text-gray-800 dark:text-gray-400">
+            <!-- Table Header -->
             <thead class="text-xs text-gray-800 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400 border ">
                 <tr>
                     <th scope="col-4" class="py-2 px-4">
@@ -121,7 +122,7 @@
 
                 </tr>
             </thead>
-            
+            <!-- Table Border -->
             <tbody>
                 <tr v-for="i in 10"
                     class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">

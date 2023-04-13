@@ -1,17 +1,17 @@
 
 <template>
-    <div class="">
-        Create MTF Form
-        <br>
-        <button class="border p-2 rounded-lg" @click="createMTF">
-            Create MTF
-        </button>
+    <div class=" flex flex-col p-2">
+        
+
+        <MTF_Table_Comp/>
 
     </div>
 </template>
 
 <script setup>
-    
+
+    import MTF_Table_Comp from '../components/MTF_Table_Comp.vue';
+
     import OrderStore from '../store/order_store.js';
     const store = OrderStore();
 
