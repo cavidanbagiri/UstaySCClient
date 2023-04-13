@@ -10,7 +10,7 @@
 
 <script setup>
 
-    import MTF_Table_Comp from '../components/MTF_Table_Comp.vue';
+    import MTF_Table_Comp from '../components/mtf_table/MTF_Table_Comp.vue';
 
     import OrderStore from '../store/order_store.js';
     const store = OrderStore();
