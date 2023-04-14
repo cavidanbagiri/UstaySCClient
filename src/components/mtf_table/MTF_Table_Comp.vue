@@ -20,8 +20,8 @@
         <MTF_Table_Row_Count_Comp @emitAddNewRow = "addNewRow" @emitRemoveRow="removeRow"/>
 
         <!-- Create MTF Button-->
-        <MTF_Create_Comp/>
-        <pre>{{ order_list }}</pre>
+        <MTF_Create_Comp :order_list=order_list />
+
     </div>
 </template>
 
@@ -36,7 +36,7 @@
     import MTF_Create_Comp from './MTF_Create_Button.vue';
 
     /************************************************* Row Management ****************/ 
-    const row_size = ref(1);
+    const row_size = ref(5);
     const addNewRow = () => row_size.value += 1;
     const removeRow = () =>  row_size.value >1 ? row_size.value -= 1 : row_size.value
     /****************************************************************************** */

@@ -98,7 +98,7 @@ const each = ref({
 });
 
 watchEffect(()=>{
-    prop.order_list.push(each);
+    prop.order_list.push(each.value);
 })
 
 </script>
