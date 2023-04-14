@@ -1,7 +1,7 @@
 
 <template>
     <div class="grid grid-cols-12  bg-slate-800 color-white">
-        <div class="col-span-3 text-white flex flex-row items-center justify-evenly" >
+        <div class="col-span-3 text-white flex flex-row items-center justify-start" >
             <router-link to="/">
                 <img class="w-12 h-12" src="https://cdn2.iconfinder.com/data/icons/letters-and-numbers-1/32/lowercase_letter_u_red-512.png" alt="">
             </router-link>
