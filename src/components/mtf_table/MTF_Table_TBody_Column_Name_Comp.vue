@@ -2,7 +2,8 @@
 
     <tr v-for="i in prop.row_size"
         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ">
-        <MTF_Table_TBody_Each_Row_Comp :each="each" :id="i" :key="i"/>
+        <!-- <MTF_Table_TBody_Each_Row_Comp :each="each" :id="i" :key="i" :order_list=order_list /> -->
+        <MTF_Table_TBody_Each_Row_Comp :order_list=order_list :id=i :key=i />
     </tr>
 
 </template>
@@ -13,21 +14,8 @@ import { ref } from 'vue';
 
 import MTF_Table_TBody_Each_Row_Comp from './MTF_Table_TBody_Each_Row_Comp.vue';
 
-const prop = defineProps(['row_size'])
+const prop = defineProps(['row_size', 'order_list'])
 
-/********* For Getting All Of The Items*/
-const orders = ref([]);
-const each = ref({
-    row_id: ref(0),
-    selected_type: ref(''),
-    material_name: ref(''),
-    material_count: ref(0),
-    selected_unit: ref(''),
-    selected_field: ref(''),
-    selected_status: ref(''),
-    material_comment: ref('')
-});
-/********* */
 
 </script>
 
