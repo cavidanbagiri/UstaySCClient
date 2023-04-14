@@ -35,12 +35,11 @@
     import MTF_Table_Row_Count_Comp from './MTF_Table_Row_Count_Comp.vue';
     import MTF_Create_Comp from './MTF_Create_Button.vue';
     
+    /************************************************* Row Management ****************/ 
     const row_size = ref(5);
-
     const addNewRow = () => row_size.value += 1;
-    
     const removeRow = () =>  row_size.value >1 ? row_size.value -= 1 : row_size.value
-    
+    /****************************************************************************** */
 
 </script>
 
