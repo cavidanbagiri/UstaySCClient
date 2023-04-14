@@ -1,7 +1,7 @@
 
 <template>
     <tbody>
-        <tr v-for="i in row_size"
+        <tr v-for="i in prop?.row_size"
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ">
 
             <th scope="row" class="w-8 font-mono font-thin text-gray-900 whitespace-nowrap dark:text-white text-center"
@@ -83,13 +83,15 @@
 
 import { ref } from 'vue';
 
+// For Choosing Material Type
 const selected = ref('');
 
-const row_size = ref(5);
+// Total Row Size
+// const row_size = ref(5);
 
-const addNewColumn = () => {
-    row_size.value += 1;
-}
+const prop = defineProps(['row_size']);
+
+
 
 </script>
 
