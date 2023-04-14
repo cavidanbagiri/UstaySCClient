@@ -1,7 +1,7 @@
 
 <template>
-    <div class="text-center bg-gray-50">
-        <span class="py-5 font-bold text-2xl my-5 ">Creating MTF</span>
+    <div class="text-start bg-gray-50">
+        <span class="py-5 font-bold text-xl my-5 ">Creating MTF</span>
         <hr>
     </div>
     <!-- MTF Inform Section -->
