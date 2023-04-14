@@ -1,8 +1,10 @@
 <template>
+
     <tr v-for="i in prop.row_size"
         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ">
-        <MTF_Table_TBody_Each_Row_Comp :each="each"/>
+        <MTF_Table_TBody_Each_Row_Comp :each="each" :id="i" :key="i"/>
     </tr>
+
 </template>
 
 <script setup>
@@ -16,6 +18,7 @@ const prop = defineProps(['row_size'])
 /********* For Getting All Of The Items*/
 const orders = ref([]);
 const each = ref({
+    row_id: ref(0),
     selected_type: ref(''),
     material_name: ref(''),
     material_count: ref(0),

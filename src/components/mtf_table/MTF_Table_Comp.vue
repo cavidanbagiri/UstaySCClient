@@ -34,9 +34,23 @@
     import MTF_Table_Title_Comp from './MTF_Table_Title_Comp.vue';
     import MTF_Table_Row_Count_Comp from './MTF_Table_Row_Count_Comp.vue';
     import MTF_Create_Comp from './MTF_Create_Button.vue';
+
+    /************************************************* Row Management ****************/ 
+    const orders = ref([]);
+    const each = ref({
+        row_id: ref(0),
+        selected_type: ref(''),
+        material_name: ref(''),
+        material_count: ref(0),
+        selected_unit: ref(''),
+        selected_field: ref(''),
+        selected_status: ref(''),
+        material_comment: ref('')
+    });
+    /******************************************************************************* */
     
     /************************************************* Row Management ****************/ 
-    const row_size = ref(5);
+    const row_size = ref(1);
     const addNewRow = () => row_size.value += 1;
     const removeRow = () =>  row_size.value >1 ? row_size.value -= 1 : row_size.value
     /****************************************************************************** */

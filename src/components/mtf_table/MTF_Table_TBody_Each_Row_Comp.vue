@@ -1,9 +1,10 @@
+
 <template>
     <!-- S/S -->
     <th scope="row" class="w-8 font-mono font-thin text-gray-900 whitespace-nowrap dark:text-white text-center"
         style="font-size: smaller;">
         <div class="flex justify-between items-center px-1">
-            <span>{{ prop?.each.i }}</span>
+            <span>{{ prop?.id }}</span>
             <span class="relative flex h-3 w-3">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
@@ -75,13 +76,14 @@
         <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Comment..."
             v-model=prop.each.material_comment>
     </td>
+
 </template>
 
 <script setup>
 
 import {ref} from 'vue';
 
-const prop = defineProps(['each']);
+const prop = defineProps(['each', 'id']);
 
 
 </script>
