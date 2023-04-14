@@ -15,8 +15,8 @@
     <th scope="row" class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white"
         style="font-size: smaller;">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Material Type..."> -->
-        <select class="border outline-none font-sans rounded-lg w-full h-full p-2" v-model="each.selected_type">
-            <option disabled value="">Select Type</option>
+        <select class="border outline-none font-sans rounded-lg w-full h-full p-2" v-model="each.type">
+            <option disabled value="">Type</option>
             <option>Project</option>
             <option>Consumables</option>
             <option>Fixture</option>
@@ -25,17 +25,22 @@
     <!-- Material Name -->
     <td class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white" style="font-size: smaller;">
         <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Material Name..."
-            v-model=each.material_name>
+            v-model=each.name>
+    </td>
+    <!-- Material Link -->
+    <td class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white" style="font-size: smaller;">
+        <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Material Link..."
+            v-model=each.link>
     </td>
     <!-- Material Count -->
     <td class="p-1 border" style="font-size: smaller;">
         <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Count..."
-            v-model=each.material_count>
+            v-model=each.count>
     </td>
     <!-- Material Unit -->
     <td class="p-1 border" style="font-size: smaller;">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2 " type="text" placeholder="Unit..."> -->
-        <select class="border outline-none font-sans rounded-lg w-full h-full p-2" v-model="each.selected_unit">
+        <select class="border outline-none font-sans rounded-lg w-full h-full p-2" v-model="each.unit">
             <option disabled value="">Unit</option>
             <option>Adet</option>
             <option>M2</option>
@@ -47,7 +52,7 @@
     <!-- Area Field -->
     <td class="p-1 border" style="font-size: smaller;">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Field..."> -->
-        <select class="border outline-none font-sans rounded-lg w-full h-full p-2" v-model="each.selected_field">
+        <select class="border outline-none font-sans rounded-lg w-full h-full p-2" v-model="each.field">
             <option disabled value="">Field</option>
             <option>PR-2</option>
             <option>Derjisnkoe</option>
@@ -57,7 +62,7 @@
     <!-- Material Status -->
     <td class="p-1 border" style="font-size: smaller;">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Status..."> -->
-        <select class="border outline-none font-sans rounded-lg w-full h-full p-2" v-model="each.selected_status">
+        <select class="border outline-none font-sans rounded-lg w-full h-full p-2" v-model="each.status">
             <option disabled value="">Status</option>
             <option>
                 <span>
@@ -74,7 +79,7 @@
     <!-- Comment Section -->
     <td class="p-1 border" style="font-size: smaller;">
         <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Comment..."
-            v-model=each.material_comment>
+            v-model=each.comment>
     </td>
 
 </template>
@@ -88,13 +93,14 @@ const prop = defineProps(['id', 'order_list']);
 
 const each = ref({
     id: prop?.id,
-    selected_type: ref(''),
-    material_name: ref(''),
-    material_count: ref(0),
-    selected_unit: ref(''),
-    selected_field: ref(''),
-    selected_status: ref(''),
-    material_comment: ref('')
+    type: ref(''),
+    name: ref(''),
+    link: ref(''),
+    count: ref(0),
+    unit: ref(''),
+    field: ref(''),
+    status: ref(''),
+    comment: ref('')
 });
 
 watchEffect(()=>{

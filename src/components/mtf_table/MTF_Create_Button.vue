@@ -13,12 +13,14 @@
 
 <script setup>
 
+    import OrderStore from '../../store/order_store';
+    const store = OrderStore();
+
+    // Define Prop For Getting All Rows Values
     const prop = defineProps(['order_list']);
 
     const createMTF = () => {
-        for(let i of prop.order_list){
-            console.log(i.material_name);
-        }
+        store.createMTF(prop?.order_list);
     }
 
 </script>

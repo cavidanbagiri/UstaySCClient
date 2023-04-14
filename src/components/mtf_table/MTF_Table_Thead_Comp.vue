@@ -14,6 +14,11 @@
                     Material Name
                 </div>
             </th>
+            <th scope="col" class="px-6 py-1 font-mono font-medium text-center border">
+                <div class="w-48">
+                    Link
+                </div>
+            </th>
             <th scope="col" class="px-6 py-1 font-mono font-medium text-center border w-4">
                 Count
             </th>
