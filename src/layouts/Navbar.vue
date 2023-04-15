@@ -28,7 +28,9 @@
             
             <span class="p-2 rounded-xl cursor-pointer w-10 h-10 flex flex-row justify-center items-center hover:bg-black" ><i class="fa-solid fa-briefcase fa-md" style="color:white"></i></span>
             
-            <router-link to="/order/createmtf">
+            <span class="p-2 rounded-xl cursor-pointer w-10 h-10 flex flex-row justify-center items-center hover:bg-black" ><i class="fa-regular fa-star fa-md" style="color:white"></i></span>
+            
+            <router-link to="/order/createmtf" class="no-underline" >
                 <span class="p-2 rounded-xl cursor-pointer w-10 h-10 flex flex-row justify-center items-center hover:bg-black" ><i class="fa-solid fa-plus fa-md" style="color:white"></i></span>
             </router-link>
             
