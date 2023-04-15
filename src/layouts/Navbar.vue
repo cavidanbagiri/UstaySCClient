@@ -8,7 +8,7 @@
             <span class="p-2 rounded-xl cursor-pointer hover:bg-black flex flex-row items-center">
                 <!-- <i class="fa-regular fa-user fa-md mr-1" style="color:white"></i> -->
                 <img class="w-8 h-8 rounded-full" src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000" alt="">
-                <span class=" text-sm text-slate-300">Cavidan Bagirli</span>
+                <span class=" text-sm text-slate-300 font-mono">Cavidan Bagirli</span>
             </span>
         </div>
         
