@@ -2,7 +2,7 @@
 <template>
     <div class="grid grid-cols-12  bg-slate-800 color-white">
         <div class="col-span-3 text-white flex flex-row items-center justify-start" >
-            <span @click="toggleCanvas" class="p-2 rounded-xl cursor-pointer  w-10 h-10 flex flex-row justify-center items-center hover:bg-black"><i class="fa-solid fa-ellipsis-vertical fa-md" style="color: white;"></i></span>
+            <span @click="toggleCanvas" class="p-2 rounded-xl cursor-pointer  w-10 h-10 flex flex-row justify-center items-center hover:bg-black"><i class="fa-solid fa-bars fa-md" style="color: white;"></i></span>
         
             <router-link to="/">
                 <!-- <img class="w-12 h-12" src="https://cdn2.iconfinder.com/data/icons/letters-and-numbers-1/32/lowercase_letter_u_red-512.png" alt=""> -->

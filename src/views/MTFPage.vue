@@ -3,7 +3,7 @@
     <div class=" flex flex-col p-2">
 
         
-        <div class="flex flex-row mt-1 my-2">
+        <div class="flex flex-row mt-1 my-2 font-mono">
             
             <span :class="tab_num===0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-plus fa-lg "></i> Create MTF</span>
             <span :class="tab_num===1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Show MTF</span>
