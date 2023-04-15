@@ -4,7 +4,7 @@
   <div class="relative">
 
     <Navbar/>
-
+    
     <Off_Canvas_Comp v-if="store.GETCANVASTOGGLE"/>
 
     <router-view></router-view>
