@@ -41,7 +41,7 @@
                 class="p-2 rounded-xl cursor-pointer w-10 h-10 flex flex-row justify-center items-center hover:bg-black"><i
                     class="fa-regular fa-bell fa-md " style="color:white"></i></span>
 
-            <span  @mouseover="cavidan" @mouseleave="eddy"
+            <span
                 class="p-2 rounded-xl cursor-pointer w-10 h-10 flex flex-row justify-center items-center hover:bg-black"><i
                     class="fa-regular fa-message fa-md" style="color:white"></i></span>
 

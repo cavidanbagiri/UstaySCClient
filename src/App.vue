@@ -5,9 +5,9 @@
 
     <Navbar/>
 
-
-
     <Off_Canvas_Comp v-if="store.GETCANVASTOGGLE"/>
+
+    <User_Login_Comp/>
 
     <router-view></router-view>
 
@@ -23,12 +23,9 @@
   import STF_COMP from './components/STF_Table_Comp.vue';
   import Navbar from './layouts/Navbar.vue';
   import Off_Canvas_Comp from './components/design/Off_Canvas_Comp.vue';
+  import User_Login_Comp from './components/design/User_Login_Comp.vue';
   import IndexStore from './store';
   const store = IndexStore();
-
-  // const cavidan = () => {
-  //   console.log('over');
-  // }
 
   onMounted(()=>{
     initFlowbite();

@@ -46,9 +46,9 @@
                 </span>
             </li>
             <li class="hover:bg-slate-700 text-white  p-2 mt-1 rounded-lg  py-2 px-4 cursor-pointer">
-                <span class="text-md">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    Log Out
+                <span @click="openUserLogin" class="text-md">
+                    <i class="fa-solid fa-right-to-bracket fa-md"></i>
+                    Log In
                 </span>
             </li>
         </ul>
@@ -57,6 +57,15 @@
 </template>
 
 <script setup>
+
+    import { ref } from 'vue';
+
+    import IndexStore from '../../store/index.js';
+    const store = IndexStore();
+
+    const openUserLogin = () => {
+        store.TOGGLEUSERTELEPORT();
+    }
 
 
 </script>
