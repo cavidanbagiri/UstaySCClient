@@ -13,9 +13,10 @@
                 <img class="w-8 h-8 rounded-full"
                     src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
                     alt="">
-                <span class=" text-xs text-slate-300 font-mono">Cavidan Bagirli</span>
+                <span class=" text-xs text-slate-300 font-mono">{{user?.name}} {{ user?.surname }}</span>
             </span>
         </div>
+
 
         <div class="col-span-6 flex flex-row items-center">
             <div class="flex flex-row w-full bg-slate-200 p-0 m-0 rounded-xl items-center hover:bg-white">
@@ -60,22 +61,28 @@
             </router-link>
 
         </div>
-
     </div>
 </template>
 
 <script setup>
 
-import { ref } from 'vue';
+import { ref, watchEffect } from 'vue';
 
 import IndexStore from '../store';
-const store = IndexStore();
+import UserStore from '../store/user_store';
+
+const index_store = IndexStore();
+const user_store = UserStore();
 
 const toggleCanvas = () => {
-    store.TOGGLECANVAS();
+    index_store.TOGGLECANVAS();
 }
+const user = ref();
 
-
+watchEffect(()=>{
+    user.value = JSON.parse(sessionStorage?.getItem('user')); 
+    user_store.user = user.value;
+})
 
 </script>
 
