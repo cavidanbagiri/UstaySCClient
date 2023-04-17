@@ -1,5 +1,7 @@
 <template>
-    <div class="  fixed left-0  shadow-lg z-10  bg-slate-800 pl-5 pt-3 pr-5 border-t rounded-r-lg">
+    <div class="  fixed left-0  shadow-lg z-10  bg-slate-800 pl-1 pt-3 pb-3 pr-5 border-t rounded-r-lg">
+
+        
         <ul class="p-0 font-mono">
             <li class="hover:bg-slate-700 text-white rounded-lg  py-2 px-4 mt-2 cursor-pointer">
                 <span class="text-md ">
@@ -55,6 +57,7 @@
 </template>
 
 <script setup>
+
 
 </script>
 

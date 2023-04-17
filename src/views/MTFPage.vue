@@ -10,8 +10,9 @@
             <span :class="tab_num===2 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(2)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-warehouse fa-lg "></i> Show Warehouse</span>
             
         </div>
-        
-        <component :is="tabs[tab_num]" />
+        <keep-alive>
+            <component :is="tabs[tab_num]" />
+        </keep-alive>
 
     </div>
 </template>

@@ -1,10 +1,13 @@
 
 <template>
 
-  <div class="relative">
+  <div class="relative">  
 
     <Navbar/>
 
+
+
+    <Off_Canvas_Comp v-if="store.GETCANVASTOGGLE"/>
 
     <router-view></router-view>
 
@@ -23,6 +26,9 @@
   import IndexStore from './store';
   const store = IndexStore();
 
+  // const cavidan = () => {
+  //   console.log('over');
+  // }
 
   onMounted(()=>{
     initFlowbite();
