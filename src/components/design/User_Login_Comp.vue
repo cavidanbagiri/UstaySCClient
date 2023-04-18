@@ -60,8 +60,9 @@ const user_store = UserStore();
 const login = async (values) => {
     await user_store.LOGINSER(values)
         .then((respond) => {
+            console.log('each happen ');
             index_store.TOGGLEUSERTELEPORT();
-            router.push('/');
+            router.push({path:'HomePage'})
             location.reload();
         }).catch((err) => {
             console.log('Login User Error : ', err);
