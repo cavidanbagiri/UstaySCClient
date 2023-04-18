@@ -101,9 +101,6 @@ const each = ref({
     field: ref(''),
     status: ref(''),
     comment: ref(''),
-    ProjectModelId: 1,
-    UserModelId: 1,
-    DepartmentModelId: 1
 });
 
 watchEffect(()=>{

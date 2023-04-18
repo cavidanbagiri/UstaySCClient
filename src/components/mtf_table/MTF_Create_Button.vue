@@ -20,8 +20,17 @@
     // Define Prop For Getting All Rows Values
     const prop = defineProps(['order_list']);
 
-    const createMTF = () => {
-        order_store.createMTF(prop?.order_list);
+    const createMTF = async () => {
+        const data = {
+            orders : prop?.order_list,
+            user : user_store.user
+        }
+        await order_store.createMTF(data)
+        .then((respond)=>{
+            console.log('from create component : ', respond);
+        }).catch((err)=>{
+            console.log('from create Error component : ',err);
+        })
     }
 
 </script>
