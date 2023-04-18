@@ -23,7 +23,7 @@
 
     import MTF_Table_Comp from '../components/mtf_table/MTF_Table_Comp.vue';
 
-    import Get_MTF_Comp from '../components/mtf_table/Get_MTF_Comp.vue';
+    import Show_MTF_Comp from '../components/mtf_table/Show_MTF_Comp.vue';
 
     import Get_Warehouse_Table_Comp from '../components/warehouse/Get_Warehouse_Table_Comp.vue';
 
@@ -45,7 +45,7 @@
     }
     const tabs = ([
         MTF_Table_Comp,
-        Get_MTF_Comp,
+        Show_MTF_Comp,
         Get_Warehouse_Table_Comp
     ])
     /***********************************************************************************************************/

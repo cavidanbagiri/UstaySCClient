@@ -15,7 +15,7 @@
     <th scope="row" class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white"
         style="font-size: smaller;">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Material Type..."> -->
-        <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.type">
+        <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.material_type">
             <option disabled value="">Type</option>
             <option>Project</option>
             <option>Consumables</option>
@@ -25,7 +25,7 @@
     <!-- Material Name -->
     <td class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white">
         <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="text" placeholder="Material Name..."
-            v-model=each.name>
+            v-model=each.material_name>
     </td>
     <!-- Material Link -->
     <td class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white">
@@ -93,8 +93,8 @@ const prop = defineProps(['id', 'order_list']);
 
 const each = ref({
     s: prop?.id,
-    type: ref(''),
-    name: ref(''),
+    material_type: ref(''),
+    material_name: ref(''),
     link: ref(''),
     count: ref(0),
     unit: ref(''),
