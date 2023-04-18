@@ -45,10 +45,17 @@
                     Warehouse
                 </span>
             </li>
-            <li class="hover:bg-slate-700 text-white  p-2 mt-1 rounded-lg  py-2 px-4 cursor-pointer">
+
+            <li v-if="!user_store?.user" class="hover:bg-slate-700 text-white  p-2 mt-1 rounded-lg  py-2 px-4 cursor-pointer">
                 <span @click="openUserLogin" class="text-md">
                     <i class="fa-solid fa-right-to-bracket fa-md"></i>
                     Log In
+                </span>
+            </li>
+            <li v-else class="hover:bg-slate-700 text-white  p-2 mt-1 rounded-lg  py-2 px-4 cursor-pointer">
+                <span @click="openUserLogout" class="text-md">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    Log Out
                 </span>
             </li>
         </ul>
@@ -58,13 +65,25 @@
 
 <script setup>
 
-    import { ref } from 'vue';
+    import { ref, watchEffect } from 'vue';
 
     import IndexStore from '../../store/index.js';
-    const store = IndexStore();
+    import UserStore from '../../store/user_store';
+    
+    import router from '../../route';
+
+    const index_store = IndexStore();
+    const user_store = UserStore();
 
     const openUserLogin = () => {
-        store.TOGGLEUSERTELEPORT();
+        index_store.TOGGLEUSERTELEPORT();
+    }
+
+    const openUserLogout = () => {
+        sessionStorage.clear();
+        user_store.user = null;
+        router.push('/');
+        location.reload();
     }
 
 

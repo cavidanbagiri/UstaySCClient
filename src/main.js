@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import App from './App.vue'
 
 // Using Tailwind Css
 import './index.css'
@@ -10,12 +11,18 @@ import router from './route/index.js';
 import { createPinia } from 'pinia';
 const pinia = createPinia();
 
-import App from './App.vue'
+// Import Plugins
+import validation from './plugins/validation'; 
 
 const app = createApp(App)
 
+// Use Router
 app.use(router);
 
+// Use Pinia
 app.use(pinia);
+
+// Use Plugins
+app.use(validation);
 
 app.mount('#app');
