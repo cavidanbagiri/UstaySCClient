@@ -14,13 +14,14 @@
 <script setup>
 
     import OrderStore from '../../store/order_store';
-    const store = OrderStore();
-
+    import UserStore from '../../store/user_store';
+    const order_store = OrderStore();
+    const user_store = UserStore();
     // Define Prop For Getting All Rows Values
     const prop = defineProps(['order_list']);
 
     const createMTF = () => {
-        store.createMTF(prop?.order_list);
+        order_store.createMTF(prop?.order_list);
     }
 
 </script>
