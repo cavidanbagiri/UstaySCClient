@@ -11,8 +11,8 @@
 
     import { ref, onMounted, watchEffect } from 'vue'
 
-    import OrderStore from '../../store/order_store';
-    import UserStore from '../../store/user_store';
+    import OrderStore from '../../../store/order_store';
+    import UserStore from '../../../store/user_store';
 
     import Show_MTF_Table_Comp from './Show_MTF_Table_Comp.vue';
 
