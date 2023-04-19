@@ -13,8 +13,8 @@
 
 <script setup>
 
-    import OrderStore from '../../store/order_store';
-    import UserStore from '../../store/user_store';
+    import OrderStore from '../../../store/order_store';
+    import UserStore from '../../../store/user_store';
     const order_store = OrderStore();
     const user_store = UserStore();
     // Define Prop For Getting All Rows Values

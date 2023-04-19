@@ -27,7 +27,7 @@
     import { ref } from 'vue';
 
     // Import Components For Showing In MTF Tab
-    import MTF_Table_Comp from '../components/mtf_table/MTF_Table_Comp.vue';
+    import MTF_Table_Comp from '../components/mtf_table/create_user_mtf/MTF_Table_Comp.vue';
     import Show_MTF_Comp from '../components/mtf_table/show_user_mtf/Show_MTF_Comp.vue';
     import Get_Warehouse_Table_Comp from '../components/warehouse/Get_Warehouse_Table_Comp.vue';
 
