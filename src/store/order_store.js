@@ -26,7 +26,7 @@ const OrderStore = defineStore('OrderStore',{
 
         // Show User MTF
         async showMTF(user) {
-            await axios.get(`http://localhost:3000/order/showorders?id=${user.id}&ProjectModelId=${user.ProjectModelId}`)
+            await axios.get(`http://localhost:3000/order/showorders?id=${user?.id}&ProjectModelId=${user?.ProjectModelId}`)
             .then((respond)=>{
                 this.orders = respond.data;
                 return respond;
