@@ -10,9 +10,14 @@
             <span :class="tab_num===2 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(2)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-warehouse fa-lg "></i> Show Warehouse</span>
             
         </div>
-        <keep-alive>
+        <div v-if="tab_num===0 || tab_num===2">
+            <keep-alive>
+                <component :is="tabs[tab_num]" />
+            </keep-alive>
+        </div>
+        <div v-else>
             <component :is="tabs[tab_num]" />
-        </keep-alive>
+        </div>
 
     </div>
 </template>
@@ -21,33 +26,15 @@
 
     import { ref } from 'vue';
 
+    // Import Components For Showing In MTF Tab
     import MTF_Table_Comp from '../components/mtf_table/MTF_Table_Comp.vue';
-
     import Show_MTF_Comp from '../components/mtf_table/show_user_mtf/Show_MTF_Comp.vue';
-
     import Get_Warehouse_Table_Comp from '../components/warehouse/Get_Warehouse_Table_Comp.vue';
 
-    import OrderStore from '../store/order_store.js';
-    const store = OrderStore();
-
-    const active = true;
-
-    const createMTF = async () => {
-        await store.createMTF();
-    }
-
     /******************************************************************* Work With Tabs *************************/
-    const tab_size = ref(3);
     const tab_num = ref(0);
-    const changeTabe = (num) => {
-        console.log('tab num : ', tab_num);
-        tab_num.value = num
-    }
-    const tabs = ([
-        MTF_Table_Comp,
-        Show_MTF_Comp,
-        Get_Warehouse_Table_Comp
-    ])
+    const changeTabe = (num) => tab_num.value = num
+    const tabs = ([MTF_Table_Comp,Show_MTF_Comp,Get_Warehouse_Table_Comp]);
     /***********************************************************************************************************/
 
 </script>

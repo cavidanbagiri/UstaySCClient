@@ -22,6 +22,7 @@
     const orders_data = ref({});
 
     onMounted(()=>{
+        console.log('again show mtf work');
         const user = user_store.GETUSERINFORM;
         order_store.showMTF(user);
     })
