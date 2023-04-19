@@ -6,10 +6,12 @@ import axios from 'axios';
 const OrderStore = defineStore('OrderStore',{
 
     state: () => ({
-        orders : null
+        orders : null,
+        filtered_orders : null
     }),
     getters:{
         GETORDERSDATA : (state) => state.orders, 
+        GETFILTEREDORDERSDATA : (state) => state.filtered_orders, 
     },
     actions:{
 
@@ -29,6 +31,7 @@ const OrderStore = defineStore('OrderStore',{
             await axios.get(`http://localhost:3000/order/showorders?id=${user?.id}&ProjectModelId=${user?.ProjectModelId}`)
             .then((respond)=>{
                 this.orders = respond.data;
+                this.filtered_orders = respond.data;
                 return respond;
             })
             .catch((err)=>{

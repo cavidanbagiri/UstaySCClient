@@ -1,5 +1,5 @@
 <template>
-    <thead class="text-xs text-gray-800 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400 border ">
+    <thead class="text-xs text-gray-800 bg-gray-200 dark:bg-gray-700 dark:text-gray-400 border ">
         <tr>
             <th scope="col-4" class="py-2 px-4">
                 <div class="flex flex-col items-center">
@@ -30,7 +30,12 @@
             <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
                 <div class="w-24  flex flex-col">
                     Material Type
-                    <input class="rounded-lg border-none outline-0 p-1" type="text">
+                    <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="material_type">
+                        <option>All</option>
+                        <option>Project</option>
+                        <option>Consumables</option>
+                        <option>Fixture</option>
+                    </select>
                 </div>
             </th>
             <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
@@ -68,7 +73,28 @@
 
 <script setup>
 
+import { ref, watchEffect } from 'vue';
+import OrderStore from '../../../store/order_store';
+const order_store = OrderStore();
 
+const material_type = ref();
+
+watchEffect(()=>{
+    if(material_type.value === undefined || material_type.value === 'Type' || material_type.value === 'All'){
+        order_store.filtered_orders = order_store.orders;
+    }
+    else{
+
+        if(order_store.GETORDERSDATA){
+            order_store.filtered_orders = [];
+            for(const i of order_store.GETORDERSDATA){
+                if(i['material_type'] ===  material_type.value ){
+                    order_store.filtered_orders.push(i);
+                }
+            }
+        }
+    }
+})
 
 </script>
 
