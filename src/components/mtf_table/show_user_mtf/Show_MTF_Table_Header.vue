@@ -1,5 +1,5 @@
 <template>
-    <thead class="text-xs text-gray-800 bg-gray-200 dark:bg-gray-700 dark:text-gray-400 border w-full">
+    <thead class="text-xs text-gray-100 bg-blue-600 dark:bg-gray-700 dark:text-gray-400 border w-full">
         <tr>
             <th scope="col-4" class="py-2 px-4">
                 <div class="flex flex-col items-center">
@@ -24,9 +24,18 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+                <div class="w-24 flex flex-col">
+                    Condition
+                </div>
+            </th>
+            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+                <div class="w-24 flex flex-col">
+                    Status
+                </div>
+            </th>
+            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
                 <div class="w-24  flex flex-col">
                     Material Type
-                    
                 </div>
             </th>
             <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
@@ -44,7 +53,6 @@
                     Unit
                 </div>
             </th>
-
             <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
                 <div class="flex flex-col w-36">
                     Order

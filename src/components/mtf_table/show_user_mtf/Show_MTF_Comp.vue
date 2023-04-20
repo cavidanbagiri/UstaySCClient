@@ -1,6 +1,6 @@
 
 <template>
-    <div class="p-1 ">
+    <div class="p-1 overflow-x-hidden">
 
         <Show_MTF_Filter_Section/>
         

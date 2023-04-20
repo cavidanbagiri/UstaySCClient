@@ -18,6 +18,12 @@
             <th class="px-2 py-2 font-mono font-thin border  text-center">
                 <span>{{ i.created_at }}</span>
             </th>
+            <th class="px-2 py-2 font-mono font-thin text-center border">
+                {{ i.cond }}
+            </th>
+            <th class="px-2 py-2 font-mono font-thin text-center border">
+                {{ i.material_status }}
+            </th>
             <th class="px-2 py-2 font-mono font-thin border">
                 {{ i.material_type }}
             </th>
