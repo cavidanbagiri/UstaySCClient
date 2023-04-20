@@ -81,7 +81,7 @@
 
     const openUserLogout = () => {
         sessionStorage.clear();
-        user_store.user = null;
+        user_store.user=null;
         router.push('/');
         location.reload();
     }

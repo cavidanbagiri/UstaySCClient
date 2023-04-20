@@ -29,7 +29,7 @@ const UserStore = defineStore('userStore',{
 
         },
         async LOGOUTUSER () {
-
+            this.user=null;
         }
     }
 
