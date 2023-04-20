@@ -1,6 +1,6 @@
 
 <template>
-    <div class="flex flex-col  my-1 py-2 px-1 shadow-md text-black bg-slate-50">
+    <div class="flex flex-col  my-1 py-2 px-1 text-black bg-slate-50">
         
         <div class="flex flex-row justify-between items-center">
             <span class="text-2xl font-mono ">Filters</span>
@@ -28,7 +28,7 @@
                     <!-- Search With Date -->
                     <div class="flex flex-col m-3">
                         <span class="text-xs m-1">Search Date</span>
-                        <input class="border outline-none rounded-md border-gray-300 text-xs p-1" type="date" name="" id=""
+                        <input class="border outline-none rounded-md border-gray-300 text-xs p-2" type="date" name="" id=""
                             placeholder="Date" v-model="date" />
                     </div>
                     <!-- Search With Material Type-->
@@ -56,8 +56,8 @@
                                 </svg>
                             </div>
                             <input type="text" id="search"
-                                class="block w-full p-1 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Search" v-model="mtf_search">
+                                class="block w-full p-2 pl-10 text-xs text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="MTF..." v-model="mtf_search">
     
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                             </svg>
                         </div>
                         <input type="search" id="search"
-                            class="block w-full p-1 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Search" v-model = 'name_search'>
 
                     </div>
@@ -101,7 +101,7 @@ const date = ref('');
 
 const date_order = ref('Ascending');
 
-const show_filters = ref(false);
+const show_filters = ref(true);
 
 const mtf_search = ref('');
 

@@ -10,7 +10,7 @@
                 </div>
             </td>
             <th class="px-2 py-2 font-mono font-bold text-center">
-                {{ index }}
+                {{ index + 1 }}
             </th>
             <th class="px-2 py-2 font-mono font-thin border text-center">
                 <span class="bg-orange-500 text-white p-1 rounded-full font-bold">{{ i.mtf_num }}</span>
