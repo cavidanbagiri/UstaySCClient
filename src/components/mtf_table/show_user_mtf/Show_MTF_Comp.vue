@@ -1,6 +1,8 @@
 
 <template>
     <div class="p-1 ">
+
+        <Show_MTF_Filter_Section/>
         
         <Show_MTF_Table_Comp />
 
@@ -15,6 +17,7 @@
     import UserStore from '../../../store/user_store';
 
     import Show_MTF_Table_Comp from './Show_MTF_Table_Comp.vue';
+    import Show_MTF_Filter_Section from './Show_MTF_Filter_Section.vue';
 
     const order_store = OrderStore();
     const user_store = UserStore();

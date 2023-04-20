@@ -77,10 +77,10 @@ import { ref, watchEffect } from 'vue';
 import OrderStore from '../../../store/order_store';
 const order_store = OrderStore();
 
-const material_type = ref();
+const material_type = ref('All');
 
 watchEffect(()=>{
-    if(material_type.value === undefined || material_type.value === 'Type' || material_type.value === 'All'){
+    if(material_type.value === 'Type' || material_type.value === 'All'){
         order_store.filtered_orders = order_store.orders;
     }
     else{
