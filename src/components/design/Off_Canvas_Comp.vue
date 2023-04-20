@@ -38,12 +38,14 @@
                     Notepad
                 </span>
             </li>
-            <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
+            <router-link to="/procurement">
+                <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
                 <span class="text-md">
                     <i class="fa-solid fa-cart-shopping fa-md" style="color: white;"></i>
                     Procurement
                 </span>
             </li>
+            </router-link>
             <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
                 <span class="text-md">
                     <i class="fa-solid fa-warehouse fa-md" style="color: white;"></i>

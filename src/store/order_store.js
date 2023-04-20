@@ -17,7 +17,7 @@ const OrderStore = defineStore('OrderStore',{
 
         // Send MTF Data for creating MTF
         async createMTF(data){
-            return await axios.post('http://localhost:3000/order/createmtf', data)
+            return await axios.post('http://localhost:3000/order/mtf', data)
             .then((respond)=>{
                 return respond;
             })

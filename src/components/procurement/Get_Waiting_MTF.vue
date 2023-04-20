@@ -1,16 +1,14 @@
-
 <template>
-    <div class="flex flex-col  my-1 py-2 px-1 text-black bg-slate-50">
+     <div class="flex flex-col  my-1 py-2 px-1 text-black bg-slate-50">
         
+        <!-- Show Filter Section -->
         <div class="flex flex-row justify-between items-center">
             <span class="text-2xl font-mono ">Filters</span>
             <button @click="show_filters=!show_filters" class="ml-3 text-xs ">Show Filters <i class="fa-solid fa-filter fa-xl"></i></button>
         </div>
-
         <!-- Filter Section -->
         <div class="flex flex-col mt-3 mtf-anim" v-if="show_filters">
-            <span class="text-xs font-mono text-start font-bold">Total Document Size : {{
-                order_store.orders?.length }}
+            <span class="text-xs font-mono text-start font-bold">Total Document Size : 
             </span>
             <div class="flex flex-row items-center my-1 justify-between">
                 <!-- Common Filter Keys -->
@@ -85,114 +83,20 @@
             </div>
         </div>
 
+        
+
     </div>
 </template>
 
 <script setup>
 
-import { ref, watchEffect } from 'vue';
-import OrderStore from '../../../store/order_store';
-const order_store = OrderStore();
-
-const material_type = ref('All');
-
-const date = ref('');
-
-const date_order = ref('Ascending');
+import { ref, watchEffect } from 'vue'
 
 const show_filters = ref(true);
-
-const mtf_search = ref('');
-
-const name_search = ref('');
-
-watchEffect(() => {
-    // Before Filter Always Equal from 0
-    order_store.filtered_orders = order_store.orders;
-    
-    // Sort For Date to Ascending or Descending Time
-    if (date_order.value === 'Ascending') {
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders.sort((a, b) => Date.parse(new Date(a.created_at)) - Date.parse(new Date(b.created_at)));
-        }
-    }
-    else {
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders.sort((a, b) => Date.parse(new Date(a.created_at)) + Date.parse(new Date(b.created_at)));
-            order_store.filtered_orders.reverse();
-        }
-    }
-    //Search MTF
-    if (date_order.value === 'Ascending') {
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders = [];
-            for (const i of order_store.GETORDERSDATA) {
-                if (i['mtf_num'].includes(mtf_search.value)) {
-                    order_store.filtered_orders.push(i);
-                    console.log('enter');
-                }
-            }
-        }
-    }
-    //Search Name
-    if (date_order.value === 'Ascending') {
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders = [];
-            for (const i of order_store.GETORDERSDATA) {
-                if (i['material_name'].includes(name_search.value)) {
-                    order_store.filtered_orders.push(i);
-                    console.log('enter');
-                }
-            }
-        }
-    }
-    // Filter And Find By Date
-    if (date.value !== '') {
-        console.log('date is : ', date.value);
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders = [];
-            for (const i of order_store.GETORDERSDATA) {
-                if (i['created_at'] === date.value) {
-                    order_store.filtered_orders.push(i);
-                    console.log('enter');
-                }
-            }
-        }
-    }
-    // Filter With Material Type
-    if (material_type.value === 'Type' || material_type.value === 'All') {
-        // order_store.filtered_orders = order_store.orders;
-    }
-    else {
-
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders = [];
-            for (const i of order_store.GETORDERSDATA) {
-                if (i['material_type'] === material_type.value) {
-                    order_store.filtered_orders.push(i);
-                }
-            }
-        }
-    }
-})
-
 
 
 </script>
 
-<style scoped>
-
-.mtf-anim{
-    animation: openfilter 0.5s;
-}
-
-@keyframes openfilter {
-    from{
-        transform: translateY(-20%);
-    }
-    to{
-        transform: translateY(0%);
-    }
-}
+<style lang="scss" scoped>
 
 </style>
