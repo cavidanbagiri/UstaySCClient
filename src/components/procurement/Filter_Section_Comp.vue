@@ -1,8 +1,9 @@
+
+
 <template>
-     <div class="flex flex-col  my-1 py-2 px-1 text-black bg-slate-50">
-        
-        <!-- Show Filter Section -->
-        <div class="flex flex-row justify-between items-center">
+
+    <!-- Show Filter Section -->
+    <div class="flex flex-row justify-between items-center">
             <span class="text-2xl font-mono ">Filters</span>
             <button @click="show_filters=!show_filters" class="ml-3 text-xs ">Show Filters <i class="fa-solid fa-filter fa-xl"></i></button>
         </div>
@@ -82,21 +83,17 @@
 
             </div>
         </div>
-
-        
-
-    </div>
 </template>
 
 <script setup>
 
-import { ref, watchEffect } from 'vue'
-
+import { ref } from 'vue';
+    
 const show_filters = ref(true);
 
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
