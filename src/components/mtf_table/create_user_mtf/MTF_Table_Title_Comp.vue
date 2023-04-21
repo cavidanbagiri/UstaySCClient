@@ -1,6 +1,6 @@
 
 <template>
-    <div class="text-gray-50 bg-slate-800 flex items-center justify-end px-3 rounded-sm ">
+    <div class="text-gray-50 bg-blue-600 flex items-center justify-end px-3 rounded-sm ">
         <span class="font-bold text-xl font-mono  ">Creating MTF</span>
         <hr>
     </div>

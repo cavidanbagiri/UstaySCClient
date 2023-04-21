@@ -3,13 +3,14 @@
     <div class=" flex flex-col p-2">
 
         
-        <div class="flex flex-row mt-1 my-2 font-mono">
+        <div class="flex flex-row mt-1 my-2 font-mono anim">
             
             <span :class="tab_num===0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-plus fa-lg "></i> Create MTF</span>
             <span :class="tab_num===1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Show MTF</span>
             <span :class="tab_num===2 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(2)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-warehouse fa-lg "></i> Show Warehouse</span>
             
         </div>
+
         <div v-if="tab_num===0 || tab_num===2">
             <keep-alive>
                 <component :is="tabs[tab_num]" />
@@ -39,6 +40,19 @@
 
 </script>
 
-<style lang="">
+<style scoped>
+
+.anim {
+    animation: openfilter 1s ease-out;
+}
+
+@keyframes openfilter {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
     
 </style>

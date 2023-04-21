@@ -1,12 +1,12 @@
 <template>
     <!-- Filter Section -->
-    <div class="flex flex-col mt-3 mtf-anim">
+    <div class="flex flex-col mt-1 mtf-anim">
         <!-- Show Total MTF Length -->
         <span class="text-xs font-mono text-start font-bold">Total Document Size : {{
             order_store.orders?.length }}
         </span>
         <!-- Common Filters Section -->
-        <div class="flex flex-row items-center my-1 justify-between">
+        <div class="flex flex-row items-center justify-between">
             <!-- Common Filter Keys -->
             <div class="flex flex-row start">
                 <!-- Date Order -->
