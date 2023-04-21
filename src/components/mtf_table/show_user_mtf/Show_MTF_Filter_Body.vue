@@ -114,7 +114,7 @@ watchEffect(() => {
         }
     }
     //Search MTF
-    if (date_order.value === 'Ascending') {
+    if (mtf_search.value !== '') {
         if (order_store.GETORDERSDATA) {
             order_store.filtered_orders = [];
             for (const i of order_store.GETORDERSDATA) {
@@ -126,7 +126,7 @@ watchEffect(() => {
         }
     }
     //Search Name
-    if (date_order.value === 'Ascending') {
+    if (name_search.value !== '') {
         if (order_store.GETORDERSDATA) {
             order_store.filtered_orders = [];
             for (const i of order_store.GETORDERSDATA) {
@@ -139,23 +139,20 @@ watchEffect(() => {
     }
     // Filter And Find By Date
     if (date.value !== '') {
-        console.log('date is : ', date.value);
         if (order_store.GETORDERSDATA) {
             order_store.filtered_orders = [];
             for (const i of order_store.GETORDERSDATA) {
                 if (i['created_at'] === date.value) {
                     order_store.filtered_orders.push(i);
-                    console.log('enter');
                 }
             }
         }
     }
     // Filter With Material Type
     if (material_type.value === 'Type' || material_type.value === 'All') {
-        // order_store.filtered_orders = order_store.orders;
+        
     }
     else {
-
         if (order_store.GETORDERSDATA) {
             order_store.filtered_orders = [];
             for (const i of order_store.GETORDERSDATA) {
@@ -164,6 +161,7 @@ watchEffect(() => {
                 }
             }
         }
+
     }
 })
 

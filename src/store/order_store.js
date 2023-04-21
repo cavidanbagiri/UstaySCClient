@@ -26,7 +26,7 @@ const OrderStore = defineStore('OrderStore',{
             })
         },
 
-        // Show User MTF
+        // Show User MTF For User Page
         async showMTF(user) {
             await axios.get(`http://localhost:3000/order/showorders?id=${user?.id}&ProjectModelId=${user?.ProjectModelId}`)
             .then((respond)=>{
@@ -37,8 +37,8 @@ const OrderStore = defineStore('OrderStore',{
             .catch((err)=>{
                 console.log('Error Is : ',err);
             })
+        }
 
-        }   
 
     }
 

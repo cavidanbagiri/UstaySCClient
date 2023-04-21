@@ -40,7 +40,7 @@
             </th>
             <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
                 <div class="w-96 flex flex-col">
-                    Order name
+                    Material name
                 </div>
             </th>
             <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
