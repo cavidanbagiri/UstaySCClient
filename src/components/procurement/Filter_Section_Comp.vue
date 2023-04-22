@@ -1,18 +1,17 @@
 
 
 <template>
-
-    <!-- Show Filter Section -->
-    <div class="flex flex-row justify-between items-center">
-            <span class="text-2xl font-mono ">Filters</span>
-            <button @click="show_filters=!show_filters" class="ml-3 text-xs ">Show Filters <i class="fa-solid fa-filter fa-xl"></i></button>
+    <div class="flex flex-col">
+        <!-- Show Filter Section -->
+        <div class="flex flex-row justify-start items-center">
+            <span class="text-sm font-mono ">Filters</span>
+            <button @click="show_filters = !show_filters" class="ml-3 text-xs "><i
+                    class="fa-solid fa-filter fa-md"></i></button>
         </div>
         <!-- <pre>{{ procurement_store.waiting_orders_filter }}</pre> -->
         <!-- Filter Section -->
-        <div class="flex flex-col mt-3 mtf-anim" v-if="show_filters">
-            <span class="text-xs font-mono text-start font-bold">Total Document Size : 
-            </span>
-            <div class="flex flex-row items-center my-1 justify-between">
+        <div class="flex flex-col mtf-anim" v-if="show_filters">
+            <div class="flex flex-row items-center justify-between">
                 <!-- Common Filter Keys -->
                 <div class="flex flex-row start">
                     <!-- Date Order -->
@@ -46,7 +45,7 @@
                             <input type="text" id="search"
                                 class="block w-full p-2 pl-10 text-xs text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="MTF..." v-model="mtf_search">
-    
+
                         </div>
                     </div>
                     <!-- Search With Order Name -->
@@ -65,7 +64,7 @@
                             <input type="text" id="search"
                                 class="block w-full p-2 pl-10 text-xs text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Orderer..." v-model="ordered_search">
-    
+
                         </div>
                     </div>
                 </div>
@@ -84,7 +83,7 @@
                         </div>
                         <input type="search" id="search"
                             class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Search" v-model = 'name_search'>
+                            placeholder="Search" v-model='name_search'>
 
                     </div>
                 </div>
@@ -92,6 +91,7 @@
 
             </div>
         </div>
+    </div>
 </template>
 
 <script setup>
@@ -116,7 +116,7 @@ const ordered_search = ref('');
 // Search Material Name
 const name_search = ref('');
 
-watchEffect(()=>{
+watchEffect(() => {
     procurement_store.waiting_orders_filter = procurement_store.waiting_orders;
 
     // Date And Time Order
@@ -145,7 +145,7 @@ watchEffect(()=>{
     }
 
     // MTF No Search
-    if(mtf_search.value !==''){
+    if (mtf_search.value !== '') {
         if (procurement_store.GETWAITINGORDERS) {
             procurement_store.waiting_orders_filter = [];
             for (const i of procurement_store.GETWAITINGORDERS) {
@@ -157,7 +157,7 @@ watchEffect(()=>{
     }
 
     // Ordered Name Search
-    if(ordered_search.value !==''){
+    if (ordered_search.value !== '') {
         if (procurement_store.GETWAITINGORDERS) {
             procurement_store.waiting_orders_filter = [];
             for (const i of procurement_store.GETWAITINGORDERS) {
@@ -168,7 +168,7 @@ watchEffect(()=>{
         }
     }
 
-    if(name_search.value !==''){
+    if (name_search.value !== '') {
         if (procurement_store.GETWAITINGORDERS) {
             procurement_store.waiting_orders_filter = [];
             for (const i of procurement_store.GETWAITINGORDERS) {
@@ -192,5 +192,17 @@ const show_filters = ref(true);
 </script>
 
 <style scoped>
+.mtf-anim {
+    animation: openfilter 0.5s;
+}
 
+@keyframes openfilter {
+    from {
+        transform: translateY(-20%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
 </style>

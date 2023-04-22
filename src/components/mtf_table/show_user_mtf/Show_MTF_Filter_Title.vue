@@ -1,8 +1,8 @@
 <template>
     <div class="flex flex-row justify-between items-center">
-        <span class="text-2xl font-mono ">Filters</span>
+        <span class="text-md font-mono ">Filters</span>
         <button @click="toggleFilter" class="ml-3 text-xs ">Show Filters <i
-                class="fa-solid fa-filter fa-xl"></i></button>
+                class="fa-solid fa-filter fa-sm"></i></button>
     </div>
 </template>
 

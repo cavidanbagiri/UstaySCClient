@@ -1,5 +1,5 @@
 <template>
-    <div class="  fixed left-0  shadow-lg z-10  bg-slate-800 pl-3 pt-3 pb-3 pr-10 border-t rounded-r-lg">
+    <div class=" fixed mtf-anim shadow-lg z-10  bg-slate-800 pl-3 pt-3 pb-3 pr-3 h-screen w-auto">
 
         <span class="p-2 rounded-xl cursor-pointer hover:bg-black flex flex-row items-center">
                 <img class="w-8 h-8 rounded-full"
@@ -8,7 +8,7 @@
                 <span class=" text-xs text-slate-300 font-mono">{{user_store?.user?.name}} {{user_store?.user?.surname }}</span>
         </span>
         <ul class="p-0 font-mono">
-            <li class="hover:bg-slate-700 text-white rounded-lg  py-2 px-4 mt-2 cursor-pointer">
+            <li class="hover:bg-slate-700 text-white rounded-lg  py-2 pl-5 pr-10 mt-2 cursor-pointer">
                 <span class="text-md ">
                     <i class="fa-solid fa-briefcase fa-md" style="color: white;"></i>
                     My Workspace
@@ -96,4 +96,18 @@
 
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.mtf-anim {
+    animation: openfilter 0.5s;
+}
+
+@keyframes openfilter {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+</style>

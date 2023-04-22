@@ -19,7 +19,7 @@
         <th class="px-2 py-2 font-mono font-thin border  text-center">
             <span>{{ prop?.each_item?.created_at }}</span>
         </th>
-        <th class="px-2 py-2 font-mono font-thin text-center border">
+        <th class="px-2 py-2 font-mono text-center border text-red-500 font-bold">
             {{ prop?.each_item?.cond }}
         </th>
         <th class="px-2 py-2 font-mono font-thin text-center border">
@@ -37,7 +37,7 @@
         <th class="px-2 py-2 font-mono font-thin border text-center">
             {{ prop?.each_item?.unit }}
         </th>
-        <th class="px-2 py-2 font-mono font-thin text-center border">
+        <th class="px-2 py-2 font-mono font-thin  border">
             {{ prop?.each_item?.username }}
         </th>
         <th class="px-2 py-2 font-mono font-thin text-center border">
