@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span>Get Creating MTF</span>
+        <span>Get Creating masin</span>
     </div>
 </template>
 

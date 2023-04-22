@@ -1,58 +1,31 @@
 <template>
     <tbody>
-        <tr v-for="(i, index) in procurement_store.waiting_orders_filter"
-            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-            <td class="w-1 p-4 py-2 ">
-                <div class="flex items-center">
-                    <input id="checkbox-table-search-1" type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                </div>
-            </td>
-            <th class="px-2 py-2 font-mono font-bold text-center">
-                {{ index + 1 }}
-            </th>
-            <th class="px-2 py-2 font-mono font-thin border text-center">
-                <span class="bg-orange-500 text-white p-1 rounded-full font-bold">{{ i.mtf_num }}</span>
-            </th>
-            <th class="px-2 py-2 font-mono font-thin border  text-center">
-                <span>{{ i.created_at }}</span>
-            </th>
-            <th class="px-2 py-2 font-mono font-thin text-center border">
-                {{ i.cond }}
-            </th>
-            <th class="px-2 py-2 font-mono font-thin text-center border">
-                {{ i.material_status }} 
-            </th>
-            <th class="px-2 py-2 font-mono font-thin border">
-                {{ i.material_type }}
-            </th>
-            <th class="px-2 py-2 font-mono font-thin border">
-                {{ i.material_name }}
-            </th>
-            <th class="px-2 py-2 font-mono font-thin border text-center">
-                {{ i.count }}
-            </th>
-            <th class="px-2 py-2 font-mono font-thin border text-center">
-                {{ i.unit }}
-            </th>
-            <th class="px-2 py-2 font-mono font-thin text-center border">
-                {{ i.username }}
-            </th>
-            <th class="px-2 py-2 font-mono font-thin text-center border">
-                <div class="w-96">{{ i.comment }}</div>
-            </th>
-        </tr>
+        
+        <Get_Waiting_MTF_Table_Body_Each_Row_Comp 
+        v-for="(each_item, index) in procurement_store.waiting_orders_filter"
+        :each_item=each_item :index = index 
+        @addChecked='addChecked' @removeChecked='removeChecked'
+        />
+
     </tbody>
 </template>
 
 <script setup>
 
+import Get_Waiting_MTF_Table_Body_Each_Row_Comp from './Get_Waiting_MTF_Table_Body_Each_Row_Comp.vue';
+
 import ProcuremntStore from '../../../store/procurement_store.js';
 const procurement_store = ProcuremntStore();
 
 
+const addChecked = (item_id) => {
+    procurement_store.checked_values.push(item_id);
+}
 
+const removeChecked = (item_id) => {
+    procurement_store.checked_values = procurement_store.checked_values.filter((id)=>id !== item_id)
+    // checked_values.value = checked_values.value.filter((id)=>id !== item_id)
+}
 
 </script>
 

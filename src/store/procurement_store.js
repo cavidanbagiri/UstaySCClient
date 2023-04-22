@@ -7,11 +7,13 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
     state: () => ({
         waiting_orders : null,
-        waiting_orders_filter: null
+        waiting_orders_filter: null,
+        checked_values: [],
     }),
     getters:{
         GETWAITINGORDERS : (state) => state.waiting_orders, 
         GETWAITINGORDERSFILTER : (state) => state.waiting_orders_filter, 
+        GETCHECKEDVALUES : (state) => state.checked_values
     },
     actions:{
 

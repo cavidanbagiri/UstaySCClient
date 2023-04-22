@@ -21,9 +21,7 @@ import Show_Waiting_MTF_Table_Comp from './Show_Waiting_MTF_Table_Comp.vue';
 
 const procurement_store = ProcurementStore();
 
-onMounted(async ()=>{
-  await procurement_store.showWaitingMTF();
-})
+onMounted(async () => await procurement_store.showWaitingMTF())
 
 </script>
 

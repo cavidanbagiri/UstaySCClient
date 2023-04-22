@@ -1,7 +1,7 @@
 
 <template>
 
-  <div class="relative">  
+  <div class="relative overflow-x-hidden">  
 
     <Navbar/>
 
