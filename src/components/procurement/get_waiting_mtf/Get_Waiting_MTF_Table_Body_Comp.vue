@@ -18,13 +18,27 @@ import ProcuremntStore from '../../../store/procurement_store.js';
 const procurement_store = ProcuremntStore();
 
 
-const addChecked = (item_id) => {
-    procurement_store.checked_values.push(item_id);
+
+const addChecked = (item) => {
+    if(procurement_store.checked_values.length >= 1){
+        procurement_store.checked_values.filter((each)=>{
+            if(item.mtf_num !== each.mtf_num){
+                procurement_store.show_error_message = true;
+            }
+            else{
+                procurement_store.checked_values.push(item);
+                procurement_store.show_error_message = false;
+            }
+        })
+    }
+    else{
+        procurement_store.checked_values.push(item);
+    }
 }
 
 const removeChecked = (item_id) => {
-    procurement_store.checked_values = procurement_store.checked_values.filter((id)=>id !== item_id)
-    // checked_values.value = checked_values.value.filter((id)=>id !== item_id)
+    procurement_store.checked_values = procurement_store.checked_values.filter((item)=>item.id !== item_id)
+    procurement_store.show_error_message = false;
 }
 
 </script>

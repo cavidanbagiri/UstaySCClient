@@ -59,7 +59,7 @@ const emit = defineEmits(['addChecked','removeChecked']);
 
 const checked = ref(false);
 
-const checkboxCond = () => checked.value === true ? emit('addChecked',prop?.each_item?.id) : emit('removeChecked', prop?.each_item?.id);
+const checkboxCond = () => checked.value === true ? emit('addChecked',prop?.each_item) : emit('removeChecked', prop?.each_item?.id);
 
 
 
