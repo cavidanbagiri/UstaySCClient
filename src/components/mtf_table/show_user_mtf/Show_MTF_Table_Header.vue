@@ -40,7 +40,7 @@
             </th>
             <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
                 <div class="w-96 flex flex-col">
-                    Order name
+                    Material Name
                 </div>
             </th>
             <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
@@ -55,7 +55,12 @@
             </th>
             <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
                 <div class="flex flex-col w-36">
-                    Order
+                    Orderer
+                </div>
+            </th>
+            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+                <div class="flex flex-col w-48">
+                    Field
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-mono font-medium text-center border">

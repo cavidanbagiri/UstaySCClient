@@ -39,6 +39,9 @@
             <th class="px-2 py-2 font-mono font-thin text-center border">
                 {{ i.username }}
             </th>
+            <th class="px-2 py-2 font-mono font-thin text-start border">
+                {{ i?.fieldname }}
+            </th>
             <th class="px-2 py-2 font-mono font-thin text-center border">
                 <div class="w-96">{{ i.comment }}</div>
             </th>

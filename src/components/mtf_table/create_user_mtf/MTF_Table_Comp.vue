@@ -9,7 +9,7 @@
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             
             <!-- Table Header -->
-            <MTF_Table_Thead_Comp/>            
+            <MTF_Table_Header_Comp/>            
 
             <!-- Table Body -->
             <MTF_Table_Body_Comp :row_size = row_size :order_list=order_list />
@@ -29,7 +29,7 @@
 
     import {ref} from 'vue';
 
-    import MTF_Table_Thead_Comp from './MTF_Table_Thead_Comp.vue';
+    import MTF_Table_Header_Comp from './MTF_Table_Header_Comp.vue';
     import MTF_Table_Body_Comp from './MTF_Table_Body_Comp.vue';
     import MTF_Table_Title_Comp from './MTF_Table_Title_Comp.vue';
     import MTF_Table_Row_Count_Comp from './MTF_Table_Row_Count_Comp.vue';

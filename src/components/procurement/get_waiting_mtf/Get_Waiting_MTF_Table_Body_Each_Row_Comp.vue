@@ -40,6 +40,9 @@
         <th class="px-2 py-2 font-mono font-thin  border">
             {{ prop?.each_item?.username }}
         </th>
+        <th class="px-2 py-2 font-mono font-thin  border">
+            {{ prop?.each_item?.fieldname }}
+        </th>
         <th class="px-2 py-2 font-mono font-thin text-center border">
             <div class="w-96">{{ prop?.each_item?.comment }}</div>
         </th>

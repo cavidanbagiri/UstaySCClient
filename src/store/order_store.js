@@ -7,11 +7,13 @@ const OrderStore = defineStore('OrderStore',{
 
     state: () => ({
         orders : null,
-        filtered_orders : null
+        filtered_orders : null,
+        fields : []
     }),
     getters:{
         GETORDERSDATA : (state) => state.orders, 
-        GETFILTEREDORDERSDATA : (state) => state.filtered_orders, 
+        GETFILTEREDORDERSDATA : (state) => state.filtered_orders,
+        GETFIELDSNAME : (state) => state.fields,
     },
     actions:{
 
@@ -33,6 +35,17 @@ const OrderStore = defineStore('OrderStore',{
                 this.orders = respond.data;
                 this.filtered_orders = respond.data;
                 return respond;
+            })
+            .catch((err)=>{
+                console.log('Error Is : ',err);
+            })
+        },
+
+        // Get Fields Name
+        async fetchFieldsNames(ProjectModelId){
+            await axios.get(`http://localhost:3000/order/getfields/${ProjectModelId}`)
+            .then((respond)=>{
+                this.fields = respond.data;
             })
             .catch((err)=>{
                 console.log('Error Is : ',err);

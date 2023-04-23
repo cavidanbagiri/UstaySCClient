@@ -23,7 +23,7 @@
     const createMTF = async () => {
         const data = {
             orders : prop?.order_list,
-            user : user_store.user
+            user : user_store?.user
         }
         await order_store.createMTF(data)
         .then((respond)=>{

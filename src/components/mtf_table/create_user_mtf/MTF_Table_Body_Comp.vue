@@ -11,8 +11,6 @@ import { ref } from 'vue';
 
 import MTF_Table_Body_Column_Name_Comp from './MTF_Table_Body_Column_Name_Comp.vue';
 
-
-
 // Adding Or Removing Row Size
 const prop = defineProps(['row_size', 'order_list']);
 

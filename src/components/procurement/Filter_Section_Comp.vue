@@ -19,8 +19,8 @@
                         <span class="text-xs m-1">Date Order</span>
                         <select class="border outline-none font-sans rounded-lg  h-full p-1 text-xs border-gray-300"
                             v-model="date_order">
+                            <option value="Descending">Descending</option>
                             <option>Ascending</option>
-                            <option>Descendig</option>
                         </select>
                     </div>
                     <!-- Search With Date -->
@@ -102,7 +102,7 @@ import ProcurementStore from '../../store/procurement_store';
 const procurement_store = ProcurementStore();
 
 // Order For Date
-const date_order = ref('');
+const date_order = ref('Descending');
 
 // Filter For Date
 const date = ref('');
@@ -127,7 +127,7 @@ watchEffect(() => {
     }
     else {
         if (procurement_store.GETWAITINGORDERS) {
-            procurement_store.waiting_orders_filter.sort((a, b) => Date.parse(new Date(a.created_at)) + Date.parse(new Date(b.created_at)));
+            procurement_store.waiting_orders_filter.sort((a, b) => Date.parse(new Date(a.created_at)) - Date.parse(new Date(b.created_at)));
             procurement_store.waiting_orders_filter.reverse();
         }
     }

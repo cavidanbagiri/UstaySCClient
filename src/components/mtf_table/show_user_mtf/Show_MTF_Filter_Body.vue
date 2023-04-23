@@ -14,8 +14,8 @@
                     <span class="text-xs m-1">Date Order</span>
                     <select class="border outline-none font-sans rounded-lg  h-full p-1 text-xs border-gray-300"
                         v-model="date_order">
+                        <option value="Descending">Descendig</option>
                         <option>Ascending</option>
-                        <option>Descendig</option>
                     </select>
                 </div>
                 <!-- Search With Date -->
@@ -91,7 +91,7 @@ const material_type = ref('All');
 
 const date = ref('');
 
-const date_order = ref('Ascending');
+const date_order = ref('Descending');
 
 const mtf_search = ref('');
 
@@ -109,7 +109,7 @@ watchEffect(() => {
     }
     else {
         if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders.sort((a, b) => Date.parse(new Date(a.created_at)) + Date.parse(new Date(b.created_at)));
+            order_store.filtered_orders.sort((a, b) => Date.parse(new Date(a.created_at)) - Date.parse(new Date(b.created_at)));
             order_store.filtered_orders.reverse();
         }
     }
