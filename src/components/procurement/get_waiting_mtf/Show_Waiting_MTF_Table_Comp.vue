@@ -4,7 +4,7 @@
         
         <!-- Create Button and Error Message Section -->
         <div class="flex justify-between pr-1 my-1 mtf-anim" v-if="procurement_store.GETCHECKEDVALUES.length">
-            <button class="bg-red-600 text-xs py-2 px-3 rounded-md text-white " @click="createSTF">
+            <button class="bg-red-600 text-xs py-2 px-3 rounded-md text-white " @click="createSTF" :disabled="procurement_store.GETERRORMESSAGE">
                 Create STF
             </button>
 
