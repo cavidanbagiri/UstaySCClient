@@ -11,6 +11,8 @@
 
     <router-view></router-view>
 
+    <Toast_Comp/>
+
   </div>
 
 </template>
@@ -20,10 +22,11 @@
   import { onMounted,  } from 'vue';
   import { initFlowbite } from 'flowbite'
 
-  import STF_COMP from './components/STF_Table_Comp.vue';
   import Navbar from './layouts/Navbar.vue';
   import Off_Canvas_Comp from './components/design/Off_Canvas_Comp.vue';
   import User_Login_Comp from './components/design/User_Login_Comp.vue';
+  import Toast_Comp from './components/design/Toast_Comp.vue';
+
   import IndexStore from './store';
   const store = IndexStore();
 

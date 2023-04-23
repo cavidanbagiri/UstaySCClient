@@ -2,9 +2,6 @@
 <template>
     <div class="relative overflow-x-auto shadow-xl sm:rounded-lg border p-2">
         
-        <!-- MTF Title Section -->
-        <MTF_Table_Title_Comp/>
-        
         <!-- Table Section -->
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             
@@ -31,7 +28,6 @@
 
     import MTF_Table_Header_Comp from './MTF_Table_Header_Comp.vue';
     import MTF_Table_Body_Comp from './MTF_Table_Body_Comp.vue';
-    import MTF_Table_Title_Comp from './MTF_Table_Title_Comp.vue';
     import MTF_Table_Row_Count_Comp from './MTF_Table_Row_Count_Comp.vue';
     import MTF_Create_Button_Comp from './MTF_Create_Button_Comp.vue';
 
