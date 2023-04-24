@@ -9,14 +9,16 @@ const OrderStore = defineStore('OrderStore',{
         orders : null,
         filtered_orders : null,
         fields : [],
-        show_mtf_toast : true,
+        // SHow Toast with last created mtf 
+        show_mtf_toast : false,
         created_last_mtf : null
     }),
     getters:{
         GETORDERSDATA : (state) => state.orders, 
         GETFILTEREDORDERSDATA : (state) => state.filtered_orders,
         GETFIELDSNAME : (state) => state.fields,
-        GETSHOWMTFTOAST : (state) => state.show_mtf_toast
+        GETSHOWMTFTOAST : (state) => state.show_mtf_toast,
+        GETCREATEDLASTMTF : (state) => state.created_last_mtf
     },
     actions:{
 
@@ -25,7 +27,7 @@ const OrderStore = defineStore('OrderStore',{
             return await axios.post('http://localhost:3000/order/mtf', data)
             .then((respond)=>{
                 this.created_last_mtf = respond.data
-                console.log('created mtf is : ',this.created_last_mtf);
+                this.show_mtf_toast = true;
                 return respond;
             })
             .catch((err)=>{

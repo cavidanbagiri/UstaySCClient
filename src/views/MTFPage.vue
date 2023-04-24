@@ -4,8 +4,8 @@
 
         <div class="flex flex-row mt-1 my-2 font-mono anim">
             
-            <span :class="tab_num===0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-plus fa-lg "></i> Create MTF</span>
-            <span :class="tab_num===1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Show MTF</span>
+            <span :class="tab_num===0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-plus fa-lg "></i> Show MTF</span>
+            <span :class="tab_num===1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Create MTF</span>
             <span :class="tab_num===2 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(2)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-warehouse fa-lg "></i> Show Warehouse</span>
             
         </div>
@@ -39,7 +39,7 @@
     /******************************************************************* Work With Tabs *************************/
     const tab_num = ref(0);
     const changeTabe = (num) => tab_num.value = num
-    const tabs = ([MTF_Table_Comp,Show_MTF_Comp,Get_Warehouse_Table_Comp]);
+    const tabs = ([Show_MTF_Comp, MTF_Table_Comp, Get_Warehouse_Table_Comp]);
     /************************************************************************************************************/
 
     onMounted(async()=>{
