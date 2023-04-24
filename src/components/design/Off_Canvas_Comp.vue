@@ -5,7 +5,7 @@
                 <img class="w-8 h-8 rounded-full"
                     src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
                     alt="">
-                <span class=" text-xs text-slate-300 font-mono">{{user_store?.user?.name}} {{user_store?.user?.surname }}</span>
+                <span class=" text-xs text-slate-300 font-mono pl-1">{{user_store?.user?.name}} {{user_store?.user?.surname }}</span>
         </span>
         <ul class="p-0 font-mono">
             <li class="hover:bg-slate-700 text-white rounded-lg  py-2 pl-5 pr-10 mt-2 cursor-pointer">

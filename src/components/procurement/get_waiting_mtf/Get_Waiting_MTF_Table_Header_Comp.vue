@@ -1,5 +1,5 @@
 <template>
-    <thead class="text-xs text-gray-100 bg-blue-600 dark:bg-gray-700 dark:text-gray-400 border w-full">
+    <thead class="text-xs text-black bg-gray-100 dark:bg-gray-700 dark:text-gray-400 border w-full">
         <tr class="">
             <th scope="col-4" class=" px-4">
                 <div class="flex flex-col items-center">
@@ -8,62 +8,62 @@
                     <label for="checkbox-all-search" class="sr-only">checkbox</label>
                 </div>
             </th>
-            <th class="px-2 py-2 font-medium font-mono text-center">
+            <th class="px-2 py-2 font-medium  text-center">
                 <div class="flex flex-col">
                     S/S
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="flex flex-col w-24">
                     MTF NO
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="flex flex-col w-24">
-                    MTF DATE
+                    MTF Date
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="w-24 flex flex-col">
                     Condition
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="w-24 flex flex-col">
                     Status
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="w-24  flex flex-col">
                     Material Type
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="w-96 flex flex-col">
                     Material name
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="flex flex-col">
                     Count
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="flex flex-col">
                     Unit
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1 font-mono font-medium text-center border">
+            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="flex flex-col w-36">
                     Orderer
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1 font-mono font-medium  text-center border">
+            <th scope="col" class="px-2 py-1  font-medium  text-center border">
                 <div class="flex flex-col w-48">
                     Field Name
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1  font-mono font-medium text-center border">
+            <th scope="col" class="px-2 py-1   font-medium text-center border">
                 Comment
             </th>
 

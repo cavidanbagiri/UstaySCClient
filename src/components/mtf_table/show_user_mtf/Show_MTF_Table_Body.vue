@@ -13,7 +13,7 @@
                 {{ index + 1 }}
             </th>
             <th class="px-2 py-2 font-mono font-thin border text-center">
-                <span class="bg-orange-500 text-white p-1 rounded-full font-bold">{{ i.mtf_num }}</span>
+                <span class="bg-orange-50 text-orange-400 p-1 rounded-full font-bold">{{ i.mtf_num }}</span>
             </th>
             <th class="px-2 py-2 font-mono font-thin border  text-center">
                 <span>{{ i.created_at }}</span>

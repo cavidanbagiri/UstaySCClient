@@ -1,6 +1,6 @@
 
 <template>
-    <div class="grid grid-cols-12  bg-slate-800 color-white relative">
+    <div class="grid grid-cols-12  bg-violet-600 color-white relative">
         <div class="col-span-3 text-white flex flex-row items-center justify-start">
             <span @click="toggleCanvas"
                 class="p-2 rounded-xl cursor-pointer  w-10 h-10 flex flex-row justify-center items-center hover:bg-black"><i
@@ -13,7 +13,7 @@
                 <img class="w-8 h-8 rounded-full"
                     src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
                     alt="">
-                <span class=" text-xs text-slate-300 font-mono">{{user?.name}} {{ user?.surname }}</span>
+                <span class=" text-xs text-slate-300 font-mono pl-1">{{user?.name}} {{ user?.surname }}</span>
             </span>
         </div>
 

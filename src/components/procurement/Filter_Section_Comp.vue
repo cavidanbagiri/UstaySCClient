@@ -4,10 +4,8 @@
     <div class="flex flex-col">
         <!-- Show Filter Section -->
         <div class="flex flex-row justify-start items-center">
-            <span class="text-sm font-mono ">Filters</span>
-            <button @click="show_filters = !show_filters" class="ml-3 text-xs "><i
-                    class="fa-solid fa-filter fa-md"></i></button>
-        </div>
+        <button @click="show_filters=!show_filters" class=" text-xs border p-1 bg-violet-200 rounded-md">Show Filters <i class="fa-solid fa-arrow-down-short-wide"></i></button>
+    </div>
         <!-- <pre>{{ procurement_store.waiting_orders_filter }}</pre> -->
         <!-- Filter Section -->
         <div class="flex flex-col mtf-anim" v-if="show_filters">
@@ -15,7 +13,7 @@
                 <!-- Common Filter Keys -->
                 <div class="flex flex-row start">
                     <!-- Date Order -->
-                    <div class="flex flex-col my-3 mr-3">
+                    <div class="flex flex-col my-1 mr-3">
                         <span class="text-xs m-1">Date Order</span>
                         <select class="border outline-none font-sans rounded-lg  h-full p-1 text-xs border-gray-300"
                             v-model="date_order">
@@ -24,13 +22,13 @@
                         </select>
                     </div>
                     <!-- Search With Date -->
-                    <div class="flex flex-col m-3">
+                    <div class="flex flex-col m-1">
                         <span class="text-xs m-1">Search Date</span>
                         <input class="border outline-none rounded-md border-gray-300 text-xs p-2" type="date" name="" id=""
                             placeholder="Date" v-model="date" />
                     </div>
                     <!-- Search With MTF -->
-                    <div class="flex flex-col m-3">
+                    <div class="flex flex-col m-1">
                         <span class="text-xs m-1">Search MTF</span>
                         <label for="search"
                             class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -49,7 +47,7 @@
                         </div>
                     </div>
                     <!-- Search With Order Name -->
-                    <div class="flex flex-col m-3">
+                    <div class="flex flex-col m-1">
                         <span class="text-xs m-1">Search Order</span>
                         <label for="search"
                             class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -69,7 +67,7 @@
                     </div>
                 </div>
                 <!-- Search With Material Name -->
-                <div class="flex flex-col m-3">
+                <div class="flex flex-col m-1">
                     <span class="text-xs m-1">Search Type</span>
                     <label for="search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -186,7 +184,7 @@ watchEffect(() => {
 
 
 // Show and Hide Filter Section
-const show_filters = ref(true);
+const show_filters = ref(false);
 
 
 </script>

@@ -1,16 +1,12 @@
 <template>
     <!-- Filter Section -->
-    <div class="flex flex-col mt-1 mtf-anim">
-        <!-- Show Total MTF Length -->
-        <span class="text-xs font-mono text-start font-bold">Total Document Size : {{
-            order_store.orders?.length }}
-        </span>
+    <div class="flex flex-col mtf-anim">
         <!-- Common Filters Section -->
         <div class="flex flex-row items-center justify-between">
             <!-- Common Filter Keys -->
             <div class="flex flex-row start">
                 <!-- Date Order -->
-                <div class="flex flex-col my-3 mr-3">
+                <div class="flex flex-col my-1 mr-3">
                     <span class="text-xs m-1">Date Order</span>
                     <select class="border outline-none font-sans rounded-lg  h-full p-1 text-xs border-gray-300"
                         v-model="date_order">
@@ -19,13 +15,13 @@
                     </select>
                 </div>
                 <!-- Search With Date -->
-                <div class="flex flex-col m-3">
+                <div class="flex flex-col m-1">
                     <span class="text-xs m-1">Search Date</span>
                     <input class="border outline-none rounded-md border-gray-300 text-xs p-2" type="date" name="" id=""
                         placeholder="Date" v-model="date" />
                 </div>
                 <!-- Search With Material Type-->
-                <div class="flex flex-col m-3">
+                <div class="flex flex-col m-1">
                     <span class="text-xs m-1">Search Type</span>
                     <select class="border outline-none font-sans rounded-lg  h-full p-1 text-xs border-gray-300"
                         v-model="material_type">
@@ -36,7 +32,7 @@
                     </select>
                 </div>
                 <!-- Search With MTF -->
-                <div class="flex flex-col m-3">
+                <div class="flex flex-col m-1">
                     <span class="text-xs m-1">Search MTF</span>
                     <label for="search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -56,7 +52,7 @@
                 </div>
             </div>
             <!-- Search With Material Name -->
-            <div class="flex flex-col m-3">
+            <div class="flex flex-col m-1">
                 <span class="text-xs m-1">Search Type</span>
                 <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                 <div class="relative  w-96">

@@ -10,6 +10,8 @@
             
         </div>
 
+        <Show_Procurement_Analyz />
+
         <component :is="tabs[tab_num]"></component>
 
     </div>
@@ -20,6 +22,7 @@
 
 import { ref } from 'vue';
 
+import Show_Procurement_Analyz from '../components/procurement/Show_Procurement_Analyz.vue';
 import Get_Waiting_MTF from '../components/procurement/get_waiting_mtf/Get_Waiting_MTF.vue';
 import Get_Creating_MTF from '../components/procurement/Get_Creating_STF.vue';
 
