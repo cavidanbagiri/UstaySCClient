@@ -54,7 +54,7 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col">
+                <div class="flex flex-col w-20">
                     Price
                 </div>
             </th>
@@ -69,7 +69,7 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-36 flex flex-col">
+                <div class="w-40 flex flex-col">
                     Orderer
                 </div>
             </th>
