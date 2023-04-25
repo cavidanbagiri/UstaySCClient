@@ -5,14 +5,17 @@
 
         <div class="flex flex-row mt-1 my-2 font-mono">
             
-            <span :class="tab_num===0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-plus fa-lg "></i> Waiting MTF</span>
-            <span :class="tab_num===1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Creating STF</span>
+            <span :class="procurement_store.GETTABNUM===0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-plus fa-lg "></i> Waiting MTF</span>
+            <span :class="procurement_store.GETTABNUM===1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Creating STF</span>
             
         </div>
 
         <Show_Procurement_Analyz />
+        
+        <KeepAlive>
+            <component :is="tabs[procurement_store.GETTABNUM]"></component>
+        </KeepAlive>
 
-        <component :is="tabs[tab_num]"></component>
 
     </div>
 
@@ -20,18 +23,18 @@
 
 <script setup>
 
-import { ref } from 'vue';
 
 import Show_Procurement_Analyz from '../components/procurement/Show_Procurement_Analyz.vue';
 import Get_Waiting_MTF from '../components/procurement/get_waiting_mtf/Get_Waiting_MTF.vue';
-import Get_Creating_MTF from '../components/procurement/Get_Creating_STF.vue';
+import Get_Creating_MTF from '../components/procurement/create_stf/Get_Creating_STF.vue';
+
+import ProcurementStore from '../store/procurement_store';
+const procurement_store = ProcurementStore();
 
 
-const tab_num = ref(0);
-
+// Change Tabs
 const tabs = [Get_Waiting_MTF, Get_Creating_MTF]
-
-const changeTabe = (num) => tab_num.value=num
+const changeTabe = (num) => procurement_store.tab_num=num
 
 
 

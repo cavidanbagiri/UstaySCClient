@@ -9,13 +9,15 @@ const ProcurementStore = defineStore('ProcurementStore',{
         waiting_orders : null,
         waiting_orders_filter: null,
         checked_values: [],
-        show_error_message : false
+        show_error_message : false,
+        tab_num : 0,
     }),
     getters:{
         GETWAITINGORDERS : (state) => state.waiting_orders, 
         GETWAITINGORDERSFILTER : (state) => state.waiting_orders_filter, 
         GETCHECKEDVALUES : (state) => state.checked_values,
-        GETERRORMESSAGE : (state) => state.show_error_message
+        GETERRORMESSAGE : (state) => state.show_error_message,
+        GETTABNUM : (state) => state.tab_num,
     },
     actions:{
 
@@ -34,9 +36,13 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
         // Create STF
         async createSTF (orders){
-            console.log('orders : ',orders);
+            // await axios.post('http://localhost:3000/procurement/createstf', orders)
+            // .then((respond)=>{
+            //     console.log(respond.data);
+            // }).catch((err)=>{
+            //     console.log('Waiting MTF Error : ',err);
+            // })
         }
-
     }
 
 })

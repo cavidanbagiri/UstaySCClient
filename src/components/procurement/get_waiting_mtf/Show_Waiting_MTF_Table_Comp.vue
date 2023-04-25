@@ -4,11 +4,11 @@
         
         <!-- Create Button and Error Message Section -->
         <div class="flex justify-between pr-1 my-1 mtf-anim" v-if="procurement_store.GETCHECKEDVALUES.length">
-            <button class="bg-red-600 text-xs py-2 px-3 rounded-md text-white " @click="createSTF" :disabled="procurement_store.GETERRORMESSAGE">
+            <button class="bg-red-600 font-medium text-xs py-2 px-3 rounded-md text-white " @click="createSTF" :disabled="procurement_store.GETERRORMESSAGE">
                 Create STF
             </button>
 
-            <span v-if="procurement_store.GETERRORMESSAGE" class="text-sm text-red-600 font-bold pr-3">For Creating STF, all
+            <span v-if="procurement_store.GETERRORMESSAGE" class="text-sm text-red-600 font-medium pr-3">For Creating STF, all
                 MTF nums must be same</span>
         </div>
         
@@ -36,7 +36,8 @@ import ProcurementStore from '../../../store/procurement_store';
 const procurement_store = ProcurementStore();
 
 const createSTF = async () => {
-    await procurement_store.createSTF(procurement_store.GETCHECKEDVALUES);
+    // await procurement_store.createSTF(procurement_store.GETCHECKEDVALUES);
+    procurement_store.tab_num = 1;
 }
 
 </script>
