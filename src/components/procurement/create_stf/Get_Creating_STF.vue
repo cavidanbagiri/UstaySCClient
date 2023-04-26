@@ -1,6 +1,8 @@
 
 <template>
+    
     <STF_Table_Comp />
+
 </template>
 
 <script setup>
