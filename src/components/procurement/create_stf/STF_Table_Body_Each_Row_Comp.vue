@@ -12,7 +12,7 @@
             {{ prop?.index + 1  }}
         </th>
         <th class="px-2 py-2 font-mono font-thin border text-center">
-            <span class="bg-orange-50 text-orange-400 p-1 rounded-full font-bold">{{ prop?.each_item?.mtf_num }}</span>
+            <span class="bg-orange-50 text-orange-400 p-1 rounded-full font-bold">{{ prop?.each_item?.stf_num }}</span>
         </th>
         <th class="px-2 py-2 font-mono font-thin border  text-center">
             <span>{{ prop?.each_item?.created_at }}</span>
@@ -83,7 +83,7 @@ const currency_list = ['₽','$']
 const each = ref({
     ProjectModelId: prop?.each_item?.ProjectModelId,
     DepartmentModelId: prop?.each_item?.DepartmentModelId,
-    MTFModelId: prop?.each_item?.id,
+    STFModelId: prop?.each_item?.id,
     VendorModelId : ref(0),
     UserModelId : ref(0),
     price : ref(0),
