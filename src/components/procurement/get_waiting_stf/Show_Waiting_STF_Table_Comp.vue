@@ -29,8 +29,8 @@
 
 import { ref } from 'vue';
 
-import Get_Waiting_MTF_Table_Header_Comp from './Get_Waiting_MTF_Table_Header_Comp.vue';
-import Get_Waiting_MTF_Table_Body_Comp from './Get_Waiting_MTF_Table_Body_Comp.vue';
+import Get_Waiting_MTF_Table_Header_Comp from './Get_Waiting_STF_Table_Header_Comp.vue';
+import Get_Waiting_MTF_Table_Body_Comp from './Get_Waiting_STF_Table_Body_Comp.vue';
 
 import ProcurementStore from '../../../store/procurement_store';
 const procurement_store = ProcurementStore();

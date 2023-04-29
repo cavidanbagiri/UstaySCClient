@@ -3,13 +3,13 @@
     
     <div class="flex flex-col p-1">
 
-        <STF_Create_Button_Comp/>
+        <SM_Create_Button_Comp/>
 
         <div class="flex flex-col w-screen overflow-x-scroll">
             
             <table class="text-xs text-left text-gray-800 dark:text-gray-400 w-full">
-                <STF_Table_Header_Comp/>
-                <STF_Table_Body_Comp/>
+                <SM_Table_Header_Comp/>
+                <SM_Table_Body_Comp/>
             </table>
 
         </div>
@@ -22,9 +22,9 @@
 <script setup>
 
     import { onMounted } from 'vue';
-    import STF_Table_Header_Comp from './STF_Table_Header_Comp.vue';
-    import STF_Table_Body_Comp from './STF_Table_Body_Comp.vue';
-    import STF_Create_Button_Comp from './STF_Create_Button_Comp.vue';
+    import SM_Table_Header_Comp from './SM_Table_Header_Comp.vue';
+    import SM_Table_Body_Comp from './SM_Table_Body_Comp.vue';
+    import SM_Create_Button_Comp from './SM_Create_Button_Comp.vue';
     import ProcurementStore from '../../../store/procurement_store';
     const procurement_store = ProcurementStore();
 
