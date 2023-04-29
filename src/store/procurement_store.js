@@ -21,7 +21,9 @@ const ProcurementStore = defineStore('ProcurementStore',{
         // Choose Companies Name
         companies_names: [],
         // Users Names
-        procurement_users_names: []
+        procurement_users_names: [],
+        // Get All SM for Project
+        all_sms : [],
     }),
     getters:{
         GETWAITINGORDERS : (state) => state.waiting_orders, 
@@ -31,7 +33,8 @@ const ProcurementStore = defineStore('ProcurementStore',{
         GETTABNUM : (state) => state.tab_num,
         GETCREATINGSTFDATA : (state) => state.creating_STF_datas,
         GETCOMPANIESNAMES : (state) => state.companies_names,
-        GETPROCUREMENTUSERSNAMES : (state) => state.procurement_users_names
+        GETPROCUREMENTUSERSNAMES : (state) => state.procurement_users_names,
+        GETALLSMS : (state) => state.all_sms
     },
     actions:{
 
@@ -76,6 +79,16 @@ const ProcurementStore = defineStore('ProcurementStore',{
                 console.log('users names : ',this.procurement_users_names);
             }).catch((err)=>{
                 console.log('Get Users Names Errors : ',err);
+            })
+        },
+
+        // Get All SM
+        async getAllSms () {
+            await axios.get('http://localhost:3000/procurement')
+            .then((respond)=>{
+                this.all_sms = respond.data;
+            }).catch((err)=>{
+                console.log('Het All Sms Errors : ',err);
             })
         }
 
