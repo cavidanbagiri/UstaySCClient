@@ -1,4 +1,5 @@
 <template>
+
     <div class="border-2 p-3 ">
         {{ selected_user }}
         <button v-html="selected_user" class="border py-2 px-6 w-60 bg-blue-500 text-white font-bold"
@@ -6,7 +7,11 @@
 
         </button>
 
-        <transition enter-active-class="transition ease-out duration-750" enter-class="transform opacity-0 scale-95"
+        <!-- <transition enter-active-class="transition ease-out duration-750" enter-class="transform opacity-0 scale-95"
+            enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-750"
+            leave-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95"> -->
+
+            <transition enter-active-class="transition ease-out duration-750" enter-class="transform opacity-0 scale-95"
             enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-750"
             leave-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
 
@@ -57,9 +62,8 @@
             </div>
         </transition>
 
-
-
     </div>
+    
 </template>
 
 <script setup>
