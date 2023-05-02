@@ -1,11 +1,12 @@
 <template>
-    <div class=" fixed mtf-anim shadow-lg z-10  bg-slate-800 pl-3 pt-3 pb-3 pr-3 h-screen w-auto">
+    <div class=" mtf-anim fixed shadow-lg z-10  bg-slate-800 pl-3 pt-3 pb-3 pr-3 h-screen  w-72">
 
         <span class="p-2 rounded-xl cursor-pointer hover:bg-black flex flex-row items-center">
             <img class="w-8 h-8 rounded-full"
                 src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
                 alt="">
-            <span class=" text-xs text-slate-300 font-mono pl-1">{{ user_store?.user?.name }} {{ user_store?.user?.surname
+            <span class=" text-xs text-slate-300 font-mono pl-1">{{ user_store?.user?.name }} {{
+                user_store?.user?.surname
             }}</span>
         </span>
         <ul class="p-0 font-mono">
@@ -39,14 +40,58 @@
                     Notepad
                 </span>
             </li>
+            <!-- Procurement -->
             <router-link to="/procurement">
-                <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
-                    <span class="text-md">
-                        <i class="fa-solid fa-cart-shopping fa-md" style="color: white;"></i>
-                        Procurement
-                    </span>
+                <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer"
+                    @click="show_procurement_dropdown = !show_procurement_dropdown">
+                    <div>
+                        <div class="flex justify-between">
+                            <div class="">
+                                <span class="text-md">
+                                    <i class="fa-solid fa-cart-shopping fa-md" style="color: white;"></i>
+                                    Procurement
+                                </span>
+                            </div>
+                            <div>
+                                <i v-if="!show_procurement_dropdown" class="fa-solid fa-chevron-left"></i>
+                                <i v-else class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <!-- Show Procurement Dropdown -->
+
+                        <!-- Dropdown menu -->
+                        <transition name="slide-fade">
+                            <div id="dropdownUsers" v-if="show_procurement_dropdown"
+                                class="z-10 rounded-lg shadow w-50 dark:bg-gray-700">
+
+                                <ul class="h-auto py-2 dark:text-gray-200 text-white" aria-labelledby="dropdownUsersButton">
+                                    <li class="text-xs" @click="changeBtnText($event)">
+                                        <div class="">
+                                            <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
+                                                <img class="w-6 h-6 mr-2 rounded-full"
+                                                    src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
+                                                    alt="Jese image">
+                                                Cavidan Bagirli
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="text-xs">
+                                        <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
+                                            <img class="w-6 h-6 mr-2 rounded-full"
+                                                src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
+                                                alt="Jese image">
+                                            Mehmet Ugur Dogan
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </transition>
+                    </div>
+
                 </li>
             </router-link>
+            <!-- Warehouse -->
             <router-link to="/warehouse">
                 <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
                     <span class="text-md">
@@ -55,7 +100,7 @@
                     </span>
                 </li>
             </router-link>
-
+            <!-- Login Logout -->
             <li v-if="!user_store?.user"
                 class="hover:bg-slate-700 text-white  p-2 mt-1 rounded-lg  py-2 px-4 cursor-pointer">
                 <span @click="openUserLogin" class="text-md">
@@ -98,6 +143,9 @@ const openUserLogout = () => {
 }
 
 
+// Show procurement Dropdown
+const show_procurement_dropdown = ref(false);
+
 </script>
 
 <style scoped>
@@ -113,5 +161,25 @@ const openUserLogout = () => {
     to {
         transform: translateX(0%);
     }
+}
+
+
+
+/* Procurement*/
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.3s ease-in;
+}
+
+.slide-fade-enter-from {
+    transform: translateY(-20%);
+}
+
+.slide-fade-leave-to {
+    transform: translateY(-30%);
+    /* opacity: 0; */
 }
 </style>
