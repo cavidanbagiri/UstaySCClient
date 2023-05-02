@@ -25,18 +25,13 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
+                <div class="flex flex-col w-24">
+                    SM NO
+                </div>
+            </th>
+            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="w-24 flex flex-col">
                     Condition
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-24 flex flex-col">
-                    Status
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-24  flex flex-col">
-                    Material Type
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
@@ -55,13 +50,18 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
+                <div class="w-96 flex flex-col">
+                    Vendor Name
+                </div>
+            </th>
+            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="flex flex-col w-36">
                     Orderer
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium  text-center border">
                 <div class="flex flex-col w-48">
-                    Field Name
+                    Supplier
                 </div>
             </th>
             <th scope="col" class="px-2 py-1   font-medium text-center border">
