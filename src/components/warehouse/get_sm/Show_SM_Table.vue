@@ -21,11 +21,11 @@
     import Get_SM_Header_Table from './Get_SM_Header_Table.vue';
     import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
 
-    import ProcurementStore from '../../../store/procurement_store';
-    const procurement_store = ProcurementStore();
+    import WarehouseStore from '../../../store/warehouse_store';
+    const warehouse_store = WarehouseStore();
 
     onMounted(async ()=>{
-        await procurement_store.getAllSms();
+        await warehouse_store.getWaitingsSMS();
     })
 
 </script>
