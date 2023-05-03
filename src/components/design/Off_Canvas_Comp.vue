@@ -93,11 +93,53 @@
             </router-link>
             <!-- Warehouse -->
             <router-link to="/warehouse">
-                <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
-                    <span class="text-md">
-                        <i class="fa-solid fa-warehouse fa-md" style="color: white;"></i>
-                        Warehouse
-                    </span>
+                <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer"
+                    @click="show_warehouse_dropdown = !show_warehouse_dropdown">
+                    <div>
+                        <div class="flex justify-between">
+                            <div class="">
+                                <span class="text-md">
+                                    <i class="fa-solid fa-cart-shopping fa-md" style="color: white;"></i>
+                                    Warehouse
+                                </span>
+                            </div>
+                            <div>
+                                <i v-if="!show_warehouse_dropdown" class="fa-solid fa-chevron-left"></i>
+                                <i v-else class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <!-- Show Procurement Dropdown -->
+
+                        <!-- Dropdown menu -->
+                        <transition name="slide-fade">
+                            <div id="dropdownUsers" v-if="show_warehouse_dropdown"
+                                class="z-10 rounded-lg shadow w-50 dark:bg-gray-700">
+
+                                <ul class="h-auto py-2 dark:text-gray-200 text-white" aria-labelledby="dropdownUsersButton">
+                                    <li class="text-xs" @click="changeBtnText($event)">
+                                        <div class="">
+                                            <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
+                                                <img class="w-6 h-6 mr-2 rounded-full"
+                                                    src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
+                                                    alt="Jese image">
+                                                Waiting SM
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="text-xs">
+                                        <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
+                                            <img class="w-6 h-6 mr-2 rounded-full"
+                                                src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
+                                                alt="Jese image">
+                                            Accepting SM
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </transition>
+                    </div>
+
                 </li>
             </router-link>
             <!-- Login Logout -->
@@ -145,6 +187,7 @@ const openUserLogout = () => {
 
 // Show procurement Dropdown
 const show_procurement_dropdown = ref(false);
+const show_warehouse_dropdown = ref(false);
 
 </script>
 
