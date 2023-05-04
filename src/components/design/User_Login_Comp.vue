@@ -60,7 +60,6 @@ const user_store = UserStore();
 const login = async (values) => {
     await user_store.LOGINSER(values)
         .then((respond) => {
-            console.log('each happen ');
             index_store.TOGGLEUSERTELEPORT();
             router.push({path:'HomePage'})
             location.reload();

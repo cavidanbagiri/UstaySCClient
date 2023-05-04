@@ -24,7 +24,7 @@ const UserStore = defineStore('userStore',{
                 console.log('user is : ',this.user);
             })
             .catch((err)=>{
-                console.log('User Login Error : ',err);
+                console.log('User Login Error : ',err.response.data);
             })
 
         },
