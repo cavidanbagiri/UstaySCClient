@@ -38,7 +38,7 @@
             {{ prop?.each_item?.vendor_name }}
         </th>
         <th class="px-2 py-2 font-mono font-thin  border">
-            {{ prop?.each_item?.UserModelId }}
+            {{ prop?.each_item?.orderer }}
         </th>
         <th class="px-2 py-2 font-mono font-thin  border">
             {{ prop?.each_item?.username }}

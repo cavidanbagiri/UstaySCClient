@@ -26,7 +26,7 @@
         </select>
         </th>
         <th class="px-2 py-2 font-mono font-thin border  text-center">
-            <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.UserModelId">
+            <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.supplierName">
             <option v-for="i in supplier_list" :value="i.id">{{ i.username }}</option> -->
         </select>
         </th>
@@ -85,7 +85,7 @@ const each = ref({
     DepartmentModelId: prop?.each_item?.DepartmentModelId,
     STFModelId: prop?.each_item?.id,
     VendorModelId : ref(0),
-    UserModelId : ref(0),
+    supplierName : ref(0),
     price : ref(0),
     total : ref(0),
     currency : ref('₽'),
