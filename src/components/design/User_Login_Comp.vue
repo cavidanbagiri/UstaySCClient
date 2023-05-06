@@ -34,7 +34,7 @@
                     <button
                         class="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign
                         in</button>
-
+                    <span class="text-red-500 flex text-sm mt-2 justify-end">{{ user_not_found }}</span>
                 </VeeForm>
 
 
@@ -56,16 +56,20 @@ import { ErrorMessage } from 'vee-validate';
 const index_store = IndexStore()
 const user_store = UserStore();
 
+const user_not_found = ref('');
 
 const login = async (values) => {
     await user_store.LOGINSER(values)
         .then((respond) => {
-            index_store.TOGGLEUSERTELEPORT();
-            router.push({path:'HomePage'})
-            location.reload();
-        }).catch((err) => {
-            console.log('Login User Error : ', err);
+            if (respond?.response?.data) {
+                user_not_found.value = respond.response.data;
+            } else {
+                index_store.TOGGLEUSERTELEPORT();
+                router.push({ path: 'HomePage' });
+                location.reload();
+            }
         })
+
 
 }
 
@@ -78,4 +82,5 @@ const login = async (values) => {
     top: 10%;
     left: 50%;
     margin-left: -150px;
-}</style>
+}
+</style>
