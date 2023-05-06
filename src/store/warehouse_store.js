@@ -13,6 +13,8 @@ const WarehouseStore = defineStore('WarehouseStore',{
         GETWAITINGSMS : (state) => state.waiting_sms,
     },
     actions:{
+
+        // Get Waiting SM
         async getWaitingsSMS () { 
             await axios.get('http://localhost:3000/warehouse/waitingsm')
             .then((respond)=>{
@@ -21,7 +23,13 @@ const WarehouseStore = defineStore('WarehouseStore',{
             }).catch((err)=>{
                 console.log('Get Warehouse Waiting Error : ',err);
             })
+        },
+
+        // Post Accepted waiting to Warehouse
+        async acceptWaitingSM(items){
+            console.log('items is : ',items.value);
         }
+
     }
 
 })

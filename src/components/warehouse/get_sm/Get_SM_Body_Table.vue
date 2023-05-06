@@ -12,16 +12,18 @@
 <script setup>
 
     import Get_SM_Body_Table_Each_Row_Comp from '../get_sm/Get_SM_Body_Table_Each_Row_Comp.vue'
-
     import WarehouseStore from '../../../store/warehouse_store';
     const warehouse_store = WarehouseStore();
+
+    const prop = defineProps(['checked_values']);
     
     const addChecked = (item) => {
-        console.log('add checked : ',item);
+        prop?.checked_values.push(item);
     }
-
+    
+    // Remove Operation FIx Needed
     const removeChecked = (item) => {
-        console.log('remove checked : ',item);
+        prop.checked_values = prop.checked_values.filter((each)=>each.id!=item.id)
     }
 
 </script>
