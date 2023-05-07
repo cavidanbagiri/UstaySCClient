@@ -18,17 +18,13 @@
 
             </div>
 
-            <div v-if="tab_num === 0 || tab_num === 2">
-                <keep-alive>
-                    <component :is="tabs[tab_num]" />
-                </keep-alive>
-            </div>
-            <div v-else>
+            <keep-alive>
                 <component :is="tabs[tab_num]" />
-            </div>
+            </keep-alive>
+            
         </div>
 
-        <div>
+        <div v-else>
             <span>Please Login</span>
         </div>
 
@@ -75,4 +71,5 @@ onMounted(async () => {
     to {
         transform: translateY(0%);
     }
-}</style>
+}
+</style>

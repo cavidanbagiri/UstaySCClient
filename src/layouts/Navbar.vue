@@ -51,7 +51,7 @@
                     class="fa-regular fa-star fa-md" style="color:white"></i></span>
 
 
-            <router-link to="/order/mtf" class="no-underline ">
+            <router-link to="/order/stf" class="no-underline ">
 
                 <span
                     class="p-2 rounded-xl cursor-pointer w-10 h-10 flex flex-row justify-center items-center hover:bg-black "><i

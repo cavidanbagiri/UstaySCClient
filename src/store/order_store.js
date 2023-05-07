@@ -24,15 +24,17 @@ const OrderStore = defineStore('OrderStore',{
 
         // Send MTF Data for creating MTF
         async createMTF(data){
-            return await axios.post('http://localhost:3000/order/mtf', data)
-            .then((respond)=>{
-                this.created_last_mtf = respond.data
-                this.show_mtf_toast = true;
-                return respond;
-            })
-            .catch((err)=>{
-                console.log('Error Is : ',err);
-            })
+            try{
+                await axios.post('http://localhost:3000/order/stf', data)
+                .then((respond)=>{
+                    console.log('respond : ',respond);
+                    this.created_last_mtf = respond.data
+                    this.show_mtf_toast = true;
+                    return respond;
+                })
+            }catch(err){
+                return err
+            }
         },
 
         // Show User MTF For User Page

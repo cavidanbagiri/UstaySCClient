@@ -28,7 +28,9 @@
         }
         await order_store.createMTF(data)
         .then((respond)=>{
-            console.log('from create component : ', respond);
+            if(respond.response.status === 400){
+                alert('MTF Cant Create');
+            }
         }).catch((err)=>{
             console.log('from create Error component : ',err);
         })
