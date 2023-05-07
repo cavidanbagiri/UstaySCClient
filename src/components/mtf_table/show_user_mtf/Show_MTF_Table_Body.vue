@@ -1,7 +1,7 @@
 <template>
-    <tbody>
+    <tbody class="text-gray-500" style="font-size: 11px;">
         <tr v-for="(i, index) in order_store.GETFILTEREDORDERSDATA"
-            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            class="bg-white border-b  hover:bg-gray-100 ">
             <td class="w-1 p-4 py-2 ">
                 <div class="flex items-center">
                     <input id="checkbox-table-search-1" type="checkbox"
@@ -9,40 +9,49 @@
                     <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
                 </div>
             </td>
-            <th class="px-2 py-2 font-mono font-bold text-center">
+            <th class="px-2 py-2 font-medium text-center">
                 {{ index + 1 }}
             </th>
-            <th class="px-2 py-2 font-mono font-thin border text-center">
-                <span class="bg-orange-50 text-orange-400 p-1 rounded-full font-bold">{{ i.stf_num }}</span>
+            <th class="px-2 font-medium text-start border-y ">
+                <div class=" bg-orange-100 text-orange-500 py-1 px-2 rounded-xl ">
+                    <span > {{ i.stf_num }}</span>
+                </div>
             </th>
-            <th class="px-2 py-2 font-mono font-thin border  text-center">
-                <span>{{ i.created_at }}</span>
+            <th class="px-2 py-2 font-medium  text-center border-y">
+                <p>{{ i.created_at }}</p>
             </th>
-            <th class="px-2 py-2 font-mono font-thin text-center border">
-                {{ i.situation }}
+            <th class="font-medium text-start border-y px-2">
+                <div class=" bg-red-100 w-w-full text-red-500 py-1 px-2 rounded-xl">
+                    <span v-if="i.situation==='Waiting'">
+                        &#9679 {{ i.situation }} 
+                    </span>
+                    <span v-else>
+                        none
+                    </span>
+                </div>
             </th>
-            <th class="px-2 py-2 font-mono font-thin text-center border">
+            <th class="px-2 py-2 font-medium text-start border-y">
                 {{ i.material_status }} 
             </th>
-            <th class="px-2 py-2 font-mono font-thin border">
+            <th class="px-2 py-2 font-medium  border-y">
                 {{ i.material_type }}
             </th>
-            <th class="px-2 py-2 font-mono font-thin border">
+            <th class="px-2 py-2  font-medium border-y">
                 {{ i.material_name }}
             </th>
-            <th class="px-2 py-2 font-mono font-thin border text-center">
+            <th class="px-2 py-2  font-medium text-start border-y">
                 {{ i.count }}
             </th>
-            <th class="px-2 py-2 font-mono font-thin border text-center">
+            <th class="px-2 py-2  font-medium text-center border-y">
                 {{ i.unit }}
             </th>
-            <th class="px-2 py-2 font-mono font-thin text-center border">
+            <th class="px-2 py-2  font-medium text-center border-y">
                 {{ i.username }}
             </th>
-            <th class="px-2 py-2 font-mono font-thin text-start border">
+            <th class="px-2 py-2 font-medium  text-start border-y">
                 {{ i?.field_name }}
             </th>
-            <th class="px-2 py-2 font-mono font-thin text-center border">
+            <th class="px-2 py-2  font-medium text-center border-y">
                 <div class="w-96">{{ i.comment }}</div>
             </th>
         </tr>

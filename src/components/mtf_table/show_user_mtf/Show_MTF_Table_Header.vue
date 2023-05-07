@@ -14,7 +14,7 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1 font-medium text-center border">
-                <div class="flex flex-col w-24">
+                <div class="flex flex-col ">
                     STF NO
                 </div>
             </th>
@@ -29,12 +29,12 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-24 flex flex-col">
+                <div class="flex flex-col">
                     Status
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-24  flex flex-col">
+                <div class="w-20 flex flex-col">
                     Material Type
                 </div>
             </th>
@@ -59,7 +59,7 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-48">
+                <div class="flex flex-col w-24">
                     Field
                 </div>
             </th>
