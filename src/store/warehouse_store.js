@@ -21,6 +21,7 @@ const WarehouseStore = defineStore('WarehouseStore',{
             await axios.get('http://localhost:3000/warehouse/waitingsm')
             .then((respond)=>{
                 this.waiting_sms = respond.data
+                console.log(this.waiting_sms);
             }).catch((err)=>{
                 console.log('Get Warehouse Waiting Error : ',err);
             })

@@ -64,10 +64,7 @@
                     Supplier
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1   font-medium text-center border">
-                Comment
-            </th>
-
+           
         </tr>
     </thead>
 </template>

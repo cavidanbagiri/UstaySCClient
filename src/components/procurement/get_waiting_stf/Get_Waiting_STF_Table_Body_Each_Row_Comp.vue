@@ -10,7 +10,7 @@
                 <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
             </div>
         </td>
-        <th class="px-2 py-2 font-mono font-bold text-center">
+        <th class="px-2 py-2  font-bold text-center">
             {{ prop?.index + 1  }}
         </th>
         <th class="px-2 font-medium text-start border-y ">
@@ -18,35 +18,35 @@
                 <span>{{ prop?.each_item?.stf_num }}</span>
             </div>
         </th>
-        <th class="px-2 py-2 font-mono font-thin border  text-center">
+        <th class="px-2 py-2 font-medium border  text-center">
             <span>{{ prop?.each_item?.created_at }}</span>
         </th>
-        <th class="px-2 py-2 font-mono text-center border text-red-500 font-bold">
+        <th class="px-2 py-2 font-medium text-center border text-red-500 ">
             <div>
                 <span class="bg-red-100 w-w-full text-red-500 py-1 px-2 rounded-md">
                     &#9679 {{ prop?.each_item?.situation }}
                 </span>
             </div>
         </th>
-        <th class="px-2 py-2 font-mono font-thin text-center border">
+        <th class="px-2 py-2 font-medium text-center border">
             {{ prop?.each_item?.material_status }}
         </th>
-        <th class="px-2 py-2 font-mono font-thin border">
+        <th class="px-2 py-2 font-medium  border">
             {{ prop?.each_item?.material_name }}
         </th>
-        <th class="px-2 py-2 font-mono font-thin border text-center">
+        <th class="px-2 py-2 font-medium  border text-center">
             {{ prop?.each_item?.count }}
         </th>
-        <th class="px-2 py-2 font-mono font-thin border text-center">
+        <th class="px-2 py-2 font-medium  border text-center">
             {{ prop?.each_item?.unit }}
         </th>
-        <th class="px-2 py-2 font-mono font-thin  border">
+        <th class="px-2 py-2 font-medium   border">
             {{ prop?.each_item?.username }}
         </th>
-        <th class="px-2 py-2 font-mono font-thin  border">
+        <th class="px-2 py-2 font-medium   border">
             {{ prop?.each_item?.field_name }}
         </th>
-        <th class="px-2 py-2 font-mono font-thin text-center border">
+        <th class="px-2 py-2 font-medium  text-center border">
             <div class="w-96">{{ prop?.each_item?.comment }}</div>
         </th>
     </tr>
