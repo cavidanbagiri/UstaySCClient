@@ -8,11 +8,13 @@ const WarehouseStore = defineStore('WarehouseStore',{
     state:()=>({
         waiting_sms : [],
         accepted_items : [],
+        checked_values : [],
     }),
 
     getters:{
         GETWAITINGSMS : (state) => state.waiting_sms,
         GETACCEPTEDITEMS : (state) => state.accepted_items,
+        GETCHECKEDVALUES : (state) => state.checked_values
     },
     actions:{
 
@@ -28,16 +30,17 @@ const WarehouseStore = defineStore('WarehouseStore',{
         },
 
         // Post Accepted waiting to Warehouse
-        async acceptWaitingSM(items){
-            // console.log(items.value);
-            await axios.post('http://localhost:3000/warehouse/accept',items.value)
-            .then((respond)=>{
-                this.accepted_items = respond;
-                console.log('accepted items is : ',this.accepted_items);
-            })
-            .catch((err)=>{
-                console.log('Accepted Materials Error From Warehouse Store : ',err);
-            })
+        async acceptWaitingSM(data){
+            console.log(data.user);
+            console.log(data.checked_values);
+            // await axios.post('http://localhost:3000/warehouse/accept',data)
+            // .then((respond)=>{
+            //     this.accepted_items = respond;
+            //     console.log('accepted items is : ',this.accepted_items);
+            // })
+            // .catch((err)=>{
+            //     console.log('Accepted Materials Error From Warehouse Store : ',err);
+            // })
         }   
 
     }

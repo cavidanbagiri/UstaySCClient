@@ -15,15 +15,14 @@
     import WarehouseStore from '../../../store/warehouse_store';
     const warehouse_store = WarehouseStore();
 
-    const prop = defineProps(['checked_values']);
     
     const addChecked = (item) => {
-        prop?.checked_values.push(item);
+        warehouse_store.checked_values.push(item);
     }
     
     // Remove Operation FIx Needed
     const removeChecked = (item) => {
-        prop.checked_values = prop.checked_values.filter((each)=>each.id!=item.id)
+        warehouse_store.checked_values = prop.checked_values.filter((each)=>each.id!=item.id)
     }
 
 </script>

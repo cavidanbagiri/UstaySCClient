@@ -68,12 +68,7 @@ import { ref } from 'vue';
 // Get Each Item from parent
 const prop = defineProps(['each_item','index']);
 
-// Create an Emit for clicking checkbox
-const emit = defineEmits(['addChecked','removeChecked']);
 
-const checked = ref(false);
-
-const checkboxCond = () => checked.value === true ? emit('addChecked',prop?.each_item) : emit('removeChecked', prop?.each_item?.id);
 
 
 
