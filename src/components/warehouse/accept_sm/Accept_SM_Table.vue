@@ -1,11 +1,15 @@
 
 
 <template>
-    <div class="relative mt-1 shadow-md sm:rounded-lg w-screen overflow-x-scroll border-2 ">
+    <div class="mt-1 shadow-md sm:rounded-lg w-screen overflow-x-scroll border-2 ">
 
+        <!-- Accept Button -->
         <button @click="acceptedByWarehouse" v-if="warehouse_store.checked_values?.length" class="bg-red-600 p-2 px-3 text-white font-weight rounded-lg my-1">
             Accept
         </button>
+
+        <!-- Accepting Data Inform -->
+        <Accepting_data/>
 
         <!-- Table -->
         <table class="text-xs text-left text-gray-800 dark:text-gray-400 w-full">
@@ -22,6 +26,7 @@
 
     import Get_SM_Header_Table from './Get_SM_Header_Table.vue';
     import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
+    import Accepting_data from './Accepting_data.vue';
 
     import WarehouseStore from '../../../store/warehouse_store';
     import UserStore from '../../../store/user_store';

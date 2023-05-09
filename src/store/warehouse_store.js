@@ -9,6 +9,7 @@ const WarehouseStore = defineStore('WarehouseStore',{
         waiting_sms : [],
         accepted_items : [],
         checked_values : [],
+        tab_num : 0,
     }),
 
     getters:{

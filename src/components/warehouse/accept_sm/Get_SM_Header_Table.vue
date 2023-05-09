@@ -29,9 +29,24 @@
                     SM NO
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-24 flex flex-col">
-                    Condition
+            <th scope="col" class="px-2 py-1  font-medium text-center border bg-violet-100">
+                <div class="flex flex-col w-24">
+                    Delivery Amount
+                </div>
+            </th>
+            <th scope="col" class="px-2 py-1  font-medium text-center border bg-violet-100">
+                <div class="flex flex-col w-24">
+                    Delivery Unit
+                </div>
+            </th>
+            <th scope="col" class="py-1  font-medium text-center border bg-violet-100">
+                <div class="flex flex-col w-24">
+                    Certificate
+                </div>
+            </th>
+            <th scope="col" class=" py-1  font-medium text-center border bg-violet-100">
+                <div class="flex flex-col w-24">
+                    Passport
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">

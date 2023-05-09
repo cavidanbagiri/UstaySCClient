@@ -22,7 +22,7 @@
 
 <script setup>
 
-    import { ref, onMounted } from 'vue';
+    import { onMounted } from 'vue';
 
     import Show_Filter_Section from '../filter_section/Show_Filter_Section.vue';
     import Get_SM_Header_Table from './Get_SM_Header_Table.vue';
@@ -40,7 +40,7 @@
 
     
     const acceptedByWarehouse = () => {
-        
+        warehouse_store.tab_num = 1;
     }
 
 
