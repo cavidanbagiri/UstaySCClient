@@ -1,7 +1,7 @@
 
 <template>
     <div class="flex my-1">
-        <button @click="createSTF" class="bg-red-600 font-medium text-xs py-2 px-3 rounded-md text-white">
+        <button v-if="procurement_store.GETCHECKEDVALUES.length>=1" @click="createSTF" class="bg-red-600 font-medium text-xs py-2 px-3 rounded-md text-white">
             Create STF
         </button>
     </div>

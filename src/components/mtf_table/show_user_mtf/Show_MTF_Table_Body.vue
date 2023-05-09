@@ -21,12 +21,14 @@
                 <p>{{ i.created_at }}</p>
             </th>
             <th class="font-medium text-start border-y px-2">
-                <div class=" bg-red-100 w-w-full text-red-500 py-1 px-2 rounded-xl">
-                    <span v-if="i.situation==='Waiting'">
+                <div v-if="i.situation==='Waiting'" >
+                    <span class=" bg-red-100 w-w-full text-red-500 py-1 px-2 rounded-md">
                         &#9679 {{ i.situation }} 
                     </span>
-                    <span v-else>
-                        none
+                </div>
+                <div v-else-if="i.situation==='Processing'" >
+                    <span class="bg-blue-100 w-w-full text-blue-500 py-1 px-2 rounded-md">
+                        &#9679 {{ i.situation }} 
                     </span>
                 </div>
             </th>

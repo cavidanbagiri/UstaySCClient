@@ -13,20 +13,23 @@
         <th class="px-2 py-2 font-mono font-bold text-center">
             {{ prop?.index + 1  }}
         </th>
-        <th class="px-2 py-2 font-mono font-thin border text-center">
-            <span class="bg-orange-50 text-orange-400 p-1 rounded-full font-bold">{{ prop?.each_item?.stf_num }}</span>
+        <th class="px-2 font-medium text-start border-y ">
+            <div class=" bg-orange-100 text-orange-500 py-1 px-2 rounded-xl ">
+                <span>{{ prop?.each_item?.stf_num }}</span>
+            </div>
         </th>
         <th class="px-2 py-2 font-mono font-thin border  text-center">
             <span>{{ prop?.each_item?.created_at }}</span>
         </th>
         <th class="px-2 py-2 font-mono text-center border text-red-500 font-bold">
-            {{ prop?.each_item?.cond }}
+            <div>
+                <span class="bg-red-100 w-w-full text-red-500 py-1 px-2 rounded-md">
+                    &#9679 {{ prop?.each_item?.situation }}
+                </span>
+            </div>
         </th>
         <th class="px-2 py-2 font-mono font-thin text-center border">
             {{ prop?.each_item?.material_status }}
-        </th>
-        <th class="px-2 py-2 font-mono font-thin border">
-            {{ prop?.each_item?.material_type }}
         </th>
         <th class="px-2 py-2 font-mono font-thin border">
             {{ prop?.each_item?.material_name }}
@@ -41,7 +44,7 @@
             {{ prop?.each_item?.username }}
         </th>
         <th class="px-2 py-2 font-mono font-thin  border">
-            {{ prop?.each_item?.fieldname }}
+            {{ prop?.each_item?.field_name }}
         </th>
         <th class="px-2 py-2 font-mono font-thin text-center border">
             <div class="w-96">{{ prop?.each_item?.comment }}</div>

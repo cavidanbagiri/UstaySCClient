@@ -1,6 +1,6 @@
 
 <template>
-    <div class="flex flex-col px-1 text-black ">
+    <div class="flex flex-col text-black ">
         
         <!-- Show Filter Title -->
         <Show_MTF_Filter_Title @toggleFilter=toggleFilter />

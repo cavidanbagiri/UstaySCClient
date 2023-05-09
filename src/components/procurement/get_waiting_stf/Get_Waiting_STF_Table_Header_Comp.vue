@@ -34,11 +34,6 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-24  flex flex-col">
-                    Material Type
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="w-96 flex flex-col">
                     Material name
                 </div>

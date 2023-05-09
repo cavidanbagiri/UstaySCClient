@@ -87,6 +87,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
             await axios.get('http://localhost:3000/procurement')
             .then((respond)=>{
                 this.all_sms = respond.data;
+                console.log('all : ',this.all_sms);
             }).catch((err)=>{
                 console.log('Het All Sms Errors : ',err);
             })
