@@ -1,7 +1,7 @@
 
 <template>
     
-    <Get_SM_Body_Table_Each_Row_Comp 
+    <Get_SM_Body_Table_Each_Row_Comp :table_data="table_data"
     v-for="(each_item, index) in warehouse_store?.checked_values"
     :each_item="each_item" :index="index"
     />
@@ -14,6 +14,7 @@
     import WarehouseStore from '../../../store/warehouse_store';
     const warehouse_store = WarehouseStore();
 
+    const prop = defineProps(['table_data']);
 
 </script>
 

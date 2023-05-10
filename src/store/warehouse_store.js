@@ -32,16 +32,15 @@ const WarehouseStore = defineStore('WarehouseStore',{
 
         // Post Accepted waiting to Warehouse
         async acceptWaitingSM(data){
-            console.log(data.user);
-            console.log(data.checked_values);
-            // await axios.post('http://localhost:3000/warehouse/accept',data)
-            // .then((respond)=>{
-            //     this.accepted_items = respond;
-            //     console.log('accepted items is : ',this.accepted_items);
-            // })
-            // .catch((err)=>{
-            //     console.log('Accepted Materials Error From Warehouse Store : ',err);
-            // })
+            console.log('data  : ',data);
+            await axios.post('http://localhost:3000/warehouse/accept',data)
+            .then((respond)=>{
+                this.accepted_items = respond;
+                console.log('accepted items is : ',this.accepted_items);
+            })
+            .catch((err)=>{
+                console.log('Accepted Materials Error From Warehouse Store : ',err);
+            })
         }   
 
     }

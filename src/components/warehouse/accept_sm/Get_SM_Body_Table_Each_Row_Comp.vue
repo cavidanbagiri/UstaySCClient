@@ -26,10 +26,10 @@
         </td>
         <td class="px-2 font-medium text-start border-y-y ">
             <input class="border-y outline-none font-sans rounded-lg w-full h-full p-1 text-xs" type="text"
-                placeholder="Count...">
+                placeholder="Count..." v-model="each_row_data.delivery_amount">
         </td>
         <td class="px-2 font-medium text-start border-y-y ">
-            <select class="border-y outline-none font-sans rounded-lg w-full h-full p-1 text-xs">
+            <select class="border-y outline-none font-sans rounded-lg w-full h-full p-1 text-xs" v-model="each_row_data.delivery_unit">
                 <option disabled value="">Unit</option>
                 <option>Adet</option>
                 <option>M2</option>
@@ -39,11 +39,11 @@
             </select>
         </td>
         <td class="px-2 font-medium text-center border-y ">
-            <input id="checkbox-table-search-1" type="checkbox" v-model="checked" @change="checkboxCond"
+            <input id="checkbox-table-search-1" type="checkbox" v-model="each_row_data.certificate"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500  focus:ring-2 ">
         </td>
         <td class="px-2 font-medium text-center border-y ">
-            <input id="checkbox-table-search-1" type="checkbox" v-model="checked" @change="checkboxCond"
+            <input id="checkbox-table-search-1" type="checkbox" v-model="each_row_data.passport"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500  focus:ring-2 ">
         </td>
         <td class="px-2 py-2 font-medium  border-y">
@@ -74,15 +74,22 @@
 </template>
 
 <script setup>
-
-import { ref } from 'vue';
+ 
+import { reactive, watchEffect } from 'vue';
 
 // Get Each Item from parent
-const prop = defineProps(['each_item', 'index']);
+const prop = defineProps(['each_item', 'index', 'table_data']);
 
+const each_row_data = reactive({
+    delivery_amount:1,
+    delivery_unit:'',
+    certificate: false,
+    passport: false
+})
 
-
-
+watchEffect(()=>{
+    prop.table_data.push(each_row_data);
+})
 
 </script>
 
