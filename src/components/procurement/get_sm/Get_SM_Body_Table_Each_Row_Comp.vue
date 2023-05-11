@@ -8,47 +8,57 @@
                 <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
             </div>
         </td>
-        <th class="px-2 py-2  font-bold text-center">
+        <td class="px-2 py-2  font-bold text-center">
             {{ prop?.index + 1 }}
-        </th>
-        <th class="px-2 font-medium text-start border-y ">
+        </td>
+        <td class="px-2 font-medium text-start border-y ">
             <div class=" bg-orange-100 text-orange-500 py-1 px-2 rounded-xl ">
                 <span>{{ prop?.each_item?.stf_num }}</span>
             </div>
-        </th>
-        <th class="px-2 py-2  font-medium border  text-center">
+        </td>
+        <td class="px-2 py-2  font-medium border  text-center">
             <span>{{ prop?.each_item?.created_at }}</span>
-        </th>
-        <th class="px-2 font-medium text-start border-y ">
+        </td>
+        <td class="px-2 font-medium text-start border-y ">
             <div class=" bg-red-100 text-red-500 py-1 px-2 rounded-xl ">
                 {{ prop?.each_item?.sm_num }}
             </div>
-        </th>
-        <th class="px-2">
-            <div>
-                <span class="bg-blue-100 w-w-full text-blue-500 py-1 px-2 rounded-md">
-                    &#9679 {{ prop?.each_item?.situation }}
-                </span>
-            </div>
-        </th>
-        <th class="px-2 py-2  font-medium border">
+        </td>
+        <td class="px-2">
+            <div v-if="prop?.each_item?.situation==='Waiting'" >
+                    <span class=" bg-red-100 w-w-full text-red-500 py-1 px-2 rounded-md">
+                        &#9679 {{ prop?.each_item?.situation }} 
+                    </span>
+                </div>
+                <div v-else-if="prop?.each_item?.situation==='Processing'" >
+                    <span class="bg-blue-100 w-w-full text-blue-500 py-1 px-2 rounded-md">
+                        &#9679 {{ prop?.each_item?.situation }} 
+                    </span>
+                </div>
+                <div v-else-if="prop?.each_item?.situation==='Accepted'" >
+                    <span class="bg-green-100 w-w-full text-green-500 py-1 px-2 rounded-md">
+                        &#9679 {{ prop?.each_item?.situation }} 
+                    </span>
+                </div>
+        </td>
+        <td class="px-2 py-2  font-medium border">
             {{ prop?.each_item?.material_name }}
-        </th>
-        <th class="px-2 py-2  font-medium border text-start">
+        </td>
+        <td class="px-2 py-2  font-medium border text-start">
             {{ prop?.each_item?.count }}
-        </th>
-        <th class="px-2 py-2  font-medium border text-start">
+        </td>
+        <td class="px-2 py-2  font-medium border text-start">
             {{ prop?.each_item?.unit }}
-        </th>
-        <th class="px-2 py-2  font-medium border text-start">
+        </td>
+        <td class="px-2 py-2  font-medium border text-start">
             {{ prop?.each_item?.vendor_name }}
-        </th>
-        <th class="px-2 py-2  font-medium  border">
+        </td>
+        <td class="px-2 py-2  font-medium  border">
             {{ prop?.each_item?.orderer }}
-        </th>
-        <th class="px-2 py-2  font-medium  border">
+        </td>
+        <td class="px-2 py-2  font-medium  border">
             {{ prop?.each_item?.username }}
-        </th>
+        </td>
     </tr>
 </template>
 
