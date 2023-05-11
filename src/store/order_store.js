@@ -11,7 +11,8 @@ const OrderStore = defineStore('OrderStore',{
         fields : [],
         // SHow Toast with last created mtf 
         show_mtf_toast : false,
-        created_last_mtf : null
+        created_last_mtf : null,
+        statistic_result : null
     }),
     getters:{
         GETORDERSDATA : (state) => state.orders, 
@@ -58,6 +59,17 @@ const OrderStore = defineStore('OrderStore',{
             })
             .catch((err)=>{
                 console.log('Error Is : ',err);
+            })
+        },
+
+        // Get User Statistic Result
+        async getUserStatisticResult(user_id){
+            console.log('user id is : ',user_id);
+            await axios.get(`http://localhost:3000/order/userstatistic/${user_id}`,)
+            .then((respond)=>{
+                this.statistic_result = respond.data;
+            }).catch((err)=>{
+                  console.log('Get Statistics Result Error : ',err);
             })
         }
 
