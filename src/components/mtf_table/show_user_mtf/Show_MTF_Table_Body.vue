@@ -31,6 +31,11 @@
                         &#9679 {{ i.situation }} 
                     </span>
                 </div>
+                <div v-else-if="i.situation==='Accepted'" >
+                    <span class="bg-green-100 w-w-full text-green-500 py-1 px-2 rounded-md">
+                        &#9679 {{ i.situation }} 
+                    </span>
+                </div>
             </th>
             <th class="px-2 py-2 font-medium text-start border-y">
                 {{ i.material_status }} 
