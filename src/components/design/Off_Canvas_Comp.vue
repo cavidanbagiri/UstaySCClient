@@ -1,5 +1,6 @@
 <template>
-    <div class=" mtf-anim fixed shadow-lg z-10  bg-slate-800 pl-3 pt-3 pb-3 pr-3 h-screen  w-72">
+    <div class=" mtf-anim fixed shadow-lg z-10  bg-slate-800 pl-3 pt-3 pb-3 pr-3 h-screen  w-72
+      overflow-y-scroll ">
 
         <span class="p-2 rounded-xl cursor-pointer hover:bg-black flex flex-row items-center">
             <img class="w-8 h-8 rounded-full"
@@ -19,19 +20,25 @@
             <li class="hover:bg-slate-700 text-white p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
                 <span class="text-md py-1">
                     <i class="fa-regular fa-bell fa-md" style="color: white;"></i>
-                    Warning
+                    Notification
                 </span>
             </li>
             <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
                 <span class="text-md">
                     <i class="fa-regular fa-star fa-md" style="color: white;"></i>
-                    Star
+                    Starred
                 </span>
             </li>
             <li class="hover:bg-slate-700 text-white   p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
                 <span class="text-md">
                     <i class="fa-regular fa-message fa-md" style="color: white;"></i>
                     Messages
+                </span>
+            </li>
+            <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
+                <span class="text-md">
+                    <i class="fa-solid fa-book fa-md" style="color: white;"></i>
+                    Notepad
                 </span>
             </li>
             <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
@@ -65,23 +72,30 @@
                                 class="z-10 rounded-lg shadow w-50 dark:bg-gray-700">
 
                                 <ul class="h-auto py-2 dark:text-gray-200 text-white" aria-labelledby="dropdownUsersButton">
-                                    <li class="text-xs" @click="changeBtnText($event)">
-                                        <div class="">
+                                    <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                        <div class=" flex items-center px-4">
+                                            <i class="fa-regular fa-clock fa-lg"></i>
                                             <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
-                                                <img class="w-6 h-6 mr-2 rounded-full"
-                                                    src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
-                                                    alt="Jese image">
-                                                Cavidan Bagirli
+                                                Waiting STF
                                             </a>
                                         </div>
                                     </li>
-                                    <li class="text-xs">
-                                        <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
-                                            <img class="w-6 h-6 mr-2 rounded-full"
-                                                src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
-                                                alt="Jese image">
-                                            Mehmet Ugur Dogan
-                                        </a>
+                                    <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                        <div class=" flex items-center px-4">
+                                            <i class="fa-solid fa-arrow-rotate-left fa-lg"></i>
+                                            <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
+                                                Processing SM
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                            <div class=" flex items-center px-4">
+                                                <i class="fa-solid fa-download fa-lg"></i>
+                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
+                                                Accepted SM
+                                            </a>
+                                        </div>
+                                        
                                     </li>
                                 </ul>
 
@@ -99,7 +113,7 @@
                         <div class="flex justify-between">
                             <div class="">
                                 <span class="text-md">
-                                    <i class="fa-solid fa-cart-shopping fa-md" style="color: white;"></i>
+                                    <i class="fa-solid fa-warehouse fa-md" style="color: white;"></i>
                                     Warehouse
                                 </span>
                             </div>
@@ -108,7 +122,6 @@
                                 <i v-else class="fa-solid fa-chevron-down"></i>
                             </div>
                         </div>
-                        <!-- Show Procurement Dropdown -->
 
                         <!-- Dropdown menu -->
                         <transition name="slide-fade">
@@ -116,23 +129,31 @@
                                 class="z-10 rounded-lg shadow w-50 dark:bg-gray-700">
 
                                 <ul class="h-auto py-2 dark:text-gray-200 text-white" aria-labelledby="dropdownUsersButton">
-                                    <li class="text-xs" @click="changeBtnText($event)">
-                                        <div class="">
+                                    <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                        <div class=" flex items-center px-4">
+                                            <i class="fa-solid fa-arrow-rotate-left fa-lg"></i>
                                             <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
-                                                <img class="w-6 h-6 mr-2 rounded-full"
-                                                    src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
-                                                    alt="Jese image">
-                                                Waiting SM
+                                                Processing SM
                                             </a>
                                         </div>
                                     </li>
-                                    <li class="text-xs">
-                                        <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
-                                            <img class="w-6 h-6 mr-2 rounded-full"
-                                                src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
-                                                alt="Jese image">
-                                            Accepting SM
-                                        </a>
+                                    <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                            <div class=" flex items-center px-4">
+                                                <i class="fa-solid fa-download fa-lg"></i>
+                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
+                                                Accepted
+                                            </a>
+                                        </div>
+                                        
+                                    </li>
+                                    <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                            <div class=" flex items-center px-4">
+                                            <i class="fa-solid fa-check-double fa-lg"></i>
+                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
+                                                Provided
+                                            </a>
+                                        </div>
+                                        
                                     </li>
                                 </ul>
 
