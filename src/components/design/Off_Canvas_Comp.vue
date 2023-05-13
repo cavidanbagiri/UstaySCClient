@@ -92,7 +92,7 @@
                                             <div class=" flex items-center px-4">
                                                 <i class="fa-solid fa-download fa-lg"></i>
                                             <a href="#" class="flex items-center rounded-lg px-4 py-2">
-                                                Accepted SM
+                                                Received SM
                                             </a>
                                         </div>
                                         
@@ -137,20 +137,21 @@
                                             </a>
                                         </div>
                                     </li>
-                                    <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                    <router-link to="/warehouse/received">
+                                        <li class="text-xs hover:bg-slate-400 rounded-lg">
                                             <div class=" flex items-center px-4">
                                                 <i class="fa-solid fa-download fa-lg"></i>
-                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
-                                                Accepted
-                                            </a>
-                                        </div>
-                                        
-                                    </li>
+                                            <span class="flex items-center rounded-lg px-4 py-2">
+                                                Received SM
+                                            </span>
+                                            </div>
+                                        </li>
+                                    </router-link>
                                     <li class="text-xs hover:bg-slate-400 rounded-lg">
                                             <div class=" flex items-center px-4">
                                             <i class="fa-solid fa-check-double fa-lg"></i>
                                             <a href="#" class="flex items-center rounded-lg px-4 py-2">
-                                                Provided
+                                                Provided SM
                                             </a>
                                         </div>
                                         

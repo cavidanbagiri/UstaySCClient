@@ -6,10 +6,10 @@
 
             <span :class="warehouse_store?.tab_num === 0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)"
                 class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-lg "></i>
-                Get Processing SMS</span>
+                Processing SM</span>
             <span :class="warehouse_store?.tab_num === 1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)"
                 class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-list fa-lg "></i>
-                Accept SMS</span>
+                Accept SM</span>
 
         </div>
 
