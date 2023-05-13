@@ -34,7 +34,7 @@
     </td>
     <!-- Material Count -->
     <td class="p-1 border">
-        <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="text" placeholder="Count..."
+        <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="number" min="1" placeholder="Count..."
             v-model=each.count>
     </td>
     <!-- Material Unit -->
@@ -61,15 +61,14 @@
     <td class="p-1 border" style="font-size: smaller;">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Status..."> -->
         <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.status">
-            <option disabled value="">Status</option>
             <option>
                 <span>
-                    <i class="fa-solid fa-gem fa-lg" style="color:red"></i> Urgent
+                    <i class="fa-solid fa-gem fa-lg" style="color:red"></i> Not Specified
                 </span>
             </option>
             <option>
                 <span>
-                    <i class="fa-solid fa-gem fa-lg" style="color:red"></i> Normally
+                    <i class="fa-solid fa-gem fa-lg" style="color:red"></i> Urgent
                 </span>
             </option>
         </select>
@@ -99,12 +98,12 @@ const each = ref({
     count: ref(0),
     unit: ref(''),
     FieldsModelId: ref(0),
-    status: ref(''),
+    status: ref('Not Specified'),
     comment: ref(''),
 });
 
 watchEffect(()=>{
-
+    // if(each.count)
     prop.order_list.push(each.value);
 })
 

@@ -13,7 +13,7 @@
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:shadow-xl hover:cursor-pointer " >
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium" >Providing</span>
+                <span class="text-gray-600 text-sm font-medium" >Waiting</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.waiting}}</span>
             </div>
             <div class="flex items-end">
@@ -22,7 +22,7 @@
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:shadow-xl hover:cursor-pointer " >
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium" >Waiting</span>
+                <span class="text-gray-600 text-sm font-medium" >Processing</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.processing}}</span>
             </div>
             <div class="flex items-end">
@@ -31,8 +31,8 @@
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:shadow-xl hover:cursor-pointer " >
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium" >Total Accepting</span>
-                <span class="mt-3 text-lg font-bold">{{statistic_result.accepted}}</span>
+                <span class="text-gray-600 text-sm font-medium" >Total Receiving</span>
+                <span class="mt-3 text-lg font-bold">{{statistic_result.received}}</span>
             </div>
             <div class="flex items-end">
                 <span class="bg-blue-100 rounded-sm text-blue-800 text-xs p-1 font-bold">Get Data</span>
@@ -59,7 +59,7 @@ const get_statistic_result = ref([]);
 const statistic_result = reactive({
     waiting : 0,
     processing : 0,
-    accepted : 0,
+    received : 0,
     total : 0
 })
 
@@ -82,7 +82,7 @@ watchEffect(() => {
                 statistic_result.processing = i.count;
             }
             if(i.SituationModelId === 3){
-                statistic_result.accepted = i.count;
+                statistic_result.received = i.count;
             }
             statistic_result.total += Number(i.count);
         }
