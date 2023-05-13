@@ -2,7 +2,7 @@
 <template>
     
     <Received_SM_Table_Body_Each_Row 
-    v-for="(each_item, index) in warehouse_store.waiting_sms"
+    v-for="(each_item, index) in warehouse_store.received_items"
     :each_item="each_item" :index="index"
     @addChecked="addChecked" @removeChecked="removeChecked"
     />

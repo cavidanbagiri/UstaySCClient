@@ -41,37 +41,31 @@
                     Notepad
                 </span>
             </li>
-            <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
-                <span class="text-md">
-                    <i class="fa-solid fa-book fa-md" style="color: white;"></i>
-                    Notepad
-                </span>
-            </li>
             <!-- Procurement -->
-            <router-link to="/procurement">
-                <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer"
-                    @click="show_procurement_dropdown = !show_procurement_dropdown">
-                    <div>
-                        <div class="flex justify-between">
-                            <div class="">
-                                <span class="text-md">
-                                    <i class="fa-solid fa-cart-shopping fa-md" style="color: white;"></i>
-                                    Procurement
-                                </span>
-                            </div>
-                            <div>
-                                <i v-if="!show_procurement_dropdown" class="fa-solid fa-chevron-left"></i>
-                                <i v-else class="fa-solid fa-chevron-down"></i>
-                            </div>
+            <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer"
+                @click="show_procurement_dropdown = !show_procurement_dropdown">
+                <div>
+                    <div class="flex justify-between">
+                        <div class="">
+                            <span class="text-md">
+                                <i class="fa-solid fa-cart-shopping fa-md" style="color: white;"></i>
+                                Procurement
+                            </span>
                         </div>
-                        <!-- Show Procurement Dropdown -->
+                        <div>
+                            <i v-if="!show_procurement_dropdown" class="fa-solid fa-chevron-left"></i>
+                            <i v-else class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <!-- Show Procurement Dropdown -->
 
-                        <!-- Dropdown menu -->
-                        <transition name="slide-fade">
-                            <div id="dropdownUsers" v-if="show_procurement_dropdown"
-                                class="z-10 rounded-lg shadow w-50 dark:bg-gray-700">
+                    <!-- Dropdown menu -->
+                    <transition name="slide-fade">
+                        <div id="dropdownUsers" v-if="show_procurement_dropdown"
+                            class="z-10 rounded-lg shadow w-50 dark:bg-gray-700">
 
-                                <ul class="h-auto py-2 dark:text-gray-200 text-white" aria-labelledby="dropdownUsersButton">
+                            <ul class="h-auto py-2 dark:text-gray-200 text-white" aria-labelledby="dropdownUsersButton">
+                                <router-link to="/procurement">
                                     <li class="text-xs hover:bg-slate-400 rounded-lg">
                                         <div class=" flex items-center px-4">
                                             <i class="fa-regular fa-clock fa-lg"></i>
@@ -80,55 +74,55 @@
                                             </a>
                                         </div>
                                     </li>
-                                    <li class="text-xs hover:bg-slate-400 rounded-lg">
-                                        <div class=" flex items-center px-4">
-                                            <i class="fa-solid fa-arrow-rotate-left fa-lg"></i>
-                                            <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
-                                                Processing SM
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="text-xs hover:bg-slate-400 rounded-lg">
-                                            <div class=" flex items-center px-4">
-                                                <i class="fa-solid fa-download fa-lg"></i>
-                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
-                                                Received SM
-                                            </a>
-                                        </div>
-                                        
-                                    </li>
-                                </ul>
+                                </router-link>
+                                <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                    <div class=" flex items-center px-4">
+                                        <i class="fa-solid fa-arrow-rotate-left fa-lg"></i>
+                                        <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
+                                            Processing SM
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                    <div class=" flex items-center px-4">
+                                        <i class="fa-solid fa-download fa-lg"></i>
+                                        <a href="#" class="flex items-center rounded-lg px-4 py-2">
+                                            Received SM
+                                        </a>
+                                    </div>
 
-                            </div>
-                        </transition>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </transition>
+                </div>
+
+            </li>
+            <!-- Warehouse -->
+            <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer"
+                @click="show_warehouse_dropdown = !show_warehouse_dropdown">
+                <div>
+                    <div class="flex justify-between">
+                        <div class="">
+                            <span class="text-md">
+                                <i class="fa-solid fa-warehouse fa-md" style="color: white;"></i>
+                                Warehouse
+                            </span>
+                        </div>
+                        <div>
+                            <i v-if="!show_warehouse_dropdown" class="fa-solid fa-chevron-left"></i>
+                            <i v-else class="fa-solid fa-chevron-down"></i>
+                        </div>
                     </div>
 
-                </li>
-            </router-link>
-            <!-- Warehouse -->
-            <router-link to="/warehouse">
-                <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer"
-                    @click="show_warehouse_dropdown = !show_warehouse_dropdown">
-                    <div>
-                        <div class="flex justify-between">
-                            <div class="">
-                                <span class="text-md">
-                                    <i class="fa-solid fa-warehouse fa-md" style="color: white;"></i>
-                                    Warehouse
-                                </span>
-                            </div>
-                            <div>
-                                <i v-if="!show_warehouse_dropdown" class="fa-solid fa-chevron-left"></i>
-                                <i v-else class="fa-solid fa-chevron-down"></i>
-                            </div>
-                        </div>
+                    <!-- Dropdown menu -->
+                    <transition name="slide-fade">
+                        <div id="dropdownUsers" v-if="show_warehouse_dropdown"
+                            class="z-10 rounded-lg shadow w-50 dark:bg-gray-700">
 
-                        <!-- Dropdown menu -->
-                        <transition name="slide-fade">
-                            <div id="dropdownUsers" v-if="show_warehouse_dropdown"
-                                class="z-10 rounded-lg shadow w-50 dark:bg-gray-700">
-
-                                <ul class="h-auto py-2 dark:text-gray-200 text-white" aria-labelledby="dropdownUsersButton">
+                            <ul class="h-auto py-2 dark:text-gray-200 text-white" aria-labelledby="dropdownUsersButton">
+                                <router-link to="/warehouse">
                                     <li class="text-xs hover:bg-slate-400 rounded-lg">
                                         <div class=" flex items-center px-4">
                                             <i class="fa-solid fa-arrow-rotate-left fa-lg"></i>
@@ -137,33 +131,33 @@
                                             </a>
                                         </div>
                                     </li>
-                                    <router-link to="/warehouse/received">
-                                        <li class="text-xs hover:bg-slate-400 rounded-lg">
-                                            <div class=" flex items-center px-4">
-                                                <i class="fa-solid fa-download fa-lg"></i>
+                                </router-link>
+                                <router-link to="/warehouse/received">
+                                    <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                        <div class=" flex items-center px-4">
+                                            <i class="fa-solid fa-download fa-lg"></i>
                                             <span class="flex items-center rounded-lg px-4 py-2">
                                                 Received SM
                                             </span>
-                                            </div>
-                                        </li>
-                                    </router-link>
-                                    <li class="text-xs hover:bg-slate-400 rounded-lg">
-                                            <div class=" flex items-center px-4">
-                                            <i class="fa-solid fa-check-double fa-lg"></i>
-                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
-                                                Provided SM
-                                            </a>
                                         </div>
-                                        
                                     </li>
-                                </ul>
+                                </router-link>
+                                <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                    <div class=" flex items-center px-4">
+                                        <i class="fa-solid fa-check-double fa-lg"></i>
+                                        <a href="#" class="flex items-center rounded-lg px-4 py-2">
+                                            Provided SM
+                                        </a>
+                                    </div>
 
-                            </div>
-                        </transition>
-                    </div>
+                                </li>
+                            </ul>
 
-                </li>
-            </router-link>
+                        </div>
+                    </transition>
+                </div>
+
+            </li>
             <!-- Login Logout -->
             <li v-if="!user_store?.user"
                 class="hover:bg-slate-700 text-white  p-2 mt-1 rounded-lg  py-2 px-4 cursor-pointer">

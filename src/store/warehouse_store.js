@@ -10,12 +10,14 @@ const WarehouseStore = defineStore('WarehouseStore',{
         accepted_items : [],
         checked_values : [],
         tab_num : 0,
+        received_items : null,
     }),
 
     getters:{
         GETWAITINGSMS : (state) => state.waiting_sms,
         GETACCEPTEDITEMS : (state) => state.accepted_items,
-        GETCHECKEDVALUES : (state) => state.checked_values
+        GETCHECKEDVALUES : (state) => state.checked_values,
+        GETRECEIVEDVALUES : (state) => state.received_items
     },
     actions:{
 
@@ -41,7 +43,18 @@ const WarehouseStore = defineStore('WarehouseStore',{
             .catch((err)=>{
                 console.log('Accepted Materials Error From Warehouse Store : ',err);
             })
-        }   
+        },
+        
+        // Fetch Received Items and Show In Warehouse/received
+        async fetchReceivingSM(){
+            await axios.get(`http://localhost:3000/warehouse/receivedsm`)
+            .then((respond)=>{
+                this.received_items = respond.data;
+                console.log('received items : ',this.received_items);
+            }).catch((err)=>{
+                console.log('Received Items Error : ',err);
+            })
+        }
 
     }
 

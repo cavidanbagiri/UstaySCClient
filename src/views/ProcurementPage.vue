@@ -6,8 +6,8 @@
         <div class="flex flex-row mt-1 my-2 font-mono">
             
             <span :class="procurement_store.GETTABNUM===0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-plus fa-lg "></i> Waiting STF</span>
-            <span :class="procurement_store.GETTABNUM===1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Creating STF</span>
-            <span :class="procurement_store.GETTABNUM===2 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(2)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Get SM</span>
+            <span :class="procurement_store.GETTABNUM===1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Get SM</span>
+            <span :class="procurement_store.GETTABNUM===2 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(2)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Creating STF</span>
             
 
         </div>
@@ -36,7 +36,7 @@ const procurement_store = ProcurementStore();
 
 
 // Change Tabs
-const tabs = [Get_Waiting_STF, Get_Creating_SM, Get_SM]
+const tabs = [Get_Waiting_STF, Get_SM, Get_Creating_SM]
 const changeTabe = (num) => procurement_store.tab_num=num
 
 

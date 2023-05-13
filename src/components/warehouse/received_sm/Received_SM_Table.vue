@@ -16,9 +16,17 @@
 
 <script setup>
 
+    import { onMounted } from 'vue';
+
     import Received_SM_Table_Header from './Received_SM_Table_Header.vue';
     import Received_SM_Table_Body from './Received_SM_Table_Body.vue'
+    import WarehouseStore from '../../../store/warehouse_store';
     
+    const warehouse_store = WarehouseStore();
+    onMounted(async()=>{
+        await warehouse_store.fetchReceivingSM();
+    })
+
 
 </script>
 

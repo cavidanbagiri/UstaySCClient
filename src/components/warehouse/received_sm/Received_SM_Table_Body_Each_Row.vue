@@ -28,7 +28,7 @@
         </th>
         <th class="px-2">
              <div>
-                <span class="bg-blue-100 w-w-full text-blue-500 py-1 px-2 rounded-md">
+                <span class="bg-green-100 w-full text-green-500 py-1 px-2 rounded-md">
                     &#9679 {{ prop?.each_item?.situation }}
                 </span>
             </div>
