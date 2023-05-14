@@ -1,8 +1,8 @@
 <template>
     <tbody>
         
-        <Get_Waiting_STF_Table_Body_Each_Row_Comp 
-        v-for="(each_item, index) in procurement_store.waiting_orders_filter"
+        <Get_Processing_STF_Table_Body_Each_Row_Comp 
+        v-for="(each_item, index) in procurement_store.processing_sms"
         :each_item=each_item :index = index 
         @addChecked='addChecked' @removeChecked='removeChecked'
         />
@@ -12,10 +12,12 @@
 
 <script setup>
 
-import Get_Waiting_STF_Table_Body_Each_Row_Comp from './Get_Waiting_STF_Table_Body_Each_Row_Comp.vue';
+import Get_Processing_STF_Table_Body_Each_Row_Comp from './Get_Processing_STF_Table_Body_Each_Row_Comp.vue';
 
 import ProcuremntStore from '../../../store/procurement_store.js';
 const procurement_store = ProcuremntStore();
+
+
 
 const addChecked = (item) => {
     if(procurement_store.checked_values.length >= 1){

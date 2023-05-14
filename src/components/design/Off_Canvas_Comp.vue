@@ -92,6 +92,15 @@
                                     </div>
 
                                 </li>
+                                <li class="text-xs hover:bg-slate-400 rounded-lg">
+                                    <div class=" flex items-center px-4">
+                                        <i class="fa-solid fa-reply-all fa-lg"></i>
+                                        <a href="#" class="flex items-center rounded-lg px-4 py-2">
+                                            ALL SM
+                                        </a>
+                                    </div>
+
+                                </li>
                             </ul>
 
                         </div>

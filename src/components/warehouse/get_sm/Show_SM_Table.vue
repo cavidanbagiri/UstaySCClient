@@ -40,7 +40,7 @@
 
     
     const acceptedByWarehouse = () => {
-        warehouse_store.tab_num = 2;
+        warehouse_store.tab_num = 1;
     }
 
 

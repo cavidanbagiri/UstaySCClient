@@ -31,7 +31,7 @@
                         &#9679 {{ i.situation }} 
                     </span>
                 </div>
-                <div v-else-if="i.situation==='Accepted'" >
+                <div v-else-if="i.situation==='Received'" >
                     <span class="bg-green-100 w-w-full text-green-500 py-1 px-2 rounded-md">
                         &#9679 {{ i.situation }} 
                     </span>

@@ -24,6 +24,10 @@ const ProcurementStore = defineStore('ProcurementStore',{
         procurement_users_names: [],
         // Get All SM for Project
         all_sms : [],
+        // Get Processing SM
+        processing_sms : null,
+        // Get Receiving SM
+        receiving_sms : null
     }),
     getters:{
         GETWAITINGORDERS : (state) => state.waiting_orders, 
@@ -54,7 +58,6 @@ const ProcurementStore = defineStore('ProcurementStore',{
             // console.log('sending orders is : ', orders);
             await axios.post('http://localhost:3000/procurement/createstf', orders)
             .then((respond)=>{
-                console.log(respond.data);
             }).catch((err)=>{
                 console.log('Waiting MTF Error : ',err);
             })
@@ -65,7 +68,6 @@ const ProcurementStore = defineStore('ProcurementStore',{
             await axios.get('http://localhost:3000/procurement/companies')
             .then((respond)=>{
                 this.companies_names = respond.data
-                console.log('companies names : ',this.companies_names);
             }).catch((err)=>{
                 console.log('Getting Companies Names Errors : ', err);
             })
@@ -76,9 +78,28 @@ const ProcurementStore = defineStore('ProcurementStore',{
             await axios.get('http://localhost:3000/procurement/users')
             .then((respond)=>{
                 this.procurement_users_names = respond.data
-                console.log('users names : ',this.procurement_users_names);
             }).catch((err)=>{
                 console.log('Get Users Names Errors : ',err);
+            })
+        },
+
+        // Fetch Processing SM
+        async fetchProcessingSM () {
+            await axios.get('http://localhost:3000/procurement/processing')
+            .then((respond)=>{
+                this.processing_sms = respond.data;
+            }).catch((err)=>{
+                console.log('Het All Sms Errors : ',err);
+            })
+        },
+
+        // Fetch Receiving SM
+        async fetchReceivingSM () {
+            await axios.get('http://localhost:3000/procurement/receiving')
+            .then((respond)=>{
+                this.receiving_sms = respond.data;
+            }).catch((err)=>{
+                console.log('Het All Sms Errors : ',err);
             })
         },
 
@@ -87,7 +108,6 @@ const ProcurementStore = defineStore('ProcurementStore',{
             await axios.get('http://localhost:3000/procurement')
             .then((respond)=>{
                 this.all_sms = respond.data;
-                console.log('all : ',this.all_sms);
             }).catch((err)=>{
                 console.log('Het All Sms Errors : ',err);
             })
