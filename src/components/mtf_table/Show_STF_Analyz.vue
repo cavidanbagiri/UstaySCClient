@@ -4,7 +4,7 @@
 
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:shadow-xl hover:cursor-pointer " >
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium" >Total</span>
+                <span class="text-gray-600 text-lg font-medium" >Total</span>
                 <span class="mt-3 text-lg font-bold">{{ statistic_result.total }}</span>
             </div>
             <div class="flex items-end">
@@ -13,7 +13,7 @@
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:shadow-xl hover:cursor-pointer " >
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium" >Waiting</span>
+                <span class="text-gray-600 text-lg font-medium" >Waiting</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.waiting}}</span>
             </div>
             <div class="flex items-end">
@@ -22,7 +22,7 @@
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:shadow-xl hover:cursor-pointer " >
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium" >Processing</span>
+                <span class="text-gray-600 text-lg font-medium" >Processing</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.processing}}</span>
             </div>
             <div class="flex items-end">
@@ -31,7 +31,7 @@
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:shadow-xl hover:cursor-pointer " >
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium" >Received</span>
+                <span class="text-gray-600 text-lg font-medium" >Received</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.received}}</span>
             </div>
             <div class="flex items-end">

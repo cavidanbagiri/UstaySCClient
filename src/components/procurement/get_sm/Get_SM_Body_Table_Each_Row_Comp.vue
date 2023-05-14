@@ -24,9 +24,9 @@
                 {{ prop?.each_item?.sm_num }}
             </div>
         </td>
-        <td class="px-2">
+        <td class="px-2 text-xs">
             <div v-if="prop?.each_item?.situation==='Waiting'" >
-                    <span class=" bg-red-100 w-w-full text-red-500 py-1 px-2 rounded-md">
+                    <span class=" bg-red-100 w-full text-red-500 py-1 px-2 rounded-md">
                         &#9679 {{ prop?.each_item?.situation }} 
                     </span>
                 </div>
@@ -35,7 +35,7 @@
                         &#9679 {{ prop?.each_item?.situation }} 
                     </span>
                 </div>
-                <div v-else-if="prop?.each_item?.situation==='Accepted'" >
+                <div v-else-if="prop?.each_item?.situation==='Received'" >
                     <span class="bg-green-100 w-w-full text-green-500 py-1 px-2 rounded-md">
                         &#9679 {{ prop?.each_item?.situation }} 
                     </span>
