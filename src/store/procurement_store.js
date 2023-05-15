@@ -55,7 +55,6 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
         // Create STF
         async createSTF (orders){
-            // console.log('sending orders is : ', orders);
             await axios.post('http://localhost:3000/procurement/createstf', orders)
             .then((respond)=>{
             }).catch((err)=>{

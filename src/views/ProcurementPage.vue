@@ -9,7 +9,7 @@
             <span :class="procurement_store.GETTABNUM===1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Processing SM</span>
             <span :class="procurement_store.GETTABNUM===2 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(2)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Receiving SM</span>
             <span :class="procurement_store.GETTABNUM===3 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(3)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> All SM</span>
-            <span :class="procurement_store.GETTABNUM===4 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(4)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Creating STF</span>
+            <span :class="procurement_store.GETTABNUM===4 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(4)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Creating SM</span>
             
 
         </div>

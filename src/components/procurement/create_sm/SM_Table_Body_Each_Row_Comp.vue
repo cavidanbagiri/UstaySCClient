@@ -17,19 +17,6 @@
         <th class="px-2 py-2 font-mono font-thin border  text-center">
             <span>{{ prop?.each_item?.created_at }}</span>
         </th>
-        <th class="px-2 py-2 font-mono font-thin border  text-center">
-            <input class="border outline-none font-sans rounded-lg w-full h-full p-3 text-xs" type="date" name="" id="" v-model="each.procurement_coming_date">
-        </th>
-        <th class="px-2 py-2 font-mono font-thin border  text-center">
-            <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.VendorModelId">
-            <option v-for="i in vendor_list" :value="i.id">{{ i.vendor_name }}</option>
-        </select>
-        </th>
-        <th class="px-2 py-2 font-mono font-thin border  text-center">
-            <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.supplierName">
-            <option v-for="i in supplier_list" :value="i.id">{{ i.username }}</option> -->
-        </select>
-        </th>
         <th class="px-2 py-2 font-mono font-thin border">
             {{ prop?.each_item?.material_name }}
         </th>
@@ -64,44 +51,33 @@
 
 <script setup>
 
-import { ref, watchEffect, computed } from 'vue';
+import { reactive, ref, watchEffect, computed } from 'vue';
 
 import ProcurementStore from '../../../store/procurement_store';
 const procurement_store = ProcurementStore();
 
-const vendor_list = computed(()=>{
-    return procurement_store.GETCOMPANIESNAMES;
-})
-
-const supplier_list = computed(()=>{
-    return procurement_store.GETPROCUREMENTUSERSNAMES;
-})
-
 const currency_list = ['₽','$']
 
 // Create Each Row For Taking Value and sending To Server
-const each = ref({
+const each = reactive({
     ProjectModelId: prop?.each_item?.ProjectModelId,
     DepartmentModelId: prop?.each_item?.DepartmentModelId,
     STFModelId: prop?.each_item?.id,
-    VendorModelId : ref(0),
-    supplierName : ref(0),
-    price : ref(0),
-    total : ref(0),
-    currency : ref('₽'),
-    procurement_coming_date : ref('')
+    price : 0,
+    total : 0,
+    currency : '₽',
 })
 
 // Create a prop for getting a value from parent
 const prop = defineProps(['each_item', 'index']);
 
 
-each.value.total=computed(()=>{
-    return each.value.price * prop?.each_item?.count
+each.total=computed(()=>{
+    return each.price * prop?.each_item?.count
 })
 
 watchEffect(()=>{
-    procurement_store.creating_STF_datas.push(each.value);
+    procurement_store.creating_STF_datas.push(each);
 })
 
 </script>

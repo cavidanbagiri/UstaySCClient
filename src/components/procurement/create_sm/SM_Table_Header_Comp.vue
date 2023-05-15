@@ -24,21 +24,6 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-24">
-                    Coming Date
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-36">
-                    Vendor
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-36">
-                    Supplier
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="w-96 flex flex-col">
                     Material name
                 </div>
