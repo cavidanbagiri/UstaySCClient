@@ -55,11 +55,18 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
         // Create STF
         async createSTF (orders){
-            await axios.post('http://localhost:3000/procurement/createstf', orders)
-            .then((respond)=>{
-            }).catch((err)=>{
-                console.log('Waiting MTF Error : ',err);
-            })
+            
+            try{
+                await axios.post('http://localhost:3000/procurement/createstf', orders)
+                .then((respond)=>{
+                    console.log('respond is : ',respond);
+                    return respond;
+                })
+            }
+            catch(err){
+                return err;
+            }
+
         },
 
         // Get Companies Names

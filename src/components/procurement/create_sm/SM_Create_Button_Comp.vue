@@ -4,7 +4,6 @@
         <button v-if="procurement_store.GETCHECKEDVALUES.length>=1" @click="createSTF" class="bg-red-600 font-medium text-xs py-2 px-3 rounded-md text-white">
             Create SM
         </button>
-        <pre>{{ common_data }}</pre>
         <div class="flex">
             <div>
                 <input class="border outline-none font-sans rounded-lg w-full h-full p-3 text-xs" type="date" name="" id="" v-model="common_data.procurement_coming_date">
@@ -45,7 +44,7 @@
         return procurement_store.GETPROCUREMENTUSERSNAMES;
     })
 
-    const createSTF = () => {
+    const createSTF = async () => {
         let check_valid = true;
         if(common_data.VendorModelId === 0 ){
             check_valid = false;
@@ -56,7 +55,7 @@
             alert('Supplier Name Must Be Choosed')
         }
         else{
-            for( let i = 0 ; i < procurement_store.GETCREATINGSTFDATA.length; i ++ ){
+            for( let i = 0 ; i < procurement_store.GETCREATINGSTFDATA.length; i ++ ){ 
                 if(procurement_store.GETCREATINGSTFDATA[i].price <=0 ){
                     check_valid = false;
                     alert(`Price Must Be Greater Than 0 in ${i+1} Row`)
@@ -65,13 +64,17 @@
                 else{
                     procurement_store.creating_STF_datas[i].VendorModelId = common_data.VendorModelId;
                     procurement_store.creating_STF_datas[i].supplierName = common_data.supplierName;
-                    // procurement_store.creating_STF_datas[i].total
                 }
             }
         }
-        // console.log(' can added ');
         if(check_valid){
-            procurement_store.createSTF(procurement_store.GETCREATINGSTFDATA);
+            await procurement_store.createSTF(procurement_store.GETCREATINGSTFDATA)
+            .then((respond)=>{
+                console.log("respond from checkvalid : ",respond);
+                procurement_store.creating_STF_datas = [];
+            }).catch((err)=>{
+
+            })
         }
 
     }

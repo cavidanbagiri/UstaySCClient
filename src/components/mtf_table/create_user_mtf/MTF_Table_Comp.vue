@@ -1,7 +1,7 @@
 
 <template>
     <div class="relative overflow-x-auto shadow-xl sm:rounded-lg border p-2">
-        
+        <pre>{{ order_list }}</pre>
         <!-- Table Section -->
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             
