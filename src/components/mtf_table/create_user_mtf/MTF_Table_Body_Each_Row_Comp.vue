@@ -88,7 +88,7 @@ import {ref, watchEffect} from 'vue';
 import OrderStore from '../../../store/order_store';
 const order_store = OrderStore();
 
-const prop = defineProps(['id', 'order_list']);
+const prop = defineProps(['id']);
 
 const each = ref({
     s: prop?.id,
@@ -104,7 +104,7 @@ const each = ref({
 
 watchEffect(()=>{
     // if(each.count)
-    prop.order_list.push(each.value);
+    order_store.order_list.push(each.value);
 })
 
 </script>

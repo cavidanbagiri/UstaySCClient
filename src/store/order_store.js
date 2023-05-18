@@ -9,10 +9,10 @@ const OrderStore = defineStore('OrderStore',{
         orders : null,
         filtered_orders : null,
         fields : [],
-        // SHow Toast with last created mtf 
         show_mtf_toast : false,
         created_last_mtf : null,
-        statistic_result : null
+        statistic_result : null,
+        order_list : [],
     }),
     getters:{
         GETORDERSDATA : (state) => state.orders, 
@@ -31,11 +31,18 @@ const OrderStore = defineStore('OrderStore',{
                     console.log('respond : ',respond);
                     this.created_last_mtf = respond.data
                     this.show_mtf_toast = true;
+                    console.log('this.orderlist : ',this.order_list);
+                    // this.order_list.
+                    console.log('this.orderlist : ',this.order_list);
                     return respond;
                 })
             }catch(err){
                 return err
             }
+        },
+
+        async orderstoretemp(){
+            console.log(':::', this.order_list);
         },
 
         // Show User MTF For User Page
