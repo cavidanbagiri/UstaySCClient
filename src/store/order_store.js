@@ -19,7 +19,8 @@ const OrderStore = defineStore('OrderStore',{
         GETFILTEREDORDERSDATA : (state) => state.filtered_orders,
         GETFIELDSNAME : (state) => state.fields,
         GETSHOWMTFTOAST : (state) => state.show_mtf_toast,
-        GETCREATEDLASTMTF : (state) => state.created_last_mtf
+        GETCREATEDLASTMTF : (state) => state.created_last_mtf,
+        GETORDERLIST : (state) => state.order_list
     },
     actions:{
 
@@ -28,17 +29,19 @@ const OrderStore = defineStore('OrderStore',{
             try{
                 await axios.post('http://localhost:3000/order/stf', data)
                 .then((respond)=>{
-                    console.log('respond : ',respond);
                     this.created_last_mtf = respond.data
                     this.show_mtf_toast = true;
-                    console.log('this.orderlist : ',this.order_list);
-                    // this.order_list.
-                    console.log('this.orderlist : ',this.order_list);
+                    this.$reset();
                     return respond;
                 })
             }catch(err){
                 return err
             }
+        },
+
+        $reset () {
+            this.order_list.length = 0;
+            console.log('state reset : ',this.order_list);
         },
 
         async orderstoretemp(){

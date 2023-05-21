@@ -17,7 +17,7 @@
         <MTF_Table_Row_Count_Comp @emitAddNewRow = "addNewRow" @emitRemoveRow="removeRow"/>
 
         <!-- Create MTF Button-->
-        <MTF_Create_Button_Comp />
+        <MTF_Create_Button_Comp @setRowSize="setRowSize" />
 
     </div>
 </template>
@@ -30,7 +30,8 @@
     import MTF_Table_Body_Comp from './MTF_Table_Body_Comp.vue';
     import MTF_Table_Row_Count_Comp from './MTF_Table_Row_Count_Comp.vue';
     import MTF_Create_Button_Comp from './MTF_Create_Button_Comp.vue';
-
+    import OrderStore from '../../../store/order_store';
+    const order_store = OrderStore();
     
 
     /************************************************* Row Management ****************/ 
@@ -40,7 +41,10 @@
     /****************************************************************************** */
     
     /************************************************* Create Creating Items List ***/ 
-    
+    const setRowSize = () => {
+        row_size.value = 0;
+        // order_store.order_list = [];
+    }
     
     /******************************************************************************* */
     

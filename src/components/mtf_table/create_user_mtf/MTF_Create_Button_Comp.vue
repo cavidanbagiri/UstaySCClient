@@ -19,6 +19,9 @@
     // Define Prop For Getting All Rows Values
     const prop = defineProps(['row_size']);
 
+    // Set Row Size 0 after creating mtf
+    const emit = defineEmits(['setRowSize']);
+
     const createMTF = async () => {
         const data = {
             orders : order_store.order_list,
@@ -30,7 +33,8 @@
                 alert('MTF Cant Create');
             }
             else{
-
+                order_store.$reset();
+                emit('setRowSize');
             }
         }).catch((err)=>{
             console.log('from create Error component : ',err);

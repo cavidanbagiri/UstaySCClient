@@ -83,28 +83,29 @@
 
 <script setup>
 
-import {ref, watchEffect} from 'vue';
+import {reactive, watchEffect} from 'vue';
 
 import OrderStore from '../../../store/order_store';
 const order_store = OrderStore();
 
 const prop = defineProps(['id']);
 
-const each = ref({
+const each = reactive({
     s: prop?.id,
-    material_type: ref(''),
-    material_name: ref(''),
-    link: ref(''),
-    count: ref(0),
-    unit: ref(''),
-    FieldsModelId: ref(0),
-    status: ref('Not Specified'),
-    comment: ref(''),
+    material_type: '',
+    material_name: '',
+    link: '',
+    count: 0,
+    unit: '',
+    FieldsModelId: 0,
+    status: 'Not Specified',
+    comment: '',
 });
 
 watchEffect(()=>{
-    // if(each.count)
-    order_store.order_list.push(each.value);
+    if(each.material_name!=='' && each.count!==0 && each.unit!=='' && each.FieldsModelId!==0){
+        order_store.order_list.push(each);
+    }
 })
 
 </script>
