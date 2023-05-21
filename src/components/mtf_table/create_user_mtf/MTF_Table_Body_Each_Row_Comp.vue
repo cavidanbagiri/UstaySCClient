@@ -1,18 +1,18 @@
 
 <template>
     <!-- S/S -->
-    <th scope="row" class="w-8 font-mono font-thin text-gray-900 whitespace-nowrap dark:text-white text-center"
+    <td scope="row" class="w-8 font-mono font-thin text-gray-900 whitespace-nowrap dark:text-white text-center"
         style="font-size: smaller;">
-        <div class="flex justify-between items-center px-1">
+        <div  class="flex justify-between items-center px-1">
             <span>{{ each.s }}</span>
             <span class="relative flex h-3 w-3">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
             </span>
         </div>
-    </th>
+    </td>
     <!-- Material Type Selected -->
-    <th scope="row" class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white"
+    <td scope="row" class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white"
         style="font-size: smaller;">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Material Type..."> -->
         <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.material_type">
@@ -21,7 +21,7 @@
             <option>Consumables</option>
             <option>Fixture</option>
         </select>
-    </th>
+    </td>
     <!-- Material Name -->
     <td class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white">
         <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="text" placeholder="Material Name..."
@@ -106,10 +106,13 @@ watchEffect(()=>{
     if(each.material_name!=='' && each.count!==0 && each.unit!=='' && each.FieldsModelId!==0){
         order_store.order_list.push(each);
     }
+
 })
 
 </script>
 
-<style lang="">
-    
+<style>
+
+
+
 </style>

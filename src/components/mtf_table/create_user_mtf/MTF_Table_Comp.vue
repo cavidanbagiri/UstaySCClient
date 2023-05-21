@@ -1,7 +1,8 @@
 
 <template>
     <div class="relative overflow-x-auto shadow-xl sm:rounded-lg border p-2">
-        <button v-if="row_size===0"  @click='row_size=5' > Create </button>
+        <button class="font-bold py-2 px-2 my-1 text-xs outline-none font-mono  border text-gray-100 rounded-xl bg-green-500 mb-2" 
+        v-if="row_size===0"  @click='row_size=5' > Create New STF </button>
         <!-- Table Section -->
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             
@@ -43,7 +44,6 @@
     /************************************************* Create Creating Items List ***/ 
     const setRowSize = () => {
         row_size.value = 0;
-        // order_store.order_list = [];
     }
     
     /******************************************************************************* */

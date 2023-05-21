@@ -23,22 +23,27 @@
     const emit = defineEmits(['setRowSize']);
 
     const createMTF = async () => {
-        const data = {
-            orders : order_store.order_list,
-            user : user_store?.user
+        if(order_store.order_list.length === 0 ){
+            alert('Must Create at least 1 data');
         }
-        await order_store.createMTF(data)
-        .then((respond)=>{
-            if(respond?.response?.status === 400){
-                alert('MTF Cant Create');
+        else{
+            const data = {
+                orders : order_store.order_list,
+                user : user_store?.user
             }
-            else{
-                order_store.$reset();
-                emit('setRowSize');
-            }
-        }).catch((err)=>{
-            console.log('from create Error component : ',err);
-        })
+            await order_store.createMTF(data)
+            .then((respond)=>{
+                if(respond?.response?.status === 400){
+                    alert('MTF Cant Create');
+                }
+                else{
+                    order_store.$reset();
+                    emit('setRowSize');
+                }
+            }).catch((err)=>{
+                console.log('from create Error component : ',err);
+            })
+        }
     }
 
 </script>
