@@ -4,7 +4,7 @@
 
     <Filter_Section_Comp />
 
-    <Show_Receiving_STF_Table_Comp />
+    <Show_All_STF_Table_Comp />
 
 
   </div>
@@ -16,12 +16,12 @@ import { onMounted } from 'vue'
 
 import ProcurementStore  from '../../../store/procurement_store.js';
 
-import Filter_Section_Comp from './Filter_Section_Comp.vue';
-import Show_Receiving_STF_Table_Comp from './Show_Receiving_STF_Table_Comp.vue';
+import Filter_Section_Comp from './filter_section/Filter_Section_Comp.vue';
+import Show_All_STF_Table_Comp from './Show_All_STF_Table_Comp.vue';
 
 const procurement_store = ProcurementStore();
 
-onMounted(async () => await procurement_store.fetchReceivingSM())
+onMounted(async () => await procurement_store.fetchAllSTF())
 
 </script>
 

@@ -16,10 +16,10 @@
         <table class="text-xs text-left text-gray-800 dark:text-gray-400 w-full">
 
             <!-- Table Header -->
-            <Get_Waiting_STF_Table_Header_Comp />
+            <Get_All_STF_Table_Header_Comp />
         
             <!-- Table Border -->
-            <Get_Waiting_STF_Table_Body_Comp />
+            <Get_All_STF_Table_Body_Comp />
 
         </table>
     </div>
@@ -29,15 +29,15 @@
 
 import { ref } from 'vue';
 
-import Get_Waiting_STF_Table_Header_Comp from './Get_Waiting_STF_Table_Header_Comp.vue';
-import Get_Waiting_STF_Table_Body_Comp from './Get_Waiting_STF_Table_Body_Comp.vue';
+import Get_All_STF_Table_Header_Comp from './Get_All_STF_Table_Header_Comp.vue';
+import Get_All_STF_Table_Body_Comp from './Get_All_STF_Table_Body_Comp.vue';
 
 import ProcurementStore from '../../../store/procurement_store';
 const procurement_store = ProcurementStore();
 
 const createSTF = async () => {
     // await procurement_store.createSTF(procurement_store.GETCHECKEDVALUES);
-    procurement_store.tab_num = 4;
+    procurement_store.tab_num = 1;
 }
 
 </script>

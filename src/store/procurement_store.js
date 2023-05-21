@@ -22,12 +22,16 @@ const ProcurementStore = defineStore('ProcurementStore',{
         companies_names: [],
         // Users Names
         procurement_users_names: [],
+        // Get Statistic Result and Show Analyz Component
+        statistic_result : null,
+        // Get All STF
+        all_stf : [],
         // Get All SM for Project
-        all_sms : [],
+        // all_sms : [],
         // Get Processing SM
-        processing_sms : null,
+        // processing_sms : null,
         // Get Receiving SM
-        receiving_sms : null
+        // receiving_sms : null
     }),
     getters:{
         GETWAITINGORDERS : (state) => state.waiting_orders, 
@@ -38,9 +42,39 @@ const ProcurementStore = defineStore('ProcurementStore',{
         GETCREATINGSTFDATA : (state) => state.creating_STF_datas,
         GETCOMPANIESNAMES : (state) => state.companies_names,
         GETPROCUREMENTUSERSNAMES : (state) => state.procurement_users_names,
-        GETALLSMS : (state) => state.all_sms
     },
     actions:{
+
+        // Get STF Statistics Result
+        async getSTFStatisticsResult (){
+            await axios.get(`http://localhost:3000/procurement/stfstatisticsresult`)
+            .then((respond)=>{
+                this.statistic_result = respond.data;
+                console.log('statistics result : ',this.statistic_result);
+            }).catch((err)=>{
+                console.log('statistics result Error : ',err);
+            })
+        },
+
+        async fetchAllSTF(){
+            await axios.get(`http://localhost:3000/procurement/allstf`)
+            .then((respond)=>{
+                this.all_stf = respond.data;
+                console.log('stf is : ',this.all_stf);
+            }).catch((err)=>{
+                console.log('all stf Error : ',err);
+            })
+        },
+
+        // Fetch Statistics Result Data
+        async fetchStatisticResultData(statistic_result_value){
+            await axios.get(`http://localhost:3000/procurement/getstatisticresult?result_value_id=${statistic_result_value}`)
+            .then((respond)=>{
+                this.all_stf = respond.data;
+            }).catch((err)=>{
+                console.log('all stf Error : ',err);
+            })
+        },
 
         // Get Waiting MTF
         async showWaitingMTF (){
@@ -55,11 +89,9 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
         // Create STF
         async createSTF (orders){
-            
             try{
                 await axios.post('http://localhost:3000/procurement/createstf', orders)
                 .then((respond)=>{
-                    console.log('respond is : ',respond);
                     return respond;
                 })
             }
@@ -88,36 +120,6 @@ const ProcurementStore = defineStore('ProcurementStore',{
                 console.log('Get Users Names Errors : ',err);
             })
         },
-
-        // Fetch Processing SM
-        async fetchProcessingSM () {
-            await axios.get('http://localhost:3000/procurement/processing')
-            .then((respond)=>{
-                this.processing_sms = respond.data;
-            }).catch((err)=>{
-                console.log('Het All Sms Errors : ',err);
-            })
-        },
-
-        // Fetch Receiving SM
-        async fetchReceivingSM () {
-            await axios.get('http://localhost:3000/procurement/receiving')
-            .then((respond)=>{
-                this.receiving_sms = respond.data;
-            }).catch((err)=>{
-                console.log('Het All Sms Errors : ',err);
-            })
-        },
-
-        // Get All SM
-        async getAllSms () {
-            await axios.get('http://localhost:3000/procurement')
-            .then((respond)=>{
-                this.all_sms = respond.data;
-            }).catch((err)=>{
-                console.log('Het All Sms Errors : ',err);
-            })
-        }
 
     }
 
