@@ -1,8 +1,8 @@
 <template>
     
-    <div class="grid grid-cols-12 gap-12 justify-between mb-2">
+    <div class="grid grid-cols-10 gap-12 justify-between mb-2">
 
-        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md
+        <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
          shadow-md hover:shadow-xl hover:cursor-pointer "  @click = "fetchCurrentData(0)"  >
             <div class="flex flex-col">
                 <span class="text-gray-600 text-lg font-medium" >Total</span>
@@ -12,7 +12,7 @@
                 <span class="bg-gray-100 rounded-md text-black-800 text-sm p-2 font-bold">Get Data</span>
             </div>
         </div>
-        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md 
+        <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-md 
         hover:shadow-xl hover:cursor-pointer " @click = "fetchCurrentData(1)" >
             <div class="flex flex-col">
                 <span class="text-gray-600 text-lg font-medium" >Waiting</span>
@@ -22,7 +22,7 @@
                 <span class="bg-red-100 rounded-md text-red-800 text-sm p-2 font-bold">Get Data</span>
             </div>
         </div>
-        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md 
+        <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-md 
         hover:shadow-xl hover:cursor-pointer " @click="fetchCurrentData(2)" >
             <div class="flex flex-col">
                 <span class="text-gray-600 text-lg font-medium" >Processing</span>
@@ -32,7 +32,7 @@
                 <span class="bg-blue-100 rounded-md text-blue-800 text-sm p-2 font-bold">Get Data</span>
             </div>
         </div>
-        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md
+        <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
          shadow-md hover:shadow-xl hover:cursor-pointer "  @click="fetchCurrentData(3)"  >
             <div class="flex flex-col">
                 <span class="text-gray-600 text-lg font-medium" >Received</span>
@@ -40,6 +40,16 @@
             </div>
             <div class="flex items-end">
                 <span class="bg-green-100 text-green-800 text-sm p-2 rounded-md font-bold">Get Data</span>
+            </div>
+        </div>
+        <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
+         shadow-md hover:shadow-xl hover:cursor-pointer "  @click="fetchCurrentData(4)"  >
+            <div class="flex flex-col">
+                <span class="text-gray-600 text-lg font-medium" >Provide</span>
+                <span class="mt-3 text-lg font-bold">0</span>
+            </div>
+            <div class="flex items-end">
+                <span class="bg-pink-100 text-pink-800 text-sm p-2 rounded-md font-bold">Get Data</span>
             </div>
         </div>
         

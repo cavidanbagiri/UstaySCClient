@@ -80,7 +80,7 @@
 import { ref, watchEffect } from 'vue';
 
 
-import OrderStore from '../../../store/order_store';
+import OrderStore from '../../../../store/order_store';
 const order_store = OrderStore();
 
 const material_type = ref('All');

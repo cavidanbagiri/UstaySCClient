@@ -20,7 +20,7 @@
 
     import Show_STF_Analyz from '../Show_STF_Analyz.vue';
     import Show_MTF_Table_Comp from './Show_MTF_Table_Comp.vue';
-    import Show_MTF_Filter_Section from './Show_MTF_Filter_Section.vue';
+    import Show_MTF_Filter_Section from './filter_section/Show_MTF_Filter_Section.vue';
 
     const order_store = OrderStore();
     const user_store = UserStore();

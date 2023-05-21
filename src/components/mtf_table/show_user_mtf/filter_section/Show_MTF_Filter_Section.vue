@@ -18,7 +18,7 @@ import { ref } from 'vue';
 import Show_MTF_Filter_Title from './Show_MTF_Filter_Title.vue';
 import Show_MTF_Filter_Body from './Show_MTF_Filter_Body.vue'
 
-const show_filters = ref(false);
+const show_filters = ref(true);
 
 const toggleFilter = () => {
     show_filters.value = !show_filters.value;
