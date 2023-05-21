@@ -13,6 +13,7 @@ const OrderStore = defineStore('OrderStore',{
         created_last_mtf : null,
         statistic_result : null,
         order_list : [],
+        statistic_result_data : []
     }),
     getters:{
         GETORDERSDATA : (state) => state.orders, 
@@ -39,18 +40,34 @@ const OrderStore = defineStore('OrderStore',{
             }
         },
 
+        // Reset order_list data
         $reset () {
             this.order_list.length = 0;
             console.log('state reset : ',this.order_list);
         },
 
-        async orderstoretemp(){
-            console.log(':::', this.order_list);
+        // Fetch Statistic Data
+        async fetchStatisticResult (data) {
+            await axios.get(`
+                http://localhost:3000/order/getstatisticresult?user_id=${data.user_id}&result_value_id=${data.statistic_result_value}
+            `)
+            .then((respond)=>{
+                // this.statistic_result_data = respond.data;
+                // console.log('statistic_result : ',this.statistic_result_data);
+                this.orders = respond.data;
+                this.filtered_orders = respond.data;
+                return respond;
+            })
+            .catch((err)=>{
+                console.log('Statistics Result Error Is : ',err);
+            })
         },
 
         // Show User MTF For User Page
         async showMTF(user) {
-            await axios.get(`http://localhost:3000/order/showorders?id=${user?.id}&ProjectModelId=${user?.ProjectModelId}`)
+            await axios.get(`
+                http://localhost:3000/order/showorders?id=${user?.id}&ProjectModelId=${user?.ProjectModelId}
+            `)
             .then((respond)=>{
                 this.orders = respond.data;
                 this.filtered_orders = respond.data;

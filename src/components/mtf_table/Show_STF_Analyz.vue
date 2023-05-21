@@ -2,7 +2,8 @@
     
     <div class="grid grid-cols-12 gap-12 justify-between mb-2">
 
-        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:shadow-xl hover:cursor-pointer " >
+        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md
+         shadow-md hover:shadow-xl hover:cursor-pointer "  @click = "fetchCurrentData(0)"  >
             <div class="flex flex-col">
                 <span class="text-gray-600 text-lg font-medium" >Total</span>
                 <span class="mt-3 text-lg font-bold">{{ statistic_result.total }}</span>
@@ -11,7 +12,8 @@
                 <span class="bg-gray-100 rounded-md text-black-800 text-sm p-2 font-bold">Get Data</span>
             </div>
         </div>
-        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:shadow-xl hover:cursor-pointer " >
+        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md 
+        hover:shadow-xl hover:cursor-pointer " @click = "fetchCurrentData(1)" >
             <div class="flex flex-col">
                 <span class="text-gray-600 text-lg font-medium" >Waiting</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.waiting}}</span>
@@ -20,7 +22,8 @@
                 <span class="bg-red-100 rounded-md text-red-800 text-sm p-2 font-bold">Get Data</span>
             </div>
         </div>
-        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:shadow-xl hover:cursor-pointer " >
+        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md 
+        hover:shadow-xl hover:cursor-pointer " @click="fetchCurrentData(2)" >
             <div class="flex flex-col">
                 <span class="text-gray-600 text-lg font-medium" >Processing</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.processing}}</span>
@@ -29,7 +32,8 @@
                 <span class="bg-blue-100 rounded-md text-blue-800 text-sm p-2 font-bold">Get Data</span>
             </div>
         </div>
-        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:shadow-xl hover:cursor-pointer " >
+        <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md
+         shadow-md hover:shadow-xl hover:cursor-pointer "  @click="fetchCurrentData(3)"  >
             <div class="flex flex-col">
                 <span class="text-gray-600 text-lg font-medium" >Received</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.received}}</span>
@@ -64,10 +68,8 @@ const statistic_result = reactive({
 })
 
 onMounted(async () => {
-
     const user_id = user_store.user;
     await order_store.getUserStatisticResult(user_id.id);
-
 })
 
 watchEffect(() => {
@@ -88,6 +90,19 @@ watchEffect(() => {
         }
     }
 })
+
+const fetchCurrentData = async (statistic_result_value) => {
+    if(statistic_result_value!==0){
+        const data = {
+            user_id : user_store.user.id,
+            statistic_result_value
+        }
+        await order_store.fetchStatisticResult(data);
+    }
+    else{
+        await order_store.showMTF(user_store.user);
+    }
+}
 
 
 </script>

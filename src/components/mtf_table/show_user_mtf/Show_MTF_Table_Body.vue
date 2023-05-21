@@ -37,9 +37,6 @@
                     </span>
                 </div>
             </th>
-            <th class="px-2 py-2 font-medium text-start border-y">
-                {{ i.material_status }} 
-            </th>
             <th class="px-2 py-2 font-medium  border-y">
                 {{ i.material_type }}
             </th>
@@ -52,14 +49,8 @@
             <th class="px-2 py-2  font-medium text-center border-y">
                 {{ i.unit }}
             </th>
-            <th class="px-2 py-2  font-medium text-center border-y">
-                {{ i.username }}
-            </th>
             <th class="px-2 py-2 font-medium  text-start border-y">
                 {{ i?.field_name }}
-            </th>
-            <th class="px-2 py-2  font-medium text-center border-y">
-                <div class="w-96">{{ i.comment }}</div>
             </th>
         </tr>
     </tbody>

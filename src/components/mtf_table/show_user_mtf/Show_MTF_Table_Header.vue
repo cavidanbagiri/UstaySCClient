@@ -29,11 +29,6 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col">
-                    Status
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="w-20 flex flex-col">
                     Material Type
                 </div>
@@ -54,17 +49,9 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-36">
-                    Orderer
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="flex flex-col w-24">
                     Field
                 </div>
-            </th>
-            <th scope="col" class="px-2 py-1   font-medium text-center border">
-                Comment
             </th>
 
         </tr>
