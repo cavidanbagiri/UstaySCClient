@@ -3,10 +3,12 @@
 
     <div class="flex flex-col">
 
-        <div class="flex flex-row mt-1 my-2 font-mono">
+        <div class="flex flex-row mt-1 my-2" style="font-family: system-ui; font-size: x-small; letter-spacing: 0.7px;">
             
-            <span :class="procurement_store.GETTABNUM===0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-plus fa-lg "></i> All STF</span>
-            <span :class="procurement_store.GETTABNUM===1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)" class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Creating SM</span>
+            <span :class="procurement_store.GETTABNUM===0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(0)" 
+            class=" text-black px-3 py-1 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-plus fa-md "></i> All STF</span>
+            <span :class="procurement_store.GETTABNUM===1 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(1)" 
+            class=" text-black px-3 py-1 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-md "></i> Creating SM</span>
             
 
         </div>

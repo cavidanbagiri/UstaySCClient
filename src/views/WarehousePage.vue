@@ -2,16 +2,16 @@
 
 <template>
     <div class="flex flex-col p-1">
-        <div class="flex flex-row mt-1 my-2 font-mono anim">
+        <div class="flex flex-row mt-1 my-2 anim"  style="font-family: system-ui; font-size: x-small; letter-spacing: 0.7px;">
 
-            <span :class="warehouse_store?.tab_num === 0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)"
-                class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-arrow-rotate-left fa-lg"></i>
+            <span :class="warehouse_store?.tab_num === 0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(0)"
+                class=" text-black px-3 mx-1 py-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-arrow-rotate-left fa-md"></i>
                 Processing SM</span>
-            <span :class="warehouse_store?.tab_num === 1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)"
-                    class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer">  <i class="fa-solid fa-download fa-lg"></i>
+            <span :class="warehouse_store?.tab_num === 1 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(1)"
+                    class=" text-black px-3 py-1 mx-1 border-b-2  cursor-pointer">  <i class="fa-solid fa-download fa-md"></i>
                     Received SM</span>
-            <span :class="warehouse_store?.tab_num === 2 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(2)"
-                class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-md"></i>
+            <span :class="warehouse_store?.tab_num === 2 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(2)"
+                class=" text-black px-3 py-1 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-md"></i>
                 Accept SM</span>
 
         </div>

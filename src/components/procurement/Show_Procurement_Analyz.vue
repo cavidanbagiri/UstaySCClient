@@ -1,9 +1,9 @@
 <template>
-    <div class="grid grid-cols-12 gap-3 justify-between mb-2 px-1">
+    <div class="grid grid-cols-12 gap-12 justify-between mb-2 px-1" style="font-family: system-ui; font-weight: 500; letter-spacing: 0.7px;">
 
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md" @click="fetchCurrentData(0)">
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium">Total Creating STF</span>
+                <span class="text-gray-600 text-sm ">Total STF</span>
                 <span class="mt-3 text-lg font-bold">{{ statistic_result.total }}</span>
             </div>
             <div class="flex items-end">
