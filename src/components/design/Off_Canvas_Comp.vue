@@ -2,7 +2,7 @@
     <div class=" mtf-anim fixed shadow-lg z-10  bg-slate-800 pl-3 pt-3 pb-3 pr-3 h-screen  w-72
       overflow-y-scroll ">
 
-        <span class="p-2 rounded-xl cursor-pointer hover:bg-black flex flex-row items-center">
+        <span class="p-2 rounded-xl cursor-pointer hover:bg-black flex flex-row items-center" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.3px;">
             <img class="w-8 h-8 rounded-full"
                 src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
                 alt="">
@@ -69,20 +69,40 @@
                                     <li class="text-xs hover:bg-slate-400 rounded-lg"
                                         @click="procurement_store.tab_num = 0">
                                         <div class=" flex items-center px-4">
-                                            <i class="fa-solid fa-download fa-lg"></i>
-                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
-                                                All STF
+                                            <i class="fa-regular fa-clock fa-lg"></i>
+                                            <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
+                                                Waiting STF
                                             </a>
                                         </div>
                                     </li>
                                     <li class="text-xs hover:bg-slate-400 rounded-lg"
                                         @click="procurement_store.tab_num = 1">
                                         <div class=" flex items-center px-4">
-                                            <i class="fa-solid fa-reply-all fa-lg"></i>
-                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
-                                                All SM
+                                            <i class="fa-solid fa-arrow-rotate-left fa-lg"></i>
+                                            <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
+                                                Processing SM
                                             </a>
                                         </div>
+                                    </li>
+                                    <li class="text-xs hover:bg-slate-400 rounded-lg"
+                                        @click="procurement_store.tab_num = 2">
+                                        <div class=" flex items-center px-4">
+                                            <i class="fa-solid fa-download fa-lg"></i>
+                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
+                                                Received SM
+                                            </a>
+                                        </div>
+
+                                    </li>
+                                    <li class="text-xs hover:bg-slate-400 rounded-lg"
+                                        @click="procurement_store.tab_num = 3">
+                                        <div class=" flex items-center px-4">
+                                            <i class="fa-solid fa-reply-all fa-lg"></i>
+                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
+                                                ALL SM
+                                            </a>
+                                        </div>
+
                                     </li>
                                 </ul>
 

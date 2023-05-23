@@ -1,6 +1,6 @@
 <template>
     
-    <div class="grid grid-cols-10 gap-12 justify-between mb-2">
+    <div class="grid grid-cols-10 gap-12 justify-between mb-2"  style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;">
 
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
          shadow-md hover:shadow-xl hover:cursor-pointer "  @click = "fetchCurrentData(0)"  >
@@ -9,7 +9,7 @@
                 <span class="mt-3 text-lg font-bold">{{ statistic_result.total }}</span>
             </div>
             <div class="flex items-end">
-                <span class="bg-gray-100 rounded-md text-black-800 text-sm p-2 font-bold">Get Data</span>
+                <span class="bg-gray-100 rounded-md text-black-800 text-xs p-2 font-bold">Get Data</span>
             </div>
         </div>
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-md 
@@ -19,7 +19,7 @@
                 <span class="mt-3 text-lg font-bold">{{statistic_result.waiting}}</span>
             </div>
             <div class="flex items-end">
-                <span class="bg-red-100 rounded-md text-red-800 text-sm p-2 font-bold">Get Data</span>
+                <span class="bg-red-100 rounded-md text-red-800 text-xs p-2 font-bold">Get Data</span>
             </div>
         </div>
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-md 
@@ -29,7 +29,7 @@
                 <span class="mt-3 text-lg font-bold">{{statistic_result.processing}}</span>
             </div>
             <div class="flex items-end">
-                <span class="bg-blue-100 rounded-md text-blue-800 text-sm p-2 font-bold">Get Data</span>
+                <span class="bg-blue-100 rounded-md text-blue-800 text-xs p-2 font-bold">Get Data</span>
             </div>
         </div>
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
@@ -39,7 +39,7 @@
                 <span class="mt-3 text-lg font-bold">{{statistic_result.received}}</span>
             </div>
             <div class="flex items-end">
-                <span class="bg-green-100 text-green-800 text-sm p-2 rounded-md font-bold">Get Data</span>
+                <span class="bg-green-100 text-green-800 text-xs p-2 rounded-md font-bold">Get Data</span>
             </div>
         </div>
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
@@ -49,7 +49,7 @@
                 <span class="mt-3 text-lg font-bold">0</span>
             </div>
             <div class="flex items-end">
-                <span class="bg-pink-100 text-pink-800 text-sm p-2 rounded-md font-bold">Get Data</span>
+                <span class="bg-pink-100 text-pink-800 text-xs p-2 rounded-md font-bold">Get Data</span>
             </div>
         </div>
         

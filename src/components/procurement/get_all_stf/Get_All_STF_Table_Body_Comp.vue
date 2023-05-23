@@ -1,5 +1,5 @@
 <template>
-    <tbody>
+    <tbody class="text-gray-500" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.3px;">
         
         <Get_All_STF_Table_Body_Each_Row_Comp 
         v-for="(each_item, index) in procurement_store.all_stf"

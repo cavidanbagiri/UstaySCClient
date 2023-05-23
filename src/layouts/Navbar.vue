@@ -13,7 +13,7 @@
                 <img class="w-8 h-8 rounded-full"
                     src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
                     alt="">
-                <span class=" text-xs text-slate-300 font-mono pl-1">{{user?.name}} {{ user?.surname }}</span>
+                <span class=" text-xs text-slate-300 font-mono pl-1" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.5px;">{{user?.name}} {{ user?.surname }}</span>
             </span>
         </div>
 

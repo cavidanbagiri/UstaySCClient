@@ -1,12 +1,12 @@
 <template>
     <!-- Filter Section -->
-    <div class="flex flex-col mtf-anim">
+    <div class="flex flex-col mtf-anim" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;">
         <!-- Common Filters Section -->
         <div class="flex flex-row items-center justify-between">
             <!-- Common Filter Keys -->
             <div class="flex flex-row start">
                 <!-- Date Order -->
-                <div class="flex flex-col my-1 mr-3">
+                <div class="flex flex-col my-1 mr-3" >
                     <span class="text-xs m-1">Date Order</span>
                     <select class="border outline-none font-sans rounded-lg  h-full p-1 text-xs border-gray-300"
                         v-model="date_order">

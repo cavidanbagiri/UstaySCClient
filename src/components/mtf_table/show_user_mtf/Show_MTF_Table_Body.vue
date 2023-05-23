@@ -1,5 +1,5 @@
 <template>
-    <tbody class="text-gray-500" style="font-size: 11px;">
+    <tbody class="text-gray-500" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.3px;">
         <tr v-for="(i, index) in order_store.GETFILTEREDORDERSDATA"
             class="bg-white border-b  hover:bg-gray-100 ">
             <td class="w-1 p-4 py-2 ">
@@ -12,9 +12,9 @@
             <th class="px-2 py-2 font-medium text-center">
                 {{ index + 1 }}
             </th>
-            <th class="px-2 font-medium text-start border-y ">
-                <div class=" bg-orange-100 text-orange-500 py-1 px-2 rounded-xl ">
-                    <span > {{ i.stf_num }}</span>
+            <th class="px-2 font-medium text-center border-y ">
+                <div>
+                    <span class="bg-orange-100 text-orange-500 py-1 px-2 rounded-xl"> {{ i.stf_num }}</span>
                 </div>
             </th>
             <th class="px-2 py-2 font-medium  text-center border-y">
@@ -22,7 +22,7 @@
             </th>
             <th class="font-medium text-start border-y px-2 text-xs">
                 <div v-if="i.situation==='Waiting'" >
-                    <span class=" bg-red-100 w-w-full text-red-500 py-1 px-2 rounded-md">
+                    <span class=" bg-red-100 w-full text-red-500 py-1 px-2 rounded-md">
                         &#9679 {{ i.situation }} 
                     </span>
                 </div>

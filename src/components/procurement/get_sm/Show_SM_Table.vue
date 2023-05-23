@@ -4,7 +4,7 @@
     <div class="relative mt-1 shadow-md sm:rounded-lg w-screen overflow-x-scroll border-2 ">
         <SM_Procurement_Analyz />
         <!-- Table -->
-        <table class="text-xs text-left text-gray-800 dark:text-gray-400 w-full">
+        <table class="text-xs text-left text-gray-800 dark:text-gray-400 w-full" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.3px;">
 
             <Get_SM_Header_Table />
             <Get_SM_Body_Table />

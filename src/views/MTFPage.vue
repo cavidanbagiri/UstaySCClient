@@ -4,16 +4,17 @@
 
         <!-- If User Login -->
         <div v-if="user_store.user">
-            <div class="flex flex-row mt-1 my-2 font-mono anim">
+            <!-- <div class="flex flex-row mt-1 my-2 anim" style="font-family: 'Courier New', Courier, monospace;"> -->
+            <div class="flex flex-row mt-1 my-2 anim" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;">
 
-                <span :class="tab_num === 0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)"
-                    class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-lg "></i>
+                <span :class="tab_num === 0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(0)"
+                class=" text-xs text-black px-3 pb-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-lg "></i>
                     Show MTF</span>
                 <span :class="tab_num === 1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)"
-                    class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-list fa-lg "></i>
+                class=" text-xs text-black px-3 pb-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-list fa-lg "></i>
                     Create MTF</span>
                 <span :class="tab_num === 2 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(2)"
-                    class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer"> <i
+                class=" text-xs text-black px-3 pb-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i
                         class="fa-solid fa-warehouse fa-lg "></i> Show Warehouse</span>
 
             </div>

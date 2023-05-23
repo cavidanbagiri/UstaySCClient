@@ -1,9 +1,9 @@
 <template>
-    <div class="grid grid-cols-12 gap-3 justify-between mb-2 px-1">
+    <div class="grid grid-cols-12 gap-3 justify-between mb-2 px-1 "  style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;">
 
         <div class=" col-span-4 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md" @click="fetchCurrentData(0)">
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium">Total Creating STF</span>
+                <span class="text-gray-600 ">Total Creating SM</span>
                 <span class="mt-3 text-lg font-bold">{{ statistic_result.total }}</span>
             </div>
             <div class="flex items-end">
@@ -12,7 +12,7 @@
         </div>
         <div class=" col-span-4 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(2)">
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium">Processing STF</span>
+                <span class="text-gray-600 text-sm font-medium">Processing SM</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.processing}}</span>
             </div>
             <div class="flex items-end">
@@ -21,7 +21,7 @@
         </div>
         <div class=" col-span-4 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(3)">
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium">Received STF</span>
+                <span class="text-gray-600 text-sm font-medium">Received SM</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.received}}</span>
             </div>
             <div class="flex items-end">

@@ -1,5 +1,5 @@
 <template>
-    <thead class="text-xs text-black bg-gray-100 dark:bg-gray-700 dark:text-gray-400 border w-full">
+    <thead class="text-xs text-black bg-gray-100 dark:bg-gray-700 dark:text-gray-400 border w-full"  style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;">
         <tr class="">
             <th scope="col-4" class=" px-4">
                 <div class="flex flex-col items-center">
@@ -14,17 +14,17 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-24">
+                <div class="flex flex-col">
                     STF NO
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-24">
+                <div class="flex flex-col">
                     STF Date
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-24 flex flex-col">
+                <div class="flex flex-col">
                     Condition
                 </div>
             </th>
@@ -44,7 +44,7 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-36">
+                <div class="flex flex-col">
                     Orderer
                 </div>
             </th>
