@@ -37,7 +37,7 @@ const procurement_store = ProcurementStore();
 
 const createSTF = async () => {
     // await procurement_store.createSTF(procurement_store.GETCHECKEDVALUES);
-    procurement_store.tab_num = 1;
+    procurement_store.tab_num = 2;
 }
 
 </script>

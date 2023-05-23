@@ -69,40 +69,20 @@
                                     <li class="text-xs hover:bg-slate-400 rounded-lg"
                                         @click="procurement_store.tab_num = 0">
                                         <div class=" flex items-center px-4">
-                                            <i class="fa-regular fa-clock fa-lg"></i>
-                                            <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
-                                                Waiting STF
+                                            <i class="fa-solid fa-download fa-lg"></i>
+                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
+                                                All STF
                                             </a>
                                         </div>
                                     </li>
                                     <li class="text-xs hover:bg-slate-400 rounded-lg"
                                         @click="procurement_store.tab_num = 1">
                                         <div class=" flex items-center px-4">
-                                            <i class="fa-solid fa-arrow-rotate-left fa-lg"></i>
-                                            <a href="#" class="flex items-center rounded-lg px-4 py-2 hover:bg-slate-400">
-                                                Processing SM
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="text-xs hover:bg-slate-400 rounded-lg"
-                                        @click="procurement_store.tab_num = 2">
-                                        <div class=" flex items-center px-4">
-                                            <i class="fa-solid fa-download fa-lg"></i>
-                                            <a href="#" class="flex items-center rounded-lg px-4 py-2">
-                                                Received SM
-                                            </a>
-                                        </div>
-
-                                    </li>
-                                    <li class="text-xs hover:bg-slate-400 rounded-lg"
-                                        @click="procurement_store.tab_num = 3">
-                                        <div class=" flex items-center px-4">
                                             <i class="fa-solid fa-reply-all fa-lg"></i>
                                             <a href="#" class="flex items-center rounded-lg px-4 py-2">
-                                                ALL SM
+                                                All SM
                                             </a>
                                         </div>
-
                                     </li>
                                 </ul>
 

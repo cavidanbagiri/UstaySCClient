@@ -2,6 +2,8 @@
 <template>
   <div class="flex flex-col  my-1 py-2 px-1 text-black bg-slate-50">
 
+    <STF_Procurement_Analyz/>
+
     <Filter_Section_Comp />
 
     <Show_All_STF_Table_Comp />
@@ -18,6 +20,7 @@ import ProcurementStore  from '../../../store/procurement_store.js';
 
 import Filter_Section_Comp from './filter_section/Filter_Section_Comp.vue';
 import Show_All_STF_Table_Comp from './Show_All_STF_Table_Comp.vue';
+import STF_Procurement_Analyz from '../STF_Procurement_Analyz.vue';
 
 const procurement_store = ProcurementStore();
 

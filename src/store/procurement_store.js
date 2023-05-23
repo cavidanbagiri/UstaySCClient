@@ -26,12 +26,11 @@ const ProcurementStore = defineStore('ProcurementStore',{
         statistic_result : null,
         // Get All STF
         all_stf : [],
-        // Get All SM for Project
-        // all_sms : [],
-        // Get Processing SM
-        // processing_sms : null,
-        // Get Receiving SM
-        // receiving_sms : null
+        //Get All SM for Project
+        all_sms : [],
+        // SM Statistic Result
+        sm_statistic_result : null,
+        
     }),
     getters:{
         GETWAITINGORDERS : (state) => state.waiting_orders, 
@@ -44,35 +43,61 @@ const ProcurementStore = defineStore('ProcurementStore',{
         GETPROCUREMENTUSERSNAMES : (state) => state.procurement_users_names,
     },
     actions:{
-
+    
         // Get STF Statistics Result
         async getSTFStatisticsResult (){
             await axios.get(`http://localhost:3000/procurement/stfstatisticsresult`)
             .then((respond)=>{
                 this.statistic_result = respond.data;
-                console.log('statistics result : ',this.statistic_result);
             }).catch((err)=>{
                 console.log('statistics result Error : ',err);
             })
         },
-
+        // Fetch All STF
         async fetchAllSTF(){
             await axios.get(`http://localhost:3000/procurement/allstf`)
             .then((respond)=>{
                 this.all_stf = respond.data;
-                console.log('stf is : ',this.all_stf);
             }).catch((err)=>{
                 console.log('all stf Error : ',err);
             })
         },
 
-        // Fetch Statistics Result Data
+        // Fetch STF Statistics Result Data
         async fetchStatisticResultData(statistic_result_value){
             await axios.get(`http://localhost:3000/procurement/getstatisticresult?result_value_id=${statistic_result_value}`)
             .then((respond)=>{
                 this.all_stf = respond.data;
             }).catch((err)=>{
                 console.log('all stf Error : ',err);
+            })
+        },
+
+        // Fetch All SMS
+        async fetchAllSM(){
+            await axios.get(`http://localhost:3000/procurement/allsm`)
+            .then((respond)=>{
+                this.all_sms = respond.data;
+            }).catch((err)=>{
+                console.log('all stf Error : ',err);
+            })
+        },
+        // Get SM Statistics Result
+        async getSMStatisticsResult (){
+            await axios.get(`http://localhost:3000/procurement/smstatisticsresult`)
+            .then((respond)=>{
+                this.sm_statistic_result = respond.data;
+            }).catch((err)=>{
+                console.log('statistics result Error : ',err);
+            })
+        },
+        // Fetch SM Statistics Result Data
+        async fetchStatisticResultDataSM(statistic_result_value){
+            await axios.get(`http://localhost:3000/procurement/getstatisticresultsm?result_value_id=${statistic_result_value}`)
+            .then((respond)=>{
+                this.all_sms = respond.data;
+            }).catch((err)=>{
+                console.log('all sm Error : ',err);
             })
         },
 
