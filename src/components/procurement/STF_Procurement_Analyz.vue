@@ -5,6 +5,8 @@
             <div class="flex flex-col">
                 <span class="text-gray-600 text-sm font-medium">Total Creating STF</span>
                 <span class="mt-3 text- font-bold">{{ statistic_result.total }}</span>
+
+    
             </div>
             <div class="flex items-end">
                 <span class="bg-violet-100 rounded-sm text-violet-800 text-xs p-1 font-bold">Get Data</span>

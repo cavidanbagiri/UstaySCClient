@@ -13,7 +13,9 @@
                 <img class="w-8 h-8 rounded-full"
                     src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
                     alt="">
+
                 <span class=" text-xs text-slate-300 font-mono pl-1" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.5px;">{{user?.name}} {{ user?.surname }}</span>
+
             </span>
         </div>
 
@@ -30,13 +32,11 @@
         <!-- User Side -->
         <div class="col-span-3 flex flex-row items-center justify-evenly">
 
-            <span
-                class="p-2 rounded-xl cursor-pointer w-10 h-10 flex flex-row justify-center items-center hover:bg-black"><i
-                    class="fa-solid fa-briefcase fa-md" style="color:white"></i></span>
-
-            <span
-                class="p-2 rounded-xl cursor-pointer w-10 h-10 flex flex-row justify-center items-center hover:bg-black"><i
-                    class="fa-solid fa-book fa-md" style="color:white"></i></span>
+            <router-link to="/workspace">
+                <span
+                    class="p-2 rounded-xl cursor-pointer w-10 h-10 flex flex-row justify-center items-center hover:bg-black"><i
+                        class="fa-solid fa-briefcase fa-md" style="color:white"></i></span>
+            </router-link>
 
             <span
                 class="p-2 rounded-xl cursor-pointer w-10 h-10 flex flex-row justify-center items-center hover:bg-black"><i
@@ -57,7 +57,7 @@
                     class="p-2 rounded-xl cursor-pointer w-10 h-10 flex flex-row justify-center items-center hover:bg-black "><i
                         class="fa-solid fa-plus fa-md" style="color:white"></i></span>
 
-              
+
             </router-link>
 
         </div>
@@ -79,8 +79,8 @@ const toggleCanvas = () => {
 }
 const user = ref();
 
-watchEffect(()=>{
-    user.value = JSON.parse(sessionStorage?.getItem('user')); 
+watchEffect(() => {
+    user.value = JSON.parse(sessionStorage?.getItem('user'));
     user_store.user = user.value;
 })
 
