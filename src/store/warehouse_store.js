@@ -26,7 +26,6 @@ const WarehouseStore = defineStore('WarehouseStore',{
             await axios.get('http://localhost:3000/warehouse/waitingsm')
             .then((respond)=>{
                 this.waiting_sms = respond.data
-                console.log(this.waiting_sms);
             }).catch((err)=>{
                 console.log('Get Warehouse Waiting Error : ',err);
             })
@@ -38,7 +37,6 @@ const WarehouseStore = defineStore('WarehouseStore',{
             await axios.post('http://localhost:3000/warehouse/accept',data)
             .then((respond)=>{
                 this.accepted_items = respond;
-                console.log('accepted items is : ',this.accepted_items);
             })
             .catch((err)=>{
                 console.log('Accepted Materials Error From Warehouse Store : ',err);

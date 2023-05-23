@@ -5,11 +5,12 @@
         <div class="flex flex-row mt-1 my-2 font-mono anim">
 
             <span :class="warehouse_store?.tab_num === 0 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(0)"
-                class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-arrow-rotate-left fa-lg"></i>
+                class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer"> <i
+                    class="fa-solid fa-arrow-rotate-left fa-lg"></i>
                 Processing SM</span>
             <span :class="warehouse_store?.tab_num === 1 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(1)"
-                    class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer">  <i class="fa-solid fa-download fa-lg"></i>
-                    Received SM</span>
+                class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-download fa-lg"></i>
+                Received SM</span>
             <span :class="warehouse_store?.tab_num === 2 ? 'border-b-slate-800 border-b-4 ' : ''" @click="changeTabe(2)"
                 class=" text-xs text-black p-3 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-md"></i>
                 Accept SM</span>
