@@ -1,12 +1,11 @@
 
 import { createRouter, createWebHistory } from 'vue-router';
 
-import MTFPage from '../views/MTFPage.vue';
-import HomePage from '../views/HomePage.vue';
-import ProcurementPage from '../views/ProcurementPage.vue';
-import WarehousePage from '../views/WarehousePage.vue';
-
-import WorkSpacePage from '../views/WorkSpacePage.vue';
+const MTFPage = () => import ('../views/MTFPage.vue');
+const HomePage = () => import ('../views/HomePage.vue');
+const ProcurementPage = () => import ('../views/ProcurementPage.vue');
+const WarehousePage = () => import ('../views/WarehousePage.vue');
+const WorkSpacePage = () => import ('../views/WorkSpacePage.vue');
 
 const routes = [
 
