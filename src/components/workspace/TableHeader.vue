@@ -17,7 +17,7 @@
                     </div>
                 </th>
                 <th scope="col" class="px-2 py-1  font-medium text-center border">
-                    <div class="flex flex-col">
+                    <div class="flex flex-col w-96">
                         Task
                     </div>
                 </th>
@@ -28,7 +28,12 @@
                 </th>
                 <th scope="col" class="px-2 py-1  font-medium text-center border">
                     <div class="flex flex-col">
-                        Tarih
+                        Date
+                    </div>
+                </th>
+                <th scope="col" class="px-2 py-1  font-medium text-center border">
+                    <div class="flex flex-col w-96">
+                        Comment
                     </div>
                 </th>
             </tr>
