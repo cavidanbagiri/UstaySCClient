@@ -9,15 +9,15 @@
                 <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
             </div>
         </td>
-        <th class="px-2 font-medium text-center">
+        <td class="px-2 font-medium text-center">
             {{ prop.index }}
-        </th>
-        <th class="px-2 font-medium text-start border-y ">
+        </td>
+        <td class="px-2 font-medium text-start border-y ">
             <div class="   py-1 px-2 rounded-xl ">
                 <span>{{ prop.data.task }}</span>
             </div>
-        </th>
-        <th class="px-2 font-medium text-center border-y text-md">
+        </td>
+        <td class="px-2 font-medium text-center border-y text-md">
             <div v-if="prop.data.condition === 'Working'" class=" bg-orange-400 text-white py-2 px-2 font-bold rounded-sm ">
                 <span>{{ prop.data.condition }}</span>
             </div>
@@ -27,19 +27,35 @@
             <div v-else-if="prop.data.condition === 'Competed'" class=" bg-green-400 text-white py-2 px-2 font-bold  rounded-sm ">
                 <span>{{ prop.data.condition }}</span>
             </div>
-        </th>
-        <th class="px-2  font-medium border text-center">
+        </td>
+        <td class="px-2  font-medium border text-center">
             <span>{{ prop.data.setting_at }}</span>
-        </th>
-        <th class="px-2  font-medium border text-start">
+        </td>
+        <td class="px-2  font-medium border text-start">
             <span>{{ prop.data.comment }}</span>
-        </th>
+        </td>
     </tr>
 </template>
 
 <script setup>
 
+    import { ref } from 'vue';
+    import WorkSpaceStore from '../../store/workspace_store';
+
+    const work_space_store = WorkSpaceStore();
+
     const prop = defineProps(['index','data']);
+
+    const checked = ref(false);
+
+    const checkboxCond = () => {
+        if(checked.value){
+            work_space_store.selecting_tasks.push(prop.data);
+        }
+        else{
+            work_space_store.selecting_tasks = work_space_store.selecting_tasks.filter((data)=>data.id!==prop.data.id)
+        }
+    }
 
 </script>
 

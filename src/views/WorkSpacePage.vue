@@ -1,5 +1,5 @@
 <template>
-    <div class="p-2">
+    <div class="p-2 relative h-screen">
         <WorkSpaceTable/>
     </div>
 </template>

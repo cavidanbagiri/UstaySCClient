@@ -6,6 +6,8 @@ const WorkSpaceStore = defineStore("WorkSpaceStore", {
   state: () => ({
     tasks: null,
     new_task_data: null, // new Task Data
+    selecting_tasks: [],
+    taskcreatedmethod: false
   }),
 
   getters: {},
