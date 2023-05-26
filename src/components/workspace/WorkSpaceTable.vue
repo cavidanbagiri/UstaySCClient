@@ -14,7 +14,10 @@
         <AddNewTask v-if="new_task_condition" />
 
         <TaskCreatedMessage/>
+
         <TaskSelectingSection v-if="work_space_store.selecting_tasks.length" />
+
+        <EditTaskSection/>
 
         <table class="text-xs text-left text-gray-800 dark:text-gray-400 w-full">
             <TableHeader />
@@ -33,6 +36,7 @@ import AddNewTask from './AddNewTask.vue';
 import WorkSpaceStore from '../../store/workspace_store';
 import TaskSelectingSection from './TaskSelectingSection.vue';
 import TaskCreatedMessage from './TaskCreatedMessage.vue';
+import EditTaskSection from './EditTaskSection.vue';
 const work_space_store = WorkSpaceStore();
 const new_task_condition = ref(false)
 

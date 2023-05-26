@@ -10,7 +10,7 @@
             </div>
             <div class="flex items-center">
                 <div class="flex flex-col items-center mx-3"> <i class="fa-regular fa-trash-can"></i> <span class="text-sm">Remove</span></div>
-                <div class="flex flex-col items-center mx-3"> <i class="fa-solid fa-highlighter"></i> <span class="text-sm">Update</span></div>
+                <div class="flex flex-col items-center mx-3 cursor-pointer"> <i class="fa-solid fa-highlighter"></i> <span @click="openEditTask()" class="text-sm">Edit</span></div>
                 <div class="flex flex-col items-center mx-3"> <i class="fa-regular fa-file-zipper"></i> <span class="text-sm">Archieve</span></div>
             </div>
         </div>
@@ -23,6 +23,10 @@
     const work_space_store = WorkSpaceStore();
 
     const selecting_tasks = work_space_store.selecting_tasks;
+
+    const openEditTask = () => {
+        work_space_store.show_edit_task=true;
+    }
 
 </script>
 

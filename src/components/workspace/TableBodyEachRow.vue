@@ -10,7 +10,7 @@
             </div>
         </td>
         <td class="px-2 font-medium text-center">
-            {{ prop.index }}
+            {{ prop.index + 1}}
         </td>
         <td class="px-2 font-medium text-start border-y ">
             <div class="   py-1 px-2 rounded-xl ">
@@ -47,6 +47,8 @@
     const prop = defineProps(['index','data']);
 
     const checked = ref(false);
+
+    const condition = ['Attached','Working','Competed'];
 
     const checkboxCond = () => {
         if(checked.value){
