@@ -6,7 +6,7 @@
       <Tempnavbar />
     </div>
     
-    <div class="overflow-x-hidden">
+    <div class="">
 
       <Off_Canvas_Comp v-if="store.GETCANVASTOGGLE" />
 
