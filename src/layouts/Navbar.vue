@@ -1,6 +1,6 @@
 
 <template>
-    <div class="grid grid-cols-12  bg-violet-600 color-white relative">
+    <div class="grid grid-cols-12  bg-violet-600 color-white sticky top-0">
         <div class="col-span-3 text-white flex flex-row items-center justify-start">
             <span @click="toggleCanvas"
                 class="p-2 rounded-xl cursor-pointer  w-10 h-10 flex flex-row justify-center items-center hover:bg-black"><i
@@ -86,4 +86,7 @@ watchEffect(() => {
 
 </script>
 
-<style scoped></style>
+<style scoped>
+
+
+</style>
