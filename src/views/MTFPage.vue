@@ -1,11 +1,10 @@
 
 <template>
-    <div class=" flex flex-col p-2">
+    <div class=" flex flex-col px-2 bg-white">
 
         <!-- If User Login -->
-        <div v-if="user_store.user">
-            <!-- <div class="flex flex-row mt-1 my-2 anim" style="font-family: 'Courier New', Courier, monospace;"> -->
-            <div class="flex flex-row mt-1 my-2 anim" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;">
+        <div v-if="user_store.user" class="w-full">
+            <div class="flex flex-row mt-1 my-2 anim h-10 sticky top-0 bg-white w-full" v-font-family style="letter-spacing: 1px;">
 
                 <span :class="tab_num === 0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(0)"
                 class=" text-xs text-black px-3 pb-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-lg "></i>

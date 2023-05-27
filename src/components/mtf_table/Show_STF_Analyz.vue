@@ -1,6 +1,6 @@
 <template>
     
-    <div class="grid grid-cols-10 gap-12 justify-between mb-2"  style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;">
+    <div class="grid grid-cols-10 gap-12 justify-between mb-2 sticky" v-font-family  style="letter-spacing: 1px;">
 
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
          shadow-md hover:shadow-xl hover:cursor-pointer "  @click = "fetchCurrentData(0)"  >
