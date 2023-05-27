@@ -1,10 +1,9 @@
 
 <template>
-    <div v-if="order_store.GETSHOWMTFTOAST" class="fixed bottom-0 right-0 p-3 border-2 bg-gray-50 w-96 h-full"
-        style="z-index: 11">
+    <div v-if="order_store.GETSHOWMTFTOAST" class="fixed bottom-0 right-0 p-3 border-2 bg-gray-50 w-96 h-full ">
 
+        <div @click="closeMTFToast">X</div>
         <div class="flex flex-col p-2" v-if="order_store?.created_last_mtf">
-
             <div class="flex justify-between py-2 items-center">
                 <span class="text-xs py-2">MTF Created</span>
                 <span class="text-end fa-xs" @click="closeMTFToast"><i class="fa-solid fa-x"></i></span>
