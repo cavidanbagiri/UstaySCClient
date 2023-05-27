@@ -1,5 +1,6 @@
 <template>
-    <tbody class="text-gray-500" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.3px;">
+    <tbody class="text-gray-500" 
+    style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.3px;">
         <tr v-for="(i, index) in order_store.GETFILTEREDORDERSDATA"
             class="bg-white border-b  hover:bg-gray-100 ">
             <td class="w-1 p-4 py-2 ">

@@ -14,6 +14,9 @@ const pinia = createPinia();
 // Import Plugins
 import validation from './plugins/validation'; 
 
+// Import Directives
+import font_family from './directives/table_header_font_family';
+
 const app = createApp(App)
 
 // Use Router
@@ -24,5 +27,13 @@ app.use(pinia);
 
 // Use Plugins
 app.use(validation);
+
+// Use Directives
+// app.directive('font-size',{
+//     beforeMount: (el, binding) => {
+//         el.style.fontSize = binding.value+'px'
+//     }
+// })
+app.directive('font-family',font_family);
 
 app.mount('#app');

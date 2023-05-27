@@ -1,7 +1,7 @@
 
 <template>
-    <thead class="text-xs text-black bg-gray-100 dark:bg-gray-700 dark:text-gray-400 border w-full"
-    style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;">
+    <thead class="text-xs text-black bg-gray-100 dark:bg-gray-700 dark:text-gray-400 border w-full" v-font-family
+    style="letter-spacing: 0.5px;">
         <tr class="">
             <th scope="col-4" class=" px-4">
                 <div class="flex flex-col items-center">

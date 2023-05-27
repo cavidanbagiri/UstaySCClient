@@ -1,5 +1,6 @@
 <template>
-    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"  v-font-family
+    style="letter-spacing: 0.5px;">
         <tr>
             <th scope="col" class="px-6 py-1 font-mono font-medium text-center border">
                 S
