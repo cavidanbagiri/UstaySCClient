@@ -3,11 +3,11 @@
 
     <div class="flex flex-col p-2" >
 
-        <div class="flex flex-row mt-1 my-2 text-xs" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;">
+        <div class="flex flex-row mt-1 my-2 text-xs"  v-font-family style="letter-spacing: 1px;font-size: x-small;">
             
-            <span :class="procurement_store.GETTABNUM===0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(0)" class=" text-xs text-black px-3 pb-2 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-plus fa-lg "></i> All STF</span>
-            <span :class="procurement_store.GETTABNUM===1 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(1)" class=" text-xs text-black px-3 pb-2 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> All SM</span>
-            <span :class="procurement_store.GETTABNUM===2 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(2)" class=" text-xs text-black px-3 pb-2 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Creating SM</span>
+            <span :class="procurement_store.GETTABNUM===0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(0)" class="text-black px-3 pb-2 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-plus fa-lg "></i> All STF</span>
+            <span :class="procurement_store.GETTABNUM===1 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(1)" class="text-black px-3 pb-2 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> All SM</span>
+            <span :class="procurement_store.GETTABNUM===2 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(2)" class="text-black px-3 pb-2 mx-1 border-b-2  cursor-pointer" > <i class="fa-solid fa-list fa-lg "></i> Creating SM</span>
 
             
 

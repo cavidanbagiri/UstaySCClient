@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col h-screen bg-slate-800 w-12 items-center p-0 m-0 rounded-r-2xl">
+    <div class="flex flex-col h-screen bg-slate-800 w-10 items-center p-0 m-0 rounded-r-lg">
         <!-- Open Toggle Canvas -->
         <span @click="toggleCanvas"
             class="rounded-md cursor-pointer mt-5 w-8 h-8 flex flex-row justify-center items-center hover:bg-slate-400"><i

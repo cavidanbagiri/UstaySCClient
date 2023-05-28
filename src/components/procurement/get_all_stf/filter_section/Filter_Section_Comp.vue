@@ -4,7 +4,7 @@
     <div class="flex flex-col bg-slate-100 mb-1">
         <!-- Show Filter Section -->
         <div class="flex flex-row justify-start items-center">
-            <button @click="show_filters = !show_filters" class=" text-xs border p-1 bg-violet-200 rounded-md">Show Filters <i
+            <button class=" text-xs border p-1 bg-violet-200 rounded-md">Show Filters <i
                     class="fa-solid fa-arrow-down-short-wide"></i></button>
         </div>
         <!-- <pre>{{ procurement_store.waiting_orders_filter }}</pre> -->
@@ -185,7 +185,7 @@ watchEffect(() => {
 
 
 // Show and Hide Filter Section
-const show_filters = ref(false);
+const show_filters = ref(true);
 
 
 </script>

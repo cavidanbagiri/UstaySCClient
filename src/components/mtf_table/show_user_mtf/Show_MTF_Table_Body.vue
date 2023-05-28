@@ -21,7 +21,7 @@
             <th class="px-2 py-2 font-medium  text-center border-y">
                 <p>{{ i.created_at }}</p>
             </th>
-            <th class="font-medium text-start border-y px-2 text-xs">
+            <th class="font-medium text-start border-y px-2 ">
                 <div v-if="i.situation==='Waiting'" >
                     <span class=" bg-red-100 w-full text-red-500 py-1 px-2 rounded-md">
                         &#9679 {{ i.situation }} 

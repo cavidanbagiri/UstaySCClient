@@ -1,8 +1,8 @@
 <template>
-    <div class=" mtf-anim fixed shadow-lg z-10  bg-slate-800 pl-3 pt-3 pb-3 pr-3 h-screen  w-72
+    <div class=" mtf-anim fixed shadow-lg z-10 bg-slate-800 px-2 py-1 h-screen  w-72
       overflow-y-scroll ">
-        <div class="flex justify-end">
-            <span class="text-white hover:bg-slate-600 p-2 rounded-md cursor-pointer" @click="closeOffCanvas"><i class="fa-solid fa-xmark fa-lg"></i></span>
+        <div class="flex justify-end ">
+            <span class="text-white hover:bg-slate-600 px-1 py-1 rounded-md cursor-pointer" @click="closeOffCanvas"><i class="fa-solid fa-xmark fa-lg"></i></span>
         </div>
         <span class="p-2 rounded-xl cursor-pointer hover:bg-black flex flex-row items-center" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.3px;">
             <img class="w-8 h-8 rounded-full"
@@ -12,35 +12,29 @@
                 user_store?.user?.surname
             }}</span>
         </span>
-        <ul class="p-0 font-mono">
-            <li class="hover:bg-slate-700 text-white rounded-lg  py-2 pl-5 pr-10 mt-2 cursor-pointer">
-                <span class="text-md ">
-                    <i class="fa-solid fa-briefcase fa-md" style="color: white;"></i>
+        <ul class="p-0 text-sm" style="letter-spacing: 2px; font-size: 13px;">
+            <li class="hover:bg-slate-700 text-white p-2 mt-2 rounded-lg cursor-pointer flex items-center">
+                <div class="text-md w-8 h-8p-1 flex items-center justify-center">
+                        <i class="fa-solid fa-briefcase fa-md" style="color: white;"></i>
+                </div>
+                <span>
                     My Workspace
                 </span>
             </li>
-            <li class="hover:bg-slate-700 text-white p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
-                <span class="text-md py-1">
+            <li class="hover:bg-slate-700 text-white p-2 mt-2 rounded-lg cursor-pointer flex items-center">
+                <div class="text-md w-8 h-8p-1 flex items-center justify-center">
                     <i class="fa-regular fa-bell fa-md" style="color: white;"></i>
+                </div>
+                <span>
                     Notification
                 </span>
             </li>
-            <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
-                <span class="text-md">
+            <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg cursor-pointer flex items-center">
+                <div class="text-md w-8 h-8p-1 flex items-center justify-center">
                     <i class="fa-regular fa-star fa-md" style="color: white;"></i>
+                </div>
+                <span>
                     Starred
-                </span>
-            </li>
-            <li class="hover:bg-slate-700 text-white   p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
-                <span class="text-md">
-                    <i class="fa-regular fa-message fa-md" style="color: white;"></i>
-                    Messages
-                </span>
-            </li>
-            <li class="hover:bg-slate-700 text-white  p-2 mt-2 rounded-lg  py-2 px-4 cursor-pointer">
-                <span class="text-md">
-                    <i class="fa-solid fa-book fa-md" style="color: white;"></i>
-                    Notepad
                 </span>
             </li>
             <!-- Procurement -->
@@ -50,8 +44,8 @@
                     <div>
                         <div class="flex justify-between">
                             <div class="">
-                                <span class="text-md">
-                                    <i class="fa-solid fa-cart-shopping fa-md" style="color: white;"></i>
+                                <span class="">
+                                    <i class="fa-solid fa-cart-shopping fa-sm" style="color: white;"></i>
                                     Procurement
                                 </span>
                             </div>
@@ -122,7 +116,7 @@
                         <div class="flex justify-between">
                             <div class="">
                                 <span class="text-md">
-                                    <i class="fa-solid fa-warehouse fa-md" style="color: white;"></i>
+                                    <i class="fa-solid fa-warehouse fa-sm" style="color: white;"></i>
                                     Warehouse
                                 </span>
                             </div>
@@ -182,7 +176,9 @@
             </li>
             <li v-else class="hover:bg-slate-700 text-white  p-2 mt-1 rounded-lg  py-2 px-4 cursor-pointer">
                 <span @click="openUserLogout" class="text-md">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <i class="fa-solid fa-arrow-right-from-bracket fa-md"></i>
+                </span>
+                <span class="">
                     Log Out
                 </span>
             </li>

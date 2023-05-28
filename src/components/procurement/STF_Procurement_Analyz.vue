@@ -1,15 +1,13 @@
 <template>
-    <div class="grid grid-cols-12 gap-3 justify-between mb-2 px-1" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;">
+    <div class="grid grid-cols-12 gap-3 justify-between mb-2 px-1" v-font-family style="letter-spacing: 1px;font-size: small;">
 
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md" @click="fetchCurrentData(0)">
             <div class="flex flex-col">
                 <span class="text-gray-600 text-sm font-medium">Total Creating STF</span>
                 <span class="mt-3 text- font-bold">{{ statistic_result.total }}</span>
-
-    
             </div>
-            <div class="flex items-end">
-                <span class="bg-violet-100 rounded-sm text-violet-800 text-xs p-1 font-bold">Get Data</span>
+            <div class="flex items-end" style="font-size: xx-small;">
+                <span class="bg-violet-100 rounded-sm text-violet-800  p-1 font-bold">Get Data</span>
             </div>
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(1)">
@@ -17,8 +15,8 @@
                 <span class="text-gray-600 text-sm font-medium">Waiting STF</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.waiting}}</span>
             </div>
-            <div class="flex items-end">
-                <span class="bg-red-100 rounded-sm text-red-800 text-xs p-1 font-bold">Get Data</span>
+            <div class="flex items-end" style="font-size: xx-small;">
+                <span class="bg-red-100 rounded-sm text-red-800  p-1 font-bold">Get Data</span>
             </div>
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(2)">
@@ -26,8 +24,8 @@
                 <span class="text-gray-600 text-sm font-medium">Processing STF</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.processing}}</span>
             </div>
-            <div class="flex items-end">
-                <span class="bg-blue-100 rounded-sm text-blue-800 text-xs p-1 font-bold">Get Data</span>
+            <div class="flex items-end" style="font-size: xx-small;">
+                <span class="bg-blue-100 rounded-sm text-blue-800  p-1 font-bold">Get Data</span>
             </div>
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(3)">
@@ -35,8 +33,8 @@
                 <span class="text-gray-600 text-sm font-medium">Received STF</span>
                 <span class="mt-3 text-lg font-bold">{{statistic_result.received}}</span>
             </div>
-            <div class="flex items-end">
-                <span class="bg-green-100 rounded-sm text-green-800 text-xs p-1 font-bold">Get Data</span>
+            <div class="flex items-end" style="font-size: xx-small;">
+                <span class="bg-green-100 rounded-sm text-green-800  p-1 font-bold">Get Data</span>
             </div>
         </div>
     </div>
