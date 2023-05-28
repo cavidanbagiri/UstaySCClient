@@ -1,7 +1,7 @@
 
 <template>
-    <div class="flex flex-row justify-start items-center" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;">
-        <button @click="toggleFilter" class=" text-xs border p-1 bg-violet-200 rounded-md">Show Filters <i class="fa-solid fa-arrow-down-short-wide"></i></button>
+    <div class="flex flex-row justify-start items-center" style="letter-spacing: 1px;" v-font-family>
+        <button class=" border p-1 bg-violet-200 rounded-md" style="font-size: x-small;">Show Filters <i class="fa-solid fa-arrow-down-short-wide"></i></button>
     </div>
 </template>
 
@@ -9,7 +9,7 @@
 
 const emit = defineEmits(['toggleFilter'])
 
-const toggleFilter = () => emit('toggleFilter')
+// const toggleFilter = () => emit('toggleFilter')
 
 
 </script>

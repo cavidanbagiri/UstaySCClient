@@ -1,7 +1,9 @@
 <template>
     <div class=" mtf-anim fixed shadow-lg z-10  bg-slate-800 pl-3 pt-3 pb-3 pr-3 h-screen  w-72
       overflow-y-scroll ">
-
+        <div class="flex justify-end">
+            <span class="text-white hover:bg-slate-600 p-2 rounded-md cursor-pointer" @click="closeOffCanvas"><i class="fa-solid fa-xmark fa-lg"></i></span>
+        </div>
         <span class="p-2 rounded-xl cursor-pointer hover:bg-black flex flex-row items-center" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.3px;">
             <img class="w-8 h-8 rounded-full"
                 src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
@@ -216,6 +218,9 @@ const openUserLogout = () => {
     location.reload();
 }
 
+const closeOffCanvas = () => {
+    index_store.canvas_toggle = false;
+}
 
 // Show procurement Dropdown
 const show_procurement_dropdown = ref(false);
