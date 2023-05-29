@@ -5,9 +5,9 @@
 
         <SM_Create_Button_Comp/>
 
-        <div class="flex flex-col w-screen overflow-x-scroll">
-            
-            <table class="text-xs text-left text-gray-800 dark:text-gray-400 w-full">
+        <div class="flex flex-col w-screen">
+            salam
+            <table class="text-xs text-left text-gray-800 dark:text-gray-400 w-full">       
                 <SM_Table_Header_Comp/>
                 <SM_Table_Body_Comp/>
             </table>

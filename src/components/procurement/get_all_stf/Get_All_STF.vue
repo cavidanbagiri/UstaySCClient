@@ -1,13 +1,14 @@
 
 <template>
-  <div class="flex flex-col  my-1 py-2 px-1 text-black bg-slate-50">
+  <div class="">
 
-    <STF_Procurement_Analyz/>
-
-    <Filter_Section_Comp />
+    <div class="h-40 sticky top-10 bg-white w-full">
+      <STF_Procurement_Analyz/>
+  
+      <Filter_Section_Comp /> 
+    </div>
 
     <Show_All_STF_Table_Comp />
-
 
   </div>
 </template>

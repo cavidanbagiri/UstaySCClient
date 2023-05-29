@@ -1,7 +1,7 @@
 
 <template>
     <div class="my-1 flex justify-between ">
-        <button v-if="procurement_store.GETCHECKEDVALUES.length>=1" @click="createSTF" class="bg-red-600 font-medium text-xs py-2 px-3 rounded-md text-white">
+        <button v-if="procurement_store.GETCHECKEDVALUES.length>=1" @click="createSM" class="bg-red-600 font-medium text-xs py-2 px-3 rounded-md text-white">
             Create SM
         </button>
         <div class="flex">
@@ -44,7 +44,7 @@
         return procurement_store.GETPROCUREMENTUSERSNAMES;
     })
 
-    const createSTF = async () => {
+    const createSM = async () => {
         let check_valid = true;
         if(common_data.VendorModelId === 0 ){
             check_valid = false;

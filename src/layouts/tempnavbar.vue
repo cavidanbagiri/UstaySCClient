@@ -24,13 +24,26 @@
 
         <!-- STF Menu -->
         <router-link to="/order/stf" class="no-underline ">
-
             <span
                 class="p-2 rounded-md cursor-pointer w-8 mt-5 h-8 flex flex-row justify-center items-center hover:bg-slate-400 "><i
                     class="fa-solid fa-plus fa-md" style="color:white"></i></span>
-
-
         </router-link>
+        <!-- Warehouse Menu -->
+        <router-link to="/procurement" class="no-underline ">
+            <span
+                class="p-2 rounded-md cursor-pointer w-8 mt-5 h-8 flex flex-row justify-center items-center hover:bg-slate-400 ">
+                <i class="fa-regular fa-handshake fa-sm" style="color: white;"></i>
+            </span>
+        </router-link>
+        <!-- Procurement Menu -->
+        <router-link to="/warehouse" class="no-underline ">
+            <span
+                class="p-2 rounded-md cursor-pointer w-8 mt-5 h-8 flex flex-row justify-center items-center hover:bg-slate-400 ">
+                <i class="fa-solid fa-warehouse fa-sm" style="color: white;"></i>
+            </span>
+        </router-link>
+        
+
     </div>
 </template>
 

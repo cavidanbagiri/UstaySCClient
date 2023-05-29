@@ -7,13 +7,13 @@
             <div class="flex flex-row anim h-10 sticky top-0 bg-white w-full items-center" v-font-family style="letter-spacing: 1px;font-size: x-small;">
 
                 <span :class="tab_num === 0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(0)"
-                class="text-black px-3 pb-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-lg "></i>
+                class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-lg "></i>
                     Show MTF</span>
                 <span :class="tab_num === 1 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(1)"
-                class="text-black px-3 pb-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-list fa-lg "></i>
+                class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-list fa-lg "></i>
                     Create MTF</span>
                 <span :class="tab_num === 2 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(2)"
-                class="text-black px-3 pb-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i
+                class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i
                         class="fa-solid fa-warehouse fa-lg "></i> Show Warehouse</span>
 
             </div>

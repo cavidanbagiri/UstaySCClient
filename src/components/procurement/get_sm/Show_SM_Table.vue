@@ -1,15 +1,17 @@
 
 
 <template>
-    <div class="relative mt-1 shadow-md sm:rounded-lg w-screen overflow-x-scroll border-2 ">
-        <SM_Procurement_Analyz />
+    <div class="mt-1 shadow-md sm:rounded-lg w-full h-full border-2 ">
         <!-- Table -->
-        <table class="text-xs text-left text-gray-800 dark:text-gray-400 w-full" style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.3px;">
+        <div class="tableFixHead">
+            <table class=" text-left text-gray-800 dark:text-gray-400 w-full" style="font-size: xx-small;">
+                <Get_SM_Header_Table />
+                <tbody class="">
+                    <Get_SM_Body_Table />
+                </tbody>
 
-            <Get_SM_Header_Table />
-            <Get_SM_Body_Table />
-
-        </table>
+            </table>
+        </div>
 
     </div>
 </template>
@@ -22,7 +24,6 @@ import Get_SM_Header_Table from './Get_SM_Header_Table.vue';
 import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
 
 import ProcurementStore from '../../../store/procurement_store';
-import SM_Procurement_Analyz from '../SM_Procurement_Analyz.vue';
 const procurement_store = ProcurementStore();
 
 onMounted(async () => {
@@ -31,4 +32,14 @@ onMounted(async () => {
 
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+
+.tableFixHead          { overflow: auto; }
+.tableFixHead thead th { position: sticky; top: 0; z-index: 1; }
+
+/* Just common table stuff. Really. */
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; }
+th     { background:#eee; }
+
+</style>

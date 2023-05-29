@@ -1,6 +1,6 @@
 
 <template>
-    <div class="relative mt-1 shadow-md sm:rounded-lg w-screen overflow-x-scroll border-2 ">
+    <div class="mt-1 shadow-md sm:rounded-lg w-full border-2 ">
         
         <!-- Create Button and Error Message Section -->
         <div class="flex justify-between pr-1 my-1 mtf-anim" v-if="procurement_store.GETCHECKEDVALUES.length">
@@ -13,8 +13,7 @@
         </div>
 
         <!-- Table -->
-        <table class="text-xs text-left text-gray-800 dark:text-gray-400 w-full" >
-
+        <table class="text-left text-gray-800 dark:text-gray-400 w-full"  style="font-size: xx-small;">
             <!-- Table Header -->
             <Get_All_STF_Table_Header_Comp />
         
