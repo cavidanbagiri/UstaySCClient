@@ -32,7 +32,7 @@
     const common_data = reactive({
         procurement_coming_date : '',
         VendorModelId : 0,
-        supplierName : 0,
+        supplierName : 2,
     })
 
     // Get All Vendors and Show in vendors List

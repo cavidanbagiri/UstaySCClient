@@ -63,7 +63,7 @@ const each = reactive({
     ProjectModelId: prop?.each_item?.ProjectModelId,
     DepartmentModelId: prop?.each_item?.DepartmentModelId,
     STFModelId: prop?.each_item?.id,
-    price : 0,
+    price : 12,
     total : 0,
     currency : '₽',
 })
