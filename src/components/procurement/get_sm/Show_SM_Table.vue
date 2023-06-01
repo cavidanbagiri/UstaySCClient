@@ -1,10 +1,10 @@
 
 
 <template>
-    <div class="mt-1 shadow-md sm:rounded-lg w-full h-full border-2 ">
+    <div class="mt-1 shadow-md sm:rounded-lg w-full border-2 h-screen">
         <!-- Table -->
-        <div class="tableFixHead">
-            <table class=" text-left text-gray-800 dark:text-gray-400 w-full" style="font-size: xx-small;">
+        <div class=" h-2/3 overflow-auto">
+            <table class="text-left text-gray-800 dark:text-gray-400 w-full" style="font-size: xx-small;">
                 <Get_SM_Header_Table />
                 <tbody class="">
                     <Get_SM_Body_Table />
@@ -34,12 +34,6 @@ onMounted(async () => {
 
 <style scoped>
 
-.tableFixHead          { overflow: auto; }
-.tableFixHead thead th { position: sticky; top: 0; z-index: 1; }
 
-/* Just common table stuff. Really. */
-table  { border-collapse: collapse; width: 100%; }
-th, td { padding: 8px 16px; }
-th     { background:#eee; }
 
 </style>
