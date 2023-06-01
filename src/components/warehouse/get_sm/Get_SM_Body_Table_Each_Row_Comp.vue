@@ -3,7 +3,7 @@
 
     <tr 
         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-xs"
-        style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.3px;">
+        style="letter-spacing: 0.3px;font-size: xx-small;" v-font-family>
         <td class="w-1 p-4 py-2 ">
             <div class="flex items-center">
                 <input id="checkbox-table-search-1" type="checkbox" v-model="checked" @change="checkboxCond"
