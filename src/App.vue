@@ -2,11 +2,11 @@
 <template>
   <div class="p-0 m-0 relative">
 
-    <div class="sticky top-0  float-left p-0">
+    <div class="sticky top-0  float-left p-0 z-10">
       <Tempnavbar />
     </div>
     
-    <div class="">
+    <div class="p-0">
 
       <Off_Canvas_Comp v-if="store.GETCANVASTOGGLE" />
 
