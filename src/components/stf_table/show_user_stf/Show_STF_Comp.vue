@@ -5,10 +5,10 @@
         <div class="h-40 sticky top-10 bg-white w-full">
             <Show_STF_Analyz />
 
-            <Show_MTF_Filter_Section />
+            <Show_STF_Filter_Section />
         </div>
 
-        <Show_MTF_Table_Comp />
+        <Show_STF_Table_Comp />
 
     </div>
 </template>
@@ -21,8 +21,9 @@ import OrderStore from '../../../store/order_store';
 import UserStore from '../../../store/user_store';
 
 import Show_STF_Analyz from '../Show_STF_Analyz.vue';
-import Show_MTF_Table_Comp from './Show_MTF_Table_Comp.vue';
-import Show_MTF_Filter_Section from './filter_section/Show_MTF_Filter_Section.vue';
+import Show_STF_Table_Comp from './Show_STF_Table_Comp.vue';
+// import Show_STF_Filter_Section from './filter_section/Show_STF_Table_Comp.vue';
+import Show_STF_Filter_Section from './filter_section/Show_STF_Filter_Section.vue';
 
 const order_store = OrderStore();
 const user_store = UserStore();

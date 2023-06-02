@@ -8,18 +8,18 @@
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 
             <!-- Table Header -->
-            <MTF_Table_Header_Comp />
+            <STF_Table_Header_Comp />
 
             <!-- Table Body -->
-            <MTF_Table_Body_Comp :row_size=row_size />
+            <STF_Table_Body_Comp :row_size=row_size />
 
         </table>
 
         <!-- Add New Column -->
-        <MTF_Table_Row_Count_Comp @emitAddNewRow="addNewRow" @emitRemoveRow="removeRow" />
+        <STF_Table_Row_Count_Comp @emitAddNewRow="addNewRow" @emitRemoveRow="removeRow" />
 
-        <!-- Create MTF Button-->
-        <MTF_Create_Button_Comp @setRowSize="setRowSize" />
+        <!-- Create STF Button-->
+        <STF_Create_Button_Comp @setRowSize="setRowSize" />
 
         <Toast_Comp />
 
@@ -30,10 +30,10 @@
 
 import { ref } from 'vue';
 
-import MTF_Table_Header_Comp from './MTF_Table_Header_Comp.vue';
-import MTF_Table_Body_Comp from './MTF_Table_Body_Comp.vue';
-import MTF_Table_Row_Count_Comp from './MTF_Table_Row_Count_Comp.vue';
-import MTF_Create_Button_Comp from './MTF_Create_Button_Comp.vue';
+import STF_Table_Header_Comp from './STF_Table_Header_Comp.vue';
+import STF_Table_Body_Comp from './STF_Table_Body_Comp.vue';
+import STF_Table_Row_Count_Comp from './STF_Table_Row_Count_Comp.vue';
+import STF_Create_Button_Comp from './STF_Create_Button_Comp.vue';
 import OrderStore from '../../../store/order_store';
 import Toast_Comp from '../../design/Toast_Comp.vue';
 const order_store = OrderStore();

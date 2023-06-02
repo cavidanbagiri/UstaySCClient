@@ -4,9 +4,9 @@
         <!-- Table -->
         <table class="text-left text-gray-800 dark:text-gray-400 w-full" style="font-size: xx-small;">
             <!-- Table Header -->
-            <Show_MTF_Table_Header />
+            <Show_STF_Table_Header />
             <!-- Table Border -->
-            <Show_MTF_Table_Body />
+            <Show_STF_Table_Body />
 
         </table>
     </div>
@@ -14,8 +14,8 @@
 
 <script setup>
 
-import Show_MTF_Table_Body from './Show_MTF_Table_Body.vue';
-import Show_MTF_Table_Header from './Show_MTF_Table_Header.vue'
+import Show_STF_Table_Body from './Show_STF_Table_Body.vue';
+import Show_STF_Table_Header from './Show_STF_Table_Header.vue'
 
 </script>
 

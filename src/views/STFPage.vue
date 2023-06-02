@@ -36,8 +36,8 @@
 import { ref, onMounted } from 'vue';
 
 // Import Components For Showing In MTF Tab
-import MTF_Table_Comp from '../components/mtf_table/create_user_mtf/MTF_Table_Comp.vue';
-import Show_MTF_Comp from '../components/mtf_table/show_user_mtf/Show_MTF_Comp.vue';
+import STF_Table_Comp from '../components/stf_table/create_user_stf/STF_Table_Comp.vue';
+import Show_STF_Comp from '../components/stf_table/show_user_stf/Show_STF_Comp.vue';
 import Get_Warehouse_Table_Comp from '../components/warehouse/Get_Warehouse_Table_Comp.vue';
 
 import OrderStore from '../store/order_store';
@@ -48,7 +48,7 @@ const user_store = UserStore();
 /******************************************************************* Work With Tabs *************************/
 const tab_num = ref(0);
 const changeTabe = (num) => tab_num.value = num
-const tabs = ([Show_MTF_Comp, MTF_Table_Comp, Get_Warehouse_Table_Comp]);
+const tabs = ([Show_STF_Comp, STF_Table_Comp, Get_Warehouse_Table_Comp]);
 /************************************************************************************************************/
 
 onMounted(async () => {
