@@ -13,7 +13,8 @@ const OrderStore = defineStore('OrderStore',{
         created_last_mtf : null,
         statistic_result : null,
         order_list : [],
-        statistic_result_data : []
+        statistic_result_data : [],
+        selecting_rows : []
     }),
     getters:{
         GETORDERSDATA : (state) => state.orders, 

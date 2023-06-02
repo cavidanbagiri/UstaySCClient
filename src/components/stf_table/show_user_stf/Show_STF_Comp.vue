@@ -7,8 +7,11 @@
 
             <Show_STF_Filter_Section />
         </div>
-
+        
+        
         <Show_STF_Table_Comp />
+        
+        <Show_STF_Selecting_Task/>
 
     </div>
 </template>
@@ -22,8 +25,8 @@ import UserStore from '../../../store/user_store';
 
 import Show_STF_Analyz from '../Show_STF_Analyz.vue';
 import Show_STF_Table_Comp from './Show_STF_Table_Comp.vue';
-// import Show_STF_Filter_Section from './filter_section/Show_STF_Table_Comp.vue';
 import Show_STF_Filter_Section from './filter_section/Show_STF_Filter_Section.vue';
+import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
 
 const order_store = OrderStore();
 const user_store = UserStore();

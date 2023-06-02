@@ -1,5 +1,5 @@
 <template>
-        <tr :class="checked_style ? 'text-white bg-blue-600 p-10 text-xs  hover:bg-blue-400' : 'bg-white' "
+        <tr :class="checked_style ? 'text-white bg-blue-600  hover:bg-blue-500 ' : '' "
             class="border-b  hover:bg-gray-100 hover:cursor-pointer" >
             <td class="w-1 p-4 py-2 ">
                 <div class="flex items-center">
@@ -71,6 +71,8 @@
 <script setup>
 
     import { ref } from 'vue';
+    import OrderStore from '../../../store/order_store';
+    const order_store = OrderStore();
 
     const prop = defineProps(['each','index'])
 
@@ -78,6 +80,14 @@
 
     const checkedRows = () => {
         checked_style.value = !checked_style.value
+        if(checked_style.value){
+            order_store.selecting_rows.push(prop.each.id)
+            console.log('add order store selected rows : ',order_store.selecting_rows);
+        }
+        else{
+            order_store.selecting_rows = order_store.selecting_rows.filter((item)=>item!=prop.each.id)
+            console.log('remove order store selected rows : ',order_store.selecting_rows);
+        }
     }
 
 
