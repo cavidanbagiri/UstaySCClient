@@ -1,6 +1,6 @@
 <template>
-        <tr :class="checked_style ? 'text-white bg-blue-600  hover:bg-blue-500 ' : '' "
-            class="border-b  hover:bg-gray-100 hover:cursor-pointer" >
+        <tr :class="checked_style ? 'text-white bg-blue-600  hover:bg-blue-500 ' : 'hover:bg-gray-100' " @dblclick="getRowInform"
+            class="border-b  hover:cursor-pointer" >
             <td class="w-1 p-4 py-2 ">
                 <div class="flex items-center">
                     <label class="relative flex cursor-pointer items-center rounded-sm p-1" for="selected_row"
@@ -8,7 +8,7 @@
                         <input :id="prop.each.id" type="checkbox" @change="checkedRows(prop.each.id)"
                             class=" before:content[''] peer relative h-4 w-4 cursor-pointer appearance-none rounded-md border-2 border-blue-gray-200 transition-all before:absolute 
                             before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500
-                             before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500 hover:before:opacity-10" />
+                            before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500 hover:before:opacity-10" />
                         <div
                             class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20"
@@ -78,18 +78,22 @@
 
     const checked_style = ref(false);
 
+    // Row Checked Controll and add selecting Rows from dell
     const checkedRows = () => {
         checked_style.value = !checked_style.value
         if(checked_style.value){
             order_store.selecting_rows.push(prop.each.id)
-            console.log('add order store selected rows : ',order_store.selecting_rows);
         }
         else{
             order_store.selecting_rows = order_store.selecting_rows.filter((item)=>item!=prop.each.id)
-            console.log('remove order store selected rows : ',order_store.selecting_rows);
         }
     }
 
+    // Get Double Click and Row Inform from dell
+    const getRowInform = () => {
+        order_store.getRowInform(prop.each?.id);
+        order_store.row_inform = true
+    }
 
 </script>
 

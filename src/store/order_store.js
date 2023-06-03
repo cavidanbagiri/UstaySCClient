@@ -14,7 +14,8 @@ const OrderStore = defineStore('OrderStore',{
         statistic_result : null,
         order_list : [],
         statistic_result_data : [],
-        selecting_rows : []
+        selecting_rows : [],
+        row_inform : false
     }),
     getters:{
         GETORDERSDATA : (state) => state.orders, 
@@ -22,7 +23,8 @@ const OrderStore = defineStore('OrderStore',{
         GETFIELDSNAME : (state) => state.fields,
         GETSHOWMTFTOAST : (state) => state.show_mtf_toast,
         GETCREATEDLASTMTF : (state) => state.created_last_mtf,
-        GETORDERLIST : (state) => state.order_list
+        GETORDERLIST : (state) => state.order_list,
+        GETROWINFORM : (state) => state.row_inform
     },
     actions:{
 
@@ -47,14 +49,17 @@ const OrderStore = defineStore('OrderStore',{
             console.log('state reset : ',this.order_list);
         },
 
+        // Get User Inform from dell
+        async getRowInform (row_id){
+            console.log('row id : ',row_id);
+        },
+
         // Fetch Statistic Data
         async fetchStatisticResult (data) {
             await axios.get(`
                 http://localhost:3000/order/getstatisticresult?user_id=${data.user_id}&result_value_id=${data.statistic_result_value}
             `)
             .then((respond)=>{
-                // this.statistic_result_data = respond.data;
-                // console.log('statistic_result : ',this.statistic_result_data);
                 this.orders = respond.data;
                 this.filtered_orders = respond.data;
                 return respond;

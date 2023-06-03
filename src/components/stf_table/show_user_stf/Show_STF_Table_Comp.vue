@@ -1,5 +1,5 @@
 <template>
-    <div class="shadow-md rounded-lg w-full border-2 mt-1 ">
+    <div class="shadow-md rounded-lg w-full border-2 mt-1 z-10">
 
         <!-- Table -->
         <table class="text-left text-gray-800 dark:text-gray-400 w-full" style="font-size: xx-small;">
