@@ -36,7 +36,7 @@ const user_store = UserStore();
 
 onMounted(() => {
     const user = user_store.GETUSERINFORM;
-    order_store.showMTF(user);
+    order_store.showSTF(user);
 })
 
 </script>

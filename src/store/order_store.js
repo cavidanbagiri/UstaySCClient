@@ -15,7 +15,8 @@ const OrderStore = defineStore('OrderStore',{
         order_list : [],
         statistic_result_data : [],
         selecting_rows : [],
-        row_inform : false
+        row_inform : false,
+        row_detail_data : null
     }),
     getters:{
         GETORDERSDATA : (state) => state.orders, 
@@ -29,7 +30,7 @@ const OrderStore = defineStore('OrderStore',{
     actions:{
 
         // Send MTF Data for creating MTF
-        async createMTF(data){
+        async createSTF(data){
             try{
                 await axios.post('http://localhost:3000/order/stf', data)
                 .then((respond)=>{
@@ -46,12 +47,19 @@ const OrderStore = defineStore('OrderStore',{
         // Reset order_list data
         $reset () {
             this.order_list.length = 0;
-            console.log('state reset : ',this.order_list);
         },
 
         // Get User Inform from dell
-        async getRowInform (row_id){
-            console.log('row id : ',row_id);
+        async getRowDetails (stfid){
+            console.log('row id  : ',stfid);
+          await axios.get(`
+            http://localhost:3000/order/getrowdetails/${stfid}
+          `).then((respond)=>{
+            console.log('row detail respond : ',respond.data);
+            this.row_detail_data = respond.data;
+        }).catch((err)=>{
+            console.log('row detail respond Error : ',err);
+          })
         },
 
         // Fetch Statistic Data
@@ -70,7 +78,7 @@ const OrderStore = defineStore('OrderStore',{
         },
 
         // Show User MTF For User Page
-        async showMTF(user) {
+        async showSTF(user) {
             console.log(`http://localhost:3000/order/showorders?id=${user?.id}&ProjectModelId=${user?.ProjectModelId}`);
             await axios.get(`
                 http://localhost:3000/order/showorders?id=${user?.id}&ProjectModelId=${user?.ProjectModelId}

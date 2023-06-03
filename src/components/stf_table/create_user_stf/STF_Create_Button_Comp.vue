@@ -1,7 +1,7 @@
 
 <template>
     <div class="flex items-center justify-end mt-10">
-            <button type="button"  @click="createMTF"  class="text-white bg-gradient-to-r bg-blue-600 
+            <button type="button"  @click="createSTF"  class="text-white bg-gradient-to-r bg-blue-600 
               font-medium rounded-lg text-md px-4 py-2 text-center mr-2 mb-2">
               <i class="fa-solid fa-plus"></i>
               Create</button>
@@ -22,7 +22,7 @@
     // Set Row Size 0 after creating mtf
     const emit = defineEmits(['setRowSize']);
 
-    const createMTF = async () => {
+    const createSTF = async () => {
         if(order_store.order_list.length === 0 ){
             alert('Must Create at least 1 data');
         }
@@ -31,7 +31,7 @@
                 orders : order_store.order_list,
                 user : user_store?.user
             }
-            await order_store.createMTF(data)
+            await order_store.createSTF(data)
             .then((respond)=>{
                 if(respond?.response?.status === 400){
                     alert('MTF Cant Create');

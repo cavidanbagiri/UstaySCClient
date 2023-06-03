@@ -1,9 +1,11 @@
 <template>
-    <div v-if="order_store.GETROWINFORM" class="h-screen w-1/2 fixed top-0 right-0 z-10 border bg-white">
-        <div class="flex flex-col">
-            <div class="flex justify-end">
-                <button @click="closeRowInform" class="p-2">
-                    <i class="fa-solid fa-xmark fa-lg"></i>
+    <div v-if="order_store.GETROWINFORM" class="h-full w-full fixed top-0 bg-black bg-opacity-10 right-0 flex
+     z-10 border justify-end ">
+        <div class="flex flex-col p-5 bg-white h-full w-1/2 bg-opacity-100 rounded-2xl ">
+            <div class="flex justify-between items-center text-xl font-bold">
+                <span class="tracking-wider">Material Details</span>
+                <button @click="order_store.row_inform = false" class="py-1 px-3 bg-gray-100 rounded-md">
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="flex flex-col">
@@ -12,6 +14,7 @@
                 <div>STF No :  </div>
                 <div>SM No : </div>
                 <div>Condition : </div>
+                <pre>{{ order_store.row_detail_data }}</pre>
             </div>
         </div>
     </div>
@@ -21,10 +24,6 @@
 
     import OrderStore from '../../../store/order_store';
     const order_store = OrderStore();
-
-    const closeRowInform = () => {
-        order_store.row_inform = false;
-    }
 
 </script>
 
