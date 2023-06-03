@@ -14,7 +14,7 @@
                 <div>STF No :  </div>
                 <div>SM No : </div>
                 <div>Condition : </div>
-                <pre>{{ order_store.row_detail_data }}</pre>
+                <pre>{{ order_store.row_detail_data }}</pre> 
             </div>
         </div>
     </div>
