@@ -51,7 +51,6 @@ const OrderStore = defineStore('OrderStore',{
 
         // Get User Inform from dell
         async getRowDetails (stfid){
-            console.log('row id  : ',stfid);
           await axios.get(`
             http://localhost:3000/order/getrowdetails/${stfid}
           `).then((respond)=>{
