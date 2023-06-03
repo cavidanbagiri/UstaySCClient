@@ -4,7 +4,7 @@
     <td scope="row" class="w-8 font-mono font-thin text-gray-900 whitespace-nowrap dark:text-white text-center"
         style="font-size: smaller;">
         <div  class="flex justify-between items-center px-1">
-            <span>{{ each.s }}</span>
+            <span>{{ each.each_id }}</span>
             <span class="relative flex h-3 w-3">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
@@ -15,7 +15,7 @@
     <td scope="row" class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white"
         style="font-size: smaller;">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Material Type..."> -->
-        <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.material_type">
+        <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.material_type">
             <option disabled value="">Type</option>
             <option>Project</option>
             <option>Consumables</option>
@@ -24,7 +24,7 @@
     </td>
     <!-- Material Name -->
     <td class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white">
-        <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="text" placeholder="Material Name..."
+        <input class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="text" placeholder="Material Name..."
             v-model=each.material_name>
     </td>
     <!-- Material Link -->
@@ -34,13 +34,13 @@
     </td>
     <!-- Material Count -->
     <td class="p-1 border">
-        <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="number" min="1" placeholder="Count..."
+        <input class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="number" min="1" placeholder="Count..."
             v-model=each.count>
     </td>
     <!-- Material Unit -->
     <td class="p-1 border" style="font-size: smaller;">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2 " type="text" placeholder="Unit..."> -->
-        <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.unit">
+        <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.unit">
             <option disabled value="">Unit</option>
             <option>Adet</option>
             <option>M2</option>
@@ -52,7 +52,7 @@
     <!-- Area Field -->
     <td class="p-1 border">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Field..."> -->
-        <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.FieldsModelId">
+        <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.FieldsModelId">
             <option disabled value="">Field</option>
             <option v-for="i in order_store.GETFIELDSNAME" :value="i.id">{{ i.field_name }}</option> 
         </select>
@@ -78,7 +78,7 @@
         <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="text" placeholder="Comment..."
             v-model=each.comment>
     </td>
-
+    
 </template>
 
 <script setup>
@@ -91,7 +91,7 @@ const order_store = OrderStore();
 const prop = defineProps(['id']);
 
 const each = reactive({
-    s: prop?.id,
+    each_id: prop?.id,
     material_type: '',
     material_name: '',
     link: '',
@@ -104,7 +104,21 @@ const each = reactive({
 
 watchEffect(()=>{
     if(each.material_name!=='' && each.count!==0 && each.unit!=='' && each.FieldsModelId!==0){
-        order_store.order_list.push(each);
+        if(order_store.order_list.length>=1){
+            let check = false;
+            for(let i of order_store.order_list){
+                if(i.id === each.each_id){
+                    check = true;
+                    break;
+                }
+            }
+            if(!check){
+                order_store.order_list.push(each);
+            }
+        }
+        else{
+            order_store.order_list.push(each)
+        }
     }
 
 })

@@ -1,8 +1,8 @@
 <template>
-    <div v-if="order_store.selecting_rows.length>=1" class=" fixed w-full bottom-10 flex flex-row mb-4 justify-center rounded-lg">
+    <div v-if="order_store.selecting_rows.length>=1" class="mtf-anim fixed w-full bottom-10 flex flex-row mb-4 justify-center rounded-lg">
         <div class="flex justify-between bg-white w-1/2 border rounded-md shadow-2xl">
             <div class="flex items-center">
-                <span class="bg-blue-600 py-4 px-6 text-white font-bold rounded-l-md">{{ selecting_rows.length }}</span>
+                <span class="bg-blue-600 py-4 px-6 text-white font-bold rounded-l-md text-3xl">{{ selecting_rows.length }}</span>
                 <div class="ml-3">
                     <p>Task Selected</p>
                     <span v-for="i in selecting_rows.length" class="text-blue-600">&#9679</span>
@@ -31,4 +31,20 @@
 
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+
+.mtf-anim {
+    animation: openfilter 0.5s;
+}
+
+@keyframes openfilter {
+    from {
+        transform: translateY(120%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+</style>
