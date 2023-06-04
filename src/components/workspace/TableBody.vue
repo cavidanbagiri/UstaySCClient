@@ -14,7 +14,7 @@ import TableBodyEachRow from './TableBodyEachRow.vue';
 import WorkSpaceStore from '../../store/workspace_store';
 const work_space_store = WorkSpaceStore();
 
-const data = ref();
+const data = ref(null);
 
 watchEffect(()=>{
     data.value = work_space_store.tasks;

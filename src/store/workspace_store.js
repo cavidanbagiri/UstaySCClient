@@ -18,8 +18,9 @@ const WorkSpaceStore = defineStore("WorkSpaceStore", {
     // Fetch Tasks
     async fetchTasks() {
       try {
-        await axios.get("http://localhost:3000/workspace/").then((respond) => {
+        await axios.get("http://localhost:3000/workspace").then((respond) => {
           this.tasks = respond.data;
+          console.log('task is : ',this.tasks);
         });
       } catch (err) {}
     },
@@ -40,6 +41,22 @@ const WorkSpaceStore = defineStore("WorkSpaceStore", {
 
       try{
         await axios.post("http://localhost:3000/workspace/updatetask",data)
+        .then((respond)=>{
+          console.log('update respond : ',respond);
+        }).catch((err)=>{
+          console.log('update error : ',err);
+        })
+      }
+      catch(err){
+        console.log('common error : ',err);
+      }
+    },
+
+    // Remove Task From Workspace Main Table
+    async removeTaskFromMain(data) {
+      console.log('sending data is : ',data);
+      try{
+        await axios.post("http://localhost:3000/workspace/deletetask",data)
         .then((respond)=>{
           console.log('update respond : ',respond);
         }).catch((err)=>{

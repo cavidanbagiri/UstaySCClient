@@ -1,11 +1,11 @@
 <template>
     <div class="p-2 relative h-screen">
-        <WorkSpaceTable/>
+        <WorkSpace/>
     </div>
 </template>
 
 <script setup>
-import WorkSpaceTable from '../components/workspace/WorkSpaceTable.vue';
+import WorkSpace from '../components/workspace/WorkSpace.vue';
 
 
 </script>

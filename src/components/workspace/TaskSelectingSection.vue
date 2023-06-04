@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="flex items-center">
-                <div class="flex flex-col items-center mx-3"> <i class="fa-regular fa-trash-can"></i> <span class="text-sm">Remove</span></div>
+                <div class="flex flex-col items-center mx-3"> <i class="fa-regular fa-trash-can"></i> <span class="text-sm" @click="removeTask()">Remove</span></div>
                 <div class="flex flex-col items-center mx-3 cursor-pointer"> <i class="fa-solid fa-highlighter"></i> <span @click="openEditTask()" class="text-sm">Edit</span></div>
                 <div class="flex flex-col items-center mx-3"> <i class="fa-regular fa-file-zipper"></i> <span class="text-sm">Archieve</span></div>
             </div>
@@ -26,6 +26,14 @@
 
     const openEditTask = () => {
         work_space_store.show_edit_task=true;
+    }
+
+    const removeTask = async () => {
+        for(let i of selecting_tasks){
+            console.log('i : ',i);
+            console.log('id : ',i.id);
+            await work_space_store.removeTaskFromMain(i);
+        }
     }
 
 </script>
