@@ -61,13 +61,7 @@ const setRowSize = () => {
 
 const { order_list } = storeToRefs(order_store);
 const cavidan = () => {
-    // order_store.$reset();
-    // order_store.order_list = [];
-    // order_list = null;
-    // order_list = [];
-    // order_list.value.length = 0;
-    // order_list.disposeStore();
-    // console.log('order list, ', order_list.value);
+    
 }
 
 const kazim = () => {

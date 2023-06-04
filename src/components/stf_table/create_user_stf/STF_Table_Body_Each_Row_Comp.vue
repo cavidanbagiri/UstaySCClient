@@ -83,7 +83,7 @@
 
 <script setup>
 
-import {reactive, watchEffect, watch} from 'vue';
+import {reactive, watchEffect, ref} from 'vue';
 
 import OrderStore from '../../../store/order_store';
 const order_store = OrderStore();
@@ -104,7 +104,7 @@ const each = reactive({
 
 watchEffect(()=>{
     if(each.material_name!=='' && each.count!==0 && each.unit!=='' && each.FieldsModelId!==0){
-        if(order_store.order_list.length>=1){
+        if(order_store.order_list?.length>=1){
             let check = false;
             for(let i of order_store.order_list){
                 if(i.each_id === each.each_id){
@@ -117,7 +117,13 @@ watchEffect(()=>{
             }
         }
         else{
-            order_store.order_list.push(each)
+            if(order_store.order_list === null){
+                order_store.order_list = []
+                order_store.order_list.push(each)
+            }
+            else{
+                order_store.order_list.push(each)
+            }
         }
     }
 

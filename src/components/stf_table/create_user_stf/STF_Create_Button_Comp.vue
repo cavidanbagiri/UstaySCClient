@@ -32,12 +32,15 @@
                 user : user_store?.user
             }
             await order_store.createSTF(data)
-            .then((respond)=>{
+            .then(async (respond)=>{
                 if(respond?.response?.status === 400){
                     alert('MTF Cant Create');
                 }
                 else{
-                    emit('setRowSize');
+                    await order_store.$reset().then(_=>{
+                        emit('setRowSize');
+                    })
+                    
                 }
             }).catch((err)=>{
                 console.log('from create Error component : ',err);
