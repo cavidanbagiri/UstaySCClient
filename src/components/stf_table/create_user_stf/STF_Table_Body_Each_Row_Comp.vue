@@ -83,7 +83,7 @@
 
 <script setup>
 
-import {reactive, watchEffect} from 'vue';
+import {reactive, watchEffect, watch} from 'vue';
 
 import OrderStore from '../../../store/order_store';
 const order_store = OrderStore();
@@ -107,7 +107,7 @@ watchEffect(()=>{
         if(order_store.order_list.length>=1){
             let check = false;
             for(let i of order_store.order_list){
-                if(i.id === each.each_id){
+                if(i.each_id === each.each_id){
                     check = true;
                     break;
                 }

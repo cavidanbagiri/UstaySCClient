@@ -93,7 +93,7 @@
     const getRowDetail = async () => {
         await order_store.getRowDetails(prop.each.id);
         
-        order_store.row_inform = true
+        order_store.row_inform_condition = true
     }
 
 </script>

@@ -37,7 +37,6 @@
                     alert('MTF Cant Create');
                 }
                 else{
-                    order_store.$reset();
                     emit('setRowSize');
                 }
             }).catch((err)=>{

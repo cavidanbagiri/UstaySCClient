@@ -15,7 +15,7 @@ const OrderStore = defineStore('OrderStore',{
         order_list : [],
         statistic_result_data : [],
         selecting_rows : [],
-        row_inform : false,
+        row_inform_condition : false,
         row_detail_data : null
     }),
     getters:{
@@ -25,7 +25,7 @@ const OrderStore = defineStore('OrderStore',{
         GETSHOWMTFTOAST : (state) => state.show_mtf_toast,
         GETCREATEDLASTMTF : (state) => state.created_last_mtf,
         GETORDERLIST : (state) => state.order_list,
-        GETROWINFORM : (state) => state.row_inform
+        GETROWINFORMCONDITION : (state) => state.row_inform_condition
     },
     actions:{
 
@@ -36,7 +36,6 @@ const OrderStore = defineStore('OrderStore',{
                 .then((respond)=>{
                     this.created_last_mtf = respond.data
                     this.show_mtf_toast = true;
-                    this.$reset();
                     return respond;
                 })
             }catch(err){
@@ -44,9 +43,8 @@ const OrderStore = defineStore('OrderStore',{
             }
         },
 
-        // Reset order_list data
-        $reset () {
-            this.order_list.length = 0;
+        $reset(){
+            this.order_list = null;
         },
 
         // Get User Inform from dell
