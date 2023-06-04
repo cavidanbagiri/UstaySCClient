@@ -117,13 +117,7 @@ watchEffect(()=>{
             }
         }
         else{
-            if(order_store.order_list === null){
-                order_store.order_list = []
-                order_store.order_list.push(each)
-            }
-            else{
-                order_store.order_list.push(each)
-            }
+            order_store.order_list.push(each)
         }
     }
 

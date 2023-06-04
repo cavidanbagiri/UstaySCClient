@@ -37,10 +37,8 @@
                     alert('MTF Cant Create');
                 }
                 else{
-                    await order_store.$reset().then(_=>{
-                        emit('setRowSize');
-                    })
-                    
+                    order_store.$reset();
+                    emit('setRowSize');
                 }
             }).catch((err)=>{
                 console.log('from create Error component : ',err);
