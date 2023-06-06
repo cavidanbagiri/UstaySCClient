@@ -9,13 +9,10 @@
                 </button>
             </div>
             <div class="flex flex-col">
-                <div>Created By : </div>
-                <div>Created Time : </div>
-                <div>STF No :  </div>
-                <div>SM No : </div>
-                <div>Condition : </div>
-                <pre>{{ order_store.row_detail_data }}</pre>
-                <pre>{{ order_store.row_detail_data }}</pre>
+                <div class="flex flex-row justify-between" >Created Time : <span>{{ order_store.row_detail_data[0].createdAt }}</span> </div>
+                <div class="flex flex-row justify-between" >STF No : <span>{{ order_store.row_detail_data[0].stf_num }}</span> </div>
+                <div class="flex flex-row justify-between" >SM No : </div>
+                <div class="flex flex-row justify-between" >Condition : </div>
                 <pre>{{ order_store.row_detail_data }}</pre>
             </div>
         </div>
