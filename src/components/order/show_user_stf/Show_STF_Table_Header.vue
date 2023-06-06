@@ -35,7 +35,7 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-96 flex flex-col">
+                <div class=" flex flex-col">
                     Material Name
                 </div>
             </th>
