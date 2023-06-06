@@ -61,9 +61,6 @@
             <th class="px-2 py-2  font-medium text-center border-y">
                 {{ prop.each.unit }}
             </th>
-            <th class="px-2 py-2 font-medium  text-start border-y">
-                {{ prop.each?.field_name }}
-            </th>
         </tr>
 
 </template>

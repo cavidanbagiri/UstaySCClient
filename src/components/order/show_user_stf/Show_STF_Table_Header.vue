@@ -20,7 +20,7 @@
                 </div>
             </th>
             <th scope="col" class="px-2 py-1 font-medium text-center border">
-                <div class="flex flex-col ">
+                <div class="flex flex-col w-16">
                     STF Date
                 </div>
             </th>
@@ -31,7 +31,7 @@
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="flex flex-col">
-                    Material Type
+                    Type
                 </div>
             </th>
             <th scope="col" class="px-2 py-1  font-medium text-center border">
@@ -47,11 +47,6 @@
             <th scope="col" class="px-2 py-1  font-medium text-center border">
                 <div class="flex flex-col">
                     Unit
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col">
-                    Field
                 </div>
             </th>
 
