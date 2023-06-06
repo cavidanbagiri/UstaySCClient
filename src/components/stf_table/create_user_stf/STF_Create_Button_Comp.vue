@@ -17,7 +17,7 @@
     const user_store = UserStore();
     
     // Define Prop For Getting All Rows Values
-    const prop = defineProps(['row_size']);
+    const prop = defineProps(['row_size', 'order_list']);
 
     // Set Row Size 0 after creating mtf
     const emit = defineEmits(['setRowSize']);
@@ -37,8 +37,8 @@
                     alert('MTF Cant Create');
                 }
                 else{
-                    order_store.$reset();
                     emit('setRowSize');
+                    order_store.after_created = true
                 }
             }).catch((err)=>{
                 console.log('from create Error component : ',err);

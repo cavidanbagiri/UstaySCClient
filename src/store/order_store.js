@@ -13,6 +13,7 @@ const OrderStore = defineStore('OrderStore',{
         created_last_mtf : null,
         statistic_result : null,
         order_list : [],
+        after_created : false,
         statistic_result_data : [],
         selecting_rows : [],
         row_inform_condition : false,
@@ -43,16 +44,11 @@ const OrderStore = defineStore('OrderStore',{
             }
         },
 
-        $reset(){
-            this.order_list = null;
-        },
-
         // Get User Inform from dell
         async getRowDetails (stfid){
           await axios.get(`
             http://localhost:3000/order/getrowdetails/${stfid}
           `).then((respond)=>{
-            console.log('row detail respond : ',respond.data);
             this.row_detail_data = respond.data;
         }).catch((err)=>{
             console.log('row detail respond Error : ',err);
