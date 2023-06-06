@@ -36,8 +36,8 @@
 import { ref, onMounted } from 'vue';
 
 // Import Components For Showing In MTF Tab
-import STF_Table_Comp from '../components/stf_table/create_user_stf/STF_Table_Comp.vue';
-import Show_STF_Comp from '../components/stf_table/show_user_stf/Show_STF_Comp.vue';
+import STF_Table_Comp from '../components/order/create_user_stf/STF_Table_Comp.vue';
+import Show_STF_Comp from '../components/order/show_user_stf/Show_STF_Comp.vue';
 import Get_Warehouse_Table_Comp from '../components/warehouse/Get_Warehouse_Table_Comp.vue';
 
 import OrderStore from '../store/order_store';
@@ -60,12 +60,12 @@ onMounted(async () => {
 
 <style scoped>
 .anim {
-    animation: openfilter 1s ease-out;
+    animation: openfilter 0.5s ease-out;
 }
 
 @keyframes openfilter {
     from {
-        transform: translateX(100%);
+        transform: translateY(-100%);
     }
 
     to {

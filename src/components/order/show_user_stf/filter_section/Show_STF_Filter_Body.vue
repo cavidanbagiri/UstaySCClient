@@ -8,7 +8,7 @@
                 <!-- Date Order -->
                 <div class="flex flex-col my-1 mr-3" style="font-size: x-small;">
                     <span class="m-1">Date Order</span>
-                    <select class="border outline-none font-sans rounded-lg  h-full p-1 border-blue-300 hover:border-blue-600"
+                    <select class="border outline-none font-sans rounded-lg  h-full p-1 border-blue-300 hover:border-blue-600 shadow-lg"
                         v-model="date_order">
                         <option value="Descending">Descendig</option>
                         <option>Ascending</option>
@@ -17,13 +17,13 @@
                 <!-- Search With Date -->
                 <div class="flex flex-col m-1">
                     <span class="m-1">Search Date</span>
-                    <input class="border outline-none rounded-md border-blue-300 p-2 hover:border-blue-600" type="date" name="" id=""
+                    <input class="border outline-none rounded-md border-blue-300 p-2 hover:border-blue-600 shadow-lg" type="date" name="" id=""
                         placeholder="Date" v-model="date" />
                 </div>
                 <!-- Search With Material Type-->
                 <div class="flex flex-col m-1">
                     <span class="m-1">Search Type</span>
-                    <select class="border outline-none font-sans rounded-lg  h-full p-1 border-blue-300 hover:border-blue-600"
+                    <select class="border outline-none font-sans rounded-lg  h-full p-1 border-blue-300 hover:border-blue-600 shadow-lg"
                         v-model="material_type">
                         <option>All</option>
                         <option>Project</option>
@@ -45,7 +45,7 @@
                             </svg>
                         </div>
                         <input type="text" id="search"
-                            class="block w-full p-2 pl-10 outline-none text-gray-900 border border-blue-300 rounded-lg  hover:border-blue-600"
+                            class="block w-full p-2 pl-10 outline-none text-gray-900 border border-blue-300 rounded-lg  hover:border-blue-600  shadow-lg"
                             placeholder="MTF..." v-model="mtf_search">
 
                     </div>
@@ -64,7 +64,7 @@
                         </svg>
                     </div>
                     <input type="search" id="search"
-                        class="outline-none w-full p-2 pl-10 text-gray-900 border border-blue-300 rounded-lg hover:border-blue-600"
+                        class="outline-none w-full p-2 pl-10 text-gray-900 border border-blue-300 rounded-lg hover:border-blue-600 shadow-lg"
                         placeholder="Search" v-model='name_search'>
 
                 </div>

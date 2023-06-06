@@ -1,6 +1,6 @@
 <template>
     
-    <div class="grid grid-cols-10 gap-12 justify-between mb-1 py-1 sticky" 
+    <div class="grid grid-cols-10 gap-12 justify-between mb-1 py-1 sticky anim" 
     v-font-family style="letter-spacing: 1px;font-size: small;">
 
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
@@ -118,4 +118,18 @@ const fetchCurrentData = async (statistic_result_value) => {
 
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.anim {
+    animation: openfilter 0.5s ease-out;
+}
+
+@keyframes openfilter {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+</style>
