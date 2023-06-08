@@ -2,7 +2,7 @@
 <template>
     <div class="">
 
-        <div class="h-40 sticky top-10 bg-white w-full z-10">
+        <div class="h-40 sticky top-10 bg-white w-full">
             <Show_STF_Analyz />
 
             <Show_STF_Filter_Section />
