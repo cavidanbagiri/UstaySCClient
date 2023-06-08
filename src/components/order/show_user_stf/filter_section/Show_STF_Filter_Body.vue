@@ -114,7 +114,7 @@ watchEffect(() => {
         if (order_store.GETORDERSDATA) {
             order_store.filtered_orders = [];
             for (const i of order_store.GETORDERSDATA) {
-                if (i['mtf_num'].includes(mtf_search.value)) {
+                if (i['stf_num'].includes(mtf_search.value)) {
                     order_store.filtered_orders.push(i);
                     console.log('enter');
                 }
