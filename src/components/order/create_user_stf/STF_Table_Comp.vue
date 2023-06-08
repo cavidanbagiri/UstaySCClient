@@ -23,6 +23,8 @@
 
         <Toast_Comp />
 
+        {{ order_store.order_list }}
+
     </div>
 </template>
 

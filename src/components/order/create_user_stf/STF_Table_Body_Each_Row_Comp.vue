@@ -105,7 +105,7 @@ const each = reactive({
 });
 
 watchEffect(() => {
-    if (each.material_name !== '' && each.count !== 0 && each.unit !== '' && each.FieldsModelId !== 0) {
+    //if (each.material_name !== '' && each.count !== 0 && each.unit !== '' && each.FieldsModelId !== 0) {
         // Add Row
         if (order_store.order_list?.length >= 1) {
             let check = false;
@@ -122,20 +122,28 @@ watchEffect(() => {
         else {
             order_store.order_list.push(each)
         }
-    }
+    //}
     // Delete Row
-    else {
-        if (order_store.order_list.length >= 1) {
-            for (let i = 0; i < order_store.order_list.length; i++) {
-                if (order_store.order_list[i].each_id === each.each_id) {
-                    order_store.order_list.splice(i, 1);
-                }
-            }
-        }
-    }
+    //else {
+        // if (order_store.order_list.length >= 1) {
+        //     for (let i = 0; i < order_store.order_list.length; i++) {
+        //         if (order_store.order_list[i].each_id === each.each_id) {
+        //             order_store.order_list.splice(i, 1);
+        //         }
+        //     }
+        // }
+    //}
     if (order_store.after_created) {
         for (let i = 0; i < order_store.order_list.length; i++) {
-            each.each_id = 0; each.material_type = ''; each.material_name = ''; each.link=''; each.count = 0; each.unit = ''; each.FieldsModelId = 0; each.status = 'Not Specified', each.comment = '';
+            each.each_id = 0; 
+            each.material_type = ''; 
+            each.material_name = ''; 
+            each.link=''; 
+            each.count = 0; 
+            each.unit = ''; 
+            each.FieldsModelId = 0; 
+            each.status = 'Not Specified', 
+            each.comment = '';
             order_store.order_list.splice(i, 1);
         }
     }
