@@ -1,9 +1,9 @@
 
 
 <template>
-    <div class="mt-1 shadow-md sm:rounded-lg w-full border-2 h-screen">
+    <div class="mt-1 shadow-md sm:rounded-lg w-full border-2 ">
         <!-- Table -->
-        <div class=" overflow-auto cavidan">
+        <div class=" cavidan">
             <table class="text-left text-gray-800 dark:text-gray-400 w-full" style="font-size: xx-small;">
                 <Get_SM_Header_Table />
                 <tbody class="">
@@ -34,8 +34,8 @@ onMounted(async () => {
 
 <style scoped>
 
-.cavidan{
+/* .cavidan{
     height: 70%;
-}
+} */
 
 </style>

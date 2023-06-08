@@ -1,8 +1,8 @@
 <template>
     
-    <div class="">
+    <div class="w-screen">
 
-        <div class="h-40 sticky top-10 bg-white w-full">
+        <div class="h-40 sticky top-10 right-0 bg-white w-full">
             <SM_Procurement_Analyz/>
             <Filter_Section_Comp/>
         </div>

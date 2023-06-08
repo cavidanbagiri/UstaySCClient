@@ -2,7 +2,7 @@
 <template>
   <div class="p-0 m-0 relative">
 
-    <div class="sticky top-0  float-left p-0 z-10">
+    <div class="sticky top-0 left-0 float-left p-0 z-10">
       <Tempnavbar />
     </div>
     
