@@ -1,13 +1,15 @@
 <template>
     
-    <div class="w-screen">
+    <div class="flex flex-col p-1" style="display:inline-block">
 
-        <div class="h-40 sticky top-10 right-0 bg-white w-full">
+        <div class="h-40 sticky left-14 top-10 flex flex-col w-max bg-white" style="display:inline-block">
             <SM_Procurement_Analyz/>
             <Filter_Section_Comp/>
         </div>
 
-        <Show_SM_Table/>
+        <div class="" >
+            <Show_SM_Table/>
+        </div>
 
     </div>
 

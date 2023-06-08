@@ -3,8 +3,8 @@
 <template>
     <div class="mt-1 shadow-md sm:rounded-lg w-full border-2 ">
         <!-- Table -->
-        <div class=" cavidan">
-            <table class="text-left text-gray-800 dark:text-gray-400 w-full" style="font-size: xx-small;">
+        <div class="">
+            <table class="text-left text-gray-800" style="font-size: xx-small;">
                 <Get_SM_Header_Table />
                 <tbody class="">
                     <Get_SM_Body_Table />

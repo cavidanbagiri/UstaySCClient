@@ -2,9 +2,9 @@
 <template>
     <div class="flex flex-col px-1 bg-white">
 
-        <div class="w-full">
-            <div class="flex flex-row anim h-10 sticky top-0 bg-white w-full items-center" v-font-family
-                style="letter-spacing: 1px;font-size: x-small;">
+        <div class="w-full bg-white">
+            <div class="flex flex-row anim h-10 sticky top-1 left-14 bg-white items-center" v-font-family
+                style="letter-spacing: 1px;font-size: x-small;display: inline-block;">
 
                 <span :class="procurement_store.GETTABNUM === 0 ? 'border-b-violet-800 border-b-4 ' : ''"
                     @click="changeTabe(0)" class="text-black px-3 py-2 mx-1 border-b-2  cursor-pointer"> <i
