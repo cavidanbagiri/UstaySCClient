@@ -20,7 +20,7 @@ const procurement_store = ProcuremntStore();
 const addChecked = (item) => {
     if(procurement_store.checked_values.length >= 1){
         procurement_store.checked_values.filter((each)=>{
-            if(item.mtf_num !== each.mtf_num){
+            if(item.stf_num !== each.stf_num){
                 procurement_store.show_error_message = true;
             }
             else{
@@ -32,6 +32,7 @@ const addChecked = (item) => {
     else{
         procurement_store.checked_values.push(item);
     }
+    console.log(procurement_store.checked_values);
 }
 
 const removeChecked = (item_id) => {

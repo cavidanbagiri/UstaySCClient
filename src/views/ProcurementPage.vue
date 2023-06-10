@@ -1,21 +1,24 @@
 
 <template>
-    <div class="flex flex-col px-1 bg-white">
+    <div class="flex flex-col bg-white">
 
-        <div class="w-full bg-white">
-            <div class="flex flex-row anim h-10 sticky top-1 left-14 bg-white items-center" v-font-family
-                style="letter-spacing: 1px;font-size: x-small;display: inline-block;">
+        <div class="bg-white">
 
-                <span :class="procurement_store.GETTABNUM === 0 ? 'border-b-violet-800 border-b-4 ' : ''"
-                    @click="changeTabe(0)" class="text-black px-3 py-2 mx-1 border-b-2  cursor-pointer"> <i
-                        class="fa-solid fa-plus fa-lg "></i> All STF</span>
-                <span :class="procurement_store.GETTABNUM === 1 ? 'border-b-violet-800 border-b-4 ' : ''"
-                    @click="changeTabe(1)" class="text-black px-3 py-2 mx-1 border-b-2  cursor-pointer"> <i
-                        class="fa-solid fa-list fa-lg "></i> All SM</span>
-                <span :class="procurement_store.GETTABNUM === 2 ? 'border-b-violet-800 border-b-4 ' : ''"
-                    @click="changeTabe(2)" class="text-black px-3 py-2 mx-1 border-b-2  cursor-pointer"> <i
-                        class="fa-solid fa-list fa-lg "></i> Creating SM</span>
+            <div class="sticky top-0 bg-white ">
+                <div class="flex flex-row anim h-10 bg-white items-center sticky left-16 " v-font-family
+                    style="letter-spacing: 1px;font-size: x-small;display: inline-block;">
 
+                    <span :class="procurement_store.GETTABNUM === 0 ? 'border-b-violet-800 border-b-4 ' : ''"
+                        @click="changeTabe(0)" class="text-black px-3 py-2 mx-1 border-b-2  cursor-pointer"> <i
+                            class="fa-solid fa-plus fa-lg "></i> All STF</span>
+                    <span :class="procurement_store.GETTABNUM === 1 ? 'border-b-violet-800 border-b-4 ' : ''"
+                        @click="changeTabe(1)" class="text-black px-3 py-2 mx-1 border-b-2  cursor-pointer"> <i
+                            class="fa-solid fa-list fa-lg "></i> All SM</span>
+                    <span :class="procurement_store.GETTABNUM === 2 ? 'border-b-violet-800 border-b-4 ' : ''"
+                        @click="changeTabe(2)" class="text-black px-3 py-2 mx-1 border-b-2  cursor-pointer"> <i
+                            class="fa-solid fa-list fa-lg "></i> Creating SM</span>
+
+                </div>
             </div>
 
 

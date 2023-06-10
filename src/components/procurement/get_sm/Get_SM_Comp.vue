@@ -1,10 +1,12 @@
 <template>
     
-    <div class="flex flex-col p-1" style="display:inline-block">
+    <div class="flex flex-col" style="display:inline-block">
 
-        <div class="h-40 sticky left-14 top-10 flex flex-col w-max bg-white" style="display:inline-block">
-            <SM_Procurement_Analyz/>
-            <Filter_Section_Comp/>
+        <div class="sticky h-40 top-10 bg-white">
+            <div class=" sticky left-16 flex flex-col w-max bg-white" style="display:inline-block">
+                <SM_Procurement_Analyz/>
+                <Filter_Section_Comp/>
+            </div>
         </div>
 
         <div class="" >
