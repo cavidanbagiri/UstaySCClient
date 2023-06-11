@@ -33,7 +33,9 @@ const ProcurementStore = defineStore('ProcurementStore',{
         // For Showing Selecting Rows
         selecting_rows : [],
         // Show After Created Message
-        sm_show_message : false
+        sm_success_show_message : false,
+        // After Create SM, for unchecked all selected rows
+        after_created : false 
     }),
     getters:{
         GETWAITINGORDERS : (state) => state.waiting_orders, 

@@ -70,13 +70,16 @@
         if(check_valid){
             await procurement_store.createSTF(procurement_store.GETCREATINGSTFDATA)
             .then((respond)=>{
-                console.log("respond from checkvalid : ",respond);
                 procurement_store.creating_STF_datas = [];
-                procurement_store.sm_show_message = true;
+                procurement_store.sm_success_show_message = true;
+                procurement_store.after_created = true;
+                
+                // Show Error Message and Return Back All STF Page
                 setTimeout(()=>{
                     procurement_store.tab_num=0;
-                    procurement_store.sm_show_message=false;
+                    procurement_store.sm_success_show_message=false;
                 },500)
+
             }).catch((err)=>{
 
             })

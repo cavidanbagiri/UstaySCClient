@@ -17,7 +17,7 @@
 
 <script setup>
 
-import { onMounted } from 'vue'
+import { onMounted, watchEffect } from 'vue'
 
 import ProcurementStore  from '../../../store/procurement_store.js';
 
@@ -29,6 +29,12 @@ import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
 const procurement_store = ProcurementStore();
 
 onMounted(async () => await procurement_store.fetchAllSTF())
+
+watchEffect(async ()=>{
+  if(procurement_store.after_created){
+    await procurement_store.fetchAllSTF();
+  }
+})
 
 </script>
 

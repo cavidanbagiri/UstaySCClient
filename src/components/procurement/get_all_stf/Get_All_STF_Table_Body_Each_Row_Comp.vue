@@ -77,7 +77,8 @@
 
 <script setup>
 
-import { ref } from 'vue';
+import { ref, watchEffect } from 'vue';
+
 
 // Get Each Item from parent
 const prop = defineProps(['each_item', 'index', 'checked_style']);
@@ -100,6 +101,7 @@ const checkboxCond = () => {
         emit('removeChecked', prop?.each_item?.id);
     } 
 }
+
 
 </script>
 
