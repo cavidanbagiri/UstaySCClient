@@ -5,14 +5,18 @@
             Create SM
         </button>
         <div class="flex">
+            <Vendor_Comp :vendor_list="vendor_list" @selectVendor="selectVendor " />
+            <!-- Choosing Procurement Coming Date-->
             <div>
                 <input class="border outline-none font-sans rounded-lg w-full h-full p-3 text-xs" type="date" name="" id="" v-model="common_data.procurement_coming_date">
             </div>
+            <!-- Choosing Vendor Name -->
             <div>
                 <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="common_data.VendorModelId">
                     <option v-for="i in vendor_list" :value="i.id">{{ i.vendor_name }}</option>
                 </select>
             </div>
+            <!-- Choosing Supplier Worker Name -->
             <div>
                 <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="common_data.supplierName">
                     <option v-for="i in supplier_list" :value="i.id">{{ i.username }}</option>
@@ -27,6 +31,7 @@
     import { ref, reactive, watchEffect, computed} from 'vue';
 
     import ProcurementStore from '../../../store/procurement_store';
+import Vendor_Comp from './Vendor_Comp.vue';
     const procurement_store = ProcurementStore();
 
     const common_data = reactive({
@@ -43,6 +48,11 @@
     const supplier_list = computed(()=>{
         return procurement_store.GETPROCUREMENTUSERSNAMES;
     })
+
+    // Select Vendor
+    const selectVendor = (vendor) => {
+        common_data.VendorModelId = vendor?.id;
+    }
 
     const createSM = async () => {
         let check_valid = true;
