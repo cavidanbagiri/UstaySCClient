@@ -27,7 +27,7 @@
             {{ prop?.each_item?.unit }}
         </th>
         <th class="px-2 py-2 font-mono font-thin border text-center">
-            <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="text" placeholder="Material Name..."
+            <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="number" min="0.001" placeholder="Material Name..."
             v-model="each.price">
         </th>
         <th class="px-2 py-2 font-mono font-thin border text-center">
@@ -63,7 +63,7 @@ const each = reactive({
     ProjectModelId: prop?.each_item?.ProjectModelId,
     DepartmentModelId: prop?.each_item?.DepartmentModelId,
     STFModelId: prop?.each_item?.id,
-    price : 12,
+    price : 0,
     total : 0,
     currency : '₽',
 })

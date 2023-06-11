@@ -36,7 +36,7 @@
     <!-- Material Count -->
     <td class="p-1 border">
         <input class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="number"
-            min="1" placeholder="Count..." v-model=each.count>
+            min="0.001" placeholder="Count..." v-model=each.count>
     </td>
     <!-- Material Unit -->
     <td class="p-1 border" style="font-size: smaller;">
@@ -97,7 +97,7 @@ const each = reactive({
     material_type: '',
     material_name: '',
     link: '',
-    count: 0,
+    count: 0.001,
     unit: '',
     FieldsModelId: 0,
     status: 'Not Specified',

@@ -1,6 +1,6 @@
 
 <template>
-    <div class="my-1 flex justify-between ">
+    <div class="mb-1 mt-3 flex justify-between ">
         <button v-if="procurement_store.GETCHECKEDVALUES.length>=1" @click="createSM" class="bg-red-600 font-medium text-xs py-2 px-3 rounded-md text-white">
             Create SM
         </button>
@@ -72,6 +72,11 @@
             .then((respond)=>{
                 console.log("respond from checkvalid : ",respond);
                 procurement_store.creating_STF_datas = [];
+                procurement_store.sm_show_message = true;
+                setTimeout(()=>{
+                    procurement_store.tab_num=0;
+                    procurement_store.sm_show_message=false;
+                },500)
             }).catch((err)=>{
 
             })

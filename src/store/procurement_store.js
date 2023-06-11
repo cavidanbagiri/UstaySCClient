@@ -10,7 +10,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
         waiting_orders : null,
         // For Filter Waiting data show in client side 
         waiting_orders_filter: null,
-        // For choosing MTF and sending for creating STF
+        // For choosing STF and sending for creating STF
         checked_values: [],
         // Show Error Message in when choosing different MTF's
         show_error_message : false,
@@ -30,7 +30,10 @@ const ProcurementStore = defineStore('ProcurementStore',{
         all_sms : [],
         // SM Statistic Result
         sm_statistic_result : null,
-        
+        // For Showing Selecting Rows
+        selecting_rows : [],
+        // Show After Created Message
+        sm_show_message : false
     }),
     getters:{
         GETWAITINGORDERS : (state) => state.waiting_orders, 

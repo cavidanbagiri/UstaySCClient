@@ -12,10 +12,12 @@
 
 <script setup>
 
+import { ref } from 'vue'
 import Get_All_STF_Table_Body_Each_Row_Comp from './Get_All_STF_Table_Body_Each_Row_Comp.vue';
-
 import ProcuremntStore from '../../../store/procurement_store.js';
 const procurement_store = ProcuremntStore();
+
+const checked_style = ref(false);
 
 const addChecked = (item) => {
     if(procurement_store.checked_values.length >= 1){
