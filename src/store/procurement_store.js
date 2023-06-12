@@ -31,7 +31,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
         // SM Statistic Result
         sm_statistic_result : null,
         // For Showing Selecting Rows
-        selecting_rows : [],
+        // selecting_rows : [],
         // Show After Created Message
         sm_success_show_message : false,
         // After Create SM, for unchecked all selected rows

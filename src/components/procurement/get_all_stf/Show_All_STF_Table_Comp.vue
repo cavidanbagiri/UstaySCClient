@@ -37,6 +37,7 @@ const procurement_store = ProcurementStore();
 
 const unselect = () => {
     procurement_store.after_created=true
+    procurement_store.checked_values = procurement_store.checked_values.filter((item)=>item.id === -1)
     setTimeout(()=>{
         procurement_store.after_created = false;
     },1000)

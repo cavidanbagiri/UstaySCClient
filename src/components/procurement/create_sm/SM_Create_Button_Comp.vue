@@ -83,6 +83,7 @@ import Vendor_Comp from './Vendor_Comp.vue';
                 procurement_store.creating_STF_datas = [];
                 procurement_store.sm_success_show_message = true;
                 procurement_store.after_created = true;
+                procurement_store.checked_values = procurement_store.checked_values.filter((item)=>item.id === -1)
                 
                 // Show Error Message and Return Back All STF Page
                 setTimeout(()=>{
