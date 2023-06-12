@@ -13,6 +13,7 @@
         </div> -->
 
         <!-- Table -->
+        <button class="p-2 border text-xs bg-blue-600 text-white" @click="unselect()" >Unselect</button>
         <table class="text-left text-gray-800 dark:text-gray-400 w-full"  style="font-size: xx-small;">
             <!-- Table Header -->
             <Get_All_STF_Table_Header_Comp />
@@ -29,12 +30,16 @@
 import Get_All_STF_Table_Header_Comp from './Get_All_STF_Table_Header_Comp.vue';
 import Get_All_STF_Table_Body_Comp from './Get_All_STF_Table_Body_Comp.vue';
 
+
+
 import ProcurementStore from '../../../store/procurement_store';
 const procurement_store = ProcurementStore();
 
-const createSTF = async () => {
-    await procurement_store.createSTF(procurement_store.GETCHECKEDVALUES);
-    procurement_store.tab_num = 2;
+const unselect = () => {
+    procurement_store.after_created=true
+    setTimeout(()=>{
+        procurement_store.after_created = false;
+    },1000)
 }
 
 </script>

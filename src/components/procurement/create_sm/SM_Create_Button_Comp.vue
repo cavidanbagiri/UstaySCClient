@@ -90,6 +90,10 @@ import Vendor_Comp from './Vendor_Comp.vue';
                     procurement_store.sm_success_show_message=false;
                 },500)
 
+                setTimeout(()=>{
+                    procurement_store.after_created = false;
+                },2000)
+
             }).catch((err)=>{
 
             })

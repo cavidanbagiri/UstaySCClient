@@ -30,7 +30,6 @@
     })
 
     const createSM = async () => {
-    await procurement_store.createSTF(procurement_store.GETCHECKEDVALUES);
     procurement_store.tab_num = 2;
 }
 

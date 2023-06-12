@@ -1,14 +1,9 @@
 
 <template>
-    <tr :class="checked ? 'text-white  bg-blue-500 hover:bg-blue-500 ' : 'hover:bg-gray-100' " 
+    <tr :class="checked ? 'text-white  bg-blue-600 hover:bg-blue-500 ' : 'hover:bg-gray-100' " 
     class="border-b dark:bg-gray-800 dark:border-gray-700 "
     style=" font-size: xx-small;" v-font-family>
         <td class="w-1 p-4 py-2 ">
-            <!-- <div class="flex items-center">
-                <input id="checkbox-table-search-1" type="checkbox" v-model="checked" @change="checkboxCond"
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-            </div> -->
 
             <div class="flex items-center">
                     <label class="relative flex cursor-pointer items-center rounded-sm p-1" for="selected_row"
@@ -79,6 +74,8 @@
 
 import { ref, watchEffect } from 'vue';
 
+import ProcurementStore from '../../../store/procurement_store';
+const procurement_store = ProcurementStore();
 
 // Get Each Item from parent
 const prop = defineProps(['each_item', 'index', 'checked_style']);
@@ -91,17 +88,21 @@ const checked = ref(false);
 // const checked_style = ref(false);
 
 const checkboxCond = () => {
-    // checked.value === true ? emit('addChecked', prop?.each_item) : emit('removeChecked', prop?.each_item?.id);
     if(checked.value === true) {
-        // checked_style.value = true
         emit('addChecked', prop?.each_item)
     }
      else{
-        // checked_style.value = false
         emit('removeChecked', prop?.each_item?.id);
     } 
 }
 
+watchEffect(()=>{
+
+    if(procurement_store.after_created){
+        checked.value = false;
+    }
+
+})
 
 </script>
 
