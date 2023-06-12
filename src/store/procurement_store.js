@@ -12,8 +12,8 @@ const ProcurementStore = defineStore('ProcurementStore',{
         waiting_orders_filter: null,
         // For choosing STF and sending for creating STF
         checked_values: [],
-        // Show Error Message in when choosing different MTF's
-        show_error_message : false,
+        // Disable Or Enable Create SM Button
+        toggle_createsm : false,
         // When MTF choosing and Create STF btn clicked, Open Create STF Component
         tab_num : 0,
         // Choose STF and send backend for inserting `stfs` table
@@ -41,7 +41,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
         GETWAITINGORDERS : (state) => state.waiting_orders, 
         GETWAITINGORDERSFILTER : (state) => state.waiting_orders_filter, 
         GETCHECKEDVALUES : (state) => state.checked_values,
-        GETERRORMESSAGE : (state) => state.show_error_message,
+        GETTOGGLEDISABLESM : (state) => state.toggle_createsm,
         GETTABNUM : (state) => state.tab_num,
         GETCREATINGSTFDATA : (state) => state.creating_STF_datas,
         GETCOMPANIESNAMES : (state) => state.companies_names,

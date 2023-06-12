@@ -18,14 +18,20 @@ const procurement_store = ProcuremntStore();
 
 
 const addChecked = (item) => {
+
+    // Check Selecting Items Conditions
+    if(item.situation ==='Processing' || item.situation === 'Received' ){
+        procurement_store.toggle_createsm = true;
+    }
+
     if(procurement_store.checked_values.length >= 1){
         procurement_store.checked_values.filter((each)=>{
             if(item.stf_num !== each.stf_num){
-                procurement_store.show_error_message = true;
+                procurement_store.toggle_createsm = true;
             }
             else{
                 procurement_store.checked_values.push(item);
-                procurement_store.show_error_message = false;
+                procurement_store.toggle_createsm = false;
             }
         })
     }
@@ -37,7 +43,7 @@ const addChecked = (item) => {
 
 const removeChecked = (item_id) => {
     procurement_store.checked_values = procurement_store.checked_values.filter((item)=>item.id !== item_id)
-    procurement_store.show_error_message = false;
+    procurement_store.toggle_createsm = false;
 }
 
 </script>
