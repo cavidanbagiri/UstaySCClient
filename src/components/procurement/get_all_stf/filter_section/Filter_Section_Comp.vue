@@ -10,7 +10,7 @@
                     <!-- Date Order -->
                     <div class="flex flex-col my-1 mr-3">
                         <span class=" m-1">Date Order</span>
-                        <select class="border outline-none font-sans rounded-lg  h-full p-1  border-gray-300"
+                        <select class="outline-none border font-sans rounded-lg  h-full p-1  border-gray-300"
                             v-model="date_order">
                             <option value="Descending">Descending</option>
                             <option>Ascending</option>
@@ -19,7 +19,7 @@
                     <!-- Search With Date -->
                     <div class="flex flex-col m-1">
                         <span class=" m-1">Search Date</span>
-                        <input class="border outline-none rounded-md border-gray-300  p-2" type="date" name="" id=""
+                        <input class="outline-none border rounded-md border-gray-300  p-2" type="date" name="" id=""
                             placeholder="Date" v-model="date" />
                     </div>
                     <!-- Search With MTF -->
@@ -36,8 +36,8 @@
                                 </svg>
                             </div>
                             <input type="text" id="search"
-                                class="block w-full p-2 pl-10  text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="MTF..." v-model="mtf_search">
+                                class="outline-none block w-full p-2 pl-10  text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="MTF..." v-model="stf_search">
 
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                 </svg>
                             </div>
                             <input type="text" id="search"
-                                class="block w-full p-2 pl-10  text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class="outline-none block w-full p-2 pl-10  text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Orderer..." v-model="ordered_search">
 
                         </div>
@@ -75,7 +75,7 @@
                             </svg>
                         </div>
                         <input type="search" id="search"
-                            class="block w-full p-2 pl-10 text-gray-900 border border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="outline-none block w-full p-2 pl-10 text-gray-900 border border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Search" v-model='name_search'>
 
                     </div>
@@ -101,7 +101,7 @@ const date_order = ref('Descending');
 const date = ref('');
 
 // MTF Search
-const mtf_search = ref('');
+const stf_search = ref('');
 
 // Ordered Search
 const ordered_search = ref('');
@@ -110,40 +110,40 @@ const ordered_search = ref('');
 const name_search = ref('');
 
 watchEffect(() => {
-    procurement_store.waiting_orders_filter = procurement_store.waiting_orders;
+    procurement_store.filtered_stf = procurement_store.all_stf;
 
     // Date And Time Order
     if (date_order.value === 'Ascending') {
-        if (procurement_store.GETWAITINGORDERS) {
-            procurement_store.waiting_orders_filter.sort((a, b) => Date.parse(new Date(a.created_at)) - Date.parse(new Date(b.created_at)));
+        if (procurement_store.all_stf) {
+            procurement_store.filtered_stf.sort((a, b) => Date.parse(new Date(a.created_at)) - Date.parse(new Date(b.created_at)));
         }
     }
     else {
-        if (procurement_store.GETWAITINGORDERS) {
-            procurement_store.waiting_orders_filter.sort((a, b) => Date.parse(new Date(a.created_at)) - Date.parse(new Date(b.created_at)));
-            procurement_store.waiting_orders_filter.reverse();
+        if (procurement_store.all_stf) {
+            procurement_store.filtered_stf.sort((a, b) => Date.parse(new Date(a.created_at)) - Date.parse(new Date(b.created_at)));
+            procurement_store.filtered_stf.reverse();
         }
     }
 
     // Filter And Find By Date
     if (date.value !== '') {
-        if (procurement_store.GETWAITINGORDERS) {
-            procurement_store.waiting_orders_filter = [];
-            for (const i of procurement_store.waiting_orders) {
+        if (procurement_store.all_stf) {
+            procurement_store.filtered_stf = [];
+            for (const i of procurement_store.all_stf) {
                 if (i['created_at'] === date.value) {
-                    procurement_store.waiting_orders_filter.push(i);
+                    procurement_store.filtered_stf.push(i);
                 }
             }
         }
     }
 
-    // MTF No Search
-    if (mtf_search.value !== '') {
-        if (procurement_store.GETWAITINGORDERS) {
-            procurement_store.waiting_orders_filter = [];
-            for (const i of procurement_store.GETWAITINGORDERS) {
-                if (i['mtf_num'].includes(mtf_search.value)) {
-                    procurement_store.waiting_orders_filter.push(i);
+    // STF No Search
+    if (stf_search.value !== '') {
+        if (procurement_store.all_stf) {
+            procurement_store.filtered_stf = [];
+            for (const i of procurement_store.all_stf) {
+                if (i['stf_num'].includes(stf_search.value)) {
+                    procurement_store.filtered_stf.push(i);
                 }
             }
         }
@@ -151,22 +151,22 @@ watchEffect(() => {
 
     // Ordered Name Search
     if (ordered_search.value !== '') {
-        if (procurement_store.GETWAITINGORDERS) {
-            procurement_store.waiting_orders_filter = [];
-            for (const i of procurement_store.GETWAITINGORDERS) {
+        if (procurement_store.all_stf) {
+            procurement_store.filtered_stf = [];
+            for (const i of procurement_store.all_stf) {
                 if (i['username'].includes(ordered_search.value)) {
-                    procurement_store.waiting_orders_filter.push(i);
+                    procurement_store.filtered_stf.push(i);
                 }
             }
         }
     }
 
     if (name_search.value !== '') {
-        if (procurement_store.GETWAITINGORDERS) {
-            procurement_store.waiting_orders_filter = [];
-            for (const i of procurement_store.GETWAITINGORDERS) {
+        if (procurement_store.all_stf) {
+            procurement_store.filtered_stf = [];
+            for (const i of procurement_store.all_stf) {
                 if (i['material_name'].includes(name_search.value)) {
-                    procurement_store.waiting_orders_filter.push(i);
+                    procurement_store.filtered_stf.push(i);
                 }
             }
         }

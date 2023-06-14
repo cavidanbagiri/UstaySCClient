@@ -2,7 +2,7 @@
     <tbody class="text-gray-500" style="letter-spacing: 0.3px;font-size: xx-small;">
         
         <Get_All_STF_Table_Body_Each_Row_Comp 
-        v-for="(each_item, index) in procurement_store.all_stf"
+        v-for="(each_item, index) in procurement_store.filtered_stf"
         :each_item=each_item :index = index 
         @addChecked='addChecked' @removeChecked='removeChecked'
         />
@@ -38,7 +38,6 @@ const addChecked = (item) => {
     else{
         procurement_store.checked_values.push(item);
     }
-    console.log(procurement_store.checked_values);
 }
 
 const removeChecked = (item_id) => {

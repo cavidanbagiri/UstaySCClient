@@ -26,6 +26,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
         statistic_result : null,
         // Get All STF
         all_stf : [],
+        filtered_stf : [],
         //Get All SM for Project
         all_sms : [],
         // SM Statistic Result
@@ -63,6 +64,8 @@ const ProcurementStore = defineStore('ProcurementStore',{
             await axios.get(`http://localhost:3000/procurement/allstf`)
             .then((respond)=>{
                 this.all_stf = respond.data;
+                this.filtered_stf = this.all_stf;
+                // console.log('here work');
             }).catch((err)=>{
                 console.log('all stf Error : ',err);
             })
