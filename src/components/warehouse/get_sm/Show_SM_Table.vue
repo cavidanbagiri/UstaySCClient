@@ -3,7 +3,8 @@
 <template>
     <div class="mt-1 shadow-md sm:rounded-lg w-full">
 
-        <div class="sticky top-10 h-20 bg-white">
+        <div class="sticky top-10 h-40 bg-white">
+            <SM_Procurement_Analyz/>
             <Show_Filter_Section />
         </div>
 
@@ -33,6 +34,7 @@ import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
 
 import WarehouseStore from '../../../store/warehouse_store';
 import UserStore from '../../../store/user_store';
+import SM_Procurement_Analyz from '../SM_Procurement_Analyz.vue';
 
 const warehouse_store = WarehouseStore();
 const user_store = UserStore();
