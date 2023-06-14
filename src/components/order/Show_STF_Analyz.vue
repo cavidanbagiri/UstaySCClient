@@ -1,23 +1,23 @@
 <template>
     
-    <div class="grid grid-cols-10 gap-12 justify-between mb-1 py-1 sticky anim" 
+    <div class="grid grid-cols-10 gap-12 justify-between mb-1 py-1 sticky anim bg-white" 
     v-font-family style="letter-spacing: 1px;font-size: small;">
 
-        <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
-         shadow-md hover:shadow-xl hover:cursor-pointer "  @click = "fetchCurrentData(0)"  >
+        <div class=" col-span-2 flex flex-row justify-between border shadow-md w-full p-3 rounded-md
+         hover:shadow-xl hover:cursor-pointer "  @click = "fetchCurrentData(0)"  >
             <div class="flex flex-col">
                 <span class="text-gray-600 text-md font-medium" >Total</span>
-                <span class="mt-3 text-md font-bold">{{ statistic_result.total }}</span>
+                <span class="mt-3 text-lg font-bold" style="font-family:Arial, Helvetica, sans-serif">{{ statistic_result.total }}</span>
             </div>
             <div class="flex items-end" style="font-size: xx-small;">
                 <span class="bg-gray-100 rounded-md text-black-800 p-2 font-bold" >Get Data</span>
             </div>
         </div>
-        <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-md 
-        hover:shadow-xl hover:cursor-pointer " @click = "fetchCurrentData(1)" >
+        <div class=" col-span-2 flex flex-row justify-between border shadow-md w-full p-3 rounded-md
+         hover:shadow-xl hover:cursor-pointer " @click = "fetchCurrentData(1)" >
             <div class="flex flex-col">
-                <span class="text-gray-600 font-medium" >Waiting</span>
-                <span class="mt-3 text-md font-bold">{{statistic_result.waiting}}</span>
+                <span class="text-gray-600 font-medium">Waiting</span>
+                <span class="mt-3 text-lg font-bold" style="font-family:Arial, Helvetica, sans-serif">{{statistic_result.waiting}}</span>
             </div>
             <div class="flex items-end"  style="font-size: xx-small;">
                 <span class="bg-red-100 rounded-md text-red-800 p-2 font-bold" >Get Data</span>
@@ -27,7 +27,7 @@
         hover:shadow-xl hover:cursor-pointer " @click="fetchCurrentData(2)" >
             <div class="flex flex-col">
                 <span class="text-gray-600 font-medium" >Processing</span>
-                <span class="mt-3 text-md font-bold">{{statistic_result.processing}}</span>
+                <span class="mt-3 text-lg font-bold" style="font-family:Arial, Helvetica, sans-serif">{{statistic_result.processing}}</span>
             </div>
             <div class="flex items-end" style="font-size: xx-small;">
                 <span class="bg-blue-100 rounded-md text-blue-800 p-2 font-bold">Get Data</span>
@@ -37,7 +37,7 @@
          shadow-md hover:shadow-xl hover:cursor-pointer "  @click="fetchCurrentData(3)"  >
             <div class="flex flex-col">
                 <span class="text-gray-600 font-medium" >Received</span>
-                <span class="mt-3 font-bold">{{statistic_result.received}}</span>
+                <span class="mt-3 text-lg font-bold"  style="font-family:Arial, Helvetica, sans-serif">{{statistic_result.received}}</span>
             </div>
             <div class="flex items-end" style="font-size: xx-small;">
                 <span class="bg-green-100 text-green-800 p-2 rounded-md font-bold">Get Data</span>
@@ -47,7 +47,7 @@
          shadow-md hover:shadow-xl hover:cursor-pointer "  @click="fetchCurrentData(4)"  >
             <div class="flex flex-col">
                 <span class="text-gray-600 font-medium" >Provide</span>
-                <span class="mt-3 font-bold">0</span>
+                <span class="mt-3 text-lg font-bold" style="font-family:Arial, Helvetica, sans-serif">0</span>
             </div>
             <div class="flex items-end" style="font-size: xx-small;">
                 <span class="bg-pink-100 text-pink-800 p-2 rounded-md font-bold">Get Data</span>
