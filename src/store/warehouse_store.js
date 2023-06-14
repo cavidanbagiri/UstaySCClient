@@ -7,6 +7,7 @@ const WarehouseStore = defineStore('WarehouseStore',{
 
     state:()=>({
         waiting_sms : [],
+        filtered_sms : [],
         accepted_items : [],
         checked_values : [],
         tab_num : 0,

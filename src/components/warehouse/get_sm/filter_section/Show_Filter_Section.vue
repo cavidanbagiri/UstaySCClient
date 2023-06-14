@@ -12,6 +12,8 @@
 
 import Show_Filter_Body from './Show_Filter_Body.vue'
 
+const show_filters = true;
+
 </script>
 
 <style scoped>

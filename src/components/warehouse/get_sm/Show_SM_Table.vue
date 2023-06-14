@@ -1,9 +1,11 @@
 
 
 <template>
-    <div class="mt-1 shadow-md sm:rounded-lg w-full border-2">
+    <div class="mt-1 shadow-md sm:rounded-lg w-full">
 
-        <Show_Filter_Section />
+        <div class="sticky top-10 h-20 bg-white">
+            <Show_Filter_Section />
+        </div>
 
         <button @click="acceptedByWarehouse" v-if="warehouse_store.checked_values.length"
             class="bg-red-600 p-2 px-3 text-white font-weight rounded-lg my-1">
@@ -11,15 +13,11 @@
         </button>
 
         <!-- Table -->
-        <div class="h-screen">
-            <div class="h-2/3 overflow-auto">
-                <table class=" text-xs text-left text-gray-800 dark:text-gray-400 w-full " style="font-size: xx-small;">
-
-                    <Get_SM_Header_Table />
-                    <Get_SM_Body_Table />
-
-                </table>
-            </div>
+        <div class="">
+            <table class=" text-xs text-left text-gray-800 dark:text-gray-400 w-full " style="font-size: xx-small;">
+                <Get_SM_Header_Table />
+                <Get_SM_Body_Table />
+            </table>
         </div>
 
     </div>
@@ -29,7 +27,7 @@
 
 import { onMounted } from 'vue';
 
-import Show_Filter_Section from '../filter_section/Show_Filter_Section.vue';
+import Show_Filter_Section from './filter_section/Show_Filter_Section.vue';
 import Get_SM_Header_Table from './Get_SM_Header_Table.vue';
 import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
 

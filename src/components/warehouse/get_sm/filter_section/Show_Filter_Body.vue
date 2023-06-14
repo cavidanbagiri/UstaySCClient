@@ -80,8 +80,8 @@
 import { ref, watchEffect } from 'vue';
 
 
-import OrderStore from '../../../store/order_store';
-const order_store = OrderStore();
+import WarehouseStore from '../../../../store/warehouse_store';
+const warehouse_store = WarehouseStore();
 
 const material_type = ref('All');
 
@@ -95,27 +95,27 @@ const name_search = ref('');
 
 watchEffect(() => {
     // Before Filter Always Equal from 0
-    order_store.filtered_orders = order_store.orders;
+    warehouse_store.filtered_orders = warehouse_store.waiting_sms;
 
     // Sort For Date to Ascending or Descending Time
     if (date_order.value === 'Ascending') {
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders.sort((a, b) => Date.parse(new Date(a.created_at)) - Date.parse(new Date(b.created_at)));
+        if (warehouse_store.GETWAITINGSMS) {
+            warehouse_store.filtered_orders.sort((a, b) => Date.parse(new Date(a.created_at)) - Date.parse(new Date(b.created_at)));
         }
     }
     else {
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders.sort((a, b) => Date.parse(new Date(a.created_at)) - Date.parse(new Date(b.created_at)));
-            order_store.filtered_orders.reverse();
+        if (warehouse_store.GETWAITINGSMS) {
+            warehouse_store.filtered_orders.sort((a, b) => Date.parse(new Date(a.created_at)) - Date.parse(new Date(b.created_at)));
+            warehouse_store.filtered_orders.reverse();
         }
     }
     //Search MTF
     if (mtf_search.value !== '') {
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders = [];
-            for (const i of order_store.GETORDERSDATA) {
+        if (warehouse_store.GETWAITINGSMS) {
+            warehouse_store.filtered_orders = [];
+            for (const i of warehouse_store.GETWAITINGSMS) {
                 if (i['mtf_num'].includes(mtf_search.value)) {
-                    order_store.filtered_orders.push(i);
+                    warehouse_store.filtered_orders.push(i);
                     console.log('enter');
                 }
             }
@@ -123,11 +123,11 @@ watchEffect(() => {
     }
     //Search Name
     if (name_search.value !== '') {
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders = [];
-            for (const i of order_store.GETORDERSDATA) {
+        if (warehouse_store.GETWAITINGSMS) {
+            warehouse_store.filtered_orders = [];
+            for (const i of warehouse_store.GETWAITINGSMS) {
                 if (i['material_name'].includes(name_search.value)) {
-                    order_store.filtered_orders.push(i);
+                    warehouse_store.filtered_orders.push(i);
                     console.log('enter');
                 }
             }
@@ -135,11 +135,11 @@ watchEffect(() => {
     }
     // Filter And Find By Date
     if (date.value !== '') {
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders = [];
-            for (const i of order_store.GETORDERSDATA) {
+        if (warehouse_store.GETWAITINGSMS) {
+            warehouse_store.filtered_orders = [];
+            for (const i of warehouse_store.GETWAITINGSMS) {
                 if (i['created_at'] === date.value) {
-                    order_store.filtered_orders.push(i);
+                    warehouse_store.filtered_orders.push(i);
                 }
             }
         }
@@ -149,11 +149,11 @@ watchEffect(() => {
         
     }
     else {
-        if (order_store.GETORDERSDATA) {
-            order_store.filtered_orders = [];
-            for (const i of order_store.GETORDERSDATA) {
+        if (warehouse_store.GETWAITINGSMS) {
+            warehouse_store.filtered_orders = [];
+            for (const i of warehouse_store.GETWAITINGSMS) {
                 if (i['material_type'] === material_type.value) {
-                    order_store.filtered_orders.push(i);
+                    warehouse_store.filtered_orders.push(i);
                 }
             }
         }
