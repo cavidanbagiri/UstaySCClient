@@ -1,6 +1,6 @@
 <template>
     <!-- Filter Section -->
-    <div class="flex flex-col mtf-anim" style="letter-spacing: 1px;font-size: x-small;" v-font-family >
+    <div class="flex flex-col mtf-anim " style="letter-spacing: 1px;font-size: x-small;" v-font-family >
         <!-- Common Filters Section -->
         <div class="flex flex-row items-center justify-between">
             <!-- Common Filter Keys -->
@@ -51,22 +51,31 @@
                     </div>
                 </div>
             </div>
-            <!-- Search With Material Name -->
-            <div class="flex flex-col m-1">
-                <span class="m-1">Search Type</span>
-                <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                <div class="relative  w-96">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none w-96">
-                        <svg aria-hidden="true" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
+            <div class="flex flex-row justify-end">
+                <!-- Search With Material Name -->
+                <div class="flex flex-col m-1 items-center">
+                    <span class="m-1">Search Type</span>
+                    <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative  w-96">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none w-96">
+                            <svg aria-hidden="true" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <input type="search" id="search"
+                            class="outline-none w-full p-2 pl-10 text-gray-900 border border-blue-300 rounded-lg hover:border-blue-600 shadow-lg"
+                            placeholder="Search" v-model='name_search'>
+    
                     </div>
-                    <input type="search" id="search"
-                        class="outline-none w-full p-2 pl-10 text-gray-900 border border-blue-300 rounded-lg hover:border-blue-600 shadow-lg"
-                        placeholder="Search" v-model='name_search'>
-
+                </div>
+                <!-- Table Specification -->
+                <div class="flex m-1 items-center p-2 text-gray-500 cursor-pointer relative">
+                    <button @click="openTableSpec">
+                        <i class="fa-solid fa-gear fa-xl"></i>
+                    </button>
+                    <Show_STF_Table_Spec v-if="show_table_spec" />
                 </div>
             </div>
 
@@ -79,7 +88,7 @@
 <script setup>
 import { ref, watchEffect } from 'vue';
 
-
+import Show_STF_Table_Spec from './Show_STF_Table_Spec.vue';
 import OrderStore from '../../../../store/order_store';
 const order_store = OrderStore();
 
@@ -93,6 +102,13 @@ const mtf_search = ref('');
 
 const name_search = ref('');
 
+// Open And Close Table Spec
+const show_table_spec = ref(false);
+const openTableSpec = () => {
+    show_table_spec.value = !show_table_spec.value;
+}
+
+// Table Filter RealTime
 watchEffect(() => {
     // Before Filter Always Equal from 0
     order_store.filtered_orders = order_store.orders;
