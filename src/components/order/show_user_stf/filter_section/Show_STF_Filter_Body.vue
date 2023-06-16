@@ -72,7 +72,7 @@
                 </div>
                 <!-- Table Specification -->
                 <div class="flex m-1 items-end text-blue-400 cursor-pointer relative">
-                    <button class="p-2 hover:bg-gray-300 rounded-md" @click="openTableSpec">
+                    <button class="p-2 hover:bg-gray-300 rounded-md" @click="show_table_spec = !show_table_spec">
                         <i class="fa-solid fa-gear fa-2xl"></i>
                     </button>
                     <Show_STF_Table_Spec v-if="show_table_spec" />
@@ -111,9 +111,6 @@ const name_search = ref('');
 
 // Open And Close Table Spec
 const show_table_spec = ref(false);
-const openTableSpec = () => {
-    show_table_spec.value = !show_table_spec.value;
-}
 
 // Table Filter RealTime
 watchEffect(() => {
