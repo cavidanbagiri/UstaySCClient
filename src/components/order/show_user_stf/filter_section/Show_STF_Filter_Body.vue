@@ -71,9 +71,9 @@
                     </div>
                 </div>
                 <!-- Table Specification -->
-                <div class="flex m-1 items-center p-2 text-gray-500 cursor-pointer relative">
+                <div class="flex m-1 items-end p-2 text-gray-500 cursor-pointer relative">
                     <button @click="openTableSpec">
-                        <i class="fa-solid fa-gear fa-xl"></i>
+                        <i class="fa-solid fa-gear fa-2xl"></i>
                     </button>
                     <Show_STF_Table_Spec v-if="show_table_spec" />
                 </div>
