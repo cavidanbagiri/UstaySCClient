@@ -71,14 +71,14 @@
                     </div>
                 </div>
                 <!-- Table Specification -->
-                <div class="flex m-1 items-end text-blue-400 cursor-pointer relative">
+                <div class="flex m-1 items-end text-gray-500 cursor-pointer relative">
                     <button class="p-2 hover:bg-gray-300 rounded-md" @click="show_table_spec = !show_table_spec">
                         <i class="fa-solid fa-gear fa-2xl"></i>
                     </button>
                     <Show_STF_Table_Spec v-if="show_table_spec" />
                 </div>
                 <!-- Table Specification -->
-                <div class="flex m-1 items-end text-red-400 cursor-pointer relative">
+                <div class="flex m-1 items-end text-gray-500 cursor-pointer relative">
                     <button class="p-2 hover:bg-gray-300 rounded-md">
                         <i class="fa-solid fa-chart-line fa-2xl"></i>
                     </button>

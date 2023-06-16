@@ -17,7 +17,8 @@ const OrderStore = defineStore('OrderStore',{
         statistic_result_data : [],
         selecting_rows : [],
         row_inform_condition : false,
-        row_detail_data : null
+        row_detail_data : null,
+        table_headers : [],
     }),
     getters:{
         GETORDERSDATA : (state) => state.orders, 
@@ -84,6 +85,28 @@ const OrderStore = defineStore('OrderStore',{
             .catch((err)=>{
                 console.log('Error Is : ',err);
             })
+        },
+
+        // Get Table Headers and show in STF
+        async getHeaders(){
+            let temp = [];
+            if(this.orders){
+                for(let [key, value] of Object.entries(this.orders[0])){
+                    if(key!=='id'){
+                        let header_cond = {};
+                        // const val = key.charAt(0).toUpperCase() + key.slice(1);
+                        if(key === 'stf_num' || key==='created_at' || key==='situation' || key==='material_type' || key==='material_name' || key==='unit' || key==='count'){
+                            header_cond[`${key}`] = true;
+                        }
+                        else{
+                            header_cond[`${key}`] = false;
+                        }
+                        temp.push(header_cond);
+                        this.table_headers.push(header_cond);
+                    }
+                }
+            }
+            console.log('temp is : ',temp);
         },
 
         // Get Fields Name

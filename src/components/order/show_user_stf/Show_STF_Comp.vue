@@ -6,6 +6,7 @@
             <Show_STF_Analyz />
 
             <Show_STF_Filter_Section />
+
         </div>
         
         
@@ -24,7 +25,6 @@ import { onMounted } from 'vue'
 
 import OrderStore from '../../../store/order_store';
 import UserStore from '../../../store/user_store';
-
 import Show_STF_Analyz from '../Show_STF_Analyz.vue';
 import Show_STF_Table_Comp from './Show_STF_Table_Comp.vue';
 import Show_STF_Filter_Section from './filter_section/Show_STF_Filter_Section.vue';

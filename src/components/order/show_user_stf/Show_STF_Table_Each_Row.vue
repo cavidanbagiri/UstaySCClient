@@ -21,17 +21,21 @@
                     </label>
                 </div>
             </td>
+            <!-- S/S Section -->
             <th class="px-2 py-2 font-medium text-center">
                 {{ prop.index + 1 }}
             </th>
+            <!-- STF Num -->
             <th class="px-2 font-medium text-center border-y ">
                 <div>
                     <span class="bg-orange-100 text-orange-500 py-1 px-2 rounded-xl"> {{ prop.each.stf_num }}</span>
                 </div>
             </th>
+            <!-- STF Created Date Section -->
             <th class="px-2 py-2 font-medium  text-center border-y">
                 <p>{{ prop.each.created_at }}</p>
             </th>
+            <!-- Condition -->
             <th class="font-medium text-start border-y px-2 ">
                 <div v-if="prop.each.situation==='Waiting'" >
                     <span class=" bg-red-100 w-full text-red-500 py-1 px-2 rounded-md">
@@ -49,15 +53,19 @@
                     </span>
                 </div>
             </th>
+            <!-- Material Type -->
             <th class="px-2 py-2 font-medium  border-y">
                 {{ prop.each.material_type }}
             </th>
+            <!-- Material Name -->
             <th class="px-2 py-2  font-medium border-y">
                 {{ prop.each.material_name }}
             </th>
+            <!-- Count -->
             <th class="px-2 py-2  font-medium text-start border-y">
                 {{ prop.each.count }}
             </th>
+            <!-- Unit -->
             <th class="px-2 py-2  font-medium text-center border-y">
                 {{ prop.each.unit }}
             </th>
