@@ -89,24 +89,25 @@ const OrderStore = defineStore('OrderStore',{
 
         // Get Table Headers and show in STF
         async getHeaders(){
-            let temp = [];
             if(this.orders){
                 for(let [key, value] of Object.entries(this.orders[0])){
                     if(key!=='id'){
                         let header_cond = {};
                         // const val = key.charAt(0).toUpperCase() + key.slice(1);
                         if(key === 'stf_num' || key==='created_at' || key==='situation' || key==='material_type' || key==='material_name' || key==='unit' || key==='count'){
-                            header_cond[`${key}`] = true;
+                            // header_cond[`${key}`] = true;
+                            header_cond['name'] = `${key}`;
+                            header_cond['value'] = true;
                         }
                         else{
-                            header_cond[`${key}`] = false;
+                            // header_cond[`${key}`] = false;
+                            header_cond['name'] = `${key}`;
+                            header_cond['value'] = false;
                         }
-                        temp.push(header_cond);
                         this.table_headers.push(header_cond);
                     }
                 }
             }
-            console.log('temp is : ',temp);
         },
 
         // Get Fields Name

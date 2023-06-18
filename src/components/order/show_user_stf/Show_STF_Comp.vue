@@ -34,9 +34,12 @@ import Show_STF_Row_Inform from './Show_STF_Row_Inform.vue';
 const order_store = OrderStore();
 const user_store = UserStore();
 
-onMounted(() => {
+onMounted(async () => {
     const user = user_store.GETUSERINFORM;
-    order_store.showSTF(user);
+    await order_store.showSTF(user);
+    if(order_store.table_headers.length===0){
+        await order_store.getHeaders();
+    }
 })
 
 </script>
