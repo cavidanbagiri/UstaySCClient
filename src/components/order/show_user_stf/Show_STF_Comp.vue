@@ -1,20 +1,25 @@
 
 <template>
-    <div class="">
+    <div class="flex flex-col " style="display: inline-block;">
 
-        <div class="h-42 sticky top-10 bg-white w-full">
-            <Show_STF_Analyz />
+        <div class="sticky top-10 p-1 bg-white ">
+            <div class=" sticky left-16 flex flex-col w-maxs " style="display: inline-block;">
+                <!-- <div class="bg-blue-300 p-1 "> -->
+                    <Show_STF_Analyz />
 
-            <Show_STF_Filter_Section />
-
+                    <Show_STF_Filter_Section />
+                <!-- </div> -->
+            </div>
         </div>
         
         
-        <Show_STF_Table_Comp />
+        <div class="">
+            <Show_STF_Table_Comp />
+        </div>
 
-        <Show_STF_Row_Inform/>
+        <Show_STF_Row_Inform />
 
-        <Show_STF_Selecting_Task/>
+        <Show_STF_Selecting_Task />
 
     </div>
 </template>
@@ -37,7 +42,7 @@ const user_store = UserStore();
 onMounted(async () => {
     const user = user_store.GETUSERINFORM;
     await order_store.showSTF(user);
-    if(order_store.table_headers.length===0){
+    if (order_store.table_headers.length === 0) {
         await order_store.getHeaders();
     }
 })

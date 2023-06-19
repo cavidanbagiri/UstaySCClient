@@ -1,9 +1,9 @@
 <template>
     
-    <div class="grid grid-cols-10 gap-12 justify-between mb-1 py-1 sticky anim bg-white" 
+    <div class="grid grid-cols-12 gap-3 justify-between mb-1 py-1 sticky anim bg-white" 
     v-font-family style="letter-spacing: 1px;font-size: small;">
 
-        <div class=" col-span-2 flex flex-row justify-between border shadow-md w-full p-3 rounded-md
+        <div class=" col-span-4 flex flex-row justify-between border shadow-md w-full p-3 rounded-md
          hover:shadow-xl hover:cursor-pointer "  @click = "fetchCurrentData(0)"  >
             <div class="flex flex-col">
                 <span class="text-gray-600 text-md font-medium" >Total</span>

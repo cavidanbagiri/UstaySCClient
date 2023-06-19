@@ -1,21 +1,28 @@
 
 <template>
-    <div class=" flex flex-col px-1 bg-white">
+    <div class=" flex flex-col  bg-white">
 
         <!-- If User Login -->
-        <div v-if="user_store.user" class="w-full">
-            <div class="flex flex-row anim h-10 sticky top-0 bg-white w-full items-center" v-font-family style="letter-spacing: 1px;font-size: x-small;">
+        <div v-if="user_store.user" class="bg-white">
+            <div class="bg-white sticky top-0">
 
-                <span :class="tab_num === 0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(0)"
-                class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-lg "></i>
-                    Show MTF</span>
-                <span :class="tab_num === 1 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(1)"
-                class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-list fa-lg "></i>
-                    Create MTF</span>
-                <span :class="tab_num === 2 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(2)"
-                class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i
-                        class="fa-solid fa-warehouse fa-lg "></i> Show Warehouse</span>
-
+                <div class="flex flex-row anim h-10 bg-white items-center sticky left-16 " v-font-family
+                        style="letter-spacing: 1px;font-size: x-small;display: inline-block;">
+                    
+                        <div class="flex flex-row anim h-10 sticky top-0 bg-white w-full items-center" v-font-family style="letter-spacing: 1px;font-size: x-small;">
+            
+                            <span :class="tab_num === 0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(0)"
+                            class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-lg "></i>
+                                Show MTF</span>
+                            <span :class="tab_num === 1 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(1)"
+                            class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-list fa-lg "></i>
+                                Create MTF</span>
+                            <span :class="tab_num === 2 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(2)"
+                            class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i
+                                    class="fa-solid fa-warehouse fa-lg "></i> Show Warehouse</span>
+            
+                                </div>
+                        </div>
             </div>
 
             <keep-alive>

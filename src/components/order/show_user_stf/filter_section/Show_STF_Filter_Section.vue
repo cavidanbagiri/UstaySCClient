@@ -1,6 +1,6 @@
 
 <template>
-    <div class="flex flex-col text-black bg-white w-full">
+    <div class="flex flex-col text-black bg-white">
         
         <!-- Show Filter Body -->
         <Show_STF_Filter_Body  />
