@@ -1,9 +1,9 @@
 
 <template>
-    <div class="flex flex-col " style="display: inline-block;">
+    <div class="flex flex-col" style="display: inline-block;">
 
-        <div class="sticky top-10 p-1 bg-white ">
-            <div class=" sticky left-16 flex flex-col w-maxs " style="display: inline-block;">
+        <div class="sticky top-10 p-1 ">
+            <div class=" sticky left-16 flex flex-col bg-white" style="display: inline-block; width: 80%;">
                 <!-- <div class="bg-blue-300 p-1 "> -->
                     <Show_STF_Analyz />
 
