@@ -8,7 +8,7 @@
             <div class="flex items-center">
                     <label class="relative flex cursor-pointer items-center rounded-sm p-1" for="selected_row"
                         data-ripple-dark="true">
-                        <input :id="prop.each_item.id" type="checkbox" v-model="checked" @change="checkboxCond"
+                        <input :id="prop.each.id" type="checkbox" v-model="checked" @change="checkboxCond"
                             class=" before:content[''] peer relative h-4 w-4 cursor-pointer appearance-none rounded-md border-2 border-blue-gray-200 transition-all before:absolute 
                             before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500
                             before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500 hover:before:opacity-10" />
@@ -28,45 +28,58 @@
         <th class="px-2 py-2  font-bold text-center">
             {{ prop?.index + 1 }}
         </th>
-        <td class="px-2 font-medium text-center border-y ">
-            <div>
-                <span class=" bg-orange-100 text-orange-500 py-1 px-2 rounded-xl ">{{ prop?.each_item?.stf_num }}</span>
-            </div>
-        </td>
+        
+        <th v-for="i in procurement_store.stf_table_headers" v-show="i.value" class="px-2 py-2 font-medium text-center">
 
-        <th class="px-2 py-2 font-medium border-y  text-center">
-            <span>{{ prop?.each_item?.created_at }}</span>
-        </th>
-        <th class="px-2 py-2 font-medium text-start border-y text-red-500 ">
-            <div v-if="prop?.each_item?.situation === 'Waiting'">
-                <span class=" bg-red-100 w-full text-red-500 py-1 px-2 rounded-md">
-                    &#9679 {{ prop?.each_item?.situation }}
-                </span>
-            </div>
-            <div v-else-if="prop?.each_item?.situation === 'Processing'">
-                <span class="bg-blue-100 w-w-full text-blue-500 py-1 px-2 rounded-md">
-                    &#9679 {{ prop?.each_item?.situation }}
-                </span>
-            </div>
-            <div v-else-if="prop?.each_item?.situation === 'Received'">
-                <span class="bg-green-100 w-w-full text-green-500 py-1 px-2 rounded-md">
-                    &#9679 {{ prop?.each_item?.situation }}
-                </span>
-            </div>
+<!-- STF Num Design -->
+<div v-if="i.name === 'stf_num'">
+    <span class="bg-orange-100 text-orange-500 py-1 px-2 rounded-xl"> {{ prop.each[i.name] }}</span>
+</div>
 
-        </th>
-        <th class="px-2 py-2 font-medium  border-y">
-            {{ prop?.each_item?.material_name }}
-        </th>
-        <th class="px-2 py-2 font-medium  border-y text-center">
-            {{ prop?.each_item?.count }}
-        </th>
-        <th class="px-2 py-2 font-medium  border-y text-center">
-            {{ prop?.each_item?.unit }}
-        </th>
-        <th class="px-2 py-2 font-medium  border-y">
-            {{ prop?.each_item?.username }}
-        </th>
+<!-- STF Num Design -->
+<div v-else-if="i.name === 'sm_num'">
+    <span class="bg-green-100 text-green-500 py-1 px-2 rounded-xl"> {{ prop.each[i.name] }}</span>
+</div>
+
+<!-- Situation Design -->
+<div v-else-if="i.name === 'situation'" class="">
+    <div v-if="prop.each[i.name] === 'Waiting'">
+        <span class=" bg-red-100 w-full text-red-500 py-1 px-2 rounded-md">
+            &#9679 {{ prop.each.situation }}
+        </span>
+    </div>
+    <div v-else-if="prop.each[i.name] === 'Processing'">
+        <span class="bg-blue-100 w-w-full text-blue-500 py-1 px-2 rounded-md">
+            &#9679 {{ prop.each.situation }}
+        </span>
+    </div>
+    <div v-else-if="prop.each[i.name] === 'Received'">
+        <span class="bg-green-100 w-w-full text-green-500 py-1 px-2 rounded-md">
+            &#9679 {{ prop.each.situation }}
+        </span>
+    </div>
+</div>
+
+<div v-else-if="i.name==='material_type'" class="text-start">
+    <span >{{ prop.each[i.name] }}</span>
+</div>
+<div v-else-if="i.name==='material_name'" class="text-start">
+    <span >{{ prop.each[i.name] }}</span>
+</div>
+<div v-else-if="i.name==='vendor_name'" class="text-start">
+    <span >{{ prop.each[i.name] }}</span>
+</div>
+<div v-else-if="i.name==='username'" class="text-start">
+    <span >{{ prop.each[i.name] }}</span>
+</div>
+
+<!-- Others Without Design -->
+<div v-else>
+    <span class=""> {{ prop.each[i.name] }}</span>
+</div>
+
+</th>
+
     </tr>
 </template>
 
@@ -78,7 +91,7 @@ import ProcurementStore from '../../../store/procurement_store';
 const procurement_store = ProcurementStore();
 
 // Get Each Item from parent
-const prop = defineProps(['each_item', 'index', 'checked_style']);
+const prop = defineProps(['each', 'index', 'checked_style']);
 
 // Create an Emit for clicking checkbox
 const emit = defineEmits(['addChecked', 'removeChecked']);
@@ -89,10 +102,10 @@ const checked = ref(false);
 
 const checkboxCond = () => {
     if(checked.value === true) {
-        emit('addChecked', prop?.each_item)
+        emit('addChecked', prop?.each)
     }
      else{
-        emit('removeChecked', prop?.each_item?.id);
+        emit('removeChecked', prop?.each.id);
     } 
 }
 

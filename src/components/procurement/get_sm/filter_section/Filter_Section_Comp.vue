@@ -62,22 +62,38 @@
                     </div>
                 </div>
                 <!-- Search With Material Name -->
-                <div class="flex flex-col m-1">
-                    <span class=" m-1">Search Type</span>
-                    <label for="search"
-                        class="mb-2 text-gray-900 sr-only dark:text-white">Search</label>
-                    <div class="relative  w-96">
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none w-96">
-                            <svg aria-hidden="true" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
+                <div class="flex flex-row justify-end">
+                    <!-- Search MTF By Material Name -->
+                    <div class="flex flex-col m-1">
+                        <span class=" m-1">Search Type</span>
+                        <label for="search"
+                            class="mb-2 text-gray-900 sr-only dark:text-white">Search</label>
+                        <div class="relative  w-96">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none w-96">
+                                <svg aria-hidden="true" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                            <input type="search" id="search"
+                                class="block w-full p-2 pl-10 text-gray-900 border border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Search" v-model='name_search'>
                         </div>
-                        <input type="search" id="search"
-                            class="block w-full p-2 pl-10 text-gray-900 border border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Search" v-model='name_search'>
-
+                    </div>
+                    <!-- Table Specification -->
+                    <div class="flex m-1 items-end text-gray-500 cursor-pointer relative">
+                        <button class="p-2 hover:bg-gray-300 rounded-md" @click="show_table_spec = !show_table_spec">
+                            <i class="fa-solid fa-gear fa-2xl"></i>
+                        </button>
+                        <Show_STF_Table_Spec v-if="show_table_spec" />
+                    </div>
+                    <!-- Table Specification -->
+                    <div class="flex m-1 items-end text-gray-500 cursor-pointer relative">
+                        <button class="p-2 hover:bg-gray-300 rounded-md">
+                            <i class="fa-solid fa-chart-line fa-2xl"></i>
+                        </button>
+                        <!-- <Show_STF_Table_Spec v-if="show_table_spec" /> -->
                     </div>
                 </div>
 

@@ -14,40 +14,29 @@
                     S/S
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col">
-                    STF NO
+            
+            <th v-for="i in procurement_store.stf_table_headers" v-show="i.value" scope="col" class="px-2 py-1 font-medium text-center border">
+                
+                <div v-if="i.name==='situation'" class="w-20">
+                    {{ i.name }}
                 </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-16">
-                    STF Date
+
+                <div v-else-if="i.name==='created_at'" class="w-16">
+                    {{ i.name }}
                 </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-20">
-                    Condition
+
+                <div v-else-if="i.name==='material_name'" class="w-96">
+                    {{ i.name }}
                 </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class=" flex flex-col">
-                    Material name
+
+                <div v-else-if="i.name==='vendor_name'" class="w-96">
+                    {{ i.name }}
                 </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col">
-                    Count
+
+                <div v-else class="flex flex-col">
+                    {{ i.name }}
                 </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col">
-                    Unit
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col">
-                    Orderer
-                </div>
+
             </th>
 
         </tr>
@@ -57,27 +46,9 @@
 <script setup>
 
 import { ref, watchEffect } from 'vue';
-import OrderStore from '../../../store/order_store';
-const order_store = OrderStore();
+import ProcurementStore from '../../../store/procurement_store';
+const procurement_store = ProcurementStore();
 
-const material_type = ref('All');
-
-watchEffect(()=>{
-    if(material_type.value === 'Type' || material_type.value === 'All'){
-        order_store.filtered_orders = order_store.orders;
-    }
-    else{
-
-        if(order_store.GETORDERSDATA){
-            order_store.filtered_orders = [];
-            for(const i of order_store.GETORDERSDATA){
-                if(i['material_type'] ===  material_type.value ){
-                    order_store.filtered_orders.push(i);
-                }
-            }
-        }
-    }
-})
 
 </script>
 

@@ -3,7 +3,7 @@
     <div class="flex flex-col" style="display:inline-block">
 
         <div class="sticky h-40 top-10 bg-white">
-            <div class=" sticky left-16 flex flex-col w-max bg-white" style="display:inline-block">
+            <div class=" sticky left-16 flex flex-col w-max bg-white" style="display:inline-block; width: calc(100vw - 5rem);">
                 <SM_Procurement_Analyz/>
                 <Filter_Section_Comp/>
             </div>

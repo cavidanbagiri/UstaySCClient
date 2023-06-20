@@ -36,7 +36,12 @@ const ProcurementStore = defineStore('ProcurementStore',{
         // Show After Created Message
         sm_success_show_message : false,
         // After Create SM, for unchecked all selected rows
-        after_created : false 
+        after_created : false,
+        // For Showing STF Table Headers
+        stf_table_headers : [],
+        // For Showing SM Table Headers
+        sm_table_headers : [],
+
     }),
     getters:{
         GETWAITINGORDERS : (state) => state.waiting_orders, 
@@ -49,7 +54,29 @@ const ProcurementStore = defineStore('ProcurementStore',{
         GETPROCUREMENTUSERSNAMES : (state) => state.procurement_users_names,
     },
     actions:{
-    
+        
+        // Get Table Headers and show in STF
+        async getSTFHeaders(){
+            if(this.all_stf){
+                for(let [key, value] of Object.entries(this.all_stf[0])){
+                    if(key!=='id'){
+                        let header_cond = {};
+                        // const val = key.charAt(0).toUpperCase() + key.slice(1);
+                        if(key === 'stf_num' || key==='created_at' || key==='situation'  || key==='material_name' || key==='unit' || key==='count'){
+                            // header_cond[`${key}`] = true;
+                            header_cond['name'] = `${key}`;
+                            header_cond['value'] = true;
+                        }
+                        else{
+                            header_cond['name'] = `${key}`;
+                            header_cond['value'] = false;
+                        }
+                        this.stf_table_headers.push(header_cond);
+                    }
+                }
+            }
+        },
+
         // Get STF Statistics Result
         async getSTFStatisticsResult (){
             await axios.get(`http://localhost:3000/procurement/stfstatisticsresult`)

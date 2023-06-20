@@ -1,11 +1,13 @@
 
 <template>
-  <div class="">
+  <div class="flex flex-col" style="display: inline-block;">
 
     <div class="h-40 sticky top-10 bg-white w-full">
-      <STF_Procurement_Analyz/>
-  
-      <Filter_Section_Comp /> 
+      <div class=" sticky left-16 flex flex-col bg-white" style="display: inline-block; width: calc(100vw - 5rem);">
+        <STF_Procurement_Analyz/>
+    
+        <Filter_Section_Comp /> 
+      </div>
     </div>
 
     <Show_All_STF_Table_Comp />
@@ -28,8 +30,11 @@ import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
 
 const procurement_store = ProcurementStore();
 
-onMounted(async () => await procurement_store.fetchAllSTF())
-
+onMounted(async () => {
+    await procurement_store.fetchAllSTF()
+    procurement_store.getSTFHeaders();
+  }
+)
 watchEffect(async ()=>{
   if(procurement_store.after_created){
     await procurement_store.fetchAllSTF();
