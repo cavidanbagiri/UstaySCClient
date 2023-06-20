@@ -76,6 +76,29 @@ const ProcurementStore = defineStore('ProcurementStore',{
                 }
             }
         },
+        // Get Table Headers and show in STF
+        async getSMHeaders(){
+            if(this.all_sms){
+                for(let [key, value] of Object.entries(this.all_sms[0])){
+                    if(key!=='id'){
+                        let header_cond = {};
+                        // const val = key.charAt(0).toUpperCase() + key.slice(1);
+                        if(key === 'stf_num' || key==='created_at' || key==='situation'  || key==='material_name' || key==='unit' || key==='count' ||
+                            key==='sm_num' || key==='username' || key==='orderer'
+                        ){
+                            // header_cond[`${key}`] = true;
+                            header_cond['name'] = `${key}`;
+                            header_cond['value'] = true;
+                        }
+                        else{
+                            header_cond['name'] = `${key}`;
+                            header_cond['value'] = false;
+                        }
+                        this.sm_table_headers.push(header_cond);
+                    }
+                }
+            }
+        },
 
         // Get STF Statistics Result
         async getSTFStatisticsResult (){

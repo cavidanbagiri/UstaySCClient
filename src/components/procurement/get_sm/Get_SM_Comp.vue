@@ -19,9 +19,19 @@
 
 <script setup>
 
+import { onMounted } from 'vue';
+
 import SM_Procurement_Analyz from '../SM_Procurement_Analyz.vue';
 import Filter_Section_Comp from './filter_section/Filter_Section_Comp.vue';
 import Show_SM_Table from './Show_SM_Table.vue';
+import ProcurementStore from '../../../store/procurement_store';
+const procurement_store = ProcurementStore();
+
+
+onMounted(async()=>{
+    await procurement_store.fetchAllSM();
+    procurement_store.getSMHeaders();
+})
 
 </script>
 

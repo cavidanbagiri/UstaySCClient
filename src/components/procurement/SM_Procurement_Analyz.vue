@@ -4,7 +4,7 @@
 
         <div class=" col-span-4 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md" @click="fetchCurrentData(0)">
             <div class="flex flex-col">
-                <span class="text-gray-600 ">Total Creating SM</span>
+                <span class="text-gray-600  text-sm font-medium">Total Creating SM</span>
                 <span class="mt-3 text-md font-bold">{{ statistic_result.total }}</span>
             </div>
             <div class="flex items-end">

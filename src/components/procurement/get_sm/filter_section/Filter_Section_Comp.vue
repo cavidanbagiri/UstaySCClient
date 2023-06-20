@@ -106,9 +106,12 @@
 <script setup>
 
 import { ref, watchEffect } from 'vue';
-
+import Show_STF_Table_Spec from './Show_STF_Table_Spec.vue';
 import ProcurementStore from '../../../../store/procurement_store';
 const procurement_store = ProcurementStore();
+
+// Expand Table Section
+const show_table_spec = ref(false);
 
 // Order For Date
 const date_order = ref('Descending');

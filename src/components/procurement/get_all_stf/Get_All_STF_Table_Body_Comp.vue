@@ -38,6 +38,7 @@ const addChecked = (item) => {
     else{
         procurement_store.checked_values.push(item);
     }
+    console.log('procurement store checked : ',procurement_store.checked_values);
 }
 
 const removeChecked = (item_id) => {

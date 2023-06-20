@@ -2,8 +2,8 @@
 <template>
     
     <Get_SM_Body_Table_Each_Row_Comp 
-    v-for="(each_item, index) in procurement_store.all_sms"
-    :each_item="each_item" :index="index"
+    v-for="(each, index) in procurement_store.all_sms"
+    :each="each" :index="index"
     />
 
 </template>

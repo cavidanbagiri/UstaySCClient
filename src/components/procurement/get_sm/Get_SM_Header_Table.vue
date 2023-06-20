@@ -1,6 +1,6 @@
 
 <template>
-    <thead class="text-black bg-gray-100 border sticky top-48"  v-font-family
+    <thead class="text-black bg-gray-100 border sticky top-48 w-full"  v-font-family
     style="letter-spacing: 0.5px; font-size: x-small;">
         <tr class="">
             <th scope="col-4" class=" px-4">
@@ -15,62 +15,39 @@
                     S/S
                 </div>
             </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col">
-                    STF NO
+            
+            <th v-for="i in procurement_store.sm_table_headers" v-show="i.value" scope="col" class="px-2 py-1 font-medium text-center border">
+                
+                <div v-if="i.name==='situation'" class="w-20">
+                    {{ i.name }}
                 </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-24">
-                    STF Date
+
+                <div v-else-if="i.name==='created_at'" class="w-16">
+                    {{ i.name }}
                 </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-24">
-                    SM NO
+
+                <div v-else-if="i.name==='material_name'" class="w-96">
+                    {{ i.name }}
                 </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-24 flex flex-col">
-                    Condition
+
+                <div v-else-if="i.name==='vendor_name'" class="w-96">
+                    {{ i.name }}
                 </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-96 flex flex-col">
-                    Material name
+
+                <div v-else class="flex flex-col">
+                    {{ i.name }}
                 </div>
+
             </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col">
-                    Count
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col">
-                    Unit
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="w-96 flex flex-col">
-                    Vendor Name
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium text-center border">
-                <div class="flex flex-col w-36">
-                    Orderer
-                </div>
-            </th>
-            <th scope="col" class="px-2 py-1  font-medium  text-center border">
-                <div class="flex flex-col w-48">
-                    Supplier
-                </div>
-            </th>
-           
+
         </tr>
     </thead>
 </template>
 
 <script setup>
+
+import ProcurementStore from '../../../store/procurement_store';
+const procurement_store = ProcurementStore();
 
 </script>
 

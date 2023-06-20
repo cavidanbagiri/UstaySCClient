@@ -1,8 +1,8 @@
 
 <template>
-    <div class="flex flex-col border shadow-xl p-2 absolute w-96 top-14 right-0 bg-white z-2">
+    <div class="flex flex-col border shadow-xl p-2 absolute w-96 h-96 overflow-auto top-14 right-0 bg-white z-2">
         <ul>
-            <li v-for="key in order_store.table_headers">
+            <li v-for="key in procurement_store.sm_table_headers">
                 <div class="flex flex-row items-center hover:bg-gray-100 p-2">
                     <input type="checkbox" name="" :checked="key.value" @change="changeHeaderCond(key)">
                     <label :for="key.name" class="ml-2">{{ key.name }} {{ key.value }} </label>
