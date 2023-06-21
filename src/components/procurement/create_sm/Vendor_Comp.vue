@@ -2,7 +2,7 @@
 <template>
     <div class="flex flex-col relative">
 
-        <button class="border p-3 mx-5 rounded-xl" @click="show=!show">
+        <button class="border py-2 mx-5 rounded-xl text-xs px-3" @click="show=!show">
             Choose Vendor
         </button>
 

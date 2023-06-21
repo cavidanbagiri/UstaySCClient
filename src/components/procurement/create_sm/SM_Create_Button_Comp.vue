@@ -1,22 +1,15 @@
 
 <template>
     <div class="mb-1 mt-3 flex justify-between ">
-        <button v-if="procurement_store.GETCHECKEDVALUES.length>=1" @click="createSM" class="bg-red-600 font-medium text-xs py-2 px-3 rounded-md text-white">
+        <button v-if="procurement_store.GETCHECKEDVALUES.length>=1" @click="createSM" class="bg-red-600 font-medium text-xs py-1 px-3 rounded-md text-white">
             Create SM
         </button>
         <div class="flex">
             <Vendor_Comp :vendor_list="vendor_list" @selectVendor="selectVendor " />
             <!-- Choosing Procurement Coming Date-->
-            <div>
-                <input class="border outline-none font-sans rounded-lg w-full h-full p-3 text-xs" type="date" name="" id="" v-model="common_data.procurement_coming_date">
+            <div class="mr-5">
+                <input class="border outline-none font-sans rounded-lg w-full h-full py-2 px-1 text-xs" type="date" name="" id="" v-model="common_data.procurement_coming_date">
             </div>
-            <!-- Choosing Vendor Name -->
-            <div>
-                <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="common_data.VendorModelId">
-                    <option v-for="i in vendor_list" :value="i.id">{{ i.vendor_name }}</option>
-                </select>
-            </div>
-            <!-- Choosing Supplier Worker Name -->
             <div>
                 <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="common_data.supplierName">
                     <option v-for="i in supplier_list" :value="i.id">{{ i.username }}</option>

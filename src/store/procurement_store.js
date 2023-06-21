@@ -12,6 +12,8 @@ const ProcurementStore = defineStore('ProcurementStore',{
         waiting_orders_filter: null,
         // For choosing STF and sending for creating STF
         checked_values: [],
+        // For choosing STF and sending for creating SM
+        checked_values_sm: [],
         // Disable Or Enable Create SM Button
         toggle_createsm : false,
         // When MTF choosing and Create STF btn clicked, Open Create STF Component

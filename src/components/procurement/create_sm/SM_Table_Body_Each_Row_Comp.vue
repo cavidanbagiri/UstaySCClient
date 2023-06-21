@@ -1,6 +1,6 @@
 <template>
     <tr 
-        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" style="letter-spacing: 0.3px;font-size: xx-small;">
         <td class="w-1 p-4 py-2 ">
             <div class="flex items-center">
                 <input id="checkbox-table-search-1" type="checkbox" @change="checkboxCond"
