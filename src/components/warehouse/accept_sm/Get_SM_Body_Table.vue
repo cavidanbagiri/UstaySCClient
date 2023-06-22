@@ -2,7 +2,7 @@
 <template>
     
     <Get_SM_Body_Table_Each_Row_Comp :table_data="table_data"
-    v-for="(each_item, index) in warehouse_store?.checked_values"
+    v-for="(each_item, index) in warehouse_store?.processing_checked_values"
     :each_item="each_item" :index="index"
     />
 

@@ -4,7 +4,7 @@
     <div class="mt-1 shadow-md sm:rounded-lg w-screen overflow-x-scroll border-2 ">
 
         <!-- Accept Button -->
-        <button @click="acceptedByWarehouse" v-if="warehouse_store.checked_values?.length" class="bg-red-600 p-2 px-3 text-white font-weight rounded-lg my-1">
+        <button @click="acceptedByWarehouse" v-if="warehouse_store.processing_checked_values?.length" class="bg-red-600 p-2 px-3 text-white font-weight rounded-lg my-1">
             Accept
         </button>
 
@@ -48,7 +48,7 @@
     const acceptedByWarehouse = async () => {
         const data = {
             user:user_store.user,
-            checked_values: warehouse_store.checked_values,
+            checked_values: warehouse_store.processing_checked_values,
             sms_data: sms_data,
             table_data: table_data.value
         }
