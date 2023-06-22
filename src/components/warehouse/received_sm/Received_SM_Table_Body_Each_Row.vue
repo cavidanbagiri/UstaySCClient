@@ -67,7 +67,7 @@
 import { ref } from 'vue';
 
 // Get Each Item from parent
-const prop = defineProps(['each_item','index']);
+const prop = defineProps(['each','index']);
 
 // Create an Emit for clicking checkbox
 const emit = defineEmits(['addChecked','removeChecked']);

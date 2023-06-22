@@ -1,9 +1,8 @@
 
 <template>
-    
     <Get_SM_Body_Table_Each_Row_Comp 
-    v-for="(each_item, index) in warehouse_store.waiting_sms"
-    :each_item="each_item" :index="index"
+    v-for="(each, index) in warehouse_store.waiting_sms"
+    :each="each" :index="index"
     @addChecked="addChecked" @removeChecked="removeChecked"
     />
 
@@ -17,12 +16,14 @@
 
     
     const addChecked = (item) => {
-        warehouse_store.checked_values.push(item);
+        warehouse_store.processing_checked_values.push(item);
+        console.log('selecting : ',warehouse_store.processing_checked_values);
     }
     
     // Remove Operation FIx Needed
     const removeChecked = (item) => {
-        warehouse_store.checked_values = prop.checked_values.filter((each)=>each.id!=item.id)
+        warehouse_store.processing_checked_values = warehouse_store.processing_checked_values.filter((each)=>each.id !== item)
+        console.log('unselecting : ',warehouse_store.processing_checked_values);
     }
 
 </script>

@@ -69,7 +69,7 @@ const each = reactive({
 })
 
 // Create a prop for getting a value from parent
-const prop = defineProps(['each_item', 'index']);
+const prop = defineProps(['each', 'index']);
 
 
 each.total=computed(()=>{

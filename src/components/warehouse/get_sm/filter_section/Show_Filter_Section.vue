@@ -3,7 +3,7 @@
     <div class="flex flex-col px-1 text-black ">
 
         <!-- Show Filter Body -->
-        <Show_Filter_Body v-if=show_filters />
+        <Show_Filter_Body />
 
     </div>
 </template>
@@ -12,7 +12,6 @@
 
 import Show_Filter_Body from './Show_Filter_Body.vue'
 
-const show_filters = true;
 
 </script>
 

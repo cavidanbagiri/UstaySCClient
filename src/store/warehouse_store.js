@@ -9,15 +9,16 @@ const WarehouseStore = defineStore('WarehouseStore',{
         waiting_sms : [],
         filtered_sms : [],
         accepted_items : [],
-        checked_values : [],
+        processing_checked_values : [],
         tab_num : 0,
         received_items : null,
+        after_created : false
     }),
 
     getters:{
         GETWAITINGSMS : (state) => state.waiting_sms,
         GETACCEPTEDITEMS : (state) => state.accepted_items,
-        GETCHECKEDVALUES : (state) => state.checked_values,
+        GETCHECKEDVALUES : (state) => state.processing_checked_values,
         GETRECEIVEDVALUES : (state) => state.received_items
     },
     actions:{

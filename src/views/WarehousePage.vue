@@ -1,12 +1,14 @@
 
 
 <template>
-    <div class="flex flex-col p-2">
+    <div class="flex flex-col bg-white">
+
         <div class=" bg-white">
+            
             <div class="sticky top-0 bg-white">
-                <div class="flex flex-row mt-1 my-2 anim h-10 bg-white left-16"
-                    style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 1px;display: inline-block;">
-    
+                <div class="flex flex-row anim h-10 bg-white items-center sticky left-16 " v-font-family
+                    style="letter-spacing: 1px;font-size: x-small;display: inline-block;">
+
                     <span :class="warehouse_store?.tab_num === 0 ? 'border-b-violet-800 border-b-4 ' : ''"
                         @click="changeTabe(0)" class=" text-black px-3 mx-1 pb-2 border-b-2  cursor-pointer"> <i
                             class="fa-solid fa-arrow-rotate-left fa-md"></i>
@@ -22,11 +24,13 @@
     
                 </div>
             </div>
+            
+            <keep-alive>
+                <component :is="tabs[warehouse_store.tab_num]" />
+            </keep-alive>
+            
         </div>
 
-        <keep-alive>
-            <component :is="tabs[warehouse_store.tab_num]" />
-        </keep-alive>
     </div>
 </template>
 
