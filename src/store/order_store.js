@@ -19,6 +19,7 @@ const OrderStore = defineStore('OrderStore',{
         row_inform_condition : false,
         row_detail_data : null,
         table_headers : [],
+        tab_num : 0
     }),
     getters:{
         GETORDERSDATA : (state) => state.orders, 
@@ -89,8 +90,8 @@ const OrderStore = defineStore('OrderStore',{
 
         // Get Table Headers and show in STF
         async getHeaders(){
-            if(this.orders){
-                for(let [key, value] of Object.entries(this.orders[0])){
+            if(this.orders?.length){
+                for(let [key, value] of Object.entries(this?.orders[0])){
                     if(key!=='id'){
                         let header_cond = {};
                         // const val = key.charAt(0).toUpperCase() + key.slice(1);

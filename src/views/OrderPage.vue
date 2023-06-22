@@ -11,13 +11,13 @@
                     
                         <div class="flex flex-row anim h-10 sticky top-0 bg-white w-full items-center" v-font-family style="letter-spacing: 1px;font-size: x-small;">
             
-                            <span :class="tab_num === 0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(0)"
+                            <span :class="order_store.tab_num === 0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTab(0)"
                             class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-lg "></i>
                                 Show MTF</span>
-                            <span :class="tab_num === 1 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(1)"
+                            <span :class="order_store.tab_num === 1 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTab(1)"
                             class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-list fa-lg "></i>
                                 Create MTF</span>
-                            <span :class="tab_num === 2 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTabe(2)"
+                            <span :class="order_store.tab_num === 2 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTab(2)"
                             class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i
                                     class="fa-solid fa-warehouse fa-lg "></i> Show Warehouse</span>
             
@@ -26,7 +26,7 @@
             </div>
 
             <keep-alive>
-                <component :is="tabs[tab_num]" />
+                <component :is="tabs[order_store.tab_num]" />
             </keep-alive>
             
         </div>
@@ -53,8 +53,8 @@ const order_store = OrderStore();
 const user_store = UserStore();
 
 /******************************************************************* Work With Tabs *************************/
-const tab_num = ref(0);
-const changeTabe = (num) => tab_num.value = num
+// const tab_num = ref(0);
+const changeTab = (num) => order_store.tab_num = num
 const tabs = ([Show_STF_Comp, STF_Table_Comp, Get_Warehouse_Table_Comp]);
 /************************************************************************************************************/
 

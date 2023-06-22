@@ -51,7 +51,7 @@ const setRowSize = () => {
 let order_list = ref([]);
 const againFunc = () => {
     row_size.value=1;
-    order_store.after_created = false
+    // order_store.after_created = false
 }
 /******************************************************************************* */
 

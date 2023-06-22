@@ -66,7 +66,8 @@ const createSTF = async () => {
                     }
                     else {
                         emit('setRowSize');
-                        order_store.after_created = true
+                        order_store.after_created = true;
+                        order_store.tab_num = 0;
                     }
                 }).catch((err) => {
                     console.log('from create Error component : ', err);

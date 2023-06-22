@@ -28,7 +28,7 @@
 
 <script setup>
 
-import { onMounted } from 'vue'
+import { onMounted, watchEffect } from 'vue'
 
 import OrderStore from '../../../store/order_store';
 import UserStore from '../../../store/user_store';
@@ -46,6 +46,13 @@ onMounted(async () => {
     await order_store.showSTF(user);
     if (order_store.table_headers.length === 0) {
         await order_store.getHeaders();
+    }
+})
+
+watchEffect(async()=>{
+    if(order_store.after_created === true){
+        await order_store.showSTF();
+        order_store.after_created=false;
     }
 })
 
