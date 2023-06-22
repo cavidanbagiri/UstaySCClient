@@ -1,6 +1,7 @@
 
 <template>
-    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-500"
+    <tr :class="checked ? 'text-white  bg-blue-600 hover:bg-blue-500 ' : 'hover:bg-gray-100'" 
+    class="border-b "
         style="letter-spacing: 0.3px; font-size: xx-small;" v-font-family>
         <td class="w-1 p-4 py-2 ">
             
