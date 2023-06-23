@@ -2,7 +2,7 @@
 <template>
     <!-- S/S -->
     <td scope="row" class="w-8 font-mono font-thin text-gray-900 whitespace-nowrap dark:text-white text-center"
-        style="font-size: smaller;">
+        style="font-size: xx-small;">
         <div class="flex justify-between items-center px-1">
             <span>{{ each.each_id }}</span>
             <span class="relative flex h-3 w-3">
@@ -13,9 +13,9 @@
     </td>
     <!-- Material Type Selected -->
     <td scope="row" class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white"
-        style="font-size: smaller;">
+        style=";">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Material Type..."> -->
-        <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 text-xs"
+        <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 "
             v-model="each.material_type">
             <option disabled value="">Type</option>
             <option>Project</option>
@@ -25,23 +25,23 @@
     </td>
     <!-- Material Name -->
     <td class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white">
-        <input class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="text"
+        <input class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 " type="text"
             placeholder="Material Name..." v-model=each.material_name>
     </td>
     <!-- Material Link -->
     <td class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white">
-        <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="text"
+        <input class="border outline-none font-sans rounded-lg w-full h-full p-2 " type="text"
             placeholder="Material Link..." v-model=each.link>
     </td>
     <!-- Material Count -->
     <td class="p-1 border">
-        <input class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="number"
+        <input class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 " type="number"
             min="0.001" placeholder="Count..." v-model=each.count>
     </td>
     <!-- Material Unit -->
-    <td class="p-1 border" style="font-size: smaller;">
+    <td class="p-1 border" style=";">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2 " type="text" placeholder="Unit..."> -->
-        <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 text-xs"
+        <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 "
             v-model="each.unit">
             <option disabled value="">Unit</option>
             <option>Adet</option>
@@ -54,16 +54,16 @@
     <!-- Area Field -->
     <td class="p-1 border">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Field..."> -->
-        <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 text-xs"
+        <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 "
             v-model="each.FieldsModelId">
             <option disabled value="">Field</option>
             <option v-for="i in order_store.GETFIELDSNAME" :value="i.id">{{ i.field_name }}</option>
         </select>
     </td>
     <!-- Material Status -->
-    <td class="p-1 border" style="font-size: smaller;">
+    <td class="p-1 border" style=";">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Status..."> -->
-        <select class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" v-model="each.status">
+        <select class="border outline-none font-sans rounded-lg w-full h-full p-2 " v-model="each.status">
             <option>
                 <span>
                     <i class="fa-solid fa-gem fa-lg" style="color:red"></i> Not Specified
@@ -77,8 +77,8 @@
         </select>
     </td>
     <!-- Comment Section -->
-    <td class="p-1 border" style="font-size: smaller;">
-        <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="text"
+    <td class="p-1 border" style=";">
+        <input class="border outline-none font-sans rounded-lg w-full h-full p-2 " type="text"
             placeholder="Comment..." v-model=each.comment>
     </td>
 </template>
