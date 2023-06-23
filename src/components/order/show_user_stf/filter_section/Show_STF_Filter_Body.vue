@@ -53,7 +53,7 @@
             </div>
             <div class="flex flex-row justify-end">
                 <!-- Search With Material Name -->
-                <div class="flex flex-col m-1 items-center">
+                <div class="flex flex-col m-1 items-start">
                     <span class="m-1">Search Type</span>
                     <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                     <div class="relative  w-96">
