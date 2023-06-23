@@ -31,14 +31,21 @@
 
         <th v-for="i in order_store.table_headers" v-show="i.value" class="px-2 py-2 font-medium text-center">
 
+            
             <!-- STF Num Design -->
             <div v-if="i.name === 'stf_num'">
                 <span class="bg-orange-100 text-orange-500 py-1 px-2 rounded-xl"> {{ prop.each[i.name] }}</span>
             </div>
-
-            <!-- STF Num Design -->
+            
+            <!-- SM Num Design -->
             <div v-else-if="i.name === 'sm_num'">
                 <span class="bg-green-100 text-green-500 py-1 px-2 rounded-xl"> {{ prop.each[i.name] }}</span>
+            </div>
+
+            <!-- Date Time Design -->
+            <div v-else-if="i.name === 'created_at'">
+                <!-- <span class="bg-orange-100 text-blue-500 py-1 px-2 rounded-xl"> {{ prop.each[i.name] }}</span> -->
+                <Time_Format_Comp :time="prop.each[i.name]" />
             </div>
 
             <!-- Situation Design -->
@@ -89,6 +96,7 @@
 
 import { ref } from 'vue';
 import OrderStore from '../../../store/order_store';
+import Time_Format_Comp from './Time_Format_Comp.vue';
 const order_store = OrderStore();
 
 const prop = defineProps(['each', 'index'])

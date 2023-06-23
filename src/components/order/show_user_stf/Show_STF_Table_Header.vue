@@ -22,23 +22,23 @@
             <th v-for="i in order_store.table_headers" v-show="i.value" scope="col" class="px-2 py-1 font-medium text-center border">
                 
                 <div v-if="i.name==='situation'" class="w-20">
-                    {{ i.name }}
+                    {{ i.showname }}
                 </div>
 
-                <div v-else-if="i.name==='created_at'" class="w-16">
-                    {{ i.name }}
+                <div v-else-if="i.name==='created_at'" class="">
+                    {{ i.showname }}
                 </div>
 
                 <div v-else-if="i.name==='material_name'" class="w-96">
-                    {{ i.name }}
+                    {{ i.showname }}
                 </div>
 
                 <div v-else-if="i.name==='vendor_name'" class="w-96">
-                    {{ i.name }}
+                    {{ i.showname }}
                 </div>
 
                 <div v-else class="flex flex-col">
-                    {{ i.name }}
+                    {{ i.showname }}
                 </div>
 
             </th>

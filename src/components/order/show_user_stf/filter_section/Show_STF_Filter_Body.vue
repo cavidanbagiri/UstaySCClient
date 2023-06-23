@@ -17,7 +17,7 @@
                 <!-- Search With Date -->
                 <div class="flex flex-col m-1">
                     <span class="m-1">Search Date</span>
-                    <input class="border outline-none rounded-md border-blue-300 p-2 hover:border-blue-600 shadow-lg" type="date" name="" id=""
+                    <input class="border outline-none rounded-md border-gray-300 p-2" type="date" name="" id="" disabled
                         placeholder="Date" v-model="date" />
                 </div>
                 <!-- Search With Material Type-->
