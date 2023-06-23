@@ -12,8 +12,7 @@
         </div>
     </td>
     <!-- Material Type Selected -->
-    <td scope="row" class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white"
-        style=";">
+    <td scope="row" class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white" style=";">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Material Type..."> -->
         <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 "
             v-model="each.material_type">
@@ -35,14 +34,13 @@
     </td>
     <!-- Material Count -->
     <td class="p-1 border">
-        <input class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 " type="number"
-            min="0.001" placeholder="Count..." v-model=each.count>
+        <input class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 " type="number" min="0.001"
+            placeholder="Count..." v-model=each.count>
     </td>
     <!-- Material Unit -->
     <td class="p-1 border" style=";">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2 " type="text" placeholder="Unit..."> -->
-        <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 "
-            v-model="each.unit">
+        <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 " v-model="each.unit">
             <option disabled value="">Unit</option>
             <option>Adet</option>
             <option>M2</option>
@@ -78,8 +76,8 @@
     </td>
     <!-- Comment Section -->
     <td class="p-1 border" style=";">
-        <input class="border outline-none font-sans rounded-lg w-full h-full p-2 " type="text"
-            placeholder="Comment..." v-model=each.comment>
+        <input class="border outline-none font-sans rounded-lg w-full h-full p-2 " type="text" placeholder="Comment..."
+            v-model=each.comment>
     </td>
 </template>
 
@@ -105,45 +103,33 @@ const each = reactive({
 });
 
 watchEffect(() => {
-    //if (each.material_name !== '' && each.count !== 0 && each.unit !== '' && each.FieldsModelId !== 0) {
-        // Add Row
-        if (order_store.order_list?.length >= 1) {
-            let check = false;
-            for (let i of order_store.order_list) {
-                if (i.each_id === each.each_id) {
-                    check = true;
-                    break;
-                }
-            }
-            if (!check) {
-                order_store.order_list.push(each);
+
+    if (order_store.order_list?.length >= 1) {
+        let check = false;
+        for (let i of order_store.order_list) {
+            if (i.each_id === each.each_id) {
+                check = true;
+                break;
             }
         }
-        else {
-            order_store.order_list.push(each)
+        if (!check && (each.material_name!=='' || each.material_type!=='') ) {
+            order_store.order_list.push(each);
         }
-    //}
-    // Delete Row
-    //else {
-        // if (order_store.order_list.length >= 1) {
-        //     for (let i = 0; i < order_store.order_list.length; i++) {
-        //         if (order_store.order_list[i].each_id === each.each_id) {
-        //             order_store.order_list.splice(i, 1);
-        //         }
-        //     }
-        // }
-    //}
+    }
+    else {
+        order_store.order_list.push(each)
+    }
     if (order_store.after_created) {
         for (let i = 0; i < order_store.order_list.length; i++) {
-            each.each_id = 0; 
-            each.material_type = ''; 
-            each.material_name = ''; 
-            each.link=''; 
-            each.count = 0; 
-            each.unit = ''; 
-            each.FieldsModelId = 0; 
-            each.status = 'Not Specified', 
-            each.comment = '';
+            each.each_id = 0;
+            each.material_type = '';
+            each.material_name = '';
+            each.link = '';
+            each.count = 0;
+            each.unit = '';
+            each.FieldsModelId = 0;
+            each.status = 'Not Specified',
+                each.comment = '';
             order_store.order_list.splice(i, 1);
         }
     }

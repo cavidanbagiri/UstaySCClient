@@ -40,8 +40,24 @@ const order_store = OrderStore();
 
 /************************************************* Row Management ****************/
 const row_size = ref(1);
-const addNewRow = () => row_size.value += 1;
-const removeRow = () => row_size.value > 1 ? row_size.value -= 1 : row_size.value
+const addNewRow = () => {
+    console.log('ab order : ',order_store.order_list);
+    row_size.value += 1;
+    console.log('aa order : ',order_store.order_list);
+}
+const removeRow = () => {
+    if(row_size.value > 1){
+        row_size.value -= 1
+        // order_store.order_list.pop();
+        // order_store.order_list.length = order_store.order_list.length-=1;
+        order_store.order_list.splice(row_size.value-2, 1);
+        console.log('a order : ',order_store.order_list);
+    } 
+    else{
+        row_size.value
+    }
+} 
+
 const setRowSize = () => {
     row_size.value = 0;
 }

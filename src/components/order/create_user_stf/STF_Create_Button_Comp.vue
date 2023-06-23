@@ -1,7 +1,7 @@
 
 <template>
     <div class="flex items-center justify-end mt-10">
-        <button type="button" @click="createSTF" class="text-white bg-gradient-to-r bg-blue-600 
+        <button type="button" @click="createSTF" class="text-white bg-gradient-to-r bg-blue-600 hover:bg-blue-500 hover:shadow-xl
               font-medium rounded-lg text-md px-4 py-2 text-center mr-2 mb-2">
             <i class="fa-solid fa-plus"></i>
             Create</button>

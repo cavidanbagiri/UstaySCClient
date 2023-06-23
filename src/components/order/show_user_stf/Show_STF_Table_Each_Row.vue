@@ -3,7 +3,7 @@
         class="border-b  hover:cursor-pointer">
         <td class=" p-1">
             <div class="flex items-center justify-center" @click="getRowDetail">
-                <i class="fa-solid fa-ellipsis-vertical fa-2xl text-green-300"  @click="getRowDetail"></i>
+                <i class="fa-solid fa-ellipsis-vertical fa-2xl text-gray-300"  @click="getRowDetail"></i>
             </div>
         </td>
         <td class="w-1 p-4 py-2 ">
