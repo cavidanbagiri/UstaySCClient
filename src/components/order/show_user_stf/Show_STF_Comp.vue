@@ -2,7 +2,7 @@
 <template>
     <div class="flex flex-col" style="display: inline-block;">
 
-        <div class="sticky top-10 p-1 ">
+        <div class="sticky top-10 px-1 ">
             <div class=" sticky left-16 flex flex-col bg-white" style="display: inline-block; width: calc(100vw - 5rem);">
                 <!-- <div class="bg-blue-300 p-1 "> -->
 
