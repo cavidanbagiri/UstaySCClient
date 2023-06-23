@@ -8,9 +8,6 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [
-    // require('flowbite/plugin','tailwind-scroolbar')
-    require('tailwind-scrollbar')({ nocompatible: true }),
-  ]
+  plugins: [require("daisyui")],
 }
 
