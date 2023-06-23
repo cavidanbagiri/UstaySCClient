@@ -30,6 +30,12 @@ import User_Login_Comp from './components/design/User_Login_Comp.vue';
 
 import IndexStore from './store';
 import Tempnavbar from './layouts/tempnavbar.vue';
+
+import { ArcElement,Chart as ChartJS } from "chart.js";
+// import { } from 'cha'
+
+ChartJS.register(ArcElement);
+
 const store = IndexStore();
 
 onMounted(() => {

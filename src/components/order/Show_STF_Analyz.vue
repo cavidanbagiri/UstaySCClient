@@ -11,6 +11,11 @@
             </div>
             <div class="flex items-end" style="font-size: xx-small;">
                 <span class="bg-gray-100 rounded-md text-black-800 p-2 font-bold" >Get Data</span>
+                <!-- <Doughnut 
+                id="my-chart-id"
+                :options="chartOptions"
+                :data="chartData"
+                /> -->
             </div>
         </div>
         <div class=" col-span-2 flex flex-row justify-between border shadow-md w-full p-3 rounded-md
@@ -63,8 +68,28 @@
 
 import { onMounted, watchEffect, ref, reactive } from 'vue';
 
+import { Doughnut } from 'vue-chartjs';
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+
+
 import OrderStore from '../../store/order_store';
 import UserStore from '../../store/user_store';
+
+
+const chartData= {
+    labels: [ 'January', 'February', 'March' ],
+    datasets: [ {
+        backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+        data: [40, 20, 12]
+    } ]
+}
+const chartOptions= {
+    responsive: true
+}
 
 const order_store = OrderStore();
 const user_store = UserStore();
@@ -81,6 +106,7 @@ const statistic_result = reactive({
 onMounted(async () => {
     const user_id = user_store.user;
     await order_store.getUserStatisticResult(user_id.id);
+    ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 })
 
 watchEffect(() => {
