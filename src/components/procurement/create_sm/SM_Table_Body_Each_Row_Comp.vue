@@ -12,19 +12,19 @@
             {{ prop?.index + 1  }}
         </th>
         <th class="px-2 py-2 font-mono font-thin border text-center">
-            <span class="bg-orange-50 text-orange-400 p-1 rounded-full font-bold">{{ prop?.each_item?.stf_num }}</span>
+            <span class="bg-orange-50 text-orange-400 p-1 rounded-full font-bold">{{ prop?.each?.stf_num }}</span>
         </th>
         <th class="px-2 py-2 font-mono font-thin border  text-center">
-            <span>{{ prop?.each_item?.created_at }}</span>
+            <span>{{ prop?.each?.created_at }}</span>
         </th>
         <th class="px-2 py-2 font-mono font-thin border">
-            {{ prop?.each_item?.material_name }}
+            {{ prop?.each?.material_name }}
         </th>
         <th class="px-2 py-2 font-mono font-thin border text-center">
-            {{ prop?.each_item?.count }}
+            {{ prop?.each?.count }}
         </th>
         <th class="px-2 py-2 font-mono font-thin border text-center">
-            {{ prop?.each_item?.unit }}
+            {{ prop?.each?.unit }}
         </th>
         <th class="px-2 py-2 font-mono font-thin border text-center">
             <input class="border outline-none font-sans rounded-lg w-full h-full p-2 text-xs" type="number" min="0.001" placeholder="Material Name..."
@@ -43,7 +43,7 @@
                 <img class="w-6 h-6 rounded-full"
                     src="https://img.freepik.com/free-photo/the-beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg?w=2000"
                     alt="">
-                <span class=" text-xs text-slate-800 font-mono pl-1">{{ prop?.each_item?.username }}</span>
+                <span class=" text-xs text-slate-800 font-mono pl-1">{{ prop?.each?.username }}</span>
             </span>
         </th>
     </tr>
@@ -60,9 +60,9 @@ const currency_list = ['₽','$']
 
 // Create Each Row For Taking Value and sending To Server
 const each = reactive({
-    ProjectModelId: prop?.each_item?.ProjectModelId,
-    DepartmentModelId: prop?.each_item?.DepartmentModelId,
-    STFModelId: prop?.each_item?.id,
+    ProjectModelId: prop?.each?.ProjectModelId,
+    DepartmentModelId: prop?.each?.DepartmentModelId,
+    STFModelId: prop?.each?.id,
     price : 0,
     total : 0,
     currency : '₽',
@@ -73,7 +73,7 @@ const prop = defineProps(['each', 'index']);
 
 
 each.total=computed(()=>{
-    return each.price * prop?.each_item?.count
+    return each.price * prop?.each?.count
 })
 
 watchEffect(()=>{

@@ -1,7 +1,7 @@
 
 <template>
     <tbody>
-        <SM_Table_Body_Each_Row_Comp v-for="(i, index) in procurement_store.GETCHECKEDVALUES" :each_item="i" :index="index"
+        <SM_Table_Body_Each_Row_Comp v-for="(i, index) in procurement_store.checked_values" :each="i" :index="index"
             :key="index" />
     </tbody>
 </template>
