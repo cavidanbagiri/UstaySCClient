@@ -5,7 +5,7 @@
             <li v-for="key in procurement_store.stf_table_headers">
                 <div class="flex flex-row items-center hover:bg-gray-100 p-2">
                     <input type="checkbox" name="" :checked="key.value" @change="changeHeaderCond(key)">
-                    <label :for="key.name" class="ml-2">{{ key.name }} {{ key.value }} </label>
+                    <label :for="key.name" class="ml-2">{{ key.showname }} </label>
                 </div>
             </li>
         </ul>

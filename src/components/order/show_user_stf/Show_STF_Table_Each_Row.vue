@@ -33,23 +33,22 @@
 
             
             <!-- STF Num Design -->
-            <div v-if="i.name === 'stf_num'">
+            <div v-if="i.name === 'stf_num'" class="w-20">
                 <span class="bg-orange-100 text-orange-500 py-1 px-2 rounded-xl"> {{ prop.each[i.name] }}</span>
             </div>
             
             <!-- SM Num Design -->
-            <div v-else-if="i.name === 'sm_num'">
+            <div v-else-if="i.name === 'sm_num'" class="w-20">
                 <span class="bg-green-100 text-green-500 py-1 px-2 rounded-xl"> {{ prop.each[i.name] }}</span>
             </div>
 
             <!-- Date Time Design -->
-            <div v-else-if="i.name === 'created_at'">
-                <!-- <span class="bg-orange-100 text-blue-500 py-1 px-2 rounded-xl"> {{ prop.each[i.name] }}</span> -->
-                <Time_Format_Comp :time="prop.each[i.name]" />
+            <div v-else-if="i.name === 'created_at'" class="w-24">
+                <DateFormat :time="prop.each[i.name]" />
             </div>
 
             <!-- Situation Design -->
-            <div v-else-if="i.name === 'situation'" class="">
+            <div v-else-if="i.name === 'situation'" class="w-20">
                 <div v-if="prop.each[i.name] === 'Waiting'">
                     <span class=" bg-red-100 w-full text-red-500 py-1 px-2 rounded-md">
                         &#9679 {{ prop.each.situation }}
@@ -67,10 +66,13 @@
                 </div>
             </div>
 
-            <div v-else-if="i.name==='material_type'" class="text-start">
+            <div v-else-if="i.name==='material_type'" class="text-start w-24">
                 <span >{{ prop.each[i.name] }}</span>
             </div>
-            <div v-else-if="i.name==='material_name'" class="text-start">
+            <div v-else-if="i.name==='material_name'" class="text-start w-96">
+                <span >{{ prop.each[i.name] }}</span>
+            </div>
+            <div v-else-if="i.name==='field_name'" class="text-start w-24">
                 <span >{{ prop.each[i.name] }}</span>
             </div>
             <div v-else-if="i.name==='vendor_name'" class="text-start">
@@ -95,8 +97,8 @@
 <script setup>
 
 import { ref } from 'vue';
+
 import OrderStore from '../../../store/order_store';
-import Time_Format_Comp from './Time_Format_Comp.vue';
 const order_store = OrderStore();
 
 const prop = defineProps(['each', 'index'])
