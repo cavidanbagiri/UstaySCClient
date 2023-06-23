@@ -4,6 +4,11 @@
         <tr class="">
             <th scope="col-4" class=" px-4">
                 <div class="flex flex-col items-center">
+                    <i class="fa-solid fa-circle-info fa-xl text-green-500"></i>
+                </div>
+            </th>
+            <th scope="col-4" class=" px-4">
+                <div class="flex flex-col items-center">
                     <input id="checkbox-all-search" type="checkbox"
                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded">
                     <label for="checkbox-all-search" class="sr-only">checkbox</label>
