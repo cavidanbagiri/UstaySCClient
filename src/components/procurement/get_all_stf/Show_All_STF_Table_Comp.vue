@@ -1,9 +1,9 @@
 
 <template>
-    <div class="mt-1 shadow-md sm:rounded-lg w-full border-2 ">
+    <div class="mt-1 shadow-md sm:rounded-lg w-full border-2 analyz_header">
 
         <!-- Table -->
-        <table class="text-left text-gray-800 dark:text-gray-400 w-full"  style="font-size: xx-small;">
+        <table class="text-left text-gray-800 dark:text-gray-400 w-full" >
             <!-- Table Header -->
             <Get_All_STF_Table_Header_Comp />
         

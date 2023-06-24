@@ -1,9 +1,8 @@
 <template>
-    <thead class="text-black bg-gray-100 border" v-font-family
-    style="letter-spacing: 0.5px; font-size: x-small;">
+    <thead class="text-black bg-gray-100 border table_header">
         <tr>
             <th scope="col" class="px-6 py-1 font-mono font-medium text-center border">
-                S
+                S/S
             </th>
             <th scope="col" class="px-6 py-1 font-mono font-medium text-center border">
                 <div class="w-20">

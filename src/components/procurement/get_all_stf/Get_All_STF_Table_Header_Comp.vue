@@ -1,6 +1,5 @@
 <template>
-    <thead class="text-black bg-gray-100 border w-full sticky top-48" v-font-family
-    style="letter-spacing: 0.5px; font-size: x-small;">
+    <thead class="text-black bg-gray-100 border w-full sticky top-48 table_header">
         <tr class="">
             <th scope="col-4" class=" px-4">
                 <div class="flex flex-col items-center">

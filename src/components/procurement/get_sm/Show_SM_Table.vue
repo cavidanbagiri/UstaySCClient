@@ -4,7 +4,7 @@
     <div class="mt-1 shadow-md sm:rounded-lg w-full border-2 ">
         <!-- Table -->
         <div class="">
-            <table class="text-left text-gray-800 w-full" style="font-size: xx-small;">
+            <table class="text-left text-gray-800 w-full">
                 <Get_SM_Header_Table />
                 <tbody class="">
                     <Get_SM_Body_Table />

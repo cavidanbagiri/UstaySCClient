@@ -1,16 +1,15 @@
 <template>
     
-    <div class="grid grid-cols-10 gap-3 justify-between  sticky anim bg-white" 
-    v-font-family style="letter-spacing: 1px;font-size: small;">
+    <div class="grid grid-cols-10 gap-3 justify-between sticky anim bg-white" >
 
         <div class=" col-span-2 flex flex-row justify-between border shadow-md w-full p-3 rounded-md
          hover:shadow-xl hover:cursor-pointer "  @click = "fetchCurrentData(0)"  >
             <div class="flex flex-col">
-                <span class="text-gray-600 text-md font-medium" >Total</span>
-                <span class="mt-3 text-lg font-bold" style="font-family:Arial, Helvetica, sans-serif">{{ statistic_result.total }}</span>
+                <span class="text-gray-600 analyz_header" >Total</span>
+                <span class="mt-3 analyz_show_data" >{{ statistic_result.total }}</span>
             </div>
-            <div class="flex items-end" style="font-size: xx-small;">
-                <span class="bg-gray-100 rounded-md text-black-800 p-2 font-bold" >Get Data</span>
+            <div class="flex items-end">
+                <span class="bg-gray-100 rounded-md text-black-800 p-2 analyz_get_data" >Get Data</span>
                 <!-- <Doughnut 
                 id="my-chart-id"
                 :options="chartOptions"
@@ -21,41 +20,41 @@
         <div class=" col-span-2 flex flex-row justify-between border shadow-md w-full p-3 rounded-md
          hover:shadow-xl hover:cursor-pointer " @click = "fetchCurrentData(1)" >
             <div class="flex flex-col">
-                <span class="text-gray-600 font-medium">Waiting</span>
-                <span class="mt-3 text-lg font-bold" style="font-family:Arial, Helvetica, sans-serif">{{statistic_result.waiting}}</span>
+                <span class="text-gray-600 analyz_header">Waiting</span>
+                <span class="mt-3 analyz_show_data">{{statistic_result.waiting}}</span>
             </div>
-            <div class="flex items-end"  style="font-size: xx-small;">
-                <span class="bg-red-100 rounded-md text-red-800 p-2 font-bold" >Get Data</span>
+            <div class="flex items-end" >
+                <span class="bg-red-100 rounded-md text-red-800 p-2 analyz_get_data" >Get Data</span>
             </div>
         </div>
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-md 
         hover:shadow-xl hover:cursor-pointer " @click="fetchCurrentData(2)" >
             <div class="flex flex-col">
-                <span class="text-gray-600 font-medium" >Processing</span>
-                <span class="mt-3 text-lg font-bold" style="font-family:Arial, Helvetica, sans-serif">{{statistic_result.processing}}</span>
+                <span class="text-gray-600 analyz_header" >Processing</span>
+                <span class="mt-3 analyz_show_data">{{statistic_result.processing}}</span>
             </div>
             <div class="flex items-end" style="font-size: xx-small;">
-                <span class="bg-blue-100 rounded-md text-blue-800 p-2 font-bold">Get Data</span>
+                <span class="bg-blue-100 rounded-md text-blue-800 p-2 analyz_get_data">Get Data</span>
             </div>
         </div>
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
          shadow-md hover:shadow-xl hover:cursor-pointer "  @click="fetchCurrentData(3)"  >
             <div class="flex flex-col">
-                <span class="text-gray-600 font-medium" >Received</span>
-                <span class="mt-3 text-lg font-bold"  style="font-family:Arial, Helvetica, sans-serif">{{statistic_result.received}}</span>
+                <span class="text-gray-600 analyz_header" >Received</span>
+                <span class="mt-3 analyz_show_data" >{{statistic_result.received}}</span>
             </div>
-            <div class="flex items-end" style="font-size: xx-small;">
-                <span class="bg-green-100 text-green-800 p-2 rounded-md font-bold">Get Data</span>
+            <div class="flex items-end">
+                <span class="bg-green-100 text-green-800 p-2 rounded-md analyz_get_data">Get Data</span>
             </div>
         </div>
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
          shadow-md hover:shadow-xl hover:cursor-pointer "  @click="fetchCurrentData(4)"  >
             <div class="flex flex-col">
-                <span class="text-gray-600 font-medium" >Provide</span>
-                <span class="mt-3 text-lg font-bold" style="font-family:Arial, Helvetica, sans-serif">0</span>
+                <span class="text-gray-600 analyz_header" >Provide</span>
+                <span class="mt-3 analyz_show_data" >0</span>
             </div>
-            <div class="flex items-end" style="font-size: xx-small;">
-                <span class="bg-pink-100 text-pink-800 p-2 rounded-md font-bold">Get Data</span>
+            <div class="flex items-end" >
+                <span class="bg-pink-100 text-pink-800 p-2 rounded-md analyz_get_data">Get Data</span>
             </div>
         </div>
         

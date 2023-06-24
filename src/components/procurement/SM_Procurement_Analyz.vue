@@ -1,32 +1,31 @@
 <template>
-    <div class="grid grid-cols-12 gap-3 justify-between mb-1 px-1 "  
-    style="letter-spacing: 1px;font-size: small">
+    <div class="grid grid-cols-12 gap-3 justify-between mb-1 px-1 ">
 
         <div class=" col-span-4 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md" @click="fetchCurrentData(0)">
             <div class="flex flex-col">
-                <span class="text-gray-600  text-sm font-medium">Total Creating SM</span>
-                <span class="mt-3 text-md font-bold">{{ statistic_result.total }}</span>
+                <span class="text-gray-600 analyz_header">Total Creating SM</span>
+                <span class="mt-3 analyz_show_data">{{ statistic_result.total }}</span>
             </div>
             <div class="flex items-end">
-                <span class="bg-violet-100 rounded-sm text-violet-800  p-1 font-bold">Get Data</span>
+                <span class="bg-violet-100 rounded-md text-violet-800  p-2 analyz_get_data">Get Data</span>
             </div>
         </div>
         <div class=" col-span-4 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(2)">
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium">Processing SM</span>
-                <span class="mt-3 text-md font-bold">{{statistic_result.processing}}</span>
+                <span class="text-gray-600 analyz_header">Processing SM</span>
+                <span class="mt-3 analyz_show_data">{{statistic_result.processing}}</span>
             </div>
             <div class="flex items-end">
-                <span class="bg-blue-100 rounded-sm text-blue-800  p-1 font-bold">Get Data</span>
+                <span class="bg-blue-100 rounded-md text-blue-800  p-2 analyz_get_data">Get Data</span>
             </div>
         </div>
         <div class=" col-span-4 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(3)">
             <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium">Received SM</span>
-                <span class="mt-3 text-md font-bold">{{statistic_result.received}}</span>
+                <span class="text-gray-600 analyz_header">Received SM</span>
+                <span class="mt-3 analyz_show_data">{{statistic_result.received}}</span>
             </div>
             <div class="flex items-end">
-                <span class="bg-green-100 rounded-sm text-green-800  p-1 font-bold">Get Data</span>
+                <span class="bg-green-100 rounded-md text-green-800  p-2 analyz_get_data">Get Data</span>
             </div>
         </div>
     </div>
