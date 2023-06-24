@@ -18,23 +18,27 @@
             <th v-for="i in procurement_store.sm_table_headers" v-show="i.value" scope="col" class="px-2 py-1 font-medium text-center border">
                 
                 <div v-if="i.name==='situation'" class="w-20">
-                    {{ i.name }}
+                    {{ i.showname }}
                 </div>
 
                 <div v-else-if="i.name==='created_at'" class="w-16">
-                    {{ i.name }}
+                    {{ i.showname }}
                 </div>
 
-                <div v-else-if="i.name==='material_name'" class="w-96">
-                    {{ i.name }}
+                <div v-else-if="i.name==='material_name'" class="min-w-[600px]">
+                    {{ i.showname }}
                 </div>
 
                 <div v-else-if="i.name==='vendor_name'" class="w-96">
-                    {{ i.name }}
+                    {{ i.showname }}
                 </div>
 
-                <div v-else class="flex flex-col">
-                    {{ i.name }}
+                <div v-else-if="i.name==='total' || i.name==='price' || i.name==='currency' ">
+                    {{ i.showname }}
+                </div>
+
+                <div v-else class="flex flex-col w-24">
+                    {{ i.showname }}
                 </div>
 
             </th>

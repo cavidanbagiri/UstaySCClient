@@ -26,7 +26,7 @@
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(2)">
             <div class="flex flex-col justify-between">
-                <span class="text-gray-600 analyz_header">Processing</span>
+                <span class="text-gray-600 analyz_header">Process</span>
                 <span class="bg-blue-200 rounded-md text-blue-800 p-2 analyz_get_data" >Get Data</span>
             </div>
             <div class="flex items-center ">
