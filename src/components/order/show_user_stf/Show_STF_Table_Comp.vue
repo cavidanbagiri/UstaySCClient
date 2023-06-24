@@ -2,7 +2,7 @@
     <div class="shadow-md rounded-lg w-full ">
 
         <!-- Table -->
-        <table class="text-left mx-2 text-gray-800 dark:text-gray-400 w-full shadow-xl bg-white" style="font-size: xx-small;">
+        <table class="text-left mx-2 text-gray-800 dark:text-gray-400 w-full shadow-xl bg-white">
             <!-- Table Header -->
             <Show_STF_Table_Header />
             <!-- Table Border -->

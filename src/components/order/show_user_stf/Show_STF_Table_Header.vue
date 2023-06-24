@@ -1,7 +1,6 @@
 <template>
-    <thead class="text-black bg-gray-100 border sticky top-48 " v-font-family
-    style="letter-spacing: 0.5px; font-size: x-small;">
-        <tr class="">
+    <thead class="text-black bg-gray-100 border sticky top-48 table_header">
+        <tr>
             <th scope="col-4" class=" px-4">
                 <div class="flex flex-col items-center">
                     <i class="fa-solid fa-circle-info fa-xl text-green-500"></i>
@@ -14,12 +13,12 @@
                     <label for="checkbox-all-search" class="sr-only">checkbox</label>
                 </div>
             </th>
-            <th class="px-2 py-2 font-medium  text-center">
+            <th class="px-2 py-2 text-center">
                 <div class="flex flex-col">
                     S/S
                 </div>
             </th>
-            <th v-for="i in order_store.table_headers" v-show="i.value" scope="col" class="px-2 py-1 font-medium text-center border">
+            <th v-for="i in order_store.table_headers" v-show="i.value" scope="col" class="px-2 py-1 text-center border">
                 
                 <div v-if="i.name==='situation'" class="">
                     {{ i.showname }}

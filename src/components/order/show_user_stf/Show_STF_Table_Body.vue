@@ -1,6 +1,6 @@
 
 <template>
-    <tbody v-font-family class="text-gray-500" style="letter-spacing: 0.3px;">
+    <tbody class="text-gray-500">
 
         <Show_STF_Table_Each_Row v-for="(i, index) in order_store.GETFILTEREDORDERSDATA"
             :each="i" :index="index"

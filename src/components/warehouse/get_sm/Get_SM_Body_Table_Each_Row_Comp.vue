@@ -2,12 +2,11 @@
 <template>
 
     <tr :class="checked ? 'text-white  bg-blue-600 hover:bg-blue-500 ' : 'hover:bg-gray-100'" 
-        class="border-b text-xs"
-        style="letter-spacing: 0.3px;font-size: xx-small;" v-font-family>
+        class="border-b table_row bg-white">
         <td class="w-1 p-4 py-2 ">
 
             <div class="flex items-center">
-                <label class="relative flex cursor-pointer items-center rounded-sm p-1" for="selected_row"
+                <label class="flex cursor-pointer items-center rounded-sm p-1" for="selected_row"
                     data-ripple-dark="true">
                     <input :id="prop.each.id" type="checkbox" v-model="checked" @change="checkboxCond"
                         class=" before:content[''] peer relative h-4 w-4 cursor-pointer appearance-none rounded-md border-2 border-blue-gray-200 transition-all before:absolute 
@@ -26,10 +25,10 @@
             </div>
 
         </td>
-        <th class="px-2 py-2 font-medium text-center">
+        <th class="px-2 py-2  text-center">
             {{ prop?.index + 1  }}
         </th>
-        <th class="px-2 font-medium text-start border-y ">
+        <th class="px-2 text-start border-y ">
             <div class=" bg-orange-100 text-orange-500 py-1 px-2 rounded-xl ">
                 <span>{{ prop?.each?.stf_num }}</span>
             </div>

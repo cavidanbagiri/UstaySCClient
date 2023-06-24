@@ -45,6 +45,8 @@ onMounted(() => {
 
 </script>
 
-<style lang="">
-  
+<style lang="scss">
+
+  @import './assets/style.scss';
+
 </style>

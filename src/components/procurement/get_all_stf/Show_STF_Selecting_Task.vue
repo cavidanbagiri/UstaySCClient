@@ -1,5 +1,5 @@
 <template>
-    <div v-if="selecting_rows.length >= 1" class="mtf-anim fixed w-full bottom-10 flex flex-col mb-4 items-center rounded-lg">
+    <div v-if="selecting_rows.length >= 1" class="mtf-anim fixed w-full bottom-10 flex flex-col mb-4 items-center rounded-lg analyz_header">
         <div class="flex justify-between bg-white w-1/2 border rounded-md shadow-2xl">
             <div class="flex items-center">
                 <span class="bg-blue-600 py-4 px-6 text-white font-bold rounded-l-md text-3xl">{{ selecting_rows.length

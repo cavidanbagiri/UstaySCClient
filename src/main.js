@@ -16,9 +16,6 @@ const pinia = createPinia();
 import validation from './plugins/validation'; 
 import dateFormat from './plugins/date_format';
 
-// Import Directives
-import font_family from './directives/table_header_font_family';
-
 const app = createApp(App)
 
 // Use Router
@@ -31,6 +28,5 @@ app.use(pinia);
 app.use(validation);
 app.use(dateFormat);
 
-app.directive('font-family',font_family);
 
 app.mount('#app');

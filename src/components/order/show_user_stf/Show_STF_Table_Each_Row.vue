@@ -1,6 +1,6 @@
 <template>
     <tr :class="checked_style ? 'text-white bg-blue-600  hover:bg-blue-500 ' : 'hover:bg-gray-100'"
-        class="border-b  hover:cursor-pointer">
+        class="border-b  hover:cursor-pointer bg-white table_row">
         <td class=" p-1">
             <div class="flex items-center justify-center" @click="getRowDetail">
                 <i class="fa-solid fa-ellipsis-vertical fa-2xl text-gray-300"  @click="getRowDetail"></i>
@@ -125,4 +125,7 @@ const getRowDetail = async () => {
 
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+
+
+</style>

@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <div class="" >
+        <div>
             <Show_SM_Table/>
         </div>
 
