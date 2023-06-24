@@ -32,7 +32,7 @@
 
             <!-- STF Num Design -->
             <div v-if="i.name === 'stf_num'">
-                <span class="bg-orange-100 text-orange-500 py-1 px-2 rounded-xl"> {{ prop.each[i.name] }}</span>
+                <span class="bg-orange-100 text-orange-500 py-[0.30rem] px-2 rounded-md"> {{ prop.each[i.name] }}</span>
             </div>
 
             <!-- Created At Design -->
@@ -42,23 +42,23 @@
 
             <!-- STF Num Design -->
             <div v-else-if="i.name === 'sm_num'">
-                <span class="bg-green-100 text-green-500 py-1 px-2 rounded-xl"> {{ prop.each[i.name] }}</span>
+                <span class="bg-green-100 text-green-500 py-[0.30rem] px-2 rounded-md"> {{ prop.each[i.name] }}</span>
             </div>
 
             <!-- Situation Design -->
             <div v-else-if="i.name === 'situation'" class="">
                 <div v-if="prop.each[i.name] === 'Waiting'">
-                    <span class=" bg-red-100 w-full text-red-500 py-1 px-2 rounded-md">
+                    <span class=" bg-red-100 w-full text-red-500 py-[0.30rem] px-2 rounded-md">
                         &#9679 {{ prop.each.situation }}
                     </span>
                 </div>
                 <div v-else-if="prop.each[i.name] === 'Processing'">
-                    <span class="bg-blue-100 w-w-full text-blue-500 py-1 px-2 rounded-md">
+                    <span class="bg-blue-100 w-w-full text-blue-500 py-[0.30rem] px-2 rounded-md">
                         &#9679 {{ prop.each.situation }}
                     </span>
                 </div>
                 <div v-else-if="prop.each[i.name] === 'Received'">
-                    <span class="bg-green-100 w-w-full text-green-500 py-1 px-2 rounded-md">
+                    <span class="bg-green-100 w-w-full text-green-500 py-[0.30rem] px-2 rounded-md">
                         &#9679 {{ prop.each.situation }}
                     </span>
                 </div>

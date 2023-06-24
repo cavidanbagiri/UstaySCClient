@@ -30,7 +30,7 @@ import Vendor_Comp from './Vendor_Comp.vue';
     const common_data = reactive({
         procurement_coming_date : '',
         VendorModelId : 0,
-        supplierName : 2,
+        supplierName : 0,
     })
 
     // Get All Vendors and Show in vendors List

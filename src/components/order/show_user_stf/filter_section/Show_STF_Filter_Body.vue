@@ -1,6 +1,6 @@
 <template>
     <!-- Filter Section -->
-    <div class="mtf-anim " style="letter-spacing: 1px;font-size: x-small;" v-font-family >
+    <div class="mtf-anim " style="letter-spacing: 1px;font-size: x-small;" >
         <!-- Common Filters Section -->
         <div class="flex flex-row items-center justify-between">
             <!-- Common Filter Keys -->

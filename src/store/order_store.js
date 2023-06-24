@@ -91,12 +91,14 @@ const OrderStore = defineStore('OrderStore',{
         // Get Table Headers and show in STF
         async getHeaders(){
             if(this.orders?.length){
+
+                // Add Header To Header List
                 for(let [key, value] of Object.entries(this?.orders[0])){
                     if(key!=='id'){
                         let header_cond = {};
                         let val = key.charAt(0).toUpperCase() + key.slice(1)
                         val = val.split('_').join(' ');
-                        if(key === 'stf_num' || key==='created_at' || key==='situation' || key==='material_type' || key==='material_name' || key==='unit' || key==='count'){
+                        if(key === 'stf_num' || key === 'sm_num' || key==='created_at' || key==='situation' || key==='material_type' || key==='material_name' || key==='unit' || key==='count'){
                             // header_cond[`${key}`] = true;
                             header_cond['showname'] = `${val}`
                             header_cond['name'] = `${key}`;
@@ -109,6 +111,24 @@ const OrderStore = defineStore('OrderStore',{
                             header_cond['value'] = false;
                         }
                         this.table_headers.push(header_cond);
+                    }
+                }
+                // Sort Headers
+                for(let i = 0 ; i < this.table_headers?.length ; i ++){
+                    if(this.table_headers[i].name === 'stf_num'){
+                        let temp = this.table_headers[0];
+                        this.table_headers[0] = this.table_headers[i];
+                        this.table_headers[i] = temp;
+                    }
+                    if(this.table_headers[i].name === 'sm_num'){
+                        let temp = this.table_headers[1];
+                        this.table_headers[1] = this.table_headers[i];
+                        this.table_headers[i] = temp;
+                    }
+                    if(this.table_headers[i].name === 'situation'){
+                        let temp = this.table_headers[2];
+                        this.table_headers[2] = this.table_headers[i];
+                        this.table_headers[i] = temp;
                     }
                 }
             }

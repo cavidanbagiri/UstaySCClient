@@ -65,7 +65,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
                         let header_cond = {};
                         let val = key.charAt(0).toUpperCase() + key.slice(1)
                         val = val.split('_').join(' ');
-                        if(key === 'stf_num' || key==='created_at' || key==='situation'  || key==='material_name' || key==='unit' || key==='count'){
+                        if(key === 'stf_num' || key === 'sm_num' || key==='created_at' || key==='situation'  || key==='material_name' || key==='unit' || key==='count'){
                             header_cond['showname'] = `${val}`
                             header_cond['name'] = `${key}`;
                             header_cond['value'] = true;
@@ -76,6 +76,24 @@ const ProcurementStore = defineStore('ProcurementStore',{
                             header_cond['value'] = false;
                         }
                         this.stf_table_headers.push(header_cond);
+                    }
+                }
+                // Sort Headers
+                for(let i = 0 ; i < this.stf_table_headers?.length ; i ++){
+                    if(this.stf_table_headers[i].name === 'stf_num'){
+                        let temp = this.stf_table_headers[0];
+                        this.stf_table_headers[0] = this.stf_table_headers[i];
+                        this.stf_table_headers[i] = temp;
+                    }
+                    if(this.stf_table_headers[i].name === 'sm_num'){
+                        let temp = this.stf_table_headers[1];
+                        this.stf_table_headers[1] = this.stf_table_headers[i];
+                        this.stf_table_headers[i] = temp;
+                    }
+                    if(this.stf_table_headers[i].name === 'situation'){
+                        let temp = this.stf_table_headers[2];
+                        this.stf_table_headers[2] = this.stf_table_headers[i];
+                        this.stf_table_headers[i] = temp;
                     }
                 }
             }
@@ -89,7 +107,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
                         let val = key.charAt(0).toUpperCase() + key.slice(1)
                         val = val.split('_').join(' ');
                         // const val = key.charAt(0).toUpperCase() + key.slice(1);
-                        if(key === 'stf_num' || key==='created_at' || key==='situation'  || key==='material_name' || key==='unit' || key==='count' ||
+                        if(key === 'stf_num' || key === 'sm_num' || key==='created_at' || key==='situation'  || key==='material_name' || key==='unit' || key==='count' ||
                             key==='sm_num' || key==='username' || key==='orderer'
                         ){
                             header_cond['showname'] = `${val}`
@@ -102,6 +120,24 @@ const ProcurementStore = defineStore('ProcurementStore',{
                             header_cond['value'] = false;
                         }
                         this.sm_table_headers.push(header_cond);
+                    }
+                }
+                // Sort Headers
+                for(let i = 0 ; i < this.sm_table_headers?.length ; i ++){
+                    if(this.sm_table_headers[i].name === 'stf_num'){
+                        let temp = this.sm_table_headers[0];
+                        this.sm_table_headers[0] = this.sm_table_headers[i];
+                        this.sm_table_headers[i] = temp;
+                    }
+                    if(this.sm_table_headers[i].name === 'sm_num'){
+                        let temp = this.sm_table_headers[1];
+                        this.sm_table_headers[1] = this.sm_table_headers[i];
+                        this.sm_table_headers[i] = temp;
+                    }
+                    if(this.sm_table_headers[i].name === 'situation'){
+                        let temp = this.sm_table_headers[2];
+                        this.sm_table_headers[2] = this.sm_table_headers[i];
+                        this.sm_table_headers[i] = temp;
                     }
                 }
             }
@@ -180,7 +216,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
         // Create STF
         async createSTF (orders){
             try{
-                await axios.post('http://localhost:3000/procurement/createstf', orders)
+                await axios.post('http://localhost:3000/procurement/createsm', orders)
                 .then((respond)=>{
                     return respond;
                 })

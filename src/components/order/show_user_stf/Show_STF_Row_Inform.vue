@@ -10,7 +10,7 @@
             </div>
             <!-- STF Section -->
             <div class="flex flex-row justify-center border-b-2 mx-20">
-                <span class="font-lg mt-4" v-font-family >STF Information</span>
+                <span class="font-lg mt-4" >STF Information</span>
             </div>
             <div class="p-1">
                 <div class="mt-2 flex flex-row justify-start bg-gray-100 p-2 rounded-md" > <span class="text-xs w-48 font-bold text-gray-500"> Situation :</span><span class="font-medium text-gray-600 text-xs ml-5">{{ order_store.row_detail_data[0].situation }}</span> </div>
@@ -24,7 +24,7 @@
             </div>
             <!-- SM Section -->
             <div class="flex flex-row justify-center border-b-2 mx-20">
-                <span class="font-lg mt-4" v-font-family >SM Information</span>
+                <span class="font-lg mt-4" >SM Information</span>
             </div>
             <div class="mt-2 p-1">
                 <div class="mt-2 flex flex-row justify-start bg-gray-100 p-2 rounded-md" > <span class="text-xs w-48 font-bold text-gray-500"> SM Created Time :</span><span class="font-medium text-gray-600 text-xs ml-5">{{ order_store.row_detail_data[0].sm_date }}</span> </div>

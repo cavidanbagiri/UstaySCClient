@@ -6,10 +6,10 @@
         <div v-if="user_store.user" class="bg-white">
             <div class="bg-white sticky top-0">
 
-                <div class="flex flex-row anim h-10 bg-white items-center sticky left-16 " v-font-family
+                <div class="flex flex-row anim h-10 bg-white items-center sticky left-16 "
                         style="letter-spacing: 1px;font-size: x-small;display: inline-block;">
                     
-                        <div class="flex flex-row anim h-10 sticky top-0 bg-white w-full items-center" v-font-family style="letter-spacing: 1px;font-size: x-small;">
+                        <div class="flex flex-row anim h-10 sticky top-0 bg-white w-full items-center" style="letter-spacing: 1px;font-size: x-small;">
             
                             <span :class="order_store.tab_num === 0 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTab(0)"
                             class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-plus fa-lg "></i>

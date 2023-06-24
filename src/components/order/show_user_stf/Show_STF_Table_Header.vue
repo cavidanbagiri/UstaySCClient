@@ -24,6 +24,10 @@
                     {{ i.showname }}
                 </div>
 
+                <div v-else-if="i.name==='sm_num'" class="w-28">
+                    {{ i.showname }}
+                </div>
+
                 <div v-else-if="i.name==='created_at'" class="w-24">
                     {{ i.showname }}
                 </div>
