@@ -1,5 +1,5 @@
 <template>
-    <thead class="text-black bg-gray-100 border w-full sticky top-48 table_header">
+    <thead class="text-black bg-gray-100 border w-full sticky top-[198px] table_header">
         <tr class="">
             <th scope="col-4" class=" px-4">
                 <div class="flex flex-col items-center">
@@ -30,7 +30,7 @@
                     {{ i.showname }}
                 </div>
 
-                <div v-else-if="i.name==='material_name'" class="w-96">
+                <div v-else-if="i.name==='material_name'" class="min-w-[600px]">
                     {{ i.showname }}
                 </div>
 
@@ -38,7 +38,7 @@
                     {{ i.showname }}
                 </div>
 
-                <div v-else class="flex flex-col">
+                <div v-else class="flex flex-col w-24">
                     {{ i.showname }}
                 </div>
 

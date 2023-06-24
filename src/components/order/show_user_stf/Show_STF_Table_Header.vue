@@ -32,7 +32,7 @@
                     {{ i.showname }}
                 </div>
 
-                <div v-else-if="i.name==='material_name'" class="">
+                <div v-else-if="i.name==='material_name'" class="min-w-[600px]">
                     {{ i.showname }}
                 </div>
 
@@ -45,7 +45,7 @@
                     {{ i.showname }}
                 </div>
 
-                <div v-else class="flex flex-col">
+                <div v-else class="flex flex-col w-24">
                     {{ i.showname }}
                 </div>
 

@@ -1,8 +1,7 @@
 
 <template>
     <!-- S/S -->
-    <td scope="row" class="w-8 font-mono font-thin text-gray-900 whitespace-nowrap dark:text-white text-center"
-        style="font-size: xx-small;">
+    <td scope="row" class="w-8 text-gray-900 whitespace-nowrap dark:text-white text-center table_row">
         <div class="flex justify-between items-center px-1">
             <span>{{ each.each_id }}</span>
             <span class="relative flex h-3 w-3">
@@ -12,7 +11,7 @@
         </div>
     </td>
     <!-- Material Type Selected -->
-    <td scope="row" class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white" style=";">
+    <td scope="row" class="p-1   border text-gray-900 whitespace-nowrap dark:text-white" style=";">
         <!-- <input class="border outline-none font-sans rounded-lg w-full h-full p-2" type="text" placeholder="Material Type..."> -->
         <select class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 "
             v-model="each.material_type">
@@ -23,12 +22,12 @@
         </select>
     </td>
     <!-- Material Name -->
-    <td class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white">
+    <td class="p-1   border text-gray-900 whitespace-nowrap dark:text-white">
         <input class="border border-red-500 outline-none font-sans rounded-lg w-full h-full p-2 " type="text"
             placeholder="Material Name..." v-model=each.material_name>
     </td>
     <!-- Material Link -->
-    <td class="p-1 font-mono font-thin border text-gray-900 whitespace-nowrap dark:text-white">
+    <td class="p-1   border text-gray-900 whitespace-nowrap dark:text-white">
         <input class="border outline-none font-sans rounded-lg w-full h-full p-2 " type="text"
             placeholder="Material Link..." v-model=each.link>
     </td>

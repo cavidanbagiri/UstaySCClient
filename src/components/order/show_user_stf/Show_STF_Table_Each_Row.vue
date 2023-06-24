@@ -1,6 +1,6 @@
 <template>
-    <tr :class="checked_style ? 'text-white bg-blue-600  hover:bg-blue-500 ' : 'hover:bg-gray-100'"
-        class="border-b  hover:cursor-pointer bg-white table_row">
+    <tr :class="checked_style ? 'text-white bg-blue-600  hover:bg-blue-500 ' : 'hover:bg-gray-100 bg-white '"
+        class="border-b  hover:cursor-pointer table_row">
         <td class=" p-1">
             <div class="flex items-center justify-center" @click="getRowDetail">
                 <i class="fa-solid fa-ellipsis-vertical fa-2xl text-gray-300"  @click="getRowDetail"></i>
@@ -69,8 +69,8 @@
             <div v-else-if="i.name==='material_type'" class="text-start w-24">
                 <span >{{ prop.each[i.name] }}</span>
             </div>
-            <div v-else-if="i.name==='material_name'" class="text-start w-96">
-                <span >{{ prop.each[i.name] }}</span>
+            <div v-else-if="i.name==='material_name'" class="text-start min-w-[600px] ">
+                <span class="" >{{ prop.each[i.name] }}</span>
             </div>
             <div v-else-if="i.name==='field_name'" class="text-start w-24">
                 <span >{{ prop.each[i.name] }}</span>

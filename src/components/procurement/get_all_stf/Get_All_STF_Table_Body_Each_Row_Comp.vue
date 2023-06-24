@@ -1,7 +1,7 @@
 
 <template>
-    <tr :class="checked ? 'text-white  bg-blue-600 hover:bg-blue-500 ' : 'hover:bg-gray-100'"
-        class="border-b dark:bg-gray-800 dark:border-gray-700 table_row bg-white">
+    <tr :class="checked ? 'text-white  bg-blue-600 hover:bg-blue-500 ' : 'hover:bg-gray-100 bg-white'"
+        class="border-b table_row ">
         <td class=" p-1">
             <div class="flex items-center justify-center" @click="getRowDetail">
                 <i class="fa-solid fa-ellipsis-vertical fa-2xl text-gray-300"  @click="getRowDetail"></i>
@@ -40,7 +40,7 @@
             </div>
 
             <!-- Created At Design -->
-            <div v-else-if="i.name === 'created_at'">
+            <div v-else-if="i.name === 'created_at'" class="w-24">
                 <DateFormat :time="prop.each[i.name]" />
             </div>
 
@@ -71,7 +71,7 @@
             <div v-else-if="i.name === 'material_type'" class="text-start">
                 <span>{{ prop.each[i.name] }}</span>
             </div>
-            <div v-else-if="i.name === 'material_name'" class="text-start w-96">
+            <div v-else-if="i.name === 'material_name'" class="text-start min-w-[600px]">
                 <span>{{ prop.each[i.name] }}</span>
             </div>
             <div v-else-if="i.name === 'vendor_name'" class="text-start">
