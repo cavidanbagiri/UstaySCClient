@@ -4,12 +4,15 @@
 
         <div class=" col-span-2 flex flex-row justify-between border shadow-md w-full p-3 rounded-md
          hover:shadow-xl hover:cursor-pointer "  @click = "fetchCurrentData(0)"  >
-            <div class="flex flex-col">
+            <div class="flex flex-col justify-between">
                 <span class="text-gray-600 analyz_header" >Total</span>
-                <span class="mt-3 analyz_show_data" >{{ statistic_result.total }}</span>
+                <span class="bg-gray-200 rounded-md text-gray-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end">
-                <span class="bg-gray-100 rounded-md text-black-800 p-2 analyz_get_data" >Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-gray-600 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.total }}
+                </div>
+                <!-- <span class="bg-gray-100 rounded-md text-black-800 p-2 analyz_get_data" >Get Data</span> -->
                 <!-- <Doughnut 
                 id="my-chart-id"
                 :options="chartOptions"
@@ -19,42 +22,53 @@
         </div>
         <div class=" col-span-2 flex flex-row justify-between border shadow-md w-full p-3 rounded-md
          hover:shadow-xl hover:cursor-pointer " @click = "fetchCurrentData(1)" >
-            <div class="flex flex-col">
+            <div class="flex flex-col justify-between">
                 <span class="text-gray-600 analyz_header">Waiting</span>
-                <span class="mt-3 analyz_show_data">{{statistic_result.waiting}}</span>
+                <span class="bg-red-200 rounded-md text-red-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end" >
-                <span class="bg-red-100 rounded-md text-red-800 p-2 analyz_get_data" >Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-red-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.waiting }}
+                </div>
             </div>
         </div>
+
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-md 
         hover:shadow-xl hover:cursor-pointer " @click="fetchCurrentData(2)" >
-            <div class="flex flex-col">
-                <span class="text-gray-600 analyz_header" >Processing</span>
-                <span class="mt-3 analyz_show_data">{{statistic_result.processing}}</span>
+            <div class="flex flex-col justify-between">
+                <span class="text-gray-600 analyz_header" >Process</span>
+                <span class="bg-blue-200 rounded-md text-blue-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end" style="font-size: xx-small;">
-                <span class="bg-blue-100 rounded-md text-blue-800 p-2 analyz_get_data">Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-blue-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.processing }}
+                </div>
             </div>
         </div>
+
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
          shadow-md hover:shadow-xl hover:cursor-pointer "  @click="fetchCurrentData(3)"  >
-            <div class="flex flex-col">
+            <div class="flex flex-col justify-between">
                 <span class="text-gray-600 analyz_header" >Received</span>
-                <span class="mt-3 analyz_show_data" >{{statistic_result.received}}</span>
+                <span class="bg-green-200 rounded-md text-green-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end">
-                <span class="bg-green-100 text-green-800 p-2 rounded-md analyz_get_data">Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-green-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.received }}
+                </div>
             </div>
         </div>
+
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md
          shadow-md hover:shadow-xl hover:cursor-pointer "  @click="fetchCurrentData(4)"  >
-            <div class="flex flex-col">
+            <div class="flex flex-col justify-between">
                 <span class="text-gray-600 analyz_header" >Provide</span>
-                <span class="mt-3 analyz_show_data" >0</span>
+                <span class="bg-pink-200 rounded-md text-pink-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end" >
-                <span class="bg-pink-100 text-pink-800 p-2 rounded-md analyz_get_data">Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-pink-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    0
+                </div>
             </div>
         </div>
         

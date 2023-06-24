@@ -1,40 +1,49 @@
 <template>
-    <div class="grid grid-cols-12 gap-3 justify-between mb-1 py-1 sticky analyz_header">
+    <div class="grid grid-cols-12 gap-3 justify-between mb-1 sticky analyz_header">
 
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:cursor-pointer hover:shadow-md" @click="fetchCurrentData(0)">
-            <div class="flex flex-col">
-                <span class="text-gray-600 analyz_show_data">Total Creating STF</span>
-                <span class="mt-3 analyz_show_data">{{ statistic_result.total }}</span>
+            <div class="flex flex-col justify-between">
+                <span class="text-gray-600 analyz_header">Total</span>
+                <span class="bg-gray-200 rounded-md text-gray-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end analyz_get_data">
-                <span class="bg-violet-100 rounded-md text-violet-800 p-2 analyz_get_data">Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-gray-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.total }}
+                </div>
             </div>
         </div>
+
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(1)">
-            <div class="flex flex-col">
-                <span class="text-gray-600 analyz_show_data">Waiting STF</span>
-                <span class="mt-3 analyz_show_data">{{statistic_result.waiting}}</span>
+            <div class="flex flex-col justify-between">
+                <span class="text-gray-600 analyz_header">Waiting</span>
+                <span class="bg-red-200 rounded-md text-red-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end" >
-                <span class="bg-red-100 rounded-md text-red-800  p-2 analyz_get_data">Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-red-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.waiting }}
+                </div>
             </div>
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(2)">
-            <div class="flex flex-col">
-                <span class="text-gray-600 analyz_show_data">Processing STF</span>
-                <span class="mt-3 analyz_show_data">{{statistic_result.processing}}</span>
+            <div class="flex flex-col justify-between">
+                <span class="text-gray-600 analyz_header">Processing</span>
+                <span class="bg-blue-200 rounded-md text-blue-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end" >
-                <span class="bg-blue-100 rounded-md text-blue-800  p-2 analyz_get_data">Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-blue-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.processing }}
+                </div>
             </div>
         </div>
         <div class=" col-span-3 flex flex-row justify-between border w-full p-3 rounded-md shadow-md hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(3)">
-            <div class="flex flex-col">
-                <span class="text-gray-600 analyz_show_data">Received STF</span>
-                <span class="mt-3 analyz_show_data">{{statistic_result.received}}</span>
+            <div class="flex flex-col justify-between">
+                <span class="text-gray-600 analyz_header">Received</span>
+                <span class="bg-green-200 rounded-md text-green-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end" >
-                <span class="bg-green-100 rounded-md text-green-800  p-2 analyz_get_data">Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-green-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.received }}
+                </div>
             </div>
         </div>
     </div>
