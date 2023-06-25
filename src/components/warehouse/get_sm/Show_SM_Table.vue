@@ -47,6 +47,7 @@ const user_store = UserStore();
 
 onMounted(async () => {
     await warehouse_store.getWaitingsSMS();
+    warehouse_store.getProcessingSMHeaders()
 })
 
 

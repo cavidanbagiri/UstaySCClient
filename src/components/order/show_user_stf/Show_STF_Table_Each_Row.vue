@@ -39,7 +39,7 @@
             
             <!-- SM Num Design -->
             <div v-else-if="i.name === 'sm_num'" class="w-24">
-                <span class="bg-green-100 text-green-500 py-[0.30rem] px-2 rounded-md"> {{ prop.each[i.name] }}</span>
+                <span v-if="prop.each[i.name]" class="bg-violet-100 text-violet-500 py-[0.30rem] px-2 rounded-md"> {{ prop.each[i.name] }}</span>
             </div>
 
             <!-- Date Time Design -->
@@ -55,12 +55,12 @@
                     </span>
                 </div>
                 <div v-else-if="prop.each[i.name] === 'Processing'">
-                    <span class="bg-blue-100 w-w-full text-blue-500 py-[0.30rem] px-2 rounded-md">
+                    <span class="bg-blue-100 w-full text-blue-500 py-[0.30rem] px-2 rounded-md">
                         &#9679 {{ prop.each.situation }}
                     </span>
                 </div>
                 <div v-else-if="prop.each[i.name] === 'Received'">
-                    <span class="bg-green-100 w-w-full text-green-500 py-[0.30rem] px-2 rounded-md">
+                    <span class="bg-green-100 w-full text-green-500 py-[0.30rem] px-2 rounded-md">
                         &#9679 {{ prop.each.situation }}
                     </span>
                 </div>

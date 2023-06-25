@@ -46,7 +46,7 @@
             </div>
 
             <!-- Situation Design -->
-            <div v-else-if="i.name === 'situation'" class="">
+            <div v-else-if="i.name === 'situation'" class="text-start">
                 <div v-if="prop.each[i.name] === 'Waiting'">
                     <span class=" bg-red-100 w-full text-red-500 py-[0.30rem] px-2 rounded-md">
                         &#9679 {{ prop.each.situation }}

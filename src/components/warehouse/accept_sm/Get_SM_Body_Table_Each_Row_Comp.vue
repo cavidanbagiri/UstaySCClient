@@ -17,7 +17,8 @@
             </div>
         </td>
         <td class="px-2 py-2   border  text-center">
-            <span>{{ prop?.each_item?.created_at }}</span>
+            <!-- <span>{{ prop?.each_item?.created_at }}</span> -->
+            <DateFormat :time="prop?.each_item?.created_at" />
         </td>
         <td class="px-2  text-start border-y ">
             <div class=" bg-red-100 text-red-500 py-1 px-2 rounded-xl ">
