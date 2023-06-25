@@ -1,50 +1,60 @@
 <template>
     <div class="grid grid-cols-10 gap-3 justify-between mb-1 px-1 " style="letter-spacing: 1px;font-size: small">
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(2)">
-            <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium">Processing SM</span>
-                <span class="mt-3 text-md font-bold">{{statistic_result.processing}}</span>
+            <div class="flex flex-col justify-between">
+                <span class="text-gray-600 tanalyz_header">Processing</span>
+                <span class="bg-blue-200 rounded-md text-blue-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end">
-                <span class="bg-blue-100 rounded-sm text-blue-800  p-1 font-bold">Get Data</span>
-            </div>
-        </div>
-        <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(3)">
-            <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium">Received SM</span>
-                <span class="mt-3 text-md font-bold">{{statistic_result.received}}</span>
-            </div>
-            <div class="flex items-end">
-                <span class="bg-green-100 rounded-sm text-green-800  p-1 font-bold">Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-blue-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.processing }}
+                </div>
             </div>
         </div>
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(3)">
-            <div class="flex flex-col">
-                <span class="text-gray-600 text-sm font-medium">Received SM</span>
-                <span class="mt-3 text-md font-bold">{{statistic_result.received}}</span>
+            <div class="flex flex-col justify-between">
+                <span class="text-gray-600 analyz_header">Received</span>
+                <span class="bg-green-200 rounded-md text-green-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end">
-                <span class="bg-green-100 rounded-sm text-green-800  p-1 font-bold">Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-green-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.received }}
+                </div>
+            </div>
+        </div>
+        <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"  @click="fetchCurrentData(3)">
+            <div class="flex flex-col justify-between">
+                <span class="text-gray-600 analyz_header">Provided</span>
+                <span class="bg-pink-200 rounded-md text-pink-800 p-2 analyz_get_data" >Get Data</span>
+            </div>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-pink-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.provided }}
+                </div>
             </div>
         </div>
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"
             @click="fetchCurrentData(0)">
-            <div class="flex flex-col">
-                <span class="text-gray-600 ">Total Creating STF</span>
-                <span class="mt-3 text-md font-bold">{{ statistic_result.total }}</span>
+            <div class="flex flex-col justify-between">
+                <span class="text-gray-600 ">Total STF</span>
+                <span class="bg-orange-200 rounded-md text-orange-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end">
-                <span class="bg-violet-100 rounded-sm text-violet-800  p-1 font-bold">Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-orange-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.total }}
+                </div>
             </div>
         </div>
         <div class=" col-span-2 flex flex-row justify-between border w-full p-3 rounded-md shadow-sm hover:cursor-pointer hover:shadow-md"
             @click="fetchCurrentData(0)">
-            <div class="flex flex-col">
-                <span class="text-gray-600 ">Total Creating SM</span>
-                <span class="mt-3 text-md font-bold">{{ statistic_result.total }}</span>
+            <div class="flex flex-col justify-between">
+                <span class="text-gray-600 ">Total SM</span>
+                <span class="bg-violet-200 rounded-md text-violet-800 p-2 analyz_get_data" >Get Data</span>
             </div>
-            <div class="flex items-end">
-                <span class="bg-violet-100 rounded-sm text-violet-800  p-1 font-bold">Get Data</span>
+            <div class="flex items-center ">
+                <div class="rounded-full flex border-8 border-violet-500 w-16 h-16  items-center justify-center analyz_show_data">
+                    {{ statistic_result.total }}
+                </div>
             </div>
         </div>
     </div>
@@ -67,6 +77,7 @@ const statistic_result = reactive({
     // waiting : 0,
     processing: 0,
     received: 0,
+    provided:0,
     total: 0
 })
 
