@@ -24,7 +24,6 @@
 import { onMounted, } from 'vue';
 import { initFlowbite } from 'flowbite'
 
-import Navbar from './layouts/Navbar.vue';
 import Off_Canvas_Comp from './components/design/Off_Canvas_Comp.vue';
 import User_Login_Comp from './components/design/User_Login_Comp.vue';
 

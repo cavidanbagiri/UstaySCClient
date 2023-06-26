@@ -18,13 +18,13 @@
             </div>
         </td>
         <td class="px-2 font-medium text-center border-y text-md">
-            <div v-if="prop.data.condition === 'Working'" class=" bg-orange-400 text-white py-2 px-2 font-bold rounded-sm ">
+            <div v-if="prop.data.condition === 'Working'" class=" bg-orange-500 text-white py-2 px-2 font-bold rounded-sm ">
                 <span>{{ prop.data.condition }}</span>
             </div>
-            <div v-else-if="prop.data.condition === 'Attached'" class=" bg-red-400 text-white  py-2  px-2 font-bold rounded-sm ">
+            <div v-else-if="prop.data.condition === 'Attached'" class=" bg-red-500 text-white  py-2  px-2 font-bold rounded-sm ">
                 <span>{{ prop.data.condition }}</span>
             </div>
-            <div v-else-if="prop.data.condition === 'Competed'" class=" bg-green-400 text-white py-2 px-2 font-bold  rounded-sm ">
+            <div v-else-if="prop.data.condition === 'Competed'" class=" bg-green-500 text-white py-2 px-2 font-bold  rounded-sm ">
                 <span>{{ prop.data.condition }}</span>
             </div>
         </td>

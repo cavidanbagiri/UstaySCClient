@@ -1,5 +1,5 @@
 
-import Date_Format_Comp from './Date_Format_Comp.vue';
+import Date_Format_Comp from '../layouts/Date_Format_Comp.vue';
 
 const dateFormat = {
     install(app, options){

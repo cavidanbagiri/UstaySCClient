@@ -39,7 +39,7 @@
 
             <!-- STF Num Design -->
             <div v-else-if="i.name === 'sm_num'">
-                <span class="bg-green-100 text-green-500 py-[0.30rem] px-2 rounded-md"> {{ prop.each[i.name] }}</span>
+                <span class="bg-violet-100 text-violet-500 py-[0.30rem] px-2 rounded-md"> {{ prop.each[i.name] }}</span>
             </div>
 
             <!-- Situation Design -->
