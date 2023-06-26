@@ -1,8 +1,6 @@
 
 <template>
-
-    <tr 
-        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
         style="font-family: Verdana, Geneva, Tahoma, sans-serif; letter-spacing: 0.3px;">
         <td class="w-1 p-4 py-2 ">
             <div class="flex items-center">
@@ -12,69 +10,83 @@
             </div>
         </td>
         <th class="px-2 py-2 font-medium text-center">
-            {{ prop?.index + 1  }}
+            {{ prop?.index + 1 }}
         </th>
-        <th class="px-2 font-medium text-start border-y ">
-            <div class=" bg-orange-100 text-orange-500 py-1 px-2 rounded-xl ">
-                <span>{{ prop?.each_item?.stf_num }}</span>
-            </div>
-        </th>
-        <th class="px-2 py-2 font-medium  border  text-center">
-            <span>{{ prop?.each_item?.created_at }}</span>
-        </th>
-        <th class="px-2 font-medium text-start border-y ">
-            <div class=" bg-red-100 text-red-500 py-1 px-2 rounded-xl ">
-                {{ prop?.each_item?.sm_num }}
-            </div>
-        </th>
-        <th class="px-2">
-             <div>
-                <span class="bg-green-100 w-full text-green-500 py-1 px-2 rounded-md">
-                    &#9679 {{ prop?.each_item?.situation }}
-                </span>
-            </div>
-        </th>
-        <th class="px-2 py-2 font-medium  border">
-            {{ prop?.each_item?.material_name }}
-        </th>
-        <th class="px-2 py-2 font-medium  border text-start">
-            {{ prop?.each_item?.count }}
-        </th>
-        <th class="px-2 py-2 font-medium  border text-center">
-            {{ prop?.each_item?.unit }}
-        </th>
-        <th class="px-2 py-2 font-medium  border text-center">
-            {{ prop?.each_item?.price }}
-        </th>
-        <th class="px-2 py-2 font-medium  border text-center">
-            {{ prop?.each_item?.currency }}
-        </th>
-        <th class="px-2 py-2 font-medium  border text-start">
-            {{ prop?.each_item?.vendor_name }}
-        </th>
-        <th class="px-2 py-2 font-medium   border">
-            {{ prop?.each_item?.orderer }}
-        </th>
-        <th class="px-2 py-2 font-medium   border">
-            {{ prop?.each_item?.username }}
-        </th>
-    </tr>
 
+        <th v-for="i in warehouse_store.receiving_sm_headers" v-show="i.value" class="px-2 py-2 font-medium text-center">
+
+            <!-- STF Num Design -->
+            <div v-if="i.name === 'stf_num'">
+                <span class="bg-orange-100 text-orange-500 py-[0.30rem] px-2 rounded-md"> {{ prop.each[i.name] }}</span>
+            </div>
+
+            <!-- Created At Design -->
+            <div v-else-if="i.name === 'created_at'" class="w-24">
+                <DateFormat :time="prop.each[i.name]" />
+            </div>
+
+            <!-- STF Num Design -->
+            <div v-else-if="i.name === 'sm_num'">
+                <span class="bg-green-100 text-green-500 py-[0.30rem] px-2 rounded-md"> {{ prop.each[i.name] }}</span>
+            </div>
+
+            <!-- Situation Design -->
+            <div v-else-if="i.name === 'situation'" class="">
+                <div v-if="prop.each[i.name] === 'Waiting'">
+                    <span class=" bg-red-100 w-full text-red-500 py-[0.30rem] px-2 rounded-md">
+                        &#9679 {{ prop.each.situation }}
+                    </span>
+                </div>
+                <div v-else-if="prop.each[i.name] === 'Processing'">
+                    <span class="bg-blue-100 w-w-full text-blue-500 py-[0.30rem] px-2 rounded-md">
+                        &#9679 {{ prop.each.situation }}
+                    </span>
+                </div>
+                <div v-else-if="prop.each[i.name] === 'Received'">
+                    <span class="bg-green-100 w-w-full text-green-500 py-[0.30rem] px-2 rounded-md">
+                        &#9679 {{ prop.each.situation }}
+                    </span>
+                </div>
+            </div>
+
+            <div v-else-if="i.name === 'material_type'" class="text-start">
+                <span>{{ prop.each[i.name] }}</span>
+            </div>
+            <div v-else-if="i.name === 'material_name'" class="text-start  min-w-[600px]">
+                <span>{{ prop.each[i.name] }}</span>
+            </div>
+            <div v-else-if="i.name === 'vendor_name'" class="text-start">
+                <span>{{ prop.each[i.name] }}</span>
+            </div>
+            <div v-else-if="i.name === 'username'" class="text-start">
+                <span>{{ prop.each[i.name] }}</span>
+            </div>
+
+            <!-- Others Without Design -->
+            <div v-else>
+                <span class=""> {{ prop.each[i.name] }}</span>
+            </div>
+
+        </th>
+
+    </tr>
 </template>
 
 <script setup>
 
 import { ref } from 'vue';
+import WarehouseStore from '../../../store/warehouse_store';
+const warehouse_store = WarehouseStore();
 
 // Get Each Item from parent
-const prop = defineProps(['each','index']);
+const prop = defineProps(['each', 'index']);
 
 // Create an Emit for clicking checkbox
-const emit = defineEmits(['addChecked','removeChecked']);
+const emit = defineEmits(['addChecked', 'removeChecked']);
 
 const checked = ref(false);
 
-const checkboxCond = () => checked.value === true ? emit('addChecked',prop?.each_item) : emit('removeChecked', prop?.each_item?.id);
+const checkboxCond = () => checked.value === true ? emit('addChecked', prop?.each) : emit('removeChecked', prop?.each?.id);
 
 
 

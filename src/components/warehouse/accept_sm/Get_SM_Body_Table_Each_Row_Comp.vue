@@ -82,8 +82,8 @@ import { reactive, watchEffect } from 'vue';
 const prop = defineProps(['each_item', 'index', 'table_data']);
 
 const each_row_data = reactive({
-    delivery_amount:1,
-    delivery_unit:'',
+    delivery_amount:prop?.each_item?.count,
+    delivery_unit:prop?.each_item?.unit,
     certificate: false,
     passport: false
 })

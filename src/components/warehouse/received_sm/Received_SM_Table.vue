@@ -35,6 +35,7 @@ import SM_Procurement_Analyz from '../SM_Procurement_Analyz.vue';
 const warehouse_store = WarehouseStore();
 onMounted(async () => {
     await warehouse_store.fetchReceivingSM();
+    warehouse_store.getReceivingSMHeaders();
 })
 
 

@@ -13,7 +13,8 @@ const WarehouseStore = defineStore('WarehouseStore',{
         tab_num : 0,
         received_items : null,
         after_created : false,
-        processing_sm_headers : []
+        processing_sm_headers : [],
+        receiving_sm_headers : [],
     }),
 
     getters:{
@@ -97,7 +98,49 @@ const WarehouseStore = defineStore('WarehouseStore',{
                         this.processing_sm_headers[i] = temp;
                     }
                 }
-                console.log('headers : ',this.waiting_sms);
+            }
+        },
+
+        // Get Table Headers and show in STF
+        async getReceivingSMHeaders(){
+            if(this.received_items){
+                for(let [key, value] of Object.entries(this.received_items[0])){
+                    if(key!=='id'){
+                        let header_cond = {};
+                        let val = key.charAt(0).toUpperCase() + key.slice(1)
+                        val = val.split('_').join(' ');
+                        if(key === 'stf_num' || key === 'sm_num' || key==='created_at' || key==='situation'  || key==='material_name' || key==='unit' || key==='count' ||
+                            key==='sm_num' || key==='username' || key==='orderer'){
+                            header_cond['showname'] = `${val}`
+                            header_cond['name'] = `${key}`;
+                            header_cond['value'] = true;
+                        }
+                        else{
+                            header_cond['showname'] = `${val}`
+                            header_cond['name'] = `${key}`;
+                            header_cond['value'] = false;
+                        }
+                        this.receiving_sm_headers.push(header_cond);
+                    }
+                }
+                // Sort Headers
+                for(let i = 0 ; i < this.receiving_sm_headers?.length ; i ++){
+                    if(this.receiving_sm_headers[i].name === 'stf_num'){
+                        let temp = this.receiving_sm_headers[0];
+                        this.receiving_sm_headers[0] = this.receiving_sm_headers[i];
+                        this.receiving_sm_headers[i] = temp;
+                    }
+                    if(this.receiving_sm_headers[i].name === 'sm_num'){
+                        let temp = this.receiving_sm_headers[1];
+                        this.receiving_sm_headers[1] = this.receiving_sm_headers[i];
+                        this.receiving_sm_headers[i] = temp;
+                    }
+                    if(this.receiving_sm_headers[i].name === 'situation'){
+                        let temp = this.receiving_sm_headers[2];
+                        this.receiving_sm_headers[2] = this.receiving_sm_headers[i];
+                        this.receiving_sm_headers[i] = temp;
+                    }
+                }
             }
         },
 
