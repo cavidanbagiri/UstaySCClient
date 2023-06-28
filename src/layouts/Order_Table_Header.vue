@@ -21,7 +21,7 @@
             </th>
             <th v-for="i in prop?.table_headers" v-show="i.value" scope="col" class="px-2 py-1 text-center border">
                 
-                <div v-if="i.name==='situation'" class="">
+                <div v-if="i.name==='situation'" class="w-20">
                     {{ i.showname }}
                 </div>
 

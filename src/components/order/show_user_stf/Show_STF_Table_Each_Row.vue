@@ -3,7 +3,7 @@
         class="border-b  hover:cursor-pointer table_row">
         <td class=" p-1">
             <div class="flex items-center justify-center" @click="getRowDetail">
-                <i class="fa-solid fa-ellipsis-vertical fa-2xl text-gray-300"  @click="getRowDetail"></i>
+                <i class="fa-solid fa-ellipsis-vertical fa-2xl text-gray-300"  ></i>
             </div>
         </td>
         <td class="w-1 p-4 py-2 ">
@@ -119,7 +119,7 @@ const checkedRows = () => {
 
 // Get Double Click and Row Inform from dell
 const getRowDetail = async () => {
-    await order_store.getRowDetails(prop.each.id);
+    await order_store.getRowDetails(prop.each.stf_id);
     order_store.row_inform_condition = true
 }
 

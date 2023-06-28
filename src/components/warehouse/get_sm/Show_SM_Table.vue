@@ -11,12 +11,6 @@
             </div>
         </div>
 
-
-        <!-- <button @click="acceptedByWarehouse" v-if="warehouse_store.processing_checked_values.length"
-            class="bg-red-600 p-2 px-3 text-white font-weight rounded-lg my-1">
-            Accept
-        </button> -->
-
         <!-- Table -->
         <div class="">
             <table class=" text-xs text-left text-gray-800 dark:text-gray-400 w-full " style="font-size: xx-small;">

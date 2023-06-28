@@ -2,6 +2,12 @@
 <template>
     <tr :class="checked ? 'text-white  bg-blue-600 hover:bg-blue-500 ' : 'hover:bg-gray-100'"
         class="border-b table_row bg-white">
+        <td class=" p-1">
+            <div class="flex items-center justify-center" @click="getRowDetail">
+                <i class="fa-solid fa-ellipsis-vertical fa-2xl text-gray-300" @click="getRowDetail"></i>
+            </div>
+        </td>
+
         <td class="w-1 p-4 py-2 ">
 
             <div class="flex items-center">

@@ -62,7 +62,7 @@ const currency_list = ['₽','$']
 const each = reactive({
     ProjectModelId: prop?.each?.ProjectModelId,
     DepartmentModelId: prop?.each?.DepartmentModelId,
-    STFModelId: prop?.each?.id,
+    STFModelId: prop?.each?.stf_id,
     price : 0,
     total : 0,
     currency : '₽',

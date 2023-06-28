@@ -35,6 +35,8 @@ onMounted(async () => {
     procurement_store.getSTFHeaders();
   }
 )
+
+// After Creating SM, This code will work
 watchEffect(async ()=>{
   if(procurement_store.after_created){
     await procurement_store.fetchAllSTF();

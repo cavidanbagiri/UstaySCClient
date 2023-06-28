@@ -152,13 +152,14 @@ const ProcurementStore = defineStore('ProcurementStore',{
                 console.log('statistics result Error : ',err);
             })
         },
+
         // Fetch All STF
         async fetchAllSTF(){
             await axios.get(`http://localhost:3000/procurement/allstf`)
             .then((respond)=>{
                 this.all_stf = respond.data;
                 this.filtered_stf = this.all_stf;
-                // console.log('here work');
+                console.log('all stf : ',this.all_stf);
             }).catch((err)=>{
                 console.log('all stf Error : ',err);
             })
@@ -214,7 +215,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
         },
 
         // Create STF
-        async createSTF (orders){
+        async createSM (orders){
             try{
                 await axios.post('http://localhost:3000/procurement/createsm', orders)
                 .then((respond)=>{
