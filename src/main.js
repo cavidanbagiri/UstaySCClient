@@ -16,6 +16,7 @@ const pinia = createPinia();
 import validation from './plugins/validation'; 
 import dateFormat from './plugins/date_format';
 import ordertableheader from './plugins/order_table_format';
+import tablerow from './plugins/table_rows';
 
 const app = createApp(App)
 
@@ -29,6 +30,7 @@ app.use(pinia);
 app.use(validation);
 app.use(dateFormat);
 app.use(ordertableheader);
+app.use(tablerow);
 
 
 app.mount('#app');

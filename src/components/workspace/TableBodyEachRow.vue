@@ -14,7 +14,7 @@
         </td>
         <td class="px-2 font-medium text-start border-y ">
             <div class="   py-1 px-2 rounded-xl ">
-                <span>{{ prop.data.task }}</span>
+                <span>{{ prop.data.task }}</span> 
             </div>
         </td>
         <td class="px-2 font-medium text-center border-y text-md">
