@@ -1,6 +1,6 @@
 
 <template>
-   <Order-Table-Header :table_headers="procurement_store.sm_table_headers" />
+   <Table-Header :table_headers="procurement_store.sm_table_headers" />
 </template>
 
 <script setup>

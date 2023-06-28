@@ -1,6 +1,6 @@
 <template>
     
-    <Order-Table-Header :table_headers="order_store.table_headers" />
+    <Table-Header :table_headers="order_store.table_headers" />
 
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     
-    <Order-Table-Header :table_headers="procurement_store.stf_table_headers" />
+    <Table-Header :table_headers="procurement_store.stf_table_headers" />
 
 </template>
 

@@ -1,12 +1,12 @@
 
-import Table_Each_Row from '../layouts/Table_Each_Row.vue';
+import TableRow from '../layouts/Table_Each_Row.vue';
 
-const tablerow = {
+const tableRow = {
     install(app, options){
-        app.component('Table-Row', Table_Each_Row);
+        app.component('Table-Row', TableRow);
     }
 
 }
 
 
-export default tablerow;
+export default tableRow;

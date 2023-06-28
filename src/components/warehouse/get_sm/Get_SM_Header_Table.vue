@@ -1,6 +1,6 @@
 
 <template>
-<Order-Table-Header :table_headers="warehouse_store.processing_sm_headers" />    
+<Table-Header :table_headers="warehouse_store.processing_sm_headers" />    
 </template>
 
 <script setup>
