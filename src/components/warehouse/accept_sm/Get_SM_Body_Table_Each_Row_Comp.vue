@@ -51,7 +51,7 @@
             {{ prop?.each_item?.material_name }}
         </td>
         <td class="px-2 py-2   border-y text-start">
-            {{ prop?.each_item?.count }}
+            {{ prop?.each_item?.sms_amount }} 
         </td>
         <td class="px-2 py-2   border-y text-center">
             {{ prop?.each_item?.unit }}
@@ -82,7 +82,7 @@ import { reactive, watchEffect } from 'vue';
 const prop = defineProps(['each_item', 'index', 'table_data']);
 
 const each_row_data = reactive({
-    delivery_amount:prop?.each_item?.count,
+    delivery_amount:prop?.each_item?.left_over_amount,
     delivery_unit:prop?.each_item?.unit,
     certificate: false,
     passport: false

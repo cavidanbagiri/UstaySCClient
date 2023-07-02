@@ -67,7 +67,7 @@ const WarehouseStore = defineStore('WarehouseStore',{
                         let val = key.charAt(0).toUpperCase() + key.slice(1)
                         val = val.split('_').join(' ');
                         if(key === 'stf_num' || key === 'sm_num' || key==='created_at' || key==='situation'  || key==='material_name' || key==='unit' || key==='count' ||
-                            key==='sm_num' || key==='username' || key==='orderer'){
+                            key==='sm_num' || key==='username' || key==='orderer' || key==='sms_amount' || key==='left_over_amount' ){
                             header_cond['showname'] = `${val}`
                             header_cond['name'] = `${key}`;
                             header_cond['value'] = true;
@@ -110,7 +110,7 @@ const WarehouseStore = defineStore('WarehouseStore',{
                         let val = key.charAt(0).toUpperCase() + key.slice(1)
                         val = val.split('_').join(' ');
                         if(key === 'stf_num' || key === 'sm_num' || key==='created_at' || key==='situation'  || key==='material_name' || key==='unit' || key==='count' ||
-                            key==='sm_num' || key==='username' || key==='orderer'){
+                            key==='sm_num' || key==='username' || key==='orderer'  || key==='delivery_amount'){
                             header_cond['showname'] = `${val}`
                             header_cond['name'] = `${key}`;
                             header_cond['value'] = true;
