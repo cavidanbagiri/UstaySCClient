@@ -6,7 +6,9 @@
         <div class="sticky h-40 top-10 bg-white">
             <div class=" sticky left-16 flex flex-col w-max bg-white"
                 style="display:inline-block; width: calc(100vw - 5rem);">
-                <SM_Procurement_Analyz />
+
+                <table-sm-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
+
                 <Show_Filter_Section />
             </div>
         </div>
@@ -27,36 +29,75 @@
         @closeRowInform="closeRowInform"
         />
 
+        {{ warehouse_store.warehouse_statistic_result }} result
 
     </div>
 </template>
 
 <script setup>
 
-import { onMounted } from 'vue';
-
+// Import Section
+import { onMounted, ref, reactive, watchEffect } from 'vue';
 import Show_Filter_Section from './filter_section/Show_Filter_Section.vue';
 import Get_SM_Header_Table from './Get_SM_Header_Table.vue';
 import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
 import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
 import WarehouseStore from '../../../store/warehouse_store';
-import UserStore from '../../../store/user_store';
 import IndexStore from '../../../store';
-import SM_Procurement_Analyz from '../SM_Procurement_Analyz.vue';
 
+// Create variable for importing data
 const warehouse_store = WarehouseStore();
-const user_store = UserStore();
 const index_store = IndexStore();
 
+// Component Variables
+const get_statistic_result = ref([]);
+const statistic_result = reactive({
+    processing: 0,
+    received: 0,
+    provided:0,
+    total: 0
+})
+
 onMounted(async () => {
+    // Get All Waiting SMS
     await warehouse_store.getWaitingsSMS();
+    // Get \Warehouse Statistics Resukt just about SM
+    await warehouse_store.getStatisticResult();
+    // Get Table Headers
     warehouse_store.getProcessingSMHeaders()
 })
 
 
-const closeRowInform = () => {
-    index_store.row_inform_condition = false;
+const fetchCurrentData = async (statistic_result_value) => {
+  if (statistic_result_value !== 0) {
+    await warehouse_store.getStatisticResultData(statistic_result_value);
+  }
+  else {
+    await warehouse_store.getWaitingsSMS();
+  }
 }
+
+watchEffect(()=>{
+    get_statistic_result.value = warehouse_store.warehouse_statistic_result;
+    if(get_statistic_result.value){
+        for(let i of get_statistic_result.value){
+            if(i.SituationModelId === 1){
+                continue;
+            }
+            if(i.SituationModelId === 2){
+                statistic_result.processing = i.count;
+            }
+            if(i.SituationModelId === 3){
+                statistic_result.received = i.count;
+            }
+            statistic_result.total += Number(i.count);
+        }
+    }
+})
+
+
+
+const closeRowInform = () => index_store.row_inform_condition = false;
 
 
 </script>

@@ -13,6 +13,7 @@ const WarehouseStore = defineStore('WarehouseStore',{
         tab_num : 0,
         received_items : null,
         after_created : false,
+        warehouse_statistic_result: null,
         processing_sm_headers : [],
         receiving_sm_headers : [],
     }),
@@ -55,6 +56,29 @@ const WarehouseStore = defineStore('WarehouseStore',{
                 console.log('received items : ',this.received_items);
             }).catch((err)=>{
                 console.log('Received Items Error : ',err);
+            })
+        },
+
+        // Get Statistic Result 
+        async getStatisticResult(){
+            console.log('called ');
+            await axios.get(`http://localhost:3000/warehouse/statisticresult`)
+            .then((respond)=>{
+                console.log('data : ',respond.data);
+                this.warehouse_statistic_result = respond.data;
+            })
+            .catch((err)=>{
+                console.log('Get Statistic Result Error : ',err);
+            })
+        },
+
+        // Fetch SM Statistics Result Data
+        async getStatisticResultData(statistic_result_value){
+            await axios.get(`http://localhost:3000/warehouse/statisticresultdata?result_value_id=${statistic_result_value}`)
+            .then((respond)=>{
+                this.waiting_sms = respond.data;
+            }).catch((err)=>{
+                console.log('all sm Error : ',err);
             })
         },
 
