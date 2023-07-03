@@ -16,7 +16,7 @@
                                 Show STF</span>
                             <span :class="order_store.tab_num === 1 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTab(1)"
                             class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i class="fa-solid fa-list fa-lg "></i>
-                                Create MTF</span>
+                                Create STF</span>
                             <span :class="order_store.tab_num === 2 ? 'border-b-violet-800 border-b-4 ' : ''" @click="changeTab(2)"
                             class="text-black px-3 py-2 pt-2 mx-1 border-b-2  cursor-pointer"> <i
                                     class="fa-solid fa-warehouse fa-lg "></i> Show Warehouse</span>

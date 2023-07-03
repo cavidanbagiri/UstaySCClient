@@ -1,7 +1,7 @@
 
 
 <template>
-    <div class="flex flex-col mtf-anim" style="font-size: x-small;letter-spacing: 1px;" v-font-family>
+    <div class="flex flex-col mtf-anim" style="font-size: x-small;letter-spacing: 1px;" >
         <!-- Filter Section -->
         <div class="flex flex-col" v-if="show_filters">
             <div class="flex flex-row items-center justify-between">
