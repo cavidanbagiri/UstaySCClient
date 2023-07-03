@@ -5,7 +5,7 @@
         <div class="sticky top-10 px-1 ">
             <div class=" sticky left-16 flex flex-col bg-white" style="display: inline-block; width: calc(100vw - 5rem);">
                
-                <table-statistics  
+                <table-stf-statistics  
                 :statistic_result="statistic_result" 
                 @fetchCurrentData = "fetchCurrentData"
                 />

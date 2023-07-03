@@ -20,7 +20,8 @@ import tablerow from './plugins/table_rows';
 import tableexpand from './plugins/table_expand';
 import tablerowinform from './plugins/table_row_inform';
 import tableinformbutton from './plugins/table_inform_button';
-import tablestatistic from './plugins/table_statistic';
+import tablestfstatistic from './plugins/table_stf_statistic';
+import tablesmsstattistic from './plugins/table_sm_statistic';
 
 const app = createApp(App)
 
@@ -38,6 +39,7 @@ app.use(tablerow);
 app.use(tableexpand);
 app.use(tablerowinform);
 app.use(tableinformbutton);
-app.use(tablestatistic);
+app.use(tablestfstatistic);
+app.use(tablesmsstattistic);
 
 app.mount('#app');

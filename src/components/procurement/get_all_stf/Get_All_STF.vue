@@ -5,7 +5,7 @@
     <div class="h-40 sticky top-10 bg-white w-full">
       <div class=" sticky left-16 flex flex-col bg-white" style="display: inline-block; width: calc(100vw - 5rem);">
 
-        <table-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
+        <table-stf-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
 
         <Filter_Section_Comp />
       </div>

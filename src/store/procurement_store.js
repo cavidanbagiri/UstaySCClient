@@ -159,7 +159,6 @@ const ProcurementStore = defineStore('ProcurementStore',{
             .then((respond)=>{
                 this.all_stf = respond.data;
                 this.filtered_stf = this.all_stf;
-                console.log('all stf : ',this.all_stf);
             }).catch((err)=>{
                 console.log('all stf Error : ',err);
             })
