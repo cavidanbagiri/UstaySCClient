@@ -17,6 +17,7 @@ import validation from './plugins/validation';
 import dateFormat from './plugins/date_format';
 import tableheader from './plugins/table_headers';
 import tablerow from './plugins/table_rows';
+import tableexpand from './plugins/table_expand';
 
 const app = createApp(App)
 
@@ -31,6 +32,7 @@ app.use(validation);
 app.use(dateFormat);
 app.use(tableheader);
 app.use(tablerow);
+app.use(tableexpand);
 
 
 app.mount('#app');

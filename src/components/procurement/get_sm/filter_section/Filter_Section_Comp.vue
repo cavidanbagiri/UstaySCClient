@@ -86,7 +86,7 @@
                         <button class="p-2 hover:bg-gray-300 rounded-md" @click="show_table_spec = !show_table_spec">
                             <i class="fa-solid fa-gear fa-2xl"></i>
                         </button>
-                        <Show_STF_Table_Spec v-if="show_table_spec" />
+                        <table-expand :table_headers="procurement_store.sm_table_headers" v-if="show_table_spec" />
                     </div>
                     <!-- Table Specification -->
                     <div class="flex m-1 items-end text-gray-500 cursor-pointer relative">
@@ -106,7 +106,6 @@
 <script setup>
 
 import { ref, watchEffect } from 'vue';
-import Show_STF_Table_Spec from './Show_STF_Table_Spec.vue';
 import ProcurementStore from '../../../../store/procurement_store';
 const procurement_store = ProcurementStore();
 
