@@ -16,8 +16,6 @@ const OrderStore = defineStore('OrderStore',{
         after_created : false,
         statistic_result_data : [],
         selecting_rows : [],
-        row_inform_condition : false,
-        row_detail_data : null,
         table_headers : [],
         tab_num : 0
     }),
@@ -28,7 +26,6 @@ const OrderStore = defineStore('OrderStore',{
         GETSHOWMTFTOAST : (state) => state.show_mtf_toast,
         GETCREATEDLASTMTF : (state) => state.created_last_mtf,
         GETORDERLIST : (state) => state.order_list,
-        GETROWINFORMCONDITION : (state) => state.row_inform_condition
     },
     actions:{
 
@@ -44,17 +41,6 @@ const OrderStore = defineStore('OrderStore',{
             }catch(err){
                 return err
             }
-        },
-
-        // Get User Inform from dell
-        async getRowDetails (stfid){
-          await axios.get(`
-            http://localhost:3000/order/getrowdetails/${stfid}
-          `).then((respond)=>{
-            this.row_detail_data = respond.data;
-        }).catch((err)=>{
-            console.log('row detail respond Error : ',err);
-          })
         },
 
         // Fetch Statistic Data

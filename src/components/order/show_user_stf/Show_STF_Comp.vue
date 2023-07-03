@@ -19,7 +19,11 @@
             <Show_STF_Table_Comp />
         </div>
 
-        <Show_STF_Row_Inform />
+        <table-row-inform 
+        :row_inform="index_store.row_detail_data" 
+        :row_inform_condition="index_store.row_inform_condition" 
+        @closeRowInform="closeRowInform"
+        />
 
         <Show_STF_Selecting_Task />
 
@@ -31,15 +35,16 @@
 import { onMounted, watchEffect } from 'vue'
 
 import OrderStore from '../../../store/order_store';
+import IndexStore from '../../../store';
 import UserStore from '../../../store/user_store';
 import Show_STF_Analyz from '../Show_STF_Analyz.vue';
 import Show_STF_Table_Comp from './Show_STF_Table_Comp.vue';
 import Show_STF_Filter_Section from './filter_section/Show_STF_Filter_Section.vue';
 import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
-import Show_STF_Row_Inform from './Show_STF_Row_Inform.vue';
 
 const order_store = OrderStore();
 const user_store = UserStore();
+const index_store = IndexStore();
 
 onMounted(async () => {
     const user = user_store.GETUSERINFORM;
@@ -55,6 +60,10 @@ watchEffect(async()=>{
         order_store.after_created=false;
     }
 })
+
+const closeRowInform = () => {
+    index_store.row_inform_condition = false;
+}
 
 </script>
 

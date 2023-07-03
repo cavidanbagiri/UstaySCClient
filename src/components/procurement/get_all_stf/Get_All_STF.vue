@@ -14,6 +14,12 @@
 
     <Show_STF_Selecting_Task/>
 
+    <table-row-inform 
+        :row_inform="index_store.row_detail_data" 
+        :row_inform_condition="index_store.row_inform_condition" 
+        @closeRowInform="closeRowInform"
+        />
+
   </div>
 </template>
 
@@ -22,6 +28,7 @@
 import { onMounted, watchEffect } from 'vue'
 
 import ProcurementStore  from '../../../store/procurement_store.js';
+import IndexStore from '../../../store';
 
 import Filter_Section_Comp from './filter_section/Filter_Section_Comp.vue';
 import Show_All_STF_Table_Comp from './Show_All_STF_Table_Comp.vue';
@@ -29,6 +36,7 @@ import STF_Procurement_Analyz from '../STF_Procurement_Analyz.vue';
 import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
 
 const procurement_store = ProcurementStore();
+const index_store = IndexStore();
 
 onMounted(async () => {
     await procurement_store.fetchAllSTF()
@@ -42,6 +50,10 @@ watchEffect(async ()=>{
     await procurement_store.fetchAllSTF();
   }
 })
+
+const closeRowInform = () => {
+    index_store.row_inform_condition = false;
+}
 
 </script>
 

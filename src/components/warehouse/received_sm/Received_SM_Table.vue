@@ -19,6 +19,13 @@
 
         <Show_STF_Selecting_Task />
 
+        <table-row-inform 
+        :row_inform="index_store.row_detail_data" 
+        :row_inform_condition="index_store.row_inform_condition" 
+        @closeRowInform="closeRowInform"
+        />
+
+
     </div>
 </template>
 
@@ -30,13 +37,19 @@ import Received_SM_Table_Header from './Received_SM_Table_Header.vue';
 import Received_SM_Table_Body from './Received_SM_Table_Body.vue'
 import WarehouseStore from '../../../store/warehouse_store';
 import SM_Procurement_Analyz from '../SM_Procurement_Analyz.vue';
-
-
+import IndexStore from '../../../store';
+const index_store = IndexStore();
 const warehouse_store = WarehouseStore();
 onMounted(async () => {
     await warehouse_store.fetchReceivingSM();
     warehouse_store.getReceivingSMHeaders();
 })
+
+
+const closeRowInform = () => {
+    index_store.row_inform_condition = false;
+}
+
 
 
 </script>

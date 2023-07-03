@@ -1,11 +1,7 @@
 <template>
     <tr :class="checked_style ? 'text-white bg-blue-600  hover:bg-blue-500 ' : 'hover:bg-gray-100 bg-white '"
         class="border-b  hover:cursor-pointer table_row">
-        <td class=" p-1">
-            <div class="flex items-center justify-center" @click="getRowDetail">
-                <i class="fa-solid fa-ellipsis-vertical fa-2xl text-gray-300"  ></i>
-            </div>
-        </td>
+        <table-inform-button :each="prop?.each" />
         <td class="w-1 p-4 py-2 ">
             <div class="flex items-center">
                 <label class=" flex cursor-pointer items-center rounded-sm p-1" for="selected_row"
@@ -41,7 +37,10 @@
 import { ref } from 'vue';
 
 import OrderStore from '../../../store/order_store';
+import IndexStore from '../../../store';
+
 const order_store = OrderStore();
+const index_store = IndexStore();
 
 const prop = defineProps(['each', 'index'])
 
@@ -49,7 +48,6 @@ const checked_style = ref(false);
 
 // Row Checked Controll and add selecting Rows from dell
 const checkedRows = () => {
-    console.log('good');
     checked_style.value = !checked_style.value
     if (checked_style.value) {
         order_store.selecting_rows.push(prop.each.id)
@@ -57,12 +55,6 @@ const checkedRows = () => {
     else {
         order_store.selecting_rows = order_store.selecting_rows.filter((item) => item != prop.each.id)
     }
-}
-
-// Get Double Click and Row Inform from dell
-const getRowDetail = async () => {
-    await order_store.getRowDetails(prop.each.stf_id);
-    order_store.row_inform_condition = true
 }
 
 </script>

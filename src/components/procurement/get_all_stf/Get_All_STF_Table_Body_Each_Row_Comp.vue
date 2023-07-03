@@ -1,12 +1,8 @@
 
 <template>
     <tr :class="checked ? 'text-white  bg-blue-600 hover:bg-blue-500 ' : 'hover:bg-gray-100 bg-white'"
-        class="border-b table_row ">
-        <td class=" p-1">
-            <div class="flex items-center justify-center" @click="getRowDetail">
-                <i class="fa-solid fa-ellipsis-vertical fa-2xl text-gray-300"  @click="getRowDetail"></i>
-            </div>
-        </td>
+        class="border-b  hover:cursor-pointer table_row ">
+        <table-inform-button :each="prop?.each" />
         <td class="w-1 p-4 py-2 ">
 
             <div class="flex items-center">
@@ -42,7 +38,10 @@
 import { ref, watchEffect } from 'vue';
 
 import ProcurementStore from '../../../store/procurement_store';
+import IndexStore from '../../../store';
+
 const procurement_store = ProcurementStore();
+const index_store = IndexStore();
 
 // Get Each Item from parent
 const prop = defineProps(['each', 'index', 'checked_style']);
@@ -63,6 +62,7 @@ const checkboxCond = () => {
     }
 }
 
+
 watchEffect(() => {
 
     if (procurement_store.after_created) {
@@ -70,6 +70,7 @@ watchEffect(() => {
     }
 
 })
+
 
 </script>
 

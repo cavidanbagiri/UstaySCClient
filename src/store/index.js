@@ -1,11 +1,18 @@
 
 import { defineStore } from "pinia";
+import axios from 'axios';
 
 const IndexStore = defineStore('IndexStore',{
 
     state : () => ({
+
+        // Common Design
         canvas_toggle : false,
         user_teleport : false,
+
+        // Table Row Inform
+        row_inform_condition : false,
+        row_detail_data : null,
     }),
 
     getters:{
@@ -19,8 +26,17 @@ const IndexStore = defineStore('IndexStore',{
         },
         TOGGLEUSERTELEPORT () { 
             this.user_teleport = !this.user_teleport;
-        }
-
+        },
+        // Get Row Information
+        async getRowDetails (stfid){
+          await axios.get(`
+            http://localhost:3000/order/getrowdetails/${stfid}
+          `).then((respond)=>{
+            this.row_detail_data = respond.data;
+        }).catch((err)=>{
+            console.log('row detail respond Error : ',err);
+          })
+        },
     }
 
 })

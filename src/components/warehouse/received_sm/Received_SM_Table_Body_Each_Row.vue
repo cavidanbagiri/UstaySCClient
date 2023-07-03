@@ -1,11 +1,7 @@
 
 <template>
-    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <td class=" p-1">
-            <div class="flex items-center justify-center" @click="getRowDetail">
-                <i class="fa-solid fa-ellipsis-vertical fa-2xl text-gray-300"  @click="getRowDetail"></i>
-            </div>
-        </td>
+    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50  hover:cursor-pointer">
+        <table-inform-button :each="prop?.each" />
         <td class="w-1 p-4 py-2 ">
             <div class="flex items-center">
                 <input id="checkbox-table-search-1" type="checkbox" v-model="checked" @change="checkboxCond"

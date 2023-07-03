@@ -21,6 +21,13 @@
 
         <Show_STF_Selecting_Task/>
 
+        <table-row-inform 
+        :row_inform="index_store.row_detail_data" 
+        :row_inform_condition="index_store.row_inform_condition" 
+        @closeRowInform="closeRowInform"
+        />
+
+
     </div>
 </template>
 
@@ -34,10 +41,12 @@ import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
 import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
 import WarehouseStore from '../../../store/warehouse_store';
 import UserStore from '../../../store/user_store';
+import IndexStore from '../../../store';
 import SM_Procurement_Analyz from '../SM_Procurement_Analyz.vue';
 
 const warehouse_store = WarehouseStore();
 const user_store = UserStore();
+const index_store = IndexStore();
 
 onMounted(async () => {
     await warehouse_store.getWaitingsSMS();
@@ -45,9 +54,9 @@ onMounted(async () => {
 })
 
 
-// const acceptedByWarehouse = () => {
-//     warehouse_store.tab_num = 2;
-// }
+const closeRowInform = () => {
+    index_store.row_inform_condition = false;
+}
 
 
 </script>
