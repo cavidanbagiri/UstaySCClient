@@ -29,7 +29,6 @@
         @closeRowInform="closeRowInform"
         />
 
-        {{ warehouse_store.warehouse_statistic_result }} result
 
     </div>
 </template>
