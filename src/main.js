@@ -22,6 +22,7 @@ import tablerowinform from './plugins/table_row_inform';
 import tableinformbutton from './plugins/table_inform_button';
 import tablestfstatistic from './plugins/table_stf_statistic';
 import tablesmsstattistic from './plugins/table_sm_statistic';
+import tablefilter from './plugins/table_filter';
 
 const app = createApp(App)
 
@@ -41,5 +42,6 @@ app.use(tablerowinform);
 app.use(tableinformbutton);
 app.use(tablestfstatistic);
 app.use(tablesmsstattistic);
+app.use(tablefilter);
 
 app.mount('#app');
