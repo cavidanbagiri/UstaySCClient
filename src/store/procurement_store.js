@@ -145,7 +145,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
         // Get STF Statistics Result
         async getSTFStatisticsResult (){
-            await axios.get(`http://localhost:3000/procurement/stfstatisticsresult`)
+            await axios.get(`https://ustay.onrender.com/procurement/stfstatisticsresult`)
             .then((respond)=>{
                 this.statistic_result = respond.data;
             }).catch((err)=>{
@@ -155,7 +155,8 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
         // Fetch All STF
         async fetchAllSTF(){
-            await axios.get(`http://localhost:3000/procurement/allstf`)
+            // await axios.get(`https://ustay.onrender.com/procurement/allstf`)
+            await axios.get(`${import.meta.env.VITE_API}/procurement/allstf`)
             .then((respond)=>{
                 this.all_stf = respond.data;
                 this.filtered_stf = this.all_stf;
@@ -166,7 +167,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
         // Fetch STF Statistics Result Data
         async fetchStatisticResultData(statistic_result_value){
-            await axios.get(`http://localhost:3000/procurement/getstatisticresult?result_value_id=${statistic_result_value}`)
+            await axios.get(`https://ustay.onrender.com/procurement/getstatisticresult?result_value_id=${statistic_result_value}`)
             .then((respond)=>{
                 this.all_stf = respond.data;
             }).catch((err)=>{
@@ -176,7 +177,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
         // Fetch All SMS
         async fetchAllSM(){
-            await axios.get(`http://localhost:3000/procurement/allsm`)
+            await axios.get(`https://ustay.onrender.com/procurement/allsm`)
             .then((respond)=>{
                 this.all_sms = respond.data;
             }).catch((err)=>{
@@ -185,7 +186,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
         },
         // Get SM Statistics Result
         async getSMStatisticsResult (){
-            await axios.get(`http://localhost:3000/procurement/smstatisticsresult`)
+            await axios.get(`https://ustay.onrender.com/procurement/smstatisticsresult`)
             .then((respond)=>{
                 this.sm_statistic_result = respond.data;
             }).catch((err)=>{
@@ -194,7 +195,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
         },
         // Fetch SM Statistics Result Data
         async fetchStatisticResultDataSM(statistic_result_value){
-            await axios.get(`http://localhost:3000/procurement/getstatisticresultsm?result_value_id=${statistic_result_value}`)
+            await axios.get(`https://ustay.onrender.com/procurement/getstatisticresultsm?result_value_id=${statistic_result_value}`)
             .then((respond)=>{
                 this.all_sms = respond.data;
             }).catch((err)=>{
@@ -204,7 +205,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
         // Get Waiting MTF
         async showWaitingMTF (){
-            await axios.get('http://localhost:3000/procurement/waitingmtf')
+            await axios.get('https://ustay.onrender.com/procurement/waitingmtf')
             .then((respond)=>{
                 this.waiting_orders = respond.data;
                 this.waiting_orders_filter = respond.data
@@ -216,7 +217,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
         // Create STF
         async createSM (orders){
             try{
-                await axios.post('http://localhost:3000/procurement/createsm', orders)
+                await axios.post('https://ustay.onrender.com/procurement/createsm', orders)
                 .then((respond)=>{
                     return respond;
                 })
@@ -229,7 +230,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
         // Get Companies Names
         async getCompaniesNames (){
-            await axios.get('http://localhost:3000/procurement/companies')
+            await axios.get('https://ustay.onrender.com/procurement/companies')
             .then((respond)=>{
                 this.companies_names = respond.data
             }).catch((err)=>{
@@ -239,7 +240,7 @@ const ProcurementStore = defineStore('ProcurementStore',{
 
         // Get Procurement Users Names
         async getProcurementUsersNames () {
-            await axios.get('http://localhost:3000/procurement/users')
+            await axios.get('https://ustay.onrender.com/procurement/users')
             .then((respond)=>{
                 this.procurement_users_names = respond.data
             }).catch((err)=>{
