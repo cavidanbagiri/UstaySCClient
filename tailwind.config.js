@@ -2,7 +2,7 @@
 
 if(!Object.hasOwn){
   Object.hasOwn = (obj, key)=>{
-    return typeof obj==='object' && obj.hasOwnProprty(key);
+    return typeof obj==='object' && obj.hasOwnProperty(key);
   }
 }
 
