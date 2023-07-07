@@ -15,7 +15,7 @@ const UserStore = defineStore("userStore", {
     async LOGINSER(user_data) {
       try {
         await axios
-          .post("http://localhost:3000/user/login", user_data)
+          .post(`${import.meta.env.VITE_API}/user/login`, user_data)
           .then((respond) => {
             // Set User Item In Storage
             sessionStorage.setItem("user", JSON.stringify(respond.data));

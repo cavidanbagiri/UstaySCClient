@@ -18,7 +18,7 @@ const WorkSpaceStore = defineStore("WorkSpaceStore", {
     // Fetch Tasks
     async fetchTasks() {
       try {
-        await axios.get("http://localhost:3000/workspace").then((respond) => {
+        await axios.get(`${import.meta.env.VITE_API}/workspace`).then((respond) => {
           this.tasks = respond.data;
           console.log('task is : ',this.tasks);
         });
@@ -29,7 +29,7 @@ const WorkSpaceStore = defineStore("WorkSpaceStore", {
     async createNewTask(task_data) {
       try {
         await axios
-          .post("http://localhost:3000/workspace/createnewtask", task_data)
+          .post(`${import.meta.env.VITE_API}/workspace/createnewtask`, task_data)
           .then((respond) => {
             this.new_task_data = respond.data;
           });
@@ -40,7 +40,7 @@ const WorkSpaceStore = defineStore("WorkSpaceStore", {
     async updateData(data){
 
       try{
-        await axios.post("http://localhost:3000/workspace/updatetask",data)
+        await axios.post(`${import.meta.env.VITE_API}/workspace/updatetask`,data)
         .then((respond)=>{
           console.log('update respond : ',respond);
         }).catch((err)=>{
@@ -56,7 +56,7 @@ const WorkSpaceStore = defineStore("WorkSpaceStore", {
     async removeTaskFromMain(data) {
       console.log('sending data is : ',data);
       try{
-        await axios.post("http://localhost:3000/workspace/deletetask",data)
+        await axios.post(`${import.meta.env.VITE_API}/workspace/deletetask`,data)
         .then((respond)=>{
           console.log('update respond : ',respond);
         }).catch((err)=>{

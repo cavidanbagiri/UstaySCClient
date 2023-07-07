@@ -28,7 +28,7 @@ const WarehouseStore = defineStore('WarehouseStore',{
 
         // Get Waiting SM
         async getWaitingsSMS () { 
-            await axios.get('http://localhost:3000/warehouse/waitingsm')
+            await axios.get(`${import.meta.env.VITE_API}/warehouse/waitingsm`)
             .then((respond)=>{
                 this.waiting_sms = respond.data
             }).catch((err)=>{
@@ -38,8 +38,7 @@ const WarehouseStore = defineStore('WarehouseStore',{
 
         // Post Accepted waiting to Warehouse
         async acceptWaitingSM(data){
-            console.log('data  : ',data);
-            await axios.post('http://localhost:3000/warehouse/accept',data)
+            await axios.post(`${import.meta.env.VITE_API}/warehouse/accept`,data)
             .then((respond)=>{
                 this.accepted_items = respond;
             })
@@ -50,7 +49,7 @@ const WarehouseStore = defineStore('WarehouseStore',{
         
         // Fetch Received Items and Show In Warehouse/received
         async fetchReceivingSM(){
-            await axios.get(`http://localhost:3000/warehouse/receivedsm`)
+            await axios.get(`${import.meta.env.VITE_API}/warehouse/receivedsm`)
             .then((respond)=>{
                 this.received_items = respond.data;
                 console.log('received items : ',this.received_items);
@@ -62,7 +61,7 @@ const WarehouseStore = defineStore('WarehouseStore',{
         // Get Statistic Result 
         async getStatisticResult(){
             console.log('called ');
-            await axios.get(`http://localhost:3000/warehouse/statisticresult`)
+            await axios.get(`${import.meta.env.VITE_API}/warehouse/statisticresult`)
             .then((respond)=>{
                 console.log('data : ',respond.data);
                 this.warehouse_statistic_result = respond.data;
@@ -74,7 +73,7 @@ const WarehouseStore = defineStore('WarehouseStore',{
 
         // Fetch SM Statistics Result Data
         async getStatisticResultData(statistic_result_value){
-            await axios.get(`http://localhost:3000/warehouse/statisticresultdata?result_value_id=${statistic_result_value}`)
+            await axios.get(`${import.meta.env.VITE_API}/warehouse/statisticresultdata?result_value_id=${statistic_result_value}`)
             .then((respond)=>{
                 this.waiting_sms = respond.data;
             }).catch((err)=>{

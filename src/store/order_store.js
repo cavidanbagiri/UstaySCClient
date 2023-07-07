@@ -32,7 +32,7 @@ const OrderStore = defineStore('OrderStore',{
         // Send MTF Data for creating MTF
         async createSTF(data){
             try{
-                await axios.post('http://localhost:3000/order/stf', data)
+                await axios.post(`${import.meta.env.VITE_API}/order/stf`, data)
                 .then((respond)=>{
                     this.created_last_mtf = respond.data
                     this.show_mtf_toast = true;
@@ -46,7 +46,7 @@ const OrderStore = defineStore('OrderStore',{
         // Fetch Statistic Data
         async fetchStatisticResult (data) {
             await axios.get(`
-                http://localhost:3000/order/getstatisticresult?user_id=${data.user_id}&result_value_id=${data.statistic_result_value}
+                ${import.meta.env.VITE_API}/order/getstatisticresult?user_id=${data.user_id}&result_value_id=${data.statistic_result_value}
             `)
             .then((respond)=>{
                 this.orders = respond.data;
@@ -60,9 +60,9 @@ const OrderStore = defineStore('OrderStore',{
 
         // Show User MTF For User Page
         async showSTF(user) {
-            console.log(`http://localhost:3000/order/showorders?id=${user?.id}&ProjectModelId=${user?.ProjectModelId}`);
+            console.log(`${import.meta.env.VITE_API}/order/showorders?id=${user?.id}&ProjectModelId=${user?.ProjectModelId}`);
             await axios.get(`
-                http://localhost:3000/order/showorders?id=${user?.id}&ProjectModelId=${user?.ProjectModelId}
+                ${import.meta.env.VITE_API}/order/showorders?id=${user?.id}&ProjectModelId=${user?.ProjectModelId}
             `)
             .then((respond)=>{
                 this.orders = respond.data;
@@ -122,7 +122,7 @@ const OrderStore = defineStore('OrderStore',{
 
         // Get Fields Name
         async fetchFieldsNames(ProjectModelId){
-            await axios.get(`http://localhost:3000/order/getfields/${ProjectModelId}`)
+            await axios.get(`${import.meta.env.VITE_API}/order/getfields/${ProjectModelId}`)
             .then((respond)=>{
                 this.fields = respond.data;
             })
@@ -133,8 +133,7 @@ const OrderStore = defineStore('OrderStore',{
 
         // Get User Statistic Result
         async getUserStatisticResult(user_id){
-            console.log('user id is : ',user_id);
-            await axios.get(`http://localhost:3000/order/userstatistic/${user_id}`,)
+            await axios.get(`${import.meta.env.VITE_API}/order/userstatistic/${user_id}`,)
             .then((respond)=>{
                 this.statistic_result = respond.data;
             }).catch((err)=>{

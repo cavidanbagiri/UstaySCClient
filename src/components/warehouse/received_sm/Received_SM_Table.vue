@@ -6,6 +6,9 @@
             <div class=" sticky left-16 flex flex-col w-max bg-white"
                 style="display:inline-block; width: calc(100vw - 5rem);">
                 <table-sm-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
+                <table-filter>
+                    <table-expand v-if="true" :table_headers="warehouse_store.receiving_sm_headers" />
+                </table-filter>
             </div>
         </div>
 
@@ -36,7 +39,6 @@ import { onMounted, ref, reactive, watchEffect } from 'vue';
 import Received_SM_Table_Header from './Received_SM_Table_Header.vue';
 import Received_SM_Table_Body from './Received_SM_Table_Body.vue'
 import WarehouseStore from '../../../store/warehouse_store';
-import SM_Procurement_Analyz from '../SM_Procurement_Analyz.vue';
 import IndexStore from '../../../store';
 
 // Create variable for importing data

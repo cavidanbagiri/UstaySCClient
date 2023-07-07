@@ -7,7 +7,9 @@
                 
                 <table-sm-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
 
-                <Filter_Section_Comp/>
+                <table-filter>
+                    <table-expand v-if="true" :table_headers="procurement_store.sm_table_headers" />
+                </table-filter>
 
             </div>
         </div>
@@ -31,7 +33,6 @@
 
 // Import Section
 import { onMounted, watchEffect, ref, reactive } from 'vue';
-import Filter_Section_Comp from './filter_section/Filter_Section_Comp.vue';
 import Show_SM_Table from './Show_SM_Table.vue';
 import ProcurementStore from '../../../store/procurement_store';
 import IndexStore from '../../../store';
