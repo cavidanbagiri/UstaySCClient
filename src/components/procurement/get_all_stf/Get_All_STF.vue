@@ -7,7 +7,11 @@
 
         <table-stf-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
 
-        <Filter_Section_Comp />
+        <!-- <Filter_Section_Comp /> -->
+        <table-filter>
+          <table-expand v-if="true" :table_headers="procurement_store.stf_table_headers" />
+        </table-filter>
+
       </div>
     </div>
 
@@ -27,7 +31,6 @@
 import { onMounted, watchEffect, ref, reactive } from 'vue'
 import ProcurementStore from '../../../store/procurement_store.js';
 import IndexStore from '../../../store';
-import Filter_Section_Comp from './filter_section/Filter_Section_Comp.vue';
 import Show_All_STF_Table_Comp from './Show_All_STF_Table_Comp.vue';
 import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
 

@@ -9,7 +9,10 @@
 
                 <table-sm-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
 
-                <Show_Filter_Section />
+                <table-filter>
+                    <table-expand v-if="true" :table_headers="warehouse_store.processing_sm_headers" />
+                </table-filter>
+
             </div>
         </div>
 
@@ -37,7 +40,6 @@
 
 // Import Section
 import { onMounted, ref, reactive, watchEffect } from 'vue';
-import Show_Filter_Section from './filter_section/Show_Filter_Section.vue';
 import Get_SM_Header_Table from './Get_SM_Header_Table.vue';
 import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
 import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
