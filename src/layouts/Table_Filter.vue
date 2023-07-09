@@ -11,7 +11,7 @@
                     <span class="m-1">Date Order</span>
                     <select
                         class="border outline-none font-sans rounded-lg  h-full p-1 border-blue-300 hover:border-blue-600 shadow-lg"
-                        >
+                        v-model="filtered_objects.date_order">
                         <option value="Descending">Descendig</option>
                         <option>Ascending</option>
                     </select>
@@ -19,13 +19,13 @@
                 <!-- Search With Date -->
                 <div class="flex flex-col m-1">
                     <span class="m-1">Search Date</span>
-                    <input class="border outline-none rounded-md border-gray-300 p-2" type="date" name="" id="" disabled
-                        placeholder="Date" />
+                    <input class="border outline-none rounded-md border-gray-300 p-2" type="date" name="" id=""
+                        placeholder="Date" v-model="filtered_objects.created_at" />
                 </div>
                 <!-- Search With Material Type-->
                 <div class="flex flex-col m-1">
                     <span class="m-1">Search Type</span>
-                    <select
+                    <select v-model="filtered_objects.material_type"
                         class="border outline-none font-sans rounded-lg  h-full p-1 border-blue-300 hover:border-blue-600 shadow-lg"
                         >
                         <option>All</option>
@@ -36,7 +36,7 @@
                 </div>
                 <!-- Search With MTF -->
                 <div class="flex flex-col m-1">
-                    <span class="m-1">Search MTF</span>
+                    <span class="m-1">Search STF</span>
                     <label for="search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                     <div class="relative">
@@ -49,7 +49,7 @@
                         </div>
                         <input type="text" id="search"
                             class="block w-full p-2 pl-10 outline-none text-gray-900 border border-blue-300 rounded-lg  hover:border-blue-600  shadow-lg"
-                            placeholder="MTF..." >
+                            placeholder="MTF..." v-model="filtered_objects.stf_num" >
 
                     </div>
                 </div>
@@ -68,9 +68,9 @@
                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                         </div>
-                        <input type="search" id="search"
+                        <input type="search" id="search" 
                             class="outline-none w-full p-2 pl-10 text-gray-900 border border-blue-300 rounded-lg hover:border-blue-600 shadow-lg"
-                            placeholder="Search">
+                            placeholder="Search" v-model="filtered_objects.material_name" >
 
                     </div>
                 </div>
@@ -99,11 +99,25 @@
 
 <script setup>
 
-import { ref } from 'vue';
+import { ref, reactive, watchEffect } from 'vue';
 
+// Define Emits
+const emits = defineEmits(['filterFunction', 'filtered_fields']);
 
-const prop = defineProps(['stores', 'headers']);
+// Create Filtered Object
+const filtered_objects = reactive({
+    date_order : '',
+    created_at : '',
+    material_type : '',
+    material_name : '',
+    stf_num : ''
+})
 
+watchEffect(()=>{
+    emits('filterFunction',filtered_objects);
+})
+
+// Show Table Headers Spec
 const show_table_spec = ref(false);
 
 
