@@ -14,7 +14,7 @@
 
                 <!-- <table-filter :stores="order_store" :headers="order_store.table_headers" /> -->
 
-                <table-filter>
+                <table-filter @filterFunction = "filterFunction" >
                     <table-expand v-if="true" :table_headers="order_store.table_headers" />
                 </table-filter>
 
@@ -57,7 +57,7 @@ const statistic_result = reactive({
     total : 0
 })
 
-
+// Load Firstly Data
 onMounted(async () => {
     // Get User Information
     const user = user_store.GETUSERINFORM;
@@ -71,6 +71,12 @@ onMounted(async () => {
     }
 })
 
+// Get Filtered Data
+const filterFunction = async (filtered_objects)=>{
+    await order_store.getFilteredData(filtered_objects);
+}
+
+// Get Statistic Result And Show
 watchEffect(async () => {
     
     // For Created STF
@@ -98,6 +104,7 @@ watchEffect(async () => {
     }
 })
 
+// Show Statistic Data
 const fetchCurrentData = async (statistic_result_value) => {
     console.log('another work');
     if(statistic_result_value!==0){
@@ -112,7 +119,7 @@ const fetchCurrentData = async (statistic_result_value) => {
     }
 }
 
-// Close Row Inform
+// Close Row Information
 const closeRowInform = () => index_store.row_inform_condition = false;
 
 
