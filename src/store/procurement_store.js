@@ -271,7 +271,7 @@ const ProcurementStore = defineStore("ProcurementStore", {
       await axios
         .get(
           `
-            ${import.meta.env.VITE_API}/order/filteredobject${queries}
+            ${import.meta.env.VITE_API}/procurement/filteredobjecstf${queries}
           `
         )
         .then((respond) => {
@@ -290,7 +290,7 @@ const ProcurementStore = defineStore("ProcurementStore", {
       await axios
         .get(
           `
-            ${import.meta.env.VITE_API}/order/filteredobject${queries}
+            ${import.meta.env.VITE_API}/procurement/filteredobjectsm${queries}
           `
         )
         .then((respond) => {
