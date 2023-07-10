@@ -9,7 +9,7 @@
 
                 <table-sm-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
 
-                <table-filter>
+                <table-filter @filterFunction = "filterFunction">
                     <table-expand v-if="true" :table_headers="warehouse_store.processing_sm_headers" />
                 </table-filter>
 
@@ -68,6 +68,10 @@ onMounted(async () => {
     warehouse_store.getProcessingSMHeaders()
 })
 
+// Get Filtered Data
+const filterFunction = async (filtered_objects)=>{
+    await warehouse_store.getFilteredDataWaitingSMS(filtered_objects);
+}
 
 const fetchCurrentData = async (statistic_result_value) => {
   if (statistic_result_value !== 0) {

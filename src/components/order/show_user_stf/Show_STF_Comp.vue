@@ -40,7 +40,6 @@ import OrderStore from '../../../store/order_store';
 import IndexStore from '../../../store';
 import UserStore from '../../../store/user_store';
 import Show_STF_Table_Comp from './Show_STF_Table_Comp.vue';
-import Show_STF_Filter_Section from './filter_section/Show_STF_Filter_Section.vue';
 import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
 
 // Create variable for importing data

@@ -2,7 +2,7 @@
 <template>
     <tbody class="text-gray-500">
 
-        <Show_STF_Table_Each_Row v-for="(i, index) in order_store.GETFILTEREDORDERSDATA"
+        <Show_STF_Table_Each_Row v-for="(i, index) in order_store.GETORDERSDATA"
             :each="i" :index="index"
         />
 

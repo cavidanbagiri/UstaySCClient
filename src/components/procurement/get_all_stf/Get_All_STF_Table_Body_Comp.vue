@@ -2,7 +2,7 @@
     <tbody class="text-gray-500">
         
         <Get_All_STF_Table_Body_Each_Row_Comp 
-        v-for="(each, index) in procurement_store.filtered_stf"
+        v-for="(each, index) in procurement_store.all_stf"
         :each=each :index = index 
         @addChecked='addChecked' @removeChecked='removeChecked'
         />

@@ -8,7 +8,7 @@
         <table-stf-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
 
         <!-- <Filter_Section_Comp /> -->
-        <table-filter>
+        <table-filter @filterFunction = "filterFunction">
           <table-expand v-if="true" :table_headers="procurement_store.stf_table_headers" />
         </table-filter>
 
@@ -58,6 +58,11 @@ onMounted(async () => {
   }
 }
 )
+
+// Get Filtered Data
+const filterFunction = async (filtered_objects)=>{
+    await procurement_store.getFilteredDataSTF(filtered_objects);
+}
 
 // After Creating SM, This code will work
 watchEffect(async () => {

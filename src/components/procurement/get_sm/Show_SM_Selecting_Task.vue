@@ -11,14 +11,14 @@
             </div>
             <div class="flex items-center">
                 <!-- Un Selected Selecting Rows -->
-                <button v-font-family @click="unselect()"
+                <button @click="unselect()"
                     class="flex flex-col items-center mx-3 cursor-pointer p-1 hover:bg-gray-100 "> <i
                         class="fa-regular fa-trash-can"></i> <span class="text-xs">Unselect</span></button>
                 <!-- Add Archieve -->
-                <button v-font-family class="flex flex-col items-center mx-3 cursor-pointer p-1 hover:bg-gray-100 "> <i
+                <button class="flex flex-col items-center mx-3 cursor-pointer p-1 hover:bg-gray-100 "> <i
                         class="fa-regular fa-file-zipper"></i> <span class="text-xs">Add Archieve</span></button>
                 <!-- Create SM -->        
-                <button v-font-family @click="createSM()" :disabled="procurement_store.toggle_createsm"
+                <button @click="createSM()" :disabled="procurement_store.toggle_createsm"
                     :class="procurement_store.toggle_createsm ? 'text-gray-400 hover:bg-white cursor-default ' : ''"
                     class="flex flex-col items-center mx-3 cursor-pointer p-1 hover:bg-gray-100 "> <i
                         class="fa-regular fa-handshake"></i> <span class="text-xs">Create SM</span></button>

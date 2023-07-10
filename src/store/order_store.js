@@ -5,7 +5,6 @@ import axios from "axios";
 const OrderStore = defineStore("OrderStore", {
   state: () => ({
     orders: null,
-    filtered_orders: null,
     fields: [],
     show_mtf_toast: false,
     created_last_mtf: null,
@@ -19,7 +18,6 @@ const OrderStore = defineStore("OrderStore", {
   }),
   getters: {
     GETORDERSDATA: (state) => state.orders,
-    GETFILTEREDORDERSDATA: (state) => state.filtered_orders,
     GETFIELDSNAME: (state) => state.fields,
     GETSHOWMTFTOAST: (state) => state.show_mtf_toast,
     GETCREATEDLASTMTF: (state) => state.created_last_mtf,
@@ -53,7 +51,6 @@ const OrderStore = defineStore("OrderStore", {
         )
         .then((respond) => {
           this.orders = respond.data;
-          this.filtered_orders = respond.data;
           return respond;
         })
         .catch((err) => {
@@ -71,7 +68,6 @@ const OrderStore = defineStore("OrderStore", {
         )
         .then((respond) => {
           this.orders = respond.data;
-          this.filtered_orders = respond.data;
           return respond;
         })
         .catch((err) => {
@@ -168,7 +164,6 @@ const OrderStore = defineStore("OrderStore", {
           )
           .then((respond) => {
             this.orders = respond.data;
-            this.filtered_orders = respond.data;
             return respond;
           })
           .catch((err) => {
@@ -197,6 +192,7 @@ const OrderStore = defineStore("OrderStore", {
 
       return queries;
     },
+
   },
 });
 

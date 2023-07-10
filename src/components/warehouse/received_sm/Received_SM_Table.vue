@@ -6,7 +6,7 @@
             <div class=" sticky left-16 flex flex-col w-max bg-white"
                 style="display:inline-block; width: calc(100vw - 5rem);">
                 <table-sm-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
-                <table-filter>
+                <table-filter @filterFunction = "filterFunction">
                     <table-expand v-if="true" :table_headers="warehouse_store.receiving_sm_headers" />
                 </table-filter>
             </div>
@@ -63,6 +63,11 @@ onMounted(async () => {
     // Get Table Headers
     warehouse_store.getReceivingSMHeaders();
 })
+
+// Get Filtered Data
+const filterFunction = async (filtered_objects)=>{
+    await warehouse_store.getFilteredDataReceivedSMS(filtered_objects);
+}
 
 const fetchCurrentData = async (statistic_result_value) => {
   if (statistic_result_value !== 0) {
