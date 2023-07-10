@@ -7,7 +7,7 @@
                 
                 <table-sm-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
 
-                <table-filter>
+                <table-filter @filterFunction = "filterFunction">
                     <table-expand v-if="true" :table_headers="procurement_store.sm_table_headers" />
                 </table-filter>
 
@@ -60,6 +60,11 @@ onMounted(async()=>{
     // Fetch Table Headers For SM
     procurement_store.getSMHeaders();
 })
+
+// Get Filtered Data
+const filterFunction = async (filtered_objects)=>{
+    await procurement_store.getFilteredDataSM(filtered_objects);
+}
 
 watchEffect(()=>{
     get_statistic_result.value = procurement_store.sm_statistic_result;
