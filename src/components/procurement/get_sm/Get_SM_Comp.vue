@@ -5,7 +5,7 @@
         <div class="sticky h-40 top-10 bg-white">
             <div class=" sticky left-16 flex flex-col w-max bg-white" style="display:inline-block; width: calc(100vw - 5rem);">
                 
-                <table-sm-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
+                <table-sm-statistics :statistic_result="procurement_store.sm_statistic_result" @fetchCurrentData="fetchCurrentData" />
 
                 <table-filter @filterFunction = "filterFunction">
                     <table-expand v-if="true" :table_headers="procurement_store.sm_table_headers" />
@@ -32,7 +32,7 @@
 <script setup>
 
 // Import Section
-import { onMounted, watchEffect, ref, reactive } from 'vue';
+import { onMounted } from 'vue';
 import Show_SM_Table from './Show_SM_Table.vue';
 import ProcurementStore from '../../../store/procurement_store';
 import IndexStore from '../../../store';
@@ -40,16 +40,6 @@ import IndexStore from '../../../store';
 // Create variable for importing data
 const procurement_store = ProcurementStore();
 const index_store = IndexStore();
-
-// Component Variables
-const get_statistic_result = ref([]);
-const statistic_result = reactive({
-  waiting: 0,
-  processing: 0,
-  received: 0,
-  provided: 0,
-  total: 0
-})
 
 
 onMounted(async()=>{
@@ -66,23 +56,6 @@ const filterFunction = async (filtered_objects)=>{
     await procurement_store.getFilteredDataSM(filtered_objects);
 }
 
-watchEffect(()=>{
-    get_statistic_result.value = procurement_store.sm_statistic_result;
-    if(get_statistic_result.value){
-        for(let i of get_statistic_result.value){
-            if(i.SituationModelId === 1){
-                continue;
-            }
-            if(i.SituationModelId === 2){
-                statistic_result.processing = i.count;
-            }
-            if(i.SituationModelId === 3){
-                statistic_result.received = i.count;
-            }
-            statistic_result.total += Number(i.count);
-        }
-    }
-})
 
 
 const fetchCurrentData = async (statistic_result_value) => {

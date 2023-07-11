@@ -36,7 +36,6 @@
 
 <script setup>
 
-import { ref } from 'vue';
 import Show_SM_Table from '../components/warehouse/get_sm/Show_SM_Table.vue';
 import Accept_SM_Table from '../components/warehouse/accept_sm/Accept_SM_Table.vue';
 import Received_SM_Table from '../components/warehouse/received_sm/Received_SM_Table.vue';
@@ -44,11 +43,11 @@ import Received_SM_Table from '../components/warehouse/received_sm/Received_SM_T
 import WarehouseStore from '../store/warehouse_store';
 const warehouse_store = WarehouseStore();
 
-const tabs = ref([
+const tabs = [
     Show_SM_Table,
     Received_SM_Table,
     Accept_SM_Table
-]);
+];
 
 const changeTabe = (num) => {
     warehouse_store.tab_num = num;

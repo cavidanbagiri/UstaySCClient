@@ -4,9 +4,9 @@
 
         <div class="sticky top-10 px-1 ">
             <div class=" sticky left-16 flex flex-col bg-white" style="display: inline-block; width: calc(100vw - 5rem);">
-               
+
                 <table-stf-statistics  
-                :statistic_result="statistic_result" 
+                :statistic_result="order_store.statistic_result"
                 @fetchCurrentData = "fetchCurrentData"
                 />
 
@@ -35,7 +35,7 @@
 <script setup>
 
 // Import Section
-import { onMounted, watchEffect, ref, reactive } from 'vue'
+import { onMounted, watchEffect,} from 'vue'
 import OrderStore from '../../../store/order_store';
 import IndexStore from '../../../store';
 import UserStore from '../../../store/user_store';
@@ -46,15 +46,6 @@ import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
 const order_store = OrderStore();
 const user_store = UserStore();
 const index_store = IndexStore();
-
-// Component Variables
-const get_statistic_result = ref([]);
-const statistic_result = reactive({
-    waiting : 0,
-    processing : 0,
-    received : 0,
-    total : 0
-})
 
 // Load Firstly Data
 onMounted(async () => {
@@ -83,24 +74,7 @@ watchEffect(async () => {
         await order_store.showSTF();
         order_store.after_created = false;
     }
-
-    // For Get Statistic Result
-    get_statistic_result.value = order_store.statistic_result;
-    if(get_statistic_result.value){
-        for(let i of get_statistic_result.value){
-            
-            if(i.SituationModelId === 1){
-                statistic_result.waiting = i.count;
-            }
-            if(i.SituationModelId === 2){
-                statistic_result.processing = i.count;
-            }
-            if(i.SituationModelId === 3){
-                statistic_result.received = i.count;
-            }
-            statistic_result.total += Number(i.count);
-        }
-    }
+   
 })
 
 // Show Statistic Data

@@ -7,7 +7,7 @@
             <div class=" sticky left-16 flex flex-col w-max bg-white"
                 style="display:inline-block; width: calc(100vw - 5rem);">
 
-                <table-sm-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
+                <table-sm-statistics :statistic_result="warehouse_store.warehouse_statistic_result" @fetchCurrentData="fetchCurrentData" />
 
                 <table-filter @filterFunction = "filterFunction">
                     <table-expand v-if="true" :table_headers="warehouse_store.processing_sm_headers" />
@@ -39,7 +39,7 @@
 <script setup>
 
 // Import Section
-import { onMounted, ref, reactive, watchEffect } from 'vue';
+import { onMounted } from 'vue';
 import Get_SM_Header_Table from './Get_SM_Header_Table.vue';
 import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
 import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
@@ -49,15 +49,6 @@ import IndexStore from '../../../store';
 // Create variable for importing data
 const warehouse_store = WarehouseStore();
 const index_store = IndexStore();
-
-// Component Variables
-const get_statistic_result = ref([]);
-const statistic_result = reactive({
-    processing: 0,
-    received: 0,
-    provided:0,
-    total: 0
-})
 
 onMounted(async () => {
     // Get All Waiting SMS
@@ -82,23 +73,6 @@ const fetchCurrentData = async (statistic_result_value) => {
   }
 }
 
-watchEffect(()=>{
-    get_statistic_result.value = warehouse_store.warehouse_statistic_result;
-    if(get_statistic_result.value){
-        for(let i of get_statistic_result.value){
-            if(i.SituationModelId === 1){
-                continue;
-            }
-            if(i.SituationModelId === 2){
-                statistic_result.processing = i.count;
-            }
-            if(i.SituationModelId === 3){
-                statistic_result.received = i.count;
-            }
-            statistic_result.total += Number(i.count);
-        }
-    }
-})
 
 
 
