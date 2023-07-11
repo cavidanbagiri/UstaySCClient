@@ -10,7 +10,7 @@
             <div class="flex items-center ">
                 <div
                     class="rounded-full flex border-8 border-gray-500 w-16 h-16  items-center justify-center analyz_show_data">
-                    {{ statistic_result.total }}
+                    {{ statistic_result?.total }}
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
             <div class="flex items-center ">
                 <div
                     class="rounded-full flex border-8 border-blue-500 w-16 h-16  items-center justify-center analyz_show_data">
-                    {{ statistic_result.processing }}
+                    {{ statistic_result?.processing }}
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
             <div class="flex items-center">
                 <div
                     class="rounded-full flex border-8 border-green-500 w-16 h-16  items-center justify-center analyz_show_data">
-                    {{ statistic_result.received }}
+                    {{ statistic_result?.received }}
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
             <div class="flex items-center">
                 <div
                     class="rounded-full flex border-8 border-pink-500 w-16 h-16  items-center justify-center analyz_show_data">
-                    {{ statistic_result.provided }}
+                    {{ statistic_result?.provided }}
                 </div>
             </div>
         </div>

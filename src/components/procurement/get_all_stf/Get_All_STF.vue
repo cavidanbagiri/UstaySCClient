@@ -5,7 +5,7 @@
     <div class="h-40 sticky top-10 bg-white w-full">
       <div class=" sticky left-16 flex flex-col bg-white" style="display: inline-block; width: calc(100vw - 5rem);">
 
-        <table-stf-statistics :statistic_result="statistic_result" @fetchCurrentData="fetchCurrentData" />
+        <table-stf-statistics :statistic_result="procurement_store.statistic_result" @fetchCurrentData="fetchCurrentData" />
 
         <!-- <Filter_Section_Comp /> -->
         <table-filter @filterFunction = "filterFunction">
@@ -28,7 +28,7 @@
 <script setup>
 
 // Import Section
-import { onMounted, watchEffect, ref, reactive } from 'vue'
+import { onMounted, watchEffect } from 'vue'
 import ProcurementStore from '../../../store/procurement_store.js';
 import IndexStore from '../../../store';
 import Show_All_STF_Table_Comp from './Show_All_STF_Table_Comp.vue';
@@ -37,15 +37,6 @@ import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
 // Create variable for importing data
 const procurement_store = ProcurementStore();
 const index_store = IndexStore();
-
-// Component Variables
-const get_statistic_result = ref([]);
-const statistic_result = reactive({
-  waiting: 0,
-  processing: 0,
-  received: 0,
-  total: 0
-})
 
 onMounted(async () => {
   // Fetch All STF
@@ -70,23 +61,6 @@ watchEffect(async () => {
   // For Fetch All STF
   if (procurement_store.after_created) {
     await procurement_store.fetchAllSTF();
-  }
-
-  // For Get Statistic Result
-  get_statistic_result.value = procurement_store.statistic_result;
-  if (get_statistic_result.value) {
-    for (let i of get_statistic_result.value) {
-      if (i.SituationModelId === 1) {
-        statistic_result.waiting = i.count;
-      }
-      if (i.SituationModelId === 2) {
-        statistic_result.processing = i.count;
-      }
-      if (i.SituationModelId === 3) {
-        statistic_result.received = i.count;
-      }
-      statistic_result.total += Number(i.count);
-    }
   }
 
 })

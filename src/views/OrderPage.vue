@@ -40,7 +40,7 @@
 
 <script setup>
 
-import { ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
 
 // Import Components For Showing In MTF Tab
 import STF_Table_Comp from '../components/order/create_user_stf/STF_Table_Comp.vue';
@@ -55,7 +55,7 @@ const user_store = UserStore();
 /******************************************************************* Work With Tabs *************************/
 // const tab_num = ref(0);
 const changeTab = (num) => order_store.tab_num = num
-const tabs = ([Show_STF_Comp, STF_Table_Comp, Get_Warehouse_Table_Comp]);
+const tabs = [Show_STF_Comp, STF_Table_Comp, Get_Warehouse_Table_Comp];
 /************************************************************************************************************/
 
 onMounted(async () => {

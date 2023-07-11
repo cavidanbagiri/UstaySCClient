@@ -10,7 +10,7 @@
             <div class="flex items-center ">
                 <div
                     class="rounded-full flex border-8 border-gray-600 w-16 h-16  items-center justify-center analyz_show_data">
-                    {{ prop?.statistic_result.total }}
+                    {{ prop?.statistic_result?.total }}
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
             <div class="flex items-center ">
                 <div
                     class="rounded-full flex border-8 border-red-500 w-16 h-16  items-center justify-center analyz_show_data">
-                    {{ prop?.statistic_result.waiting }}
+                    {{ prop?.statistic_result?.waiting }}
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
             <div class="flex items-center ">
                 <div
                     class="rounded-full flex border-8 border-blue-500 w-16 h-16  items-center justify-center analyz_show_data">
-                    {{ prop?.statistic_result.processing }}
+                    {{ prop?.statistic_result?.processing }}
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
             <div class="flex items-center ">
                 <div
                     class="rounded-full flex border-8 border-green-500 w-16 h-16  items-center justify-center analyz_show_data">
-                    {{ prop?.statistic_result.received }}
+                    {{ prop?.statistic_result?.received }}
                 </div>
             </div>
         </div>
