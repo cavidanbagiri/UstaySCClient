@@ -14,8 +14,14 @@
             </div>
         </div>
 
-        <div>
-            <Show_SM_Table/>
+        <div class="">
+            <table class="text-left text-gray-800 w-full">
+                <Table-Header :table_headers="procurement_store.sm_table_headers" />
+                <tbody class="">
+                    <Get_SM_Body_Table />
+                </tbody>
+
+            </table>
         </div>
 
         <table-row-inform 
@@ -33,7 +39,8 @@
 
 // Import Section
 import { onMounted } from 'vue';
-import Show_SM_Table from './Show_SM_Table.vue';
+// import Show_SM_Table from './Show_SM_Table.vue';
+import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
 import ProcurementStore from '../../../store/procurement_store';
 import IndexStore from '../../../store';
 

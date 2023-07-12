@@ -5,22 +5,32 @@
     <div class="h-40 sticky top-10 bg-white w-full">
       <div class=" sticky left-16 flex flex-col bg-white" style="display: inline-block; width: calc(100vw - 5rem);">
 
-        <table-stf-statistics :statistic_result="procurement_store.statistic_result" @fetchCurrentData="fetchCurrentData" />
+        <table-stf-statistics :statistic_result="procurement_store.statistic_result"
+          @fetchCurrentData="fetchCurrentData" />
 
         <!-- <Filter_Section_Comp /> -->
-        <table-filter @filterFunction = "filterFunction">
+        <table-filter @filterFunction="filterFunction">
           <table-expand v-if="true" :table_headers="procurement_store.stf_table_headers" />
         </table-filter>
 
       </div>
     </div>
 
-    <Show_All_STF_Table_Comp />
+    <div class="mt-1 shadow-md sm:rounded-lg w-full border-2 analyz_header">
 
-    <Show_STF_Selecting_Task />
+      <!-- Table -->
+      <table class="text-left text-gray-800 dark:text-gray-400 w-full">
+        <!-- Table Header -->
+        <Table-Header :table_headers="procurement_store.stf_table_headers" />
+        <!-- Table Border -->
+        <Get_All_STF_Table_Body_Comp />
+      </table>
+    </div>
+
 
     <table-row-inform :row_inform="index_store.row_detail_data" :row_inform_condition="index_store.row_inform_condition"
       @closeRowInform="closeRowInform" />
+    <Show_STF_Selecting_Task />
 
   </div>
 </template>
@@ -31,8 +41,8 @@
 import { onMounted, watchEffect } from 'vue'
 import ProcurementStore from '../../../store/procurement_store.js';
 import IndexStore from '../../../store';
-import Show_All_STF_Table_Comp from './Show_All_STF_Table_Comp.vue';
 import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
+import Get_All_STF_Table_Body_Comp from './Get_All_STF_Table_Body_Comp.vue';
 
 // Create variable for importing data
 const procurement_store = ProcurementStore();
@@ -51,8 +61,8 @@ onMounted(async () => {
 )
 
 // Get Filtered Data
-const filterFunction = async (filtered_objects)=>{
-    await procurement_store.getFilteredDataSTF(filtered_objects);
+const filterFunction = async (filtered_objects) => {
+  await procurement_store.getFilteredDataSTF(filtered_objects);
 }
 
 // After Creating SM, This code will work
