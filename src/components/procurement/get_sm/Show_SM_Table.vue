@@ -5,7 +5,7 @@
         <!-- Table -->
         <div class="">
             <table class="text-left text-gray-800 w-full">
-                <Get_SM_Header_Table />
+                <Table-Header :table_headers="procurement_store.sm_table_headers" />
                 <tbody class="">
                     <Get_SM_Body_Table />
                 </tbody>
@@ -18,22 +18,13 @@
 
 <script setup>
 
-// import { onMounted } from 'vue';
 
-import Get_SM_Header_Table from './Get_SM_Header_Table.vue';
 import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
-
-
-// onMounted(async () => {
-//     await procurement_store.fetchAllSM();
-//})
+import ProcurementStore from '../../../store/procurement_store';
+const procurement_store = ProcurementStore();
 
 </script>
 
 <style scoped>
-
-/* .cavidan{
-    height: 70%;
-} */
 
 </style>

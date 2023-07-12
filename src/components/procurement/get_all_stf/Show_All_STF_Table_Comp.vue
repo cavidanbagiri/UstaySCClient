@@ -5,8 +5,8 @@
         <!-- Table -->
         <table class="text-left text-gray-800 dark:text-gray-400 w-full" >
             <!-- Table Header -->
-            <Get_All_STF_Table_Header_Comp />
-        
+            <!-- <Get_All_STF_Table_Header_Comp /> -->
+            <Table-Header :table_headers="procurement_store.stf_table_headers" />
             <!-- Table Border -->
             <Get_All_STF_Table_Body_Comp />
 
@@ -16,8 +16,10 @@
 
 <script setup>
 
-import Get_All_STF_Table_Header_Comp from './Get_All_STF_Table_Header_Comp.vue';
 import Get_All_STF_Table_Body_Comp from './Get_All_STF_Table_Body_Comp.vue';
+
+import ProcurementStore from '../../../store/procurement_store';
+const procurement_store = ProcurementStore();
 
 </script>
 

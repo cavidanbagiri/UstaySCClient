@@ -19,7 +19,7 @@
         <!-- Table -->
         <div class="">
             <table class=" text-xs text-left text-gray-800 dark:text-gray-400 w-full " style="font-size: xx-small;">
-                <Get_SM_Header_Table />
+                <Table-Header :table_headers="warehouse_store.processing_sm_headers" />
                 <Get_SM_Body_Table />
             </table>
         </div>
@@ -40,7 +40,6 @@
 
 // Import Section
 import { onMounted } from 'vue';
-import Get_SM_Header_Table from './Get_SM_Header_Table.vue';
 import Get_SM_Body_Table from './Get_SM_Body_Table.vue';
 import Show_STF_Selecting_Task from './Show_STF_Selecting_Task.vue';
 import WarehouseStore from '../../../store/warehouse_store';

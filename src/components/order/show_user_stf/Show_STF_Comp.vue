@@ -12,8 +12,6 @@
 
                 <!-- <Show_STF_Filter_Section /> -->
 
-                <!-- <table-filter :stores="order_store" :headers="order_store.table_headers" /> -->
-
                 <table-filter @filterFunction = "filterFunction" >
                     <table-expand v-if="true" :table_headers="order_store.table_headers" />
                 </table-filter>

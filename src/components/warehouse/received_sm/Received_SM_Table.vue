@@ -15,7 +15,7 @@
         <!-- Table -->
         <div class="">
             <table class=" text-xs text-left text-gray-800 dark:text-gray-400 w-full " style="font-size: xx-small;">
-                <Received_SM_Table_Header />
+                <Table-Header :table_headers="warehouse_store.receiving_sm_headers" />
                 <Received_SM_Table_Body />
             </table>
         </div>
@@ -36,7 +36,6 @@
 
 // Import Section
 import { onMounted } from 'vue';
-import Received_SM_Table_Header from './Received_SM_Table_Header.vue';
 import Received_SM_Table_Body from './Received_SM_Table_Body.vue'
 import WarehouseStore from '../../../store/warehouse_store';
 import IndexStore from '../../../store';
